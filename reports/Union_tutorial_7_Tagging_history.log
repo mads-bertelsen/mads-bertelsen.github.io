@@ -1,0 +1,41 @@
+Traceback (most recent call last):
+  File "/Users/madsbertelsen/opt/anaconda3/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/Users/madsbertelsen/opt/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 1112, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/madsbertelsen/opt/anaconda3/lib/python3.8/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Users/madsbertelsen/opt/anaconda3/lib/python3.8/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/Users/madsbertelsen/opt/anaconda3/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/Users/madsbertelsen/opt/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 553, in async_execute
+    await self.async_execute_cell(
+  File "/Users/madsbertelsen/opt/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 857, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/Users/madsbertelsen/opt/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 760, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+with open("run_folder/Union_history.dat") as file:
+    instrument_string = file.read()
+    print(instrument_string)
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mUnicodeDecodeError[0m                        Traceback (most recent call last)
+[0;32m<ipython-input-7-3b7a198cd154>[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0;32mwith[0m [0mopen[0m[0;34m([0m[0;34m"run_folder/Union_history.dat"[0m[0;34m)[0m [0;32mas[0m [0mfile[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 2[0;31m     [0minstrument_string[0m [0;34m=[0m [0mfile[0m[0;34m.[0m[0mread[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      3[0m     [0mprint[0m[0;34m([0m[0minstrument_string[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.8/codecs.py[0m in [0;36mdecode[0;34m(self, input, final)[0m
+[1;32m    320[0m         [0;31m# decode input (taking the buffer into account)[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    321[0m         [0mdata[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0mbuffer[0m [0;34m+[0m [0minput[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 322[0;31m         [0;34m([0m[0mresult[0m[0;34m,[0m [0mconsumed[0m[0;34m)[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_buffer_decode[0m[0;34m([0m[0mdata[0m[0;34m,[0m [0mself[0m[0;34m.[0m[0merrors[0m[0;34m,[0m [0mfinal[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    323[0m         [0;31m# keep undecoded input until the next call[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    324[0m         [0mself[0m[0;34m.[0m[0mbuffer[0m [0;34m=[0m [0mdata[0m[0;34m[[0m[0mconsumed[0m[0;34m:[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mUnicodeDecodeError[0m: 'utf-8' codec can't decode byte 0x96 in position 430: invalid start byte
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x96 in position 430: invalid start byte
+

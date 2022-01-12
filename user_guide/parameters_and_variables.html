@@ -1,0 +1,2061 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parameters and variables &#8212; McStasScript  documentation</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Plotting" href="plotting.html" />
+    <link rel="prev" title="Component object" href="component_object.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">McStasScript  documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Getting started
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_started/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_started/installation.html">
+   Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_started/quick_start.html">
+   Quick start
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  User guide
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="instrument_object.html">
+   Instrument object
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="component_object.html">
+   Component object
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Parameters and variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plotting.html">
+   Plotting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="instrument_reader.html">
+   Instrument reader
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  McStasScript Tutorial
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorial/McStasScript_tutorial_1_the_basics.html">
+   McStasScript introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorial/McStasScript_tutorial_2_SPLIT.html">
+   Advanced McStas features:  SPLIT
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorial/McStasScript_tutorial_3_EXTEND_and_WHEN.html">
+   Advanced McStas features: EXTEND and WHEN
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorial/McStasScript_tutorial_4_JUMP.html">
+   Advanced McStas features: JUMP
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  McStas Union Tutorial
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorial/Union_tutorial_1_processes_and_materials.html">
+   The Union components
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorial/Union_tutorial_2_geometry.html">
+   Advanced geometry using the Union components
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorial/Union_tutorial_3_loggers.html">
+   Visualizing what happens in Union master
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorial/Union_tutorial_4_conditionals.html">
+   Using conditional component to modify loggers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorial/Union_tutorial_5_masks.html">
+   Union tutorial on masks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorial/Union_tutorial_6_Exit_and_number_of_activations.html">
+   Advanced geometry component concepts: Exit geometry and number of activations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorial/Union_tutorial_7_Tagging_history.html">
+   Union tagging system
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../_autosummary/mcstasscript.html">
+   mcstasscript
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../_autosummary/mcstasscript.data.html">
+     mcstasscript.data
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.data.data.html">
+       mcstasscript.data.data
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+      <label for="toctree-checkbox-3">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.data.data.McStasData.html">
+         mcstasscript.data.data.McStasData
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.data.data.McStasDataBinned.html">
+         mcstasscript.data.data.McStasDataBinned
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.data.data.McStasDataEvent.html">
+         mcstasscript.data.data.McStasDataEvent
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.data.data.McStasMetaData.html">
+         mcstasscript.data.data.McStasMetaData
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.data.data.McStasPlotOptions.html">
+         mcstasscript.data.data.McStasPlotOptions
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../_autosummary/mcstasscript.helper.html">
+     mcstasscript.helper
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.helper.component_reader.html">
+       mcstasscript.helper.component_reader
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.component_reader.ComponentInfo.html">
+         mcstasscript.helper.component_reader.ComponentInfo
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.component_reader.ComponentReader.html">
+         mcstasscript.helper.component_reader.ComponentReader
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.helper.formatting.html">
+       mcstasscript.helper.formatting
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+      <label for="toctree-checkbox-6">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.formatting.is_legal_filename.html">
+         mcstasscript.helper.formatting.is_legal_filename
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.formatting.is_legal_parameter.html">
+         mcstasscript.helper.formatting.is_legal_parameter
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.formatting.bcolors.html">
+         mcstasscript.helper.formatting.bcolors
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.helper.managed_mcrun.html">
+       mcstasscript.helper.managed_mcrun
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+      <label for="toctree-checkbox-7">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.managed_mcrun.load_metadata.html">
+         mcstasscript.helper.managed_mcrun.load_metadata
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.managed_mcrun.load_monitor.html">
+         mcstasscript.helper.managed_mcrun.load_monitor
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.managed_mcrun.load_results.html">
+         mcstasscript.helper.managed_mcrun.load_results
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.managed_mcrun.ManagedMcrun.html">
+         mcstasscript.helper.managed_mcrun.ManagedMcrun
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.helper.mcstas_objects.html">
+       mcstasscript.helper.mcstas_objects
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+      <label for="toctree-checkbox-8">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.mcstas_objects.Component.html">
+         mcstasscript.helper.mcstas_objects.Component
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.mcstas_objects.DeclareVariable.html">
+         mcstasscript.helper.mcstas_objects.DeclareVariable
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.mcstas_objects.ParameterContainer.html">
+         mcstasscript.helper.mcstas_objects.ParameterContainer
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.mcstas_objects.ParameterVariable.html">
+         mcstasscript.helper.mcstas_objects.ParameterVariable
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../_autosummary/mcstasscript.helper.plot_helper.html">
+       mcstasscript.helper.plot_helper
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.html">
+     mcstasscript.instr_reader
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.control.html">
+       mcstasscript.instr_reader.control
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+      <label for="toctree-checkbox-10">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.control.InstrumentReader.html">
+         mcstasscript.instr_reader.control.InstrumentReader
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.read_declare.html">
+       mcstasscript.instr_reader.read_declare
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+      <label for="toctree-checkbox-11">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.read_declare.DeclareReader.html">
+         mcstasscript.instr_reader.read_declare.DeclareReader
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.read_definition.html">
+       mcstasscript.instr_reader.read_definition
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+      <label for="toctree-checkbox-12">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.read_definition.DefinitionReader.html">
+         mcstasscript.instr_reader.read_definition.DefinitionReader
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.read_finally.html">
+       mcstasscript.instr_reader.read_finally
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+      <label for="toctree-checkbox-13">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.read_finally.FinallyReader.html">
+         mcstasscript.instr_reader.read_finally.FinallyReader
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.read_initialize.html">
+       mcstasscript.instr_reader.read_initialize
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+      <label for="toctree-checkbox-14">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.read_initialize.InitializeReader.html">
+         mcstasscript.instr_reader.read_initialize.InitializeReader
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.read_trace.html">
+       mcstasscript.instr_reader.read_trace
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+      <label for="toctree-checkbox-15">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.read_trace.TraceReader.html">
+         mcstasscript.instr_reader.read_trace.TraceReader
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.util.html">
+       mcstasscript.instr_reader.util
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+      <label for="toctree-checkbox-16">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.util.SectionReader.html">
+         mcstasscript.instr_reader.util.SectionReader
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../_autosummary/mcstasscript.integration_tests.html">
+     mcstasscript.integration_tests
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+    <label for="toctree-checkbox-17">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.integration_tests.test_complex_instrument.html">
+       mcstasscript.integration_tests.test_complex_instrument
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+      <label for="toctree-checkbox-18">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.integration_tests.test_complex_instrument.setup_complex_instrument.html">
+         mcstasscript.integration_tests.test_complex_instrument.setup_complex_instrument
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.integration_tests.test_complex_instrument.FakeChange.html">
+         mcstasscript.integration_tests.test_complex_instrument.FakeChange
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.integration_tests.test_complex_instrument.TestComplexInstrument.html">
+         mcstasscript.integration_tests.test_complex_instrument.TestComplexInstrument
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.integration_tests.test_simple_instrument.html">
+       mcstasscript.integration_tests.test_simple_instrument
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+      <label for="toctree-checkbox-19">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.integration_tests.test_simple_instrument.setup_simple_instrument.html">
+         mcstasscript.integration_tests.test_simple_instrument.setup_simple_instrument
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.integration_tests.test_simple_instrument.setup_simple_instrument_input_path.html">
+         mcstasscript.integration_tests.test_simple_instrument.setup_simple_instrument_input_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.integration_tests.test_simple_instrument.setup_simple_slit_instrument.html">
+         mcstasscript.integration_tests.test_simple_instrument.setup_simple_slit_instrument
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.integration_tests.test_simple_instrument.TestSimpleInstrument.html">
+         mcstasscript.integration_tests.test_simple_instrument.TestSimpleInstrument
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../_autosummary/mcstasscript.interface.html">
+     mcstasscript.interface
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+    <label for="toctree-checkbox-20">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.interface.functions.html">
+       mcstasscript.interface.functions
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+      <label for="toctree-checkbox-21">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.functions.load_data.html">
+         mcstasscript.interface.functions.load_data
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.functions.load_metadata.html">
+         mcstasscript.interface.functions.load_metadata
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.functions.load_monitor.html">
+         mcstasscript.interface.functions.load_monitor
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.functions.name_plot_options.html">
+         mcstasscript.interface.functions.name_plot_options
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.functions.name_search.html">
+         mcstasscript.interface.functions.name_search
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.functions.Configurator.html">
+         mcstasscript.interface.functions.Configurator
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.interface.instr.html">
+       mcstasscript.interface.instr
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+      <label for="toctree-checkbox-22">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.instr.McCode_instr.html">
+         mcstasscript.interface.instr.McCode_instr
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.instr.McStas_instr.html">
+         mcstasscript.interface.instr.McStas_instr
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.instr.McXtrace_instr.html">
+         mcstasscript.interface.instr.McXtrace_instr
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.interface.plotter.html">
+       mcstasscript.interface.plotter
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+      <label for="toctree-checkbox-23">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.plotter.interface.html">
+         mcstasscript.interface.plotter.interface
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.plotter.make_animation.html">
+         mcstasscript.interface.plotter.make_animation
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.plotter.make_plot.html">
+         mcstasscript.interface.plotter.make_plot
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.plotter.make_sub_plot.html">
+         mcstasscript.interface.plotter.make_sub_plot
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.interface.reader.html">
+       mcstasscript.interface.reader
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+      <label for="toctree-checkbox-24">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.reader.McStas_file.html">
+         mcstasscript.interface.reader.McStas_file
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.html">
+     mcstasscript.jb_interface
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+    <label for="toctree-checkbox-25">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.plot_interface.html">
+       mcstasscript.jb_interface.plot_interface
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+      <label for="toctree-checkbox-26">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.plot_interface.ColormapDropdown.html">
+         mcstasscript.jb_interface.plot_interface.ColormapDropdown
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.plot_interface.LogCheckbox.html">
+         mcstasscript.jb_interface.plot_interface.LogCheckbox
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.plot_interface.MonitorDropdown.html">
+         mcstasscript.jb_interface.plot_interface.MonitorDropdown
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.plot_interface.OrdersOfMagField.html">
+         mcstasscript.jb_interface.plot_interface.OrdersOfMagField
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.plot_interface.PlotInterface.html">
+         mcstasscript.jb_interface.plot_interface.PlotInterface
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.simulation_interface.html">
+       mcstasscript.jb_interface.simulation_interface
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+      <label for="toctree-checkbox-27">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.simulation_interface.add_data.html">
+         mcstasscript.jb_interface.simulation_interface.add_data
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.simulation_interface.ParameterWidget.html">
+         mcstasscript.jb_interface.simulation_interface.ParameterWidget
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.simulation_interface.SimInterface.html">
+         mcstasscript.jb_interface.simulation_interface.SimInterface
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.widget_helpers.html">
+       mcstasscript.jb_interface.widget_helpers
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+      <label for="toctree-checkbox-28">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.widget_helpers.get_parameter_default.html">
+         mcstasscript.jb_interface.widget_helpers.get_parameter_default
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.widget_helpers.parameter_has_default.html">
+         mcstasscript.jb_interface.widget_helpers.parameter_has_default
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.widget_helpers.HiddenPrints.html">
+         mcstasscript.jb_interface.widget_helpers.HiddenPrints
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../_autosummary/mcstasscript.tests.html">
+     mcstasscript.tests
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+    <label for="toctree-checkbox-29">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.helpers_for_tests.html">
+       mcstasscript.tests.helpers_for_tests
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+      <label for="toctree-checkbox-30">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.helpers_for_tests.WorkInTestDir.html">
+         mcstasscript.tests.helpers_for_tests.WorkInTestDir
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_ComponentReader.html">
+       mcstasscript.tests.test_ComponentReader
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+      <label for="toctree-checkbox-31">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_ComponentReader.setup_component_reader.html">
+         mcstasscript.tests.test_ComponentReader.setup_component_reader
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_ComponentReader.setup_component_reader_input_path.html">
+         mcstasscript.tests.test_ComponentReader.setup_component_reader_input_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_ComponentReader.TestComponentReader.html">
+         mcstasscript.tests.test_ComponentReader.TestComponentReader
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Configurator.html">
+       mcstasscript.tests.test_Configurator
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+      <label for="toctree-checkbox-32">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Configurator.setup_configurator.html">
+         mcstasscript.tests.test_Configurator.setup_configurator
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Configurator.setup_expected_file.html">
+         mcstasscript.tests.test_Configurator.setup_expected_file
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Configurator.TestConfigurator.html">
+         mcstasscript.tests.test_Configurator.TestConfigurator
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.html">
+       mcstasscript.tests.test_Instr
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+      <label for="toctree-checkbox-33">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_instr_no_path.html">
+         mcstasscript.tests.test_Instr.setup_instr_no_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_instr_root_path.html">
+         mcstasscript.tests.test_Instr.setup_instr_root_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_instr_with_input_path.html">
+         mcstasscript.tests.test_Instr.setup_instr_with_input_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_instr_with_input_path_relative.html">
+         mcstasscript.tests.test_Instr.setup_instr_with_input_path_relative
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_instr_with_path.html">
+         mcstasscript.tests.test_Instr.setup_instr_with_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_populated_instr.html">
+         mcstasscript.tests.test_Instr.setup_populated_instr
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_populated_instr_with_dummy_path.html">
+         mcstasscript.tests.test_Instr.setup_populated_instr_with_dummy_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_populated_with_some_options_instr.html">
+         mcstasscript.tests.test_Instr.setup_populated_with_some_options_instr
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_populated_x_ray_instr.html">
+         mcstasscript.tests.test_Instr.setup_populated_x_ray_instr
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_populated_x_ray_instr_with_dummy_path.html">
+         mcstasscript.tests.test_Instr.setup_populated_x_ray_instr_with_dummy_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_x_ray_instr_no_path.html">
+         mcstasscript.tests.test_Instr.setup_x_ray_instr_no_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_x_ray_instr_root_path.html">
+         mcstasscript.tests.test_Instr.setup_x_ray_instr_root_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_x_ray_instr_with_path.html">
+         mcstasscript.tests.test_Instr.setup_x_ray_instr_with_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.TestMcStas_instr.html">
+         mcstasscript.tests.test_Instr.TestMcStas_instr
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr_reader.html">
+       mcstasscript.tests.test_Instr_reader
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
+      <label for="toctree-checkbox-34">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr_reader.blockPrint.html">
+         mcstasscript.tests.test_Instr_reader.blockPrint
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr_reader.enablePrint.html">
+         mcstasscript.tests.test_Instr_reader.enablePrint
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr_reader.set_dummy_dir.html">
+         mcstasscript.tests.test_Instr_reader.set_dummy_dir
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr_reader.setup_standard.html">
+         mcstasscript.tests.test_Instr_reader.setup_standard
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr_reader.setup_standard_auto_instr.html">
+         mcstasscript.tests.test_Instr_reader.setup_standard_auto_instr
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr_reader.TestInstrReader.html">
+         mcstasscript.tests.test_Instr_reader.TestInstrReader
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_ManagedMcrun.html">
+       mcstasscript.tests.test_ManagedMcrun
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
+      <label for="toctree-checkbox-35">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_ManagedMcrun.TestManagedMcrun.html">
+         mcstasscript.tests.test_ManagedMcrun.TestManagedMcrun
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_ManagedMcrun.Test_load_functions.html">
+         mcstasscript.tests.test_ManagedMcrun.Test_load_functions
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_McStasData.html">
+       mcstasscript.tests.test_McStasData
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
+      <label for="toctree-checkbox-36">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_McStasData.set_dummy_McStasDataBinned_1d.html">
+         mcstasscript.tests.test_McStasData.set_dummy_McStasDataBinned_1d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_McStasData.set_dummy_McStasDataBinned_2d.html">
+         mcstasscript.tests.test_McStasData.set_dummy_McStasDataBinned_2d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_McStasData.set_dummy_MetaDataBinned_1d.html">
+         mcstasscript.tests.test_McStasData.set_dummy_MetaDataBinned_1d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_McStasData.set_dummy_MetaDataBinned_2d.html">
+         mcstasscript.tests.test_McStasData.set_dummy_MetaDataBinned_2d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_McStasData.TestMcStasData.html">
+         mcstasscript.tests.test_McStasData.TestMcStasData
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_McStasMetaData.html">
+       mcstasscript.tests.test_McStasMetaData
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
+      <label for="toctree-checkbox-37">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_McStasMetaData.TestMcStasMetaData.html">
+         mcstasscript.tests.test_McStasMetaData.TestMcStasMetaData
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_McStasPlotOptions.html">
+       mcstasscript.tests.test_McStasPlotOptions
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
+      <label for="toctree-checkbox-38">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_McStasPlotOptions.TestMcStasPlotOptions.html">
+         mcstasscript.tests.test_McStasPlotOptions.TestMcStasPlotOptions
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Plotter.html">
+       mcstasscript.tests.test_Plotter
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
+      <label for="toctree-checkbox-39">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Plotter.get_dummy_McStasDataBinned_1d.html">
+         mcstasscript.tests.test_Plotter.get_dummy_McStasDataBinned_1d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Plotter.get_dummy_McStasDataBinned_2d.html">
+         mcstasscript.tests.test_Plotter.get_dummy_McStasDataBinned_2d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Plotter.get_dummy_MetaDataBinned_1d.html">
+         mcstasscript.tests.test_Plotter.get_dummy_MetaDataBinned_1d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Plotter.get_dummy_MetaDataBinned_2d.html">
+         mcstasscript.tests.test_Plotter.get_dummy_MetaDataBinned_2d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Plotter.TestPlotterHelpers.html">
+         mcstasscript.tests.test_Plotter.TestPlotterHelpers
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_add_data.html">
+       mcstasscript.tests.test_add_data
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
+      <label for="toctree-checkbox-40">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_add_data.set_dummy_McStasDataBinned_1d.html">
+         mcstasscript.tests.test_add_data.set_dummy_McStasDataBinned_1d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_add_data.set_dummy_McStasDataBinned_2d.html">
+         mcstasscript.tests.test_add_data.set_dummy_McStasDataBinned_2d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_add_data.set_dummy_MetaDataBinned_1d.html">
+         mcstasscript.tests.test_add_data.set_dummy_MetaDataBinned_1d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_add_data.set_dummy_MetaDataBinned_2d.html">
+         mcstasscript.tests.test_add_data.set_dummy_MetaDataBinned_2d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_add_data.Test_add_data.html">
+         mcstasscript.tests.test_add_data.Test_add_data
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_component.html">
+       mcstasscript.tests.test_component
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
+      <label for="toctree-checkbox-41">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_component.setup_Component_all_keywords.html">
+         mcstasscript.tests.test_component.setup_Component_all_keywords
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_component.setup_Component_relative.html">
+         mcstasscript.tests.test_component.setup_Component_relative
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_component.setup_Component_with_parameters.html">
+         mcstasscript.tests.test_component.setup_Component_with_parameters
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_component.TestComponent.html">
+         mcstasscript.tests.test_component.TestComponent
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_declare_variable.html">
+       mcstasscript.tests.test_declare_variable
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
+      <label for="toctree-checkbox-42">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_declare_variable.Test_DeclareVariable.html">
+         mcstasscript.tests.test_declare_variable.Test_DeclareVariable
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.html">
+       mcstasscript.tests.test_dump_and_load
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
+      <label for="toctree-checkbox-43">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_instr_no_path.html">
+         mcstasscript.tests.test_dump_and_load.setup_instr_no_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_instr_root_path.html">
+         mcstasscript.tests.test_dump_and_load.setup_instr_root_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_instr_with_input_path.html">
+         mcstasscript.tests.test_dump_and_load.setup_instr_with_input_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_instr_with_input_path_relative.html">
+         mcstasscript.tests.test_dump_and_load.setup_instr_with_input_path_relative
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_instr_with_path.html">
+         mcstasscript.tests.test_dump_and_load.setup_instr_with_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_populated_instr.html">
+         mcstasscript.tests.test_dump_and_load.setup_populated_instr
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_populated_instr_with_dummy_path.html">
+         mcstasscript.tests.test_dump_and_load.setup_populated_instr_with_dummy_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_populated_with_some_options_instr.html">
+         mcstasscript.tests.test_dump_and_load.setup_populated_with_some_options_instr
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_populated_x_ray_instr.html">
+         mcstasscript.tests.test_dump_and_load.setup_populated_x_ray_instr
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_populated_x_ray_instr_with_dummy_path.html">
+         mcstasscript.tests.test_dump_and_load.setup_populated_x_ray_instr_with_dummy_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_x_ray_instr_no_path.html">
+         mcstasscript.tests.test_dump_and_load.setup_x_ray_instr_no_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_x_ray_instr_root_path.html">
+         mcstasscript.tests.test_dump_and_load.setup_x_ray_instr_root_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_x_ray_instr_with_path.html">
+         mcstasscript.tests.test_dump_and_load.setup_x_ray_instr_with_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.TestDumpAndLoad.html">
+         mcstasscript.tests.test_dump_and_load.TestDumpAndLoad
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_formatting.html">
+       mcstasscript.tests.test_formatting
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
+      <label for="toctree-checkbox-44">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_formatting.TestFormatting.html">
+         mcstasscript.tests.test_formatting.TestFormatting
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.html">
+       mcstasscript.tests.test_functions
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
+      <label for="toctree-checkbox-45">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.set_dummy_McStasDataBinned_1d.html">
+         mcstasscript.tests.test_functions.set_dummy_McStasDataBinned_1d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.set_dummy_McStasDataBinned_2d.html">
+         mcstasscript.tests.test_functions.set_dummy_McStasDataBinned_2d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.set_dummy_MetaDataBinned_1d.html">
+         mcstasscript.tests.test_functions.set_dummy_MetaDataBinned_1d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.set_dummy_MetaDataBinned_2d.html">
+         mcstasscript.tests.test_functions.set_dummy_MetaDataBinned_2d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.setup_McStasData_array.html">
+         mcstasscript.tests.test_functions.setup_McStasData_array
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.setup_McStasData_array_repeat.html">
+         mcstasscript.tests.test_functions.setup_McStasData_array_repeat
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.Test_load_data.html">
+         mcstasscript.tests.test_functions.Test_load_data
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.Test_load_metadata.html">
+         mcstasscript.tests.test_functions.Test_load_metadata
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.Test_load_monitor.html">
+         mcstasscript.tests.test_functions.Test_load_monitor
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.Test_name_plot_options.html">
+         mcstasscript.tests.test_functions.Test_name_plot_options
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.Test_name_search.html">
+         mcstasscript.tests.test_functions.Test_name_search
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_parameter_variable.html">
+       mcstasscript.tests.test_parameter_variable
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
+      <label for="toctree-checkbox-46">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_parameter_variable.Test_ParameterVariable.html">
+         mcstasscript.tests.test_parameter_variable.Test_ParameterVariable
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_plot_interface.html">
+       mcstasscript.tests.test_plot_interface
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
+      <label for="toctree-checkbox-47">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_plot_interface.fake_data.html">
+         mcstasscript.tests.test_plot_interface.fake_data
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_plot_interface.set_dummy_McStasDataBinned_1d.html">
+         mcstasscript.tests.test_plot_interface.set_dummy_McStasDataBinned_1d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_plot_interface.set_dummy_McStasDataBinned_2d.html">
+         mcstasscript.tests.test_plot_interface.set_dummy_McStasDataBinned_2d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_plot_interface.set_dummy_MetaDataBinned_1d.html">
+         mcstasscript.tests.test_plot_interface.set_dummy_MetaDataBinned_1d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_plot_interface.set_dummy_MetaDataBinned_2d.html">
+         mcstasscript.tests.test_plot_interface.set_dummy_MetaDataBinned_2d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_plot_interface.FakeChange.html">
+         mcstasscript.tests.test_plot_interface.FakeChange
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_plot_interface.TestPlotInterface.html">
+         mcstasscript.tests.test_plot_interface.TestPlotInterface
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_simulation_interface.html">
+       mcstasscript.tests.test_simulation_interface
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
+      <label for="toctree-checkbox-48">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_simulation_interface.setup_instr_root_path_McStas.html">
+         mcstasscript.tests.test_simulation_interface.setup_instr_root_path_McStas
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_simulation_interface.setup_instr_root_path_McXtrace.html">
+         mcstasscript.tests.test_simulation_interface.setup_instr_root_path_McXtrace
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_simulation_interface.setup_populated_instr_McStas.html">
+         mcstasscript.tests.test_simulation_interface.setup_populated_instr_McStas
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_simulation_interface.setup_populated_instr_McXtrace.html">
+         mcstasscript.tests.test_simulation_interface.setup_populated_instr_McXtrace
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_simulation_interface.FakeChange.html">
+         mcstasscript.tests.test_simulation_interface.FakeChange
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_simulation_interface.TestSimulationInterface.html">
+         mcstasscript.tests.test_simulation_interface.TestSimulationInterface
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_widget_helpers.html">
+       mcstasscript.tests.test_widget_helpers
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
+      <label for="toctree-checkbox-49">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_widget_helpers.TestWidgetHelpers.html">
+         mcstasscript.tests.test_widget_helpers.TestWidgetHelpers
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.utilities.html">
+       mcstasscript.tests.utilities
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
+      <label for="toctree-checkbox-50">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.utilities.work_dir_test.html">
+         mcstasscript.tests.utilities.work_dir_test
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/user_guide/parameters_and_variables.ipynb.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/PaNOSC-ViNYL/McStasScript"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/PaNOSC-ViNYL/McStasScript/issues/new?title=Issue%20on%20page%20%2Fuser_guide/parameters_and_variables.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/PaNOSC-ViNYL/McStasScript/edit/mcstasscript_on_libpyvinyl/docs/user_guide/parameters_and_variables.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parameters">
+   Parameters
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#types">
+     Types
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#value">
+     Value
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parameter-restrictions">
+     Parameter restrictions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#declared-variables">
+   Declared variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-parameters-and-variables">
+   Using parameters and variables
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Parameters and variables</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parameters">
+   Parameters
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#types">
+     Types
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#value">
+     Value
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parameter-restrictions">
+     Parameter restrictions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#declared-variables">
+   Declared variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-parameters-and-variables">
+   Using parameters and variables
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="parameters-and-variables">
+<h1>Parameters and variables<a class="headerlink" href="#parameters-and-variables" title="Permalink to this headline">¶</a></h1>
+<p>At the instrument level there is a destingsion between parameters and variables. Parameters are inputs to the instrument that can be changed at run time, while variables are defined internally within the insturment. This section of the documentation covers these two as they have some similarities.</p>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<p>Instrument parameters are built on the libpyvinyl parameters, and have some interesting features. First a simple parameter is added.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mcstasscript.interface</span> <span class="kn">import</span> <span class="n">instr</span><span class="p">,</span> <span class="n">functions</span><span class="p">,</span> <span class="n">plotter</span>
+<span class="n">instrument</span> <span class="o">=</span> <span class="n">instr</span><span class="o">.</span><span class="n">McStas_instr</span><span class="p">(</span><span class="s2">&quot;parameters_and_variables&quot;</span><span class="p">)</span>
+
+<span class="n">first_par</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span><span class="s2">&quot;first_par&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">first_par</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parameter named: &#39;first_par&#39; without set value.
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is a good habit to add a comment to each parameter when creating it. Since two parameters can not have the same name, creates</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">second_parameter</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span><span class="s2">&quot;first_par&quot;</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="s2">&quot;My first parameter!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="types">
+<h3>Types<a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h3>
+<p>If only one argument is given, it is assumed the type is a C <em>double</em>, so a floating point number. It is also allowed to have integers and strings. No other types are supported by McStas / McXtrace.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">double_par</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span><span class="s2">&quot;double&quot;</span><span class="p">,</span> <span class="s2">&quot;double_par&quot;</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="s2">&quot;Typed double&quot;</span><span class="p">)</span>
+<span class="n">int_par</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span><span class="s2">&quot;int&quot;</span><span class="p">,</span> <span class="s2">&quot;int_par&quot;</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="s2">&quot;Typed int&quot;</span><span class="p">)</span>
+<span class="n">string_par</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="s2">&quot;string_par&quot;</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="s2">&quot;Typed string&quot;</span><span class="p">)</span>
+
+<span class="n">instrument</span><span class="o">.</span><span class="n">show_parameters</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       first_par           // My first parameter!
+double double_par          // Typed double
+int    int_par             // Typed int
+string string_par          // Typed string
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="value">
+<h3>Value<a class="headerlink" href="#value" title="Permalink to this headline">¶</a></h3>
+<p>It is common to set the value of a parameter when it is created.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instrument</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span><span class="s2">&quot;par_with_value&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">5.2</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="s2">&quot;Added value at creation&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parameter named: &#39;par_with_value&#39; with value: 5.2
+ Added value at creation
+</pre></div>
+</div>
+</div>
+</div>
+<p>The value can always be changed, either directly or through the instrument object. When using the instrument object, use the name in the instrument file as the keyword argument.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">double_par</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="mf">1.2</span>
+<span class="n">instrument</span><span class="o">.</span><span class="n">set_parameters</span><span class="p">(</span><span class="n">int_par</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instrument</span><span class="o">.</span><span class="n">show_parameters</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       first_par               // My first parameter!
+double double_par      = 1.2   // Typed double
+int    int_par         = 3     // Typed int
+string string_par              // Typed string
+       par_with_value  = 5.2   // Added value at creation
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="parameter-restrictions">
+<h3>Parameter restrictions<a class="headerlink" href="#parameter-restrictions" title="Permalink to this headline">¶</a></h3>
+<p>Since the parameter object in McStasScript is derived from libpyvinyl, some functionality is inherited in terms of setting parameter restrictions. This comes in the forms of intervals and options, which can both be legal and illegal.</p>
+<p>Here is an example of adding legal intervals to the <em>double_par</em> parameter. None can be used if the interval should extend to infinity in the given direction.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">double_par</span><span class="o">.</span><span class="n">add_interval</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">intervals_are_legal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">double_par</span><span class="o">.</span><span class="n">add_interval</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">intervals_are_legal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">double_par</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parameter named: &#39;double_par&#39; with value: 1.2
+ Typed double
+  Legal intervals:
+    [0,5]
+    [7,inf]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now only values between 0 and 5 or from 7 to 8 are accepted. Trying to set a different value will raise a ValueError.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">double_par</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="mf">1.8</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">double_par</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parameter named: &#39;double_par&#39; with value: 1.8
+ Typed double
+  Legal intervals:
+    [0,5]
+    [7,inf]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">double_par</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Failed to set value!&quot;</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">double_par</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parameter named: &#39;double_par&#39; with value: 10
+ Typed double
+  Legal intervals:
+    [0,5]
+    [7,inf]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Setting <em>intervals_are_legal</em> to False means that only values outside the defined intervals are allowed.</p>
+<p>Options work in a similar way, but for specific values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">int_par</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">options_are_legal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">int_par</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">options_are_legal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">int_par</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">options_are_legal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">int_par</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Failed to set value!&quot;</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">int_par</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Failed to set value!
+Parameter named: &#39;int_par&#39; with value: 3
+ Typed int
+  Allowed values:
+    1
+    2
+    3
+</pre></div>
+</div>
+</div>
+</div>
+<p>Adding restrictions to parameters is a healthy habit that can make the produced instrument more resilient to errors. Ensure the given wavelength is a positive number to catch errors early instead of trying to understand what happened when a simulation fails.</p>
+</div>
+</div>
+<div class="section" id="declared-variables">
+<h2>Declared variables<a class="headerlink" href="#declared-variables" title="Permalink to this headline">¶</a></h2>
+<p>It is possible to declare variables that are used internally in the instrument and as such not exposed to the user. This is done thrugh the instrument objects <em>add_declare_var</em> method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">declared_var</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_declare_var</span><span class="p">(</span><span class="s2">&quot;double&quot;</span><span class="p">,</span> <span class="s2">&quot;declared_var&quot;</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="s2">&quot;Declared variable&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">declared_var</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Declare variable: &#39;declared_var&#39; of type double
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are no restrictions on the type for declared variables, typically double and int is used.</p>
+<p>Declared variables have no methods for additional input, all information must be given at initialization.</p>
+<p>The declared variable can be initialized to a given value by using the <em>value</em> keyword.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">declared_var</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_declare_var</span><span class="p">(</span><span class="s2">&quot;int&quot;</span><span class="p">,</span> <span class="s2">&quot;integer&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="s2">&quot;Declared integer&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">declared_var</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Declare variable: &#39;integer&#39; of type int with value: 5
+</pre></div>
+</div>
+</div>
+</div>
+<p>Declared variables can also be one dimensional arrays using the <em>array</em> keyword. In the full McStas / McXtrace its possible to make arrays of any dimensionality but only one dimensional is supported in McStasScript. If a value of array is smaller than the length of the given value, the simulation will fail as it would write outside of the declared memory.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_declare_var</span><span class="p">(</span><span class="s2">&quot;double&quot;</span><span class="p">,</span> <span class="s2">&quot;declared_array&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">array</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Declare variable: &#39;declared_array&#39; of type double with value: [2, 3, 4]. Array with length 3
+</pre></div>
+</div>
+</div>
+</div>
+<p>The declared variables of the instrument can be displayed with <em>show_variables</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instrument</span><span class="o">.</span><span class="n">show_variables</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>type    variable name   value      array length  
+-----------------------------------------------
+double  declared_var                             
+int     integer         5                        
+double  declared_array  [2, 3, 4]  3             
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="using-parameters-and-variables">
+<h2>Using parameters and variables<a class="headerlink" href="#using-parameters-and-variables" title="Permalink to this headline">¶</a></h2>
+<p>Instrument parameters and variables are can both be used when setting component attributes. One can use either the name in a string, or the object directly. When using a string, it is allowed to do basic math and use several parameter / variables. It is also possible to select a certain element from an array.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;source&quot;</span><span class="p">,</span> <span class="s2">&quot;Source_simple&quot;</span><span class="p">)</span>
+<span class="n">source</span><span class="o">.</span><span class="n">xwidth</span> <span class="o">=</span> <span class="n">double_par</span>
+<span class="n">source</span><span class="o">.</span><span class="n">yheight</span> <span class="o">=</span> <span class="n">declared_var</span>
+<span class="n">source</span><span class="o">.</span><span class="n">dist</span> <span class="o">=</span> <span class="s2">&quot;5.0*first_par + 0.1*double_par&quot;</span>
+<span class="n">source</span><span class="o">.</span><span class="n">focus_xw</span> <span class="o">=</span> <span class="s2">&quot;declared_array[0]&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>COMPONENT source = Source_simple
+  <span class=" -Color -Color-Bold">yheight</span> = <span class=" -Color -Color-Bold">integer</span> [m]
+  <span class=" -Color -Color-Bold">xwidth</span> = <span class=" -Color -Color-Bold">double_par</span> [m]
+  <span class=" -Color -Color-Bold">dist</span> = <span class=" -Color -Color-Bold">5.0*first_par + 0.1*double_par</span> [m]
+  <span class=" -Color -Color-Bold">focus_xw</span> = <span class=" -Color -Color-Bold">declared_array[0]</span> [m]
+AT [0, 0, 0] ABSOLUTE
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="component_object.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Component object</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="plotting.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Plotting</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Mads Bertelsen<br/>
+    
+        &copy; Copyright 2022, Mads Bertelsen.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

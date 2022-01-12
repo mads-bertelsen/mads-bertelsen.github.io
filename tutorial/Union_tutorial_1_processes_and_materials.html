@@ -1,0 +1,2776 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Union components &#8212; McStasScript  documentation</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Advanced geometry using the Union components" href="Union_tutorial_2_geometry.html" />
+    <link rel="prev" title="Advanced McStas features: JUMP" href="McStasScript_tutorial_4_JUMP.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">McStasScript  documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Getting started
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_started/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_started/installation.html">
+   Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_started/quick_start.html">
+   Quick start
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  User guide
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../user_guide/instrument_object.html">
+   Instrument object
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../user_guide/component_object.html">
+   Component object
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../user_guide/parameters_and_variables.html">
+   Parameters and variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../user_guide/plotting.html">
+   Plotting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../user_guide/instrument_reader.html">
+   Instrument reader
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  McStasScript Tutorial
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="McStasScript_tutorial_1_the_basics.html">
+   McStasScript introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="McStasScript_tutorial_2_SPLIT.html">
+   Advanced McStas features:  SPLIT
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="McStasScript_tutorial_3_EXTEND_and_WHEN.html">
+   Advanced McStas features: EXTEND and WHEN
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="McStasScript_tutorial_4_JUMP.html">
+   Advanced McStas features: JUMP
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  McStas Union Tutorial
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   The Union components
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Union_tutorial_2_geometry.html">
+   Advanced geometry using the Union components
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Union_tutorial_3_loggers.html">
+   Visualizing what happens in Union master
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Union_tutorial_4_conditionals.html">
+   Using conditional component to modify loggers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Union_tutorial_5_masks.html">
+   Union tutorial on masks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Union_tutorial_6_Exit_and_number_of_activations.html">
+   Advanced geometry component concepts: Exit geometry and number of activations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Union_tutorial_7_Tagging_history.html">
+   Union tagging system
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../_autosummary/mcstasscript.html">
+   mcstasscript
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../_autosummary/mcstasscript.data.html">
+     mcstasscript.data
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.data.data.html">
+       mcstasscript.data.data
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+      <label for="toctree-checkbox-3">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.data.data.McStasData.html">
+         mcstasscript.data.data.McStasData
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.data.data.McStasDataBinned.html">
+         mcstasscript.data.data.McStasDataBinned
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.data.data.McStasDataEvent.html">
+         mcstasscript.data.data.McStasDataEvent
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.data.data.McStasMetaData.html">
+         mcstasscript.data.data.McStasMetaData
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.data.data.McStasPlotOptions.html">
+         mcstasscript.data.data.McStasPlotOptions
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../_autosummary/mcstasscript.helper.html">
+     mcstasscript.helper
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.helper.component_reader.html">
+       mcstasscript.helper.component_reader
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.component_reader.ComponentInfo.html">
+         mcstasscript.helper.component_reader.ComponentInfo
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.component_reader.ComponentReader.html">
+         mcstasscript.helper.component_reader.ComponentReader
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.helper.formatting.html">
+       mcstasscript.helper.formatting
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+      <label for="toctree-checkbox-6">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.formatting.is_legal_filename.html">
+         mcstasscript.helper.formatting.is_legal_filename
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.formatting.is_legal_parameter.html">
+         mcstasscript.helper.formatting.is_legal_parameter
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.formatting.bcolors.html">
+         mcstasscript.helper.formatting.bcolors
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.helper.managed_mcrun.html">
+       mcstasscript.helper.managed_mcrun
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+      <label for="toctree-checkbox-7">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.managed_mcrun.load_metadata.html">
+         mcstasscript.helper.managed_mcrun.load_metadata
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.managed_mcrun.load_monitor.html">
+         mcstasscript.helper.managed_mcrun.load_monitor
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.managed_mcrun.load_results.html">
+         mcstasscript.helper.managed_mcrun.load_results
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.managed_mcrun.ManagedMcrun.html">
+         mcstasscript.helper.managed_mcrun.ManagedMcrun
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.helper.mcstas_objects.html">
+       mcstasscript.helper.mcstas_objects
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+      <label for="toctree-checkbox-8">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.mcstas_objects.Component.html">
+         mcstasscript.helper.mcstas_objects.Component
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.mcstas_objects.DeclareVariable.html">
+         mcstasscript.helper.mcstas_objects.DeclareVariable
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.mcstas_objects.ParameterContainer.html">
+         mcstasscript.helper.mcstas_objects.ParameterContainer
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.mcstas_objects.ParameterVariable.html">
+         mcstasscript.helper.mcstas_objects.ParameterVariable
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../_autosummary/mcstasscript.helper.plot_helper.html">
+       mcstasscript.helper.plot_helper
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.html">
+     mcstasscript.instr_reader
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.control.html">
+       mcstasscript.instr_reader.control
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+      <label for="toctree-checkbox-10">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.control.InstrumentReader.html">
+         mcstasscript.instr_reader.control.InstrumentReader
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.read_declare.html">
+       mcstasscript.instr_reader.read_declare
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+      <label for="toctree-checkbox-11">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.read_declare.DeclareReader.html">
+         mcstasscript.instr_reader.read_declare.DeclareReader
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.read_definition.html">
+       mcstasscript.instr_reader.read_definition
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+      <label for="toctree-checkbox-12">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.read_definition.DefinitionReader.html">
+         mcstasscript.instr_reader.read_definition.DefinitionReader
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.read_finally.html">
+       mcstasscript.instr_reader.read_finally
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+      <label for="toctree-checkbox-13">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.read_finally.FinallyReader.html">
+         mcstasscript.instr_reader.read_finally.FinallyReader
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.read_initialize.html">
+       mcstasscript.instr_reader.read_initialize
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+      <label for="toctree-checkbox-14">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.read_initialize.InitializeReader.html">
+         mcstasscript.instr_reader.read_initialize.InitializeReader
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.read_trace.html">
+       mcstasscript.instr_reader.read_trace
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+      <label for="toctree-checkbox-15">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.read_trace.TraceReader.html">
+         mcstasscript.instr_reader.read_trace.TraceReader
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.util.html">
+       mcstasscript.instr_reader.util
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+      <label for="toctree-checkbox-16">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.util.SectionReader.html">
+         mcstasscript.instr_reader.util.SectionReader
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../_autosummary/mcstasscript.integration_tests.html">
+     mcstasscript.integration_tests
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+    <label for="toctree-checkbox-17">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.integration_tests.test_complex_instrument.html">
+       mcstasscript.integration_tests.test_complex_instrument
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+      <label for="toctree-checkbox-18">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.integration_tests.test_complex_instrument.setup_complex_instrument.html">
+         mcstasscript.integration_tests.test_complex_instrument.setup_complex_instrument
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.integration_tests.test_complex_instrument.FakeChange.html">
+         mcstasscript.integration_tests.test_complex_instrument.FakeChange
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.integration_tests.test_complex_instrument.TestComplexInstrument.html">
+         mcstasscript.integration_tests.test_complex_instrument.TestComplexInstrument
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.integration_tests.test_simple_instrument.html">
+       mcstasscript.integration_tests.test_simple_instrument
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+      <label for="toctree-checkbox-19">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.integration_tests.test_simple_instrument.setup_simple_instrument.html">
+         mcstasscript.integration_tests.test_simple_instrument.setup_simple_instrument
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.integration_tests.test_simple_instrument.setup_simple_instrument_input_path.html">
+         mcstasscript.integration_tests.test_simple_instrument.setup_simple_instrument_input_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.integration_tests.test_simple_instrument.setup_simple_slit_instrument.html">
+         mcstasscript.integration_tests.test_simple_instrument.setup_simple_slit_instrument
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.integration_tests.test_simple_instrument.TestSimpleInstrument.html">
+         mcstasscript.integration_tests.test_simple_instrument.TestSimpleInstrument
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../_autosummary/mcstasscript.interface.html">
+     mcstasscript.interface
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+    <label for="toctree-checkbox-20">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.interface.functions.html">
+       mcstasscript.interface.functions
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+      <label for="toctree-checkbox-21">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.functions.load_data.html">
+         mcstasscript.interface.functions.load_data
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.functions.load_metadata.html">
+         mcstasscript.interface.functions.load_metadata
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.functions.load_monitor.html">
+         mcstasscript.interface.functions.load_monitor
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.functions.name_plot_options.html">
+         mcstasscript.interface.functions.name_plot_options
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.functions.name_search.html">
+         mcstasscript.interface.functions.name_search
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.functions.Configurator.html">
+         mcstasscript.interface.functions.Configurator
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.interface.instr.html">
+       mcstasscript.interface.instr
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+      <label for="toctree-checkbox-22">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.instr.McCode_instr.html">
+         mcstasscript.interface.instr.McCode_instr
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.instr.McStas_instr.html">
+         mcstasscript.interface.instr.McStas_instr
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.instr.McXtrace_instr.html">
+         mcstasscript.interface.instr.McXtrace_instr
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.interface.plotter.html">
+       mcstasscript.interface.plotter
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+      <label for="toctree-checkbox-23">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.plotter.interface.html">
+         mcstasscript.interface.plotter.interface
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.plotter.make_animation.html">
+         mcstasscript.interface.plotter.make_animation
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.plotter.make_plot.html">
+         mcstasscript.interface.plotter.make_plot
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.plotter.make_sub_plot.html">
+         mcstasscript.interface.plotter.make_sub_plot
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.interface.reader.html">
+       mcstasscript.interface.reader
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+      <label for="toctree-checkbox-24">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.reader.McStas_file.html">
+         mcstasscript.interface.reader.McStas_file
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.html">
+     mcstasscript.jb_interface
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+    <label for="toctree-checkbox-25">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.plot_interface.html">
+       mcstasscript.jb_interface.plot_interface
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+      <label for="toctree-checkbox-26">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.plot_interface.ColormapDropdown.html">
+         mcstasscript.jb_interface.plot_interface.ColormapDropdown
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.plot_interface.LogCheckbox.html">
+         mcstasscript.jb_interface.plot_interface.LogCheckbox
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.plot_interface.MonitorDropdown.html">
+         mcstasscript.jb_interface.plot_interface.MonitorDropdown
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.plot_interface.OrdersOfMagField.html">
+         mcstasscript.jb_interface.plot_interface.OrdersOfMagField
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.plot_interface.PlotInterface.html">
+         mcstasscript.jb_interface.plot_interface.PlotInterface
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.simulation_interface.html">
+       mcstasscript.jb_interface.simulation_interface
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+      <label for="toctree-checkbox-27">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.simulation_interface.add_data.html">
+         mcstasscript.jb_interface.simulation_interface.add_data
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.simulation_interface.ParameterWidget.html">
+         mcstasscript.jb_interface.simulation_interface.ParameterWidget
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.simulation_interface.SimInterface.html">
+         mcstasscript.jb_interface.simulation_interface.SimInterface
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.widget_helpers.html">
+       mcstasscript.jb_interface.widget_helpers
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+      <label for="toctree-checkbox-28">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.widget_helpers.get_parameter_default.html">
+         mcstasscript.jb_interface.widget_helpers.get_parameter_default
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.widget_helpers.parameter_has_default.html">
+         mcstasscript.jb_interface.widget_helpers.parameter_has_default
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.widget_helpers.HiddenPrints.html">
+         mcstasscript.jb_interface.widget_helpers.HiddenPrints
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../_autosummary/mcstasscript.tests.html">
+     mcstasscript.tests
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+    <label for="toctree-checkbox-29">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.helpers_for_tests.html">
+       mcstasscript.tests.helpers_for_tests
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+      <label for="toctree-checkbox-30">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.helpers_for_tests.WorkInTestDir.html">
+         mcstasscript.tests.helpers_for_tests.WorkInTestDir
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_ComponentReader.html">
+       mcstasscript.tests.test_ComponentReader
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+      <label for="toctree-checkbox-31">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_ComponentReader.setup_component_reader.html">
+         mcstasscript.tests.test_ComponentReader.setup_component_reader
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_ComponentReader.setup_component_reader_input_path.html">
+         mcstasscript.tests.test_ComponentReader.setup_component_reader_input_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_ComponentReader.TestComponentReader.html">
+         mcstasscript.tests.test_ComponentReader.TestComponentReader
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Configurator.html">
+       mcstasscript.tests.test_Configurator
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+      <label for="toctree-checkbox-32">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Configurator.setup_configurator.html">
+         mcstasscript.tests.test_Configurator.setup_configurator
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Configurator.setup_expected_file.html">
+         mcstasscript.tests.test_Configurator.setup_expected_file
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Configurator.TestConfigurator.html">
+         mcstasscript.tests.test_Configurator.TestConfigurator
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.html">
+       mcstasscript.tests.test_Instr
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+      <label for="toctree-checkbox-33">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_instr_no_path.html">
+         mcstasscript.tests.test_Instr.setup_instr_no_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_instr_root_path.html">
+         mcstasscript.tests.test_Instr.setup_instr_root_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_instr_with_input_path.html">
+         mcstasscript.tests.test_Instr.setup_instr_with_input_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_instr_with_input_path_relative.html">
+         mcstasscript.tests.test_Instr.setup_instr_with_input_path_relative
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_instr_with_path.html">
+         mcstasscript.tests.test_Instr.setup_instr_with_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_populated_instr.html">
+         mcstasscript.tests.test_Instr.setup_populated_instr
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_populated_instr_with_dummy_path.html">
+         mcstasscript.tests.test_Instr.setup_populated_instr_with_dummy_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_populated_with_some_options_instr.html">
+         mcstasscript.tests.test_Instr.setup_populated_with_some_options_instr
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_populated_x_ray_instr.html">
+         mcstasscript.tests.test_Instr.setup_populated_x_ray_instr
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_populated_x_ray_instr_with_dummy_path.html">
+         mcstasscript.tests.test_Instr.setup_populated_x_ray_instr_with_dummy_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_x_ray_instr_no_path.html">
+         mcstasscript.tests.test_Instr.setup_x_ray_instr_no_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_x_ray_instr_root_path.html">
+         mcstasscript.tests.test_Instr.setup_x_ray_instr_root_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_x_ray_instr_with_path.html">
+         mcstasscript.tests.test_Instr.setup_x_ray_instr_with_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.TestMcStas_instr.html">
+         mcstasscript.tests.test_Instr.TestMcStas_instr
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr_reader.html">
+       mcstasscript.tests.test_Instr_reader
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
+      <label for="toctree-checkbox-34">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr_reader.blockPrint.html">
+         mcstasscript.tests.test_Instr_reader.blockPrint
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr_reader.enablePrint.html">
+         mcstasscript.tests.test_Instr_reader.enablePrint
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr_reader.set_dummy_dir.html">
+         mcstasscript.tests.test_Instr_reader.set_dummy_dir
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr_reader.setup_standard.html">
+         mcstasscript.tests.test_Instr_reader.setup_standard
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr_reader.setup_standard_auto_instr.html">
+         mcstasscript.tests.test_Instr_reader.setup_standard_auto_instr
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr_reader.TestInstrReader.html">
+         mcstasscript.tests.test_Instr_reader.TestInstrReader
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_ManagedMcrun.html">
+       mcstasscript.tests.test_ManagedMcrun
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
+      <label for="toctree-checkbox-35">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_ManagedMcrun.TestManagedMcrun.html">
+         mcstasscript.tests.test_ManagedMcrun.TestManagedMcrun
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_ManagedMcrun.Test_load_functions.html">
+         mcstasscript.tests.test_ManagedMcrun.Test_load_functions
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_McStasData.html">
+       mcstasscript.tests.test_McStasData
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
+      <label for="toctree-checkbox-36">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_McStasData.set_dummy_McStasDataBinned_1d.html">
+         mcstasscript.tests.test_McStasData.set_dummy_McStasDataBinned_1d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_McStasData.set_dummy_McStasDataBinned_2d.html">
+         mcstasscript.tests.test_McStasData.set_dummy_McStasDataBinned_2d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_McStasData.set_dummy_MetaDataBinned_1d.html">
+         mcstasscript.tests.test_McStasData.set_dummy_MetaDataBinned_1d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_McStasData.set_dummy_MetaDataBinned_2d.html">
+         mcstasscript.tests.test_McStasData.set_dummy_MetaDataBinned_2d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_McStasData.TestMcStasData.html">
+         mcstasscript.tests.test_McStasData.TestMcStasData
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_McStasMetaData.html">
+       mcstasscript.tests.test_McStasMetaData
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
+      <label for="toctree-checkbox-37">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_McStasMetaData.TestMcStasMetaData.html">
+         mcstasscript.tests.test_McStasMetaData.TestMcStasMetaData
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_McStasPlotOptions.html">
+       mcstasscript.tests.test_McStasPlotOptions
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
+      <label for="toctree-checkbox-38">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_McStasPlotOptions.TestMcStasPlotOptions.html">
+         mcstasscript.tests.test_McStasPlotOptions.TestMcStasPlotOptions
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Plotter.html">
+       mcstasscript.tests.test_Plotter
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
+      <label for="toctree-checkbox-39">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Plotter.get_dummy_McStasDataBinned_1d.html">
+         mcstasscript.tests.test_Plotter.get_dummy_McStasDataBinned_1d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Plotter.get_dummy_McStasDataBinned_2d.html">
+         mcstasscript.tests.test_Plotter.get_dummy_McStasDataBinned_2d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Plotter.get_dummy_MetaDataBinned_1d.html">
+         mcstasscript.tests.test_Plotter.get_dummy_MetaDataBinned_1d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Plotter.get_dummy_MetaDataBinned_2d.html">
+         mcstasscript.tests.test_Plotter.get_dummy_MetaDataBinned_2d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Plotter.TestPlotterHelpers.html">
+         mcstasscript.tests.test_Plotter.TestPlotterHelpers
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_add_data.html">
+       mcstasscript.tests.test_add_data
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
+      <label for="toctree-checkbox-40">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_add_data.set_dummy_McStasDataBinned_1d.html">
+         mcstasscript.tests.test_add_data.set_dummy_McStasDataBinned_1d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_add_data.set_dummy_McStasDataBinned_2d.html">
+         mcstasscript.tests.test_add_data.set_dummy_McStasDataBinned_2d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_add_data.set_dummy_MetaDataBinned_1d.html">
+         mcstasscript.tests.test_add_data.set_dummy_MetaDataBinned_1d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_add_data.set_dummy_MetaDataBinned_2d.html">
+         mcstasscript.tests.test_add_data.set_dummy_MetaDataBinned_2d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_add_data.Test_add_data.html">
+         mcstasscript.tests.test_add_data.Test_add_data
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_component.html">
+       mcstasscript.tests.test_component
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
+      <label for="toctree-checkbox-41">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_component.setup_Component_all_keywords.html">
+         mcstasscript.tests.test_component.setup_Component_all_keywords
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_component.setup_Component_relative.html">
+         mcstasscript.tests.test_component.setup_Component_relative
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_component.setup_Component_with_parameters.html">
+         mcstasscript.tests.test_component.setup_Component_with_parameters
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_component.TestComponent.html">
+         mcstasscript.tests.test_component.TestComponent
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_declare_variable.html">
+       mcstasscript.tests.test_declare_variable
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
+      <label for="toctree-checkbox-42">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_declare_variable.Test_DeclareVariable.html">
+         mcstasscript.tests.test_declare_variable.Test_DeclareVariable
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.html">
+       mcstasscript.tests.test_dump_and_load
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
+      <label for="toctree-checkbox-43">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_instr_no_path.html">
+         mcstasscript.tests.test_dump_and_load.setup_instr_no_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_instr_root_path.html">
+         mcstasscript.tests.test_dump_and_load.setup_instr_root_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_instr_with_input_path.html">
+         mcstasscript.tests.test_dump_and_load.setup_instr_with_input_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_instr_with_input_path_relative.html">
+         mcstasscript.tests.test_dump_and_load.setup_instr_with_input_path_relative
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_instr_with_path.html">
+         mcstasscript.tests.test_dump_and_load.setup_instr_with_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_populated_instr.html">
+         mcstasscript.tests.test_dump_and_load.setup_populated_instr
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_populated_instr_with_dummy_path.html">
+         mcstasscript.tests.test_dump_and_load.setup_populated_instr_with_dummy_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_populated_with_some_options_instr.html">
+         mcstasscript.tests.test_dump_and_load.setup_populated_with_some_options_instr
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_populated_x_ray_instr.html">
+         mcstasscript.tests.test_dump_and_load.setup_populated_x_ray_instr
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_populated_x_ray_instr_with_dummy_path.html">
+         mcstasscript.tests.test_dump_and_load.setup_populated_x_ray_instr_with_dummy_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_x_ray_instr_no_path.html">
+         mcstasscript.tests.test_dump_and_load.setup_x_ray_instr_no_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_x_ray_instr_root_path.html">
+         mcstasscript.tests.test_dump_and_load.setup_x_ray_instr_root_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_x_ray_instr_with_path.html">
+         mcstasscript.tests.test_dump_and_load.setup_x_ray_instr_with_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.TestDumpAndLoad.html">
+         mcstasscript.tests.test_dump_and_load.TestDumpAndLoad
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_formatting.html">
+       mcstasscript.tests.test_formatting
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
+      <label for="toctree-checkbox-44">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_formatting.TestFormatting.html">
+         mcstasscript.tests.test_formatting.TestFormatting
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.html">
+       mcstasscript.tests.test_functions
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
+      <label for="toctree-checkbox-45">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.set_dummy_McStasDataBinned_1d.html">
+         mcstasscript.tests.test_functions.set_dummy_McStasDataBinned_1d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.set_dummy_McStasDataBinned_2d.html">
+         mcstasscript.tests.test_functions.set_dummy_McStasDataBinned_2d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.set_dummy_MetaDataBinned_1d.html">
+         mcstasscript.tests.test_functions.set_dummy_MetaDataBinned_1d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.set_dummy_MetaDataBinned_2d.html">
+         mcstasscript.tests.test_functions.set_dummy_MetaDataBinned_2d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.setup_McStasData_array.html">
+         mcstasscript.tests.test_functions.setup_McStasData_array
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.setup_McStasData_array_repeat.html">
+         mcstasscript.tests.test_functions.setup_McStasData_array_repeat
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.Test_load_data.html">
+         mcstasscript.tests.test_functions.Test_load_data
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.Test_load_metadata.html">
+         mcstasscript.tests.test_functions.Test_load_metadata
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.Test_load_monitor.html">
+         mcstasscript.tests.test_functions.Test_load_monitor
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.Test_name_plot_options.html">
+         mcstasscript.tests.test_functions.Test_name_plot_options
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.Test_name_search.html">
+         mcstasscript.tests.test_functions.Test_name_search
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_parameter_variable.html">
+       mcstasscript.tests.test_parameter_variable
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
+      <label for="toctree-checkbox-46">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_parameter_variable.Test_ParameterVariable.html">
+         mcstasscript.tests.test_parameter_variable.Test_ParameterVariable
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_plot_interface.html">
+       mcstasscript.tests.test_plot_interface
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
+      <label for="toctree-checkbox-47">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_plot_interface.fake_data.html">
+         mcstasscript.tests.test_plot_interface.fake_data
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_plot_interface.set_dummy_McStasDataBinned_1d.html">
+         mcstasscript.tests.test_plot_interface.set_dummy_McStasDataBinned_1d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_plot_interface.set_dummy_McStasDataBinned_2d.html">
+         mcstasscript.tests.test_plot_interface.set_dummy_McStasDataBinned_2d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_plot_interface.set_dummy_MetaDataBinned_1d.html">
+         mcstasscript.tests.test_plot_interface.set_dummy_MetaDataBinned_1d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_plot_interface.set_dummy_MetaDataBinned_2d.html">
+         mcstasscript.tests.test_plot_interface.set_dummy_MetaDataBinned_2d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_plot_interface.FakeChange.html">
+         mcstasscript.tests.test_plot_interface.FakeChange
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_plot_interface.TestPlotInterface.html">
+         mcstasscript.tests.test_plot_interface.TestPlotInterface
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_simulation_interface.html">
+       mcstasscript.tests.test_simulation_interface
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
+      <label for="toctree-checkbox-48">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_simulation_interface.setup_instr_root_path_McStas.html">
+         mcstasscript.tests.test_simulation_interface.setup_instr_root_path_McStas
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_simulation_interface.setup_instr_root_path_McXtrace.html">
+         mcstasscript.tests.test_simulation_interface.setup_instr_root_path_McXtrace
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_simulation_interface.setup_populated_instr_McStas.html">
+         mcstasscript.tests.test_simulation_interface.setup_populated_instr_McStas
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_simulation_interface.setup_populated_instr_McXtrace.html">
+         mcstasscript.tests.test_simulation_interface.setup_populated_instr_McXtrace
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_simulation_interface.FakeChange.html">
+         mcstasscript.tests.test_simulation_interface.FakeChange
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_simulation_interface.TestSimulationInterface.html">
+         mcstasscript.tests.test_simulation_interface.TestSimulationInterface
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_widget_helpers.html">
+       mcstasscript.tests.test_widget_helpers
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
+      <label for="toctree-checkbox-49">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_widget_helpers.TestWidgetHelpers.html">
+         mcstasscript.tests.test_widget_helpers.TestWidgetHelpers
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.utilities.html">
+       mcstasscript.tests.utilities
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
+      <label for="toctree-checkbox-50">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.utilities.work_dir_test.html">
+         mcstasscript.tests.utilities.work_dir_test
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/tutorial/Union_tutorial_1_processes_and_materials.ipynb.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/PaNOSC-ViNYL/McStasScript"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/PaNOSC-ViNYL/McStasScript/issues/new?title=Issue%20on%20page%20%2Ftutorial/Union_tutorial_1_processes_and_materials.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/PaNOSC-ViNYL/McStasScript/edit/mcstasscript_on_libpyvinyl/docs/tutorial/Union_tutorial_1_processes_and_materials.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#process-components">
+   Process components
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#making-a-material">
+   Making a material
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-geometries-that-use-the-material-definitions">
+   Adding geometries that use the material definitions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-loggers-that-show-scattering-and-absorption">
+   Adding loggers that show scattering and absorption
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-the-union-master-component">
+   Adding the Union master component
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-the-simulation">
+   Running the simulation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interpreting-the-results">
+   Interpreting the results
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#alternative-run-to-show-powder-properties">
+     Alternative run to show powder properties
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interpretation-of-the-data">
+     Interpretation of the data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#troubleshooting">
+     Troubleshooting
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>The Union components</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#process-components">
+   Process components
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#making-a-material">
+   Making a material
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-geometries-that-use-the-material-definitions">
+   Adding geometries that use the material definitions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-loggers-that-show-scattering-and-absorption">
+   Adding loggers that show scattering and absorption
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-the-union-master-component">
+   Adding the Union master component
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-the-simulation">
+   Running the simulation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interpreting-the-results">
+   Interpreting the results
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#alternative-run-to-show-powder-properties">
+     Alternative run to show powder properties
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interpretation-of-the-data">
+     Interpretation of the data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#troubleshooting">
+     Troubleshooting
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="the-union-components">
+<h1>The Union components<a class="headerlink" href="#the-union-components" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial is the first in a series showing how the Union components are used. This notebook focuses on setting up material definitions that are used to provide scattering physics to geometries. There are several kinds of Union components, and they need to be used in conjunction with one another to function.</p>
+<ul class="simple">
+<li><p>Process components: Describe individual scattering phenomena, such as incoherent, powder, single crystal scattering</p></li>
+<li><p>Make_material component: Joins several processes into a material definition</p></li>
+<li><p>Geometry components: Describe geometry, each is assigned a material definition</p></li>
+<li><p>Union logger components: Records information for each scattering event and plots it</p></li>
+<li><p>Union abs logger components: Records information for each absorption event and plots it</p></li>
+<li><p>Union conditional components: Modifies a logger or abs logger so it only records when certain final condition met</p></li>
+<li><p>Union master component: Performs simulation described by previous Union components</p></li>
+</ul>
+<p>In this notebook we will focus on setting up materials using process components and the <em>Union_make_material</em> component, but the Union components can not work individually, so it will also be necessary to add a geometry and the <em>Union_master</em>. First we import McStasScript and create a new instrument object.</p>
+<p>In case of any issues with running the tutorial notebooks there is troubleshooting at the end of this notebook.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mcstasscript.interface</span> <span class="kn">import</span> <span class="n">instr</span><span class="p">,</span> <span class="n">functions</span><span class="p">,</span> <span class="n">plotter</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instrument</span> <span class="o">=</span> <span class="n">instr</span><span class="o">.</span><span class="n">McStas_instr</span><span class="p">(</span><span class="s2">&quot;python_tutorial&quot;</span><span class="p">,</span> <span class="n">input_path</span><span class="o">=</span><span class="s2">&quot;run_folder&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="process-components">
+<h2>Process components<a class="headerlink" href="#process-components" title="Permalink to this headline">¶</a></h2>
+<p>In this notebook we will focus on exploring how to build different physical descriptions of materials, and checking that they behave as expected. We start by looking at the process component for incoherent scattering, Incoherent_process.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instrument</span><span class="o">.</span><span class="n">show_components</span><span class="p">(</span><span class="s2">&quot;Work directory&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Here are all components in the Work directory category.
+No components found in this category! Available categories:
+ contrib
+ misc
+ monitors
+ obsolete
+ optics
+ samples
+ sources
+ union
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instrument</span><span class="o">.</span><span class="n">component_help</span><span class="p">(</span><span class="s2">&quot;Incoherent_process&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> ___ Help Incoherent_process ________________________________________________________
+|<span class=" -Color -Color-Bold">optional parameter</span>|<span class=" -Color -Color-Bold">required parameter</span>|<span class=" -Color -Color-Bold">default value</span>|<span class=" -Color -Color-Bold">user specified value</span>|
+<span class=" -Color -Color-Bold">sigma</span> = <span class=" -Color -Color-Bold">5.08</span> [barns] // Incoherent scattering cross section
+<span class=" -Color -Color-Bold">f_QE</span> = <span class=" -Color -Color-Bold">0.0</span> [1] // Fraction of quasielastic scattering (rest is elastic)
+<span class=" -Color -Color-Bold">gamma</span> = <span class=" -Color -Color-Bold">0.0</span> [1] // Lorentzian width of quasielastic broadening (HWHM)
+<span class=" -Color -Color-Bold">packing_factor</span> = <span class=" -Color -Color-Bold">1.0</span> [1] // How dense is the material compared to optimal 0-1
+<span class=" -Color -Color-Bold">unit_cell_volume</span> = <span class=" -Color -Color-Bold">13.8</span> [AA^3] // Unit_cell_volume
+<span class=" -Color -Color-Bold">interact_fraction</span> = <span class=" -Color -Color-Bold">-1.0</span> [1] // How large a part of the scattering events 
+                                should use this process 0-1 (sum of all processes 
+                                in material = 1) 
+-------------------------------------------------------------------------------------
+</pre></div>
+</div>
+</div>
+</div>
+<p>The process components in general have few parameters as they just describe a single physical phenomena. The incoherent process here is described adequately by just the cross section <em>sigma</em> and volume of the unit cell, <em>unit_cell_volume</em>.</p>
+<p>Two parameters are available for all processes, <em>packing_factor</em> and <em>interact_fraction</em>. The packing factor describes how dense the material is, and can make it easier to mix for example different powders. It is implemented as a simple factor on the scattering strength. The interact fraction is used to balance many processes when they are used in one material. Normally processes are sampled according to they natural probability for scattering, but this can be overwritten using the <em>interact_fraction</em>, which provides the sampling probability directly, they just have to sum to 1 within a material.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">incoherent</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;incoherent&quot;</span><span class="p">,</span> <span class="s2">&quot;Incoherent_process&quot;</span><span class="p">)</span>
+<span class="n">incoherent</span><span class="o">.</span><span class="n">sigma</span> <span class="o">=</span> <span class="mf">2.5</span>
+<span class="n">incoherent</span><span class="o">.</span><span class="n">unit_cell_volume</span> <span class="o">=</span> <span class="mf">13.8</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="making-a-material">
+<h2>Making a material<a class="headerlink" href="#making-a-material" title="Permalink to this headline">¶</a></h2>
+<p>In order to collect processes into a material, one uses the <em>Union_make_material</em> component. Here are the parameters.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instrument</span><span class="o">.</span><span class="n">component_help</span><span class="p">(</span><span class="s2">&quot;Union_make_material&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> ___ Help Union_make_material _______________________________________________________
+|<span class=" -Color -Color-Bold">optional parameter</span>|<span class=" -Color -Color-Bold">required parameter</span>|<span class=" -Color -Color-Bold">default value</span>|<span class=" -Color -Color-Bold">user specified value</span>|
+<span class=" -Color -Color-Bold">process_string</span> = <span class=" -Color -Color-Bold">&quot;NULL&quot;</span> [string] // Comma seperated names of physical processes
+<span class=" -Color -Color-Bold">my_absorption</span> [1/m] // Inverse penetration depth from absorption at standard 
+                       energy 
+<span class=" -Color -Color-Bold">absorber</span> = <span class=" -Color -Color-Bold">0.0</span> [0/1] // Control parameter, if set to 1 the material will have 
+                        no scattering processes 
+-------------------------------------------------------------------------------------
+</pre></div>
+</div>
+</div>
+</div>
+<p>A material definition thus consists of a number of processes given with the <em>process_string</em> parameter, and a description of the absorption in the material given with the inverse penetration depth at the standard neutron speed of 2200 m/s. For our first test material, lets just set absorption to zero and set our process_string to incoherent, referring to the process we created above.</p>
+<p>The name of the material is now inc_material, which will be used in the future to refer to this material.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inc_material</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;inc_material&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_make_material&quot;</span><span class="p">)</span>
+<span class="n">inc_material</span><span class="o">.</span><span class="n">my_absorption</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">inc_material</span><span class="o">.</span><span class="n">process_string</span> <span class="o">=</span> <span class="s1">&#39;&quot;incoherent&quot;&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If the material contains no physical processes, it is necessary to set the <em>absorber</em> parameter to 1, as it will just have an absorption description. Here we make a material called abs_material.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">absorber</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;abs_material&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_make_material&quot;</span><span class="p">)</span>
+<span class="n">absorber</span><span class="o">.</span><span class="n">absorber</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">absorber</span><span class="o">.</span><span class="n">my_absorption</span> <span class="o">=</span> <span class="mf">3.0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The primary reason for having both process components and a make_material component is that it is possible to add as many processes in one material as necessary. Here we create a powder process, and then make a material using the powder and previously defined incoherent processes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">powder</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;powder&quot;</span><span class="p">,</span> <span class="s2">&quot;Powder_process&quot;</span><span class="p">)</span>
+<span class="n">powder</span><span class="o">.</span><span class="n">reflections</span> <span class="o">=</span> <span class="s1">&#39;&quot;Cu.laz&quot;&#39;</span>
+
+<span class="n">inc_material</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;powder_material&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_make_material&quot;</span><span class="p">)</span>
+<span class="n">inc_material</span><span class="o">.</span><span class="n">my_absorption</span> <span class="o">=</span> <span class="mf">1.2</span>
+<span class="n">inc_material</span><span class="o">.</span><span class="n">process_string</span> <span class="o">=</span> <span class="s1">&#39;&quot;incoherent,powder&quot;&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>At this point we have three materials defined</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Material name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>inc_material</p></td>
+<td><p>Has one incoherent process and no absorption</p></td>
+</tr>
+<tr class="row-odd"><td><p>abs_material</p></td>
+<td><p>Only has absorption</p></td>
+</tr>
+<tr class="row-even"><td><p>powder_material</p></td>
+<td><p>Has both incoherent and powder process in addition to absorption</p></td>
+</tr>
+</tbody>
+</table>
+<p>Let us defined a quick test instrument to see these materials are behaving as expected. First we add a source.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">src</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;source&quot;</span><span class="p">,</span> <span class="s2">&quot;Source_div&quot;</span><span class="p">)</span>
+
+<span class="n">source_width</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span><span class="s2">&quot;source_width&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="s2">&quot;Width of source in [m]&quot;</span><span class="p">)</span>
+<span class="n">src</span><span class="o">.</span><span class="n">xwidth</span> <span class="o">=</span> <span class="n">source_width</span>
+<span class="n">src</span><span class="o">.</span><span class="n">yheight</span> <span class="o">=</span> <span class="mf">0.03</span>
+<span class="n">src</span><span class="o">.</span><span class="n">focus_aw</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">src</span><span class="o">.</span><span class="n">focus_ah</span> <span class="o">=</span> <span class="mf">0.01</span>
+
+<span class="n">src</span><span class="o">.</span><span class="n">lambda0</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span><span class="s2">&quot;wavelength&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="s2">&quot;Wavelength in [Ang]&quot;</span><span class="p">)</span>
+<span class="n">src</span><span class="o">.</span><span class="n">dlambda</span> <span class="o">=</span> <span class="s2">&quot;0.001*wavelength&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="adding-geometries-that-use-the-material-definitions">
+<h2>Adding geometries that use the material definitions<a class="headerlink" href="#adding-geometries-that-use-the-material-definitions" title="Permalink to this headline">¶</a></h2>
+<p>Here we add three boxes, each using a different material definition and placed next to one another. The <em>material_string</em> parameter is used to specify the material name. The <em>priority</em> parameter will be explained later, as it is only important when geometries overlap, here they are spatially separated, yet the priorties must still be unique.</p>
+<p>It is important to note that these three boxes will be simulated simultaneously in the McStas simulation flow, so no need for GROUP statements to have these in parallel. Because they are simulated simultaneously, a ray can go from one to another, which would not be possible with a standard GROUP.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">box_inc</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;box_inc&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_box&quot;</span><span class="p">,</span> <span class="n">AT</span><span class="o">=</span><span class="p">[</span><span class="mf">0.04</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">src</span><span class="p">)</span>
+<span class="n">box_inc</span><span class="o">.</span><span class="n">xwidth</span> <span class="o">=</span> <span class="mf">0.03</span>
+<span class="n">box_inc</span><span class="o">.</span><span class="n">yheight</span> <span class="o">=</span> <span class="mf">0.03</span>
+<span class="n">box_inc</span><span class="o">.</span><span class="n">zdepth</span> <span class="o">=</span> <span class="mf">0.03</span>
+<span class="n">box_inc</span><span class="o">.</span><span class="n">material_string</span> <span class="o">=</span> <span class="s1">&#39;&quot;inc_material&quot;&#39;</span>
+<span class="n">box_inc</span><span class="o">.</span><span class="n">priority</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="n">box_inc</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;box_powder&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_box&quot;</span><span class="p">,</span> <span class="n">AT</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">src</span><span class="p">)</span>
+<span class="n">box_inc</span><span class="o">.</span><span class="n">xwidth</span> <span class="o">=</span> <span class="mf">0.03</span>
+<span class="n">box_inc</span><span class="o">.</span><span class="n">yheight</span> <span class="o">=</span> <span class="mf">0.03</span>
+<span class="n">box_inc</span><span class="o">.</span><span class="n">zdepth</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">box_inc</span><span class="o">.</span><span class="n">material_string</span> <span class="o">=</span> <span class="s1">&#39;&quot;powder_material&quot;&#39;</span>
+<span class="n">box_inc</span><span class="o">.</span><span class="n">priority</span> <span class="o">=</span> <span class="mi">11</span>
+
+<span class="n">box_inc</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;box_abs&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_box&quot;</span><span class="p">,</span> <span class="n">AT</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">0.04</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">src</span><span class="p">)</span>
+<span class="n">box_inc</span><span class="o">.</span><span class="n">xwidth</span> <span class="o">=</span> <span class="mf">0.03</span>
+<span class="n">box_inc</span><span class="o">.</span><span class="n">yheight</span> <span class="o">=</span> <span class="mf">0.03</span>
+<span class="n">box_inc</span><span class="o">.</span><span class="n">zdepth</span> <span class="o">=</span> <span class="mf">0.03</span>
+<span class="n">box_inc</span><span class="o">.</span><span class="n">material_string</span> <span class="o">=</span> <span class="s1">&#39;&quot;abs_material&quot;&#39;</span>
+<span class="n">box_inc</span><span class="o">.</span><span class="n">priority</span> <span class="o">=</span> <span class="mi">12</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="adding-loggers-that-show-scattering-and-absorption">
+<h2>Adding loggers that show scattering and absorption<a class="headerlink" href="#adding-loggers-that-show-scattering-and-absorption" title="Permalink to this headline">¶</a></h2>
+<p>In order to check the three materials behave as expected, we add spatial loggers for scattering and absorption. These are called loggers and abs_loggers, here is the parameters for a logger.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instrument</span><span class="o">.</span><span class="n">component_help</span><span class="p">(</span><span class="s2">&quot;Union_logger_2D_space&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> ___ Help Union_logger_2D_space _____________________________________________________
+|<span class=" -Color -Color-Bold">optional parameter</span>|<span class=" -Color -Color-Bold">required parameter</span>|<span class=" -Color -Color-Bold">default value</span>|<span class=" -Color -Color-Bold">user specified value</span>|
+<span class=" -Color -Color-Bold">target_geometry</span> = <span class=" -Color -Color-Bold">&quot;NULL&quot;</span> [string] // Comma seperated list of geometry names 
+                                     that will be logged, leave empty for all 
+                                     volumes (even not defined yet) 
+<span class=" -Color -Color-Bold">target_process</span> = <span class=" -Color -Color-Bold">&quot;NULL&quot;</span> [string] // Comma seperated names of physical 
+                                    processes, if volumes are selected, one can 
+                                    select Union_process names 
+<span class=" -Color -Color-Bold">D_direction_1</span> = <span class=" -Color -Color-Bold">&quot;x&quot;</span> [string] // Direction for first axis (&quot;x&quot;, &quot;y&quot; or &quot;z&quot;)
+<span class=" -Color -Color-Bold">D1_min</span> = <span class=" -Color -Color-Bold">-5.0</span> [1] // histogram boundery, min position value for first axis
+<span class=" -Color -Color-Bold">D1_max</span> = <span class=" -Color -Color-Bold">5.0</span> [1] // histogram boundery, max position value for first axis
+<span class=" -Color -Color-Bold">n1</span> = <span class=" -Color -Color-Bold">90.0</span> [1] // number of bins for first axis
+<span class=" -Color -Color-Bold">D_direction_2</span> = <span class=" -Color -Color-Bold">&quot;z&quot;</span> [string] // Direction for second axis (&quot;x&quot;, &quot;y&quot; or &quot;z&quot;)
+<span class=" -Color -Color-Bold">D2_min</span> = <span class=" -Color -Color-Bold">-5.0</span> [1] // histogram boundery, min position value for second axis
+<span class=" -Color -Color-Bold">D2_max</span> = <span class=" -Color -Color-Bold">5.0</span> [1] // histogram boundery, max position value for second axis
+<span class=" -Color -Color-Bold">n2</span> = <span class=" -Color -Color-Bold">90.0</span> [1] // number of bins for second axis
+<span class=" -Color -Color-Bold">filename</span> = <span class=" -Color -Color-Bold">&quot;NULL&quot;</span> [string] // Filename for logging output
+<span class=" -Color -Color-Bold">order_total</span> = <span class=" -Color -Color-Bold">0.0</span> [1] // Only log rays that scatter for the n&#39;th time, 0 for 
+                         all orders 
+<span class=" -Color -Color-Bold">order_volume</span> = <span class=" -Color -Color-Bold">0.0</span> [1] // Only log rays that scatter for the n&#39;th time in the 
+                          same geometry 
+<span class=" -Color -Color-Bold">order_volume_process</span> = <span class=" -Color -Color-Bold">0.0</span> [1] // Only log rays that scatter for the n&#39;th time 
+                                  in the same geometry, using the same process 
+<span class=" -Color -Color-Bold">logger_conditional_extend_index</span> = <span class=" -Color -Color-Bold">-1.0</span> [1] // If a conditional is used with 
+                                              this logger, the result of each 
+                                              conditional calculation can be made 
+                                              available in extend as a array called 
+                                              &quot;logger_conditional_extend&quot;, and one 
+                                              would then acces 
+                                              logger_conditional_extend[n] if 
+                                              logger_conditional_extend_index is 
+                                              set to n 
+-------------------------------------------------------------------------------------
+</pre></div>
+</div>
+</div>
+</div>
+<p>The parameters for the abs_logger are very similar, so the two are added here.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logger</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;logger_space&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_logger_2D_space&quot;</span><span class="p">,</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="s2">&quot;box_powder&quot;</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">D_direction_1</span> <span class="o">=</span> <span class="s1">&#39;&quot;z&quot;&#39;</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">D1_min</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.04</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">D1_max</span> <span class="o">=</span> <span class="mf">0.04</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">n1</span> <span class="o">=</span> <span class="mi">250</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">D_direction_2</span> <span class="o">=</span> <span class="s1">&#39;&quot;x&quot;&#39;</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">D2_min</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.075</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">D2_max</span> <span class="o">=</span> <span class="mf">0.075</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">n2</span> <span class="o">=</span> <span class="mi">400</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;&quot;logger.dat&quot;&#39;</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;abs_logger_space&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_abs_logger_2D_space&quot;</span><span class="p">,</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="s2">&quot;box_powder&quot;</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">D_direction_1</span> <span class="o">=</span> <span class="s1">&#39;&quot;z&quot;&#39;</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">D1_min</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.04</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">D1_max</span> <span class="o">=</span> <span class="mf">0.04</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">n1</span> <span class="o">=</span> <span class="mi">250</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">D_direction_2</span> <span class="o">=</span> <span class="s1">&#39;&quot;x&quot;&#39;</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">D2_min</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.075</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">D2_max</span> <span class="o">=</span> <span class="mf">0.075</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">n2</span> <span class="o">=</span> <span class="mi">400</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;&quot;abs_logger.dat&quot;&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="adding-the-union-master-component">
+<h2>Adding the Union master component<a class="headerlink" href="#adding-the-union-master-component" title="Permalink to this headline">¶</a></h2>
+<p>The Union master component is what actually executes the simulation, and so it takes information from all Union components defined before and performs the described simulation. This is the component that matters in terms of order of execution within the sequence of McStas components. As all the previous components have described the what the master component should simulate, it has no required parameters. It also does not matter where it is located in space, as it will grab the locations described by all previous Union components that need a spatial location, such as the geometries and loggers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instrument</span><span class="o">.</span><span class="n">component_help</span><span class="p">(</span><span class="s2">&quot;Union_master&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> ___ Help Union_master ______________________________________________________________
+|<span class=" -Color -Color-Bold">optional parameter</span>|<span class=" -Color -Color-Bold">required parameter</span>|<span class=" -Color -Color-Bold">default value</span>|<span class=" -Color -Color-Bold">user specified value</span>|
+<span class=" -Color -Color-Bold">verbal</span> = <span class=" -Color -Color-Bold">1.0</span> [bool] // Toogles terminal output describing the defined simulation
+<span class=" -Color -Color-Bold">list_verbal</span> = <span class=" -Color -Color-Bold">0.0</span> [bool] // Toogles information of all internal lists in 
+                            intersection network 
+<span class=" -Color -Color-Bold">finally_verbal</span> = <span class=" -Color -Color-Bold">0.0</span> [bool] // Toogles information about cleanup performed in 
+                               finally section 
+<span class=" -Color -Color-Bold">allow_inside_start</span> = <span class=" -Color -Color-Bold">0.0</span> [bool] // Set to 1 to allow rays to start inside the 
+                                   defined geometry 
+<span class=" -Color -Color-Bold">enable_tagging</span> = <span class=" -Color -Color-Bold">0.0</span> [bool] // Enable tagging of ray history (geometry, 
+                               scattering process) 
+<span class=" -Color -Color-Bold">history_limit</span> = <span class=" -Color -Color-Bold">300000.0</span> [bool] // Limit the number of unique histories that 
+                                   are saved 
+<span class=" -Color -Color-Bold">enable_conditionals</span> = <span class=" -Color -Color-Bold">1.0</span> [bool] // Use conditionals with this master
+<span class=" -Color -Color-Bold">inherit_number_of_scattering_events</span> = <span class=" -Color -Color-Bold">0.0</span> [bool] // Inherit the number of 
+                                                    scattering events from last 
+                                                    master 
+<span class=" -Color -Color-Bold">record_absorption</span> = <span class=" -Color -Color-Bold">0.0</span> [bool] // Toggles logging of absorption
+-------------------------------------------------------------------------------------
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">master</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;master&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_master&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="running-the-simulation">
+<h2>Running the simulation<a class="headerlink" href="#running-the-simulation" title="Permalink to this headline">¶</a></h2>
+<p>Here the McStas simulation is executed as normal.</p>
+<div class="cell tag_scroll-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instrument</span><span class="o">.</span><span class="n">set_parameters</span><span class="p">(</span><span class="n">wavelength</span><span class="o">=</span><span class="mf">8.0</span><span class="p">)</span>
+<span class="n">instrument</span><span class="o">.</span><span class="n">settings</span><span class="p">(</span><span class="n">ncount</span><span class="o">=</span><span class="mf">3E5</span><span class="p">,</span> <span class="n">output_path</span><span class="o">=</span><span class="s2">&quot;data_folder/union_materials&quot;</span><span class="p">)</span>
+<span class="n">instrument</span><span class="o">.</span><span class="n">show_settings</span><span class="p">()</span>
+
+<span class="n">instrument</span><span class="o">.</span><span class="n">backengine</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Instrument settings:
+  ncount:           3.00e+05
+  output_path:      data_folder/union_materials
+  run_path:         run_folder
+  package_path:     /Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1
+  executable_path:  /Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1/bin/
+  executable:       mcrun
+  force_compile:    True
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_materials_25&quot;
+INFO: Regenerating c-file: python_tutorial.c
+CFLAGS= -I@MCCODE_LIB@/share/
+INFO: Recompiling: ./python_tutorial.out
+mccode-r.c:2837:3: warning: expression result unused [-Wunused-value]
+  *t0;
+  ^~~
+In file included from /Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Incoherent_process.comp:65:
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Union_functions.c:1604:105: warning: incompatible pointer types passing &#39;int (const struct saved_history_struct *, const struct saved_history_struct *)&#39; to parameter of type &#39;int (* _Nonnull)(const void *, const void *)&#39; [-Wincompatible-pointer-types]
+  qsort(total_history.saved_histories,total_history.used_elements,sizeof (struct saved_history_struct), Sample_compare_history_intensities);
+                                                                                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/stdlib.h:161:22: note: passing argument to parameter &#39;__compar&#39; here
+            int (* _Nonnull __compar)(const void *, const void *));
+                            ^
+In file included from /Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Incoherent_process.comp:65:
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Union_functions.c:1613:20: warning: incompatible pointer types passing &#39;struct saved_history_struct *&#39; to parameter of type &#39;struct dynamic_history_list *&#39; [-Wincompatible-pointer-types]
+    printf_history(&amp;total_history.saved_histories[history_iterate]);
+                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+mccode-r.h:219:27: note: expanded from macro &#39;MPI_MASTER&#39;
+#define MPI_MASTER(instr) instr
+                          ^~~~~
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Union_functions.c:1434:50: note: passing argument to parameter &#39;history&#39; here
+void printf_history(struct dynamic_history_list *history) {
+                                                 ^
+In file included from /Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Incoherent_process.comp:65:
+In file included from /Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Union_functions.c:2030:
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:839:1: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+};
+^
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:883:1: warning: non-void function does not return a value [-Wreturn-type]
+};
+^
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:3274:42: warning: if statement has empty body [-Wempty-body]
+    if (dist_to_corner &gt; sphere_2_radius); { sphere_2_radius = dist_to_corner ; }
+                                         ^
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:3274:42: note: put the semicolon on a separate line to silence this warning
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:3276:42: warning: if statement has empty body [-Wempty-body]
+    if (dist_to_corner &gt; sphere_2_radius); { sphere_2_radius = dist_to_corner ; }
+                                         ^
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:3276:42: note: put the semicolon on a separate line to silence this warning
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:3278:42: warning: if statement has empty body [-Wempty-body]
+    if (dist_to_corner &gt; sphere_2_radius); { sphere_2_radius = dist_to_corner ; }
+                                         ^
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:3278:42: note: put the semicolon on a separate line to silence this warning
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:3280:42: warning: if statement has empty body [-Wempty-body]
+    if (dist_to_corner &gt; sphere_2_radius); { sphere_2_radius = dist_to_corner ; }
+                                         ^
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:3280:42: note: put the semicolon on a separate line to silence this warning
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Union_logger_2D_space.comp:574:45: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+  sprintf(this_storage.Detector_2D.Filename,filename);
+                                            ^~~~~~~~
+./python_tutorial.c:17318:18: note: expanded from macro &#39;filename&#39;
+#define filename mcclogger_space_filename
+                 ^~~~~~~~~~~~~~~~~~~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro &#39;sprintf&#39;
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Union_logger_2D_space.comp:574:45: note: treat the string as an argument to avoid this
+  sprintf(this_storage.Detector_2D.Filename,filename);
+                                            ^
+                                            &quot;%s&quot;, 
+./python_tutorial.c:17318:18: note: expanded from macro &#39;filename&#39;
+#define filename mcclogger_space_filename
+                 ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro &#39;sprintf&#39;
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Union_abs_logger_2D_space.comp:543:49: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+  sprintf(this_abs_storage.Detector_2D.Filename,filename);
+                                                ^~~~~~~~
+./python_tutorial.c:17560:18: note: expanded from macro &#39;filename&#39;
+#define filename mccabs_logger_space_filename
+                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro &#39;sprintf&#39;
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Union_abs_logger_2D_space.comp:543:49: note: treat the string as an argument to avoid this
+  sprintf(this_abs_storage.Detector_2D.Filename,filename);
+                                                ^
+                                                &quot;%s&quot;, 
+./python_tutorial.c:17560:18: note: expanded from macro &#39;filename&#39;
+#define filename mccabs_logger_space_filename
+                 ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro &#39;sprintf&#39;
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Union_master.comp:788:15: warning: expression result unused [-Wunused-value]
+          if (volume_index_main,Volumes[volume_index_main]-&gt;geometry.is_mask_volume == 0 ||
+              ^~~~~~~~~~~~~~~~~
+mccode-r.h:219:27: note: expanded from macro &#39;MPI_MASTER&#39;
+#define MPI_MASTER(instr) instr
+                          ^~~~~
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Union_master.comp:788:90: warning: expression result unused [-Wunused-value]
+          if (volume_index_main,Volumes[volume_index_main]-&gt;geometry.is_mask_volume == 0 ||
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+mccode-r.h:219:27: note: expanded from macro &#39;MPI_MASTER&#39;
+#define MPI_MASTER(instr) instr
+                          ^~~~~
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Union_master.comp:789:92: warning: expression result unused [-Wunused-value]
+              volume_index_main,Volumes[volume_index_main]-&gt;geometry.is_masked_volume == 0 ||
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+mccode-r.h:219:27: note: expanded from macro &#39;MPI_MASTER&#39;
+#define MPI_MASTER(instr) instr
+                          ^~~~~
+14 warnings generated.
+INFO: ===
+INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_materials_25
+
+    Opening input file &#39;/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//data/Cu.laz&#39; (Table_Read_Offset)
+Table from file &#39;Cu.laz&#39; (block 1) is 19 x 18 (x=1:6), constant step. interpolation: linear
+  &#39;# TITLE *-Cu-[FM3-M] Otte, H.M.[1961];# CELL 3.615050 3.615050 3.615050 90. ...&#39;
+PowderN: powder: Reading 19 rows from Cu.laz
+PowderN: powder: Read 19 reflections from file &#39;Cu.laz&#39;
+PowderN: powder: Vc=47.24 [Angs] sigma_abs=15.12 [barn] sigma_inc=2.2 [barn] reflections=Cu.laz
+---------------------------------------------------------------------
+global_process_list.num_elements: 2
+name of process [0]: incoherent 
+component index [0]: 1 
+name of process [1]: powder 
+component index [1]: 4 
+---------------------------------------------------------------------
+global_material_list.num_elements: 3
+name of material    [0]: inc_material 
+component index     [0]: 2 
+my_absoprtion       [0]: 0.000000 
+number of processes [0]: 1 
+name of material    [1]: abs_material 
+component index     [1]: 3 
+my_absoprtion       [1]: 3.000000 
+number of processes [1]: 0 
+name of material    [2]: powder_material 
+component index     [2]: 5 
+my_absoprtion       [2]: 1.200000 
+number of processes [2]: 2 
+---------------------------------------------------------------------
+global_geometry_list.num_elements: 3
+
+name of geometry    [0]: box_inc 
+component index     [0]: 7 
+Volume.name         [0]: box_inc 
+Volume.p_physics.is_vacuum           [0]: 0 
+Volume.p_physics.my_absorption       [0]: 0.000000 
+Volume.p_physics.number of processes [0]: 1 
+Volume.geometry.shape                [0]: box 
+Volume.geometry.center.x             [0]: 0.040000 
+Volume.geometry.center.y             [0]: 0.000000 
+Volume.geometry.center.z             [0]: 1.000000 
+Volume.geometry.rotation_matrix[0]           [0]: [1.000000 0.000000 0.000000] 
+Volume.geometry.rotation_matrix[1]           [0]: [0.000000 1.000000 0.000000] 
+Volume.geometry.rotation_matrix[2]           [0]: [0.000000 0.000000 1.000000] 
+Volume.geometry.focus_data_array.elements[0].Aim             [0]: [0.000000 0.000000 1.000000] 
+
+name of geometry    [1]: box_powder 
+component index     [1]: 8 
+Volume.name         [1]: box_powder 
+Volume.p_physics.is_vacuum           [1]: 0 
+Volume.p_physics.my_absorption       [1]: 1.200000 
+Volume.p_physics.number of processes [1]: 2 
+Volume.geometry.shape                [1]: box 
+Volume.geometry.center.x             [1]: 0.000000 
+Volume.geometry.center.y             [1]: 0.000000 
+Volume.geometry.center.z             [1]: 1.000000 
+Volume.geometry.rotation_matrix[0]           [1]: [1.000000 0.000000 0.000000] 
+Volume.geometry.rotation_matrix[1]           [1]: [0.000000 1.000000 0.000000] 
+Volume.geometry.rotation_matrix[2]           [1]: [0.000000 0.000000 1.000000] 
+Volume.geometry.focus_data_array.elements[0].Aim             [1]: [0.000000 0.000000 1.000000] 
+
+name of geometry    [2]: box_abs 
+component index     [2]: 9 
+Volume.name         [2]: box_abs 
+Volume.p_physics.is_vacuum           [2]: 0 
+Volume.p_physics.my_absorption       [2]: 3.000000 
+Volume.p_physics.number of processes [2]: 0 
+Volume.geometry.shape                [2]: box 
+Volume.geometry.center.x             [2]: -0.040000 
+Volume.geometry.center.y             [2]: 0.000000 
+Volume.geometry.center.z             [2]: 1.000000 
+Volume.geometry.rotation_matrix[0]           [2]: [1.000000 0.000000 0.000000] 
+Volume.geometry.rotation_matrix[1]           [2]: [0.000000 1.000000 0.000000] 
+Volume.geometry.rotation_matrix[2]           [2]: [0.000000 0.000000 1.000000] 
+Volume.geometry.focus_data_array.elements[0].Aim             [2]: [0.000000 0.000000 1.000000] 
+---------------------------------------------------------------------
+number_of_volumes = 4
+number_of_masks = 0
+number_of_masked_volumes = 0
+
+ ---- Overview of the lists generated for each volume ---- 
+List overview for surrounding vacuum
+LIST: Children for Volume                  0 = [1,2,3]
+LIST: Direct_children for Volume           0 = [1,2,3]
+LIST: Intersect_check_list for Volume      0 = [1,2,3]
+LIST: Mask_intersect_list for Volume       0 = []
+LIST: Destinations_list for Volume         0 = []
+LIST: Reduced_destinations_list for Volume 0 = []
+LIST: Next_volume_list for Volume          0 = [1,2,3]
+LIST: mask_list for Volume                 0 = []
+LIST: masked_by_list for Volume            0 = []
+LIST: masked_by_mask_index_list for Volume 0 = []
+      mask_mode for Volume                 0 = 0
+
+List overview for box_inc with box shape made of inc_material
+LIST: Children for Volume                  1 = []
+LIST: Direct_children for Volume           1 = []
+LIST: Intersect_check_list for Volume      1 = []
+LIST: Mask_intersect_list for Volume       1 = []
+LIST: Destinations_list for Volume         1 = [0]
+LIST: Reduced_destinations_list for Volume 1 = []
+LIST: Next_volume_list for Volume          1 = [0]
+      Is_vacuum for Volume                 1 = 0
+      is_mask_volume for Volume            1 = 0
+      is_masked_volume for Volume          1 = 0
+      is_exit_volume for Volume            1 = 0
+LIST: mask_list for Volume                 1 = []
+LIST: masked_by_list for Volume            1 = []
+LIST: masked_by_mask_index_list for Volume 1 = []
+      mask_mode for Volume                 1 = 0
+
+List overview for box_powder with box shape made of powder_material
+LIST: Children for Volume                  2 = []
+LIST: Direct_children for Volume           2 = []
+LIST: Intersect_check_list for Volume      2 = []
+LIST: Mask_intersect_list for Volume       2 = []
+LIST: Destinations_list for Volume         2 = [0]
+LIST: Reduced_destinations_list for Volume 2 = []
+LIST: Next_volume_list for Volume          2 = [0]
+      Is_vacuum for Volume                 2 = 0
+      is_mask_volume for Volume            2 = 0
+      is_masked_volume for Volume          2 = 0
+      is_exit_volume for Volume            2 = 0
+LIST: mask_list for Volume                 2 = []
+LIST: masked_by_list for Volume            2 = []
+LIST: masked_by_mask_index_list for Volume 2 = []
+      mask_mode for Volume                 2 = 0
+
+List overview for box_abs with box shape made of abs_material
+LIST: Children for Volume                  3 = []
+LIST: Direct_children for Volume           3 = []
+LIST: Intersect_check_list for Volume      3 = []
+LIST: Mask_intersect_list for Volume       3 = []
+LIST: Destinations_list for Volume         3 = [0]
+LIST: Reduced_destinations_list for Volume 3 = []
+LIST: Next_volume_list for Volume          3 = [0]
+      Is_vacuum for Volume                 3 = 0
+      is_mask_volume for Volume            3 = 0
+      is_masked_volume for Volume          3 = 0
+      is_exit_volume for Volume            3 = 0
+LIST: mask_list for Volume                 3 = []
+LIST: masked_by_list for Volume            3 = []
+LIST: masked_by_mask_index_list for Volume 3 = []
+      mask_mode for Volume                 3 = 0
+
+Union_master component master initialized sucessfully
+Detector: logger_space_I=3.16383e-09 logger_space_ERR=1.46805e-11 logger_space_N=47426 &quot;logger.dat&quot;
+Detector: abs_logger_space_I=1.70519e-09 abs_logger_space_ERR=6.24801e-12 abs_logger_space_N=108714 &quot;abs_logger.dat&quot;
+loading system configuration
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="interpreting-the-results">
+<h2>Interpreting the results<a class="headerlink" href="#interpreting-the-results" title="Permalink to this headline">¶</a></h2>
+<p>The first logger shows scattering, and since the top box has incoherent, and the middle both powder and incoherent, we expect those to show up. We can see the beam attenuation, as the beam originates from the left side.</p>
+<p>The second logger shows absorption, and here the top box is absent as it has no absorption cross section. The bottom box is however visible now, as it has absorption but no scattering. As the absorber is quite strong, we see the attenuation here as well.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plotter</span><span class="o">.</span><span class="n">make_sub_plot</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Plotting data with name logger_space
+Plotting data with name abs_logger_space
+</pre></div>
+</div>
+<img alt="../_images/Union_tutorial_1_processes_and_materials_30_1.png" src="../_images/Union_tutorial_1_processes_and_materials_30_1.png" />
+</div>
+</div>
+<div class="section" id="alternative-run-to-show-powder-properties">
+<h3>Alternative run to show powder properties<a class="headerlink" href="#alternative-run-to-show-powder-properties" title="Permalink to this headline">¶</a></h3>
+<p>In order to see the scattering from the powder sample, we restrict the source size to only illuminate the center box with a powder material. A wavelength with powder lines close to 90 deg is selected to ensure the scattering from the center box hits the surrounding boxes.</p>
+<p>We choose to show the data with logarithmic colorscale using the <em>name_plot_options</em> method on functions.</p>
+<div class="cell tag_scroll-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instrument</span><span class="o">.</span><span class="n">set_parameters</span><span class="p">(</span><span class="n">wavelength</span><span class="o">=</span><span class="mf">2.8</span><span class="p">,</span> <span class="n">source_width</span><span class="o">=</span><span class="mf">0.03</span><span class="p">)</span>
+<span class="n">instrument</span><span class="o">.</span><span class="n">settings</span><span class="p">(</span><span class="n">ncount</span><span class="o">=</span><span class="mf">5E6</span><span class="p">,</span> <span class="n">output_path</span><span class="o">=</span><span class="s2">&quot;data_folder/union_materials&quot;</span><span class="p">)</span>
+<span class="n">instrument</span><span class="o">.</span><span class="n">show_settings</span><span class="p">()</span>
+
+<span class="n">instrument</span><span class="o">.</span><span class="n">backengine</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Instrument settings:
+  ncount:           5.00e+06
+  output_path:      data_folder/union_materials
+  run_path:         run_folder
+  package_path:     /Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1
+  executable_path:  /Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1/bin/
+  executable:       mcrun
+  force_compile:    True
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_materials_26&quot;
+INFO: Regenerating c-file: python_tutorial.c
+CFLAGS= -I@MCCODE_LIB@/share/
+INFO: Recompiling: ./python_tutorial.out
+mccode-r.c:2837:3: warning: expression result unused [-Wunused-value]
+  *t0;
+  ^~~
+In file included from /Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Incoherent_process.comp:65:
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Union_functions.c:1604:105: warning: incompatible pointer types passing &#39;int (const struct saved_history_struct *, const struct saved_history_struct *)&#39; to parameter of type &#39;int (* _Nonnull)(const void *, const void *)&#39; [-Wincompatible-pointer-types]
+  qsort(total_history.saved_histories,total_history.used_elements,sizeof (struct saved_history_struct), Sample_compare_history_intensities);
+                                                                                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/stdlib.h:161:22: note: passing argument to parameter &#39;__compar&#39; here
+            int (* _Nonnull __compar)(const void *, const void *));
+                            ^
+In file included from /Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Incoherent_process.comp:65:
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Union_functions.c:1613:20: warning: incompatible pointer types passing &#39;struct saved_history_struct *&#39; to parameter of type &#39;struct dynamic_history_list *&#39; [-Wincompatible-pointer-types]
+    printf_history(&amp;total_history.saved_histories[history_iterate]);
+                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+mccode-r.h:219:27: note: expanded from macro &#39;MPI_MASTER&#39;
+#define MPI_MASTER(instr) instr
+                          ^~~~~
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Union_functions.c:1434:50: note: passing argument to parameter &#39;history&#39; here
+void printf_history(struct dynamic_history_list *history) {
+                                                 ^
+In file included from /Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Incoherent_process.comp:65:
+In file included from /Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Union_functions.c:2030:
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:839:1: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+};
+^
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:883:1: warning: non-void function does not return a value [-Wreturn-type]
+};
+^
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:3274:42: warning: if statement has empty body [-Wempty-body]
+    if (dist_to_corner &gt; sphere_2_radius); { sphere_2_radius = dist_to_corner ; }
+                                         ^
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:3274:42: note: put the semicolon on a separate line to silence this warning
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:3276:42: warning: if statement has empty body [-Wempty-body]
+    if (dist_to_corner &gt; sphere_2_radius); { sphere_2_radius = dist_to_corner ; }
+                                         ^
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:3276:42: note: put the semicolon on a separate line to silence this warning
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:3278:42: warning: if statement has empty body [-Wempty-body]
+    if (dist_to_corner &gt; sphere_2_radius); { sphere_2_radius = dist_to_corner ; }
+                                         ^
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:3278:42: note: put the semicolon on a separate line to silence this warning
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:3280:42: warning: if statement has empty body [-Wempty-body]
+    if (dist_to_corner &gt; sphere_2_radius); { sphere_2_radius = dist_to_corner ; }
+                                         ^
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:3280:42: note: put the semicolon on a separate line to silence this warning
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Union_logger_2D_space.comp:574:45: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+  sprintf(this_storage.Detector_2D.Filename,filename);
+                                            ^~~~~~~~
+./python_tutorial.c:17318:18: note: expanded from macro &#39;filename&#39;
+#define filename mcclogger_space_filename
+                 ^~~~~~~~~~~~~~~~~~~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro &#39;sprintf&#39;
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Union_logger_2D_space.comp:574:45: note: treat the string as an argument to avoid this
+  sprintf(this_storage.Detector_2D.Filename,filename);
+                                            ^
+                                            &quot;%s&quot;, 
+./python_tutorial.c:17318:18: note: expanded from macro &#39;filename&#39;
+#define filename mcclogger_space_filename
+                 ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro &#39;sprintf&#39;
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Union_abs_logger_2D_space.comp:543:49: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+  sprintf(this_abs_storage.Detector_2D.Filename,filename);
+                                                ^~~~~~~~
+./python_tutorial.c:17560:18: note: expanded from macro &#39;filename&#39;
+#define filename mccabs_logger_space_filename
+                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro &#39;sprintf&#39;
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Union_abs_logger_2D_space.comp:543:49: note: treat the string as an argument to avoid this
+  sprintf(this_abs_storage.Detector_2D.Filename,filename);
+                                                ^
+                                                &quot;%s&quot;, 
+./python_tutorial.c:17560:18: note: expanded from macro &#39;filename&#39;
+#define filename mccabs_logger_space_filename
+                 ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro &#39;sprintf&#39;
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Union_master.comp:788:15: warning: expression result unused [-Wunused-value]
+          if (volume_index_main,Volumes[volume_index_main]-&gt;geometry.is_mask_volume == 0 ||
+              ^~~~~~~~~~~~~~~~~
+mccode-r.h:219:27: note: expanded from macro &#39;MPI_MASTER&#39;
+#define MPI_MASTER(instr) instr
+                          ^~~~~
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Union_master.comp:788:90: warning: expression result unused [-Wunused-value]
+          if (volume_index_main,Volumes[volume_index_main]-&gt;geometry.is_mask_volume == 0 ||
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+mccode-r.h:219:27: note: expanded from macro &#39;MPI_MASTER&#39;
+#define MPI_MASTER(instr) instr
+                          ^~~~~
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Union_master.comp:789:92: warning: expression result unused [-Wunused-value]
+              volume_index_main,Volumes[volume_index_main]-&gt;geometry.is_masked_volume == 0 ||
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+mccode-r.h:219:27: note: expanded from macro &#39;MPI_MASTER&#39;
+#define MPI_MASTER(instr) instr
+                          ^~~~~
+14 warnings generated.
+INFO: ===
+INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_materials_26
+
+    Opening input file &#39;/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//data/Cu.laz&#39; (Table_Read_Offset)
+Table from file &#39;Cu.laz&#39; (block 1) is 19 x 18 (x=1:6), constant step. interpolation: linear
+  &#39;# TITLE *-Cu-[FM3-M] Otte, H.M.[1961];# CELL 3.615050 3.615050 3.615050 90. ...&#39;
+PowderN: powder: Reading 19 rows from Cu.laz
+PowderN: powder: Read 19 reflections from file &#39;Cu.laz&#39;
+PowderN: powder: Vc=47.24 [Angs] sigma_abs=15.12 [barn] sigma_inc=2.2 [barn] reflections=Cu.laz
+---------------------------------------------------------------------
+global_process_list.num_elements: 2
+name of process [0]: incoherent 
+component index [0]: 1 
+name of process [1]: powder 
+component index [1]: 4 
+---------------------------------------------------------------------
+global_material_list.num_elements: 3
+name of material    [0]: inc_material 
+component index     [0]: 2 
+my_absoprtion       [0]: 0.000000 
+number of processes [0]: 1 
+name of material    [1]: abs_material 
+component index     [1]: 3 
+my_absoprtion       [1]: 3.000000 
+number of processes [1]: 0 
+name of material    [2]: powder_material 
+component index     [2]: 5 
+my_absoprtion       [2]: 1.200000 
+number of processes [2]: 2 
+---------------------------------------------------------------------
+global_geometry_list.num_elements: 3
+
+name of geometry    [0]: box_inc 
+component index     [0]: 7 
+Volume.name         [0]: box_inc 
+Volume.p_physics.is_vacuum           [0]: 0 
+Volume.p_physics.my_absorption       [0]: 0.000000 
+Volume.p_physics.number of processes [0]: 1 
+Volume.geometry.shape                [0]: box 
+Volume.geometry.center.x             [0]: 0.040000 
+Volume.geometry.center.y             [0]: 0.000000 
+Volume.geometry.center.z             [0]: 1.000000 
+Volume.geometry.rotation_matrix[0]           [0]: [1.000000 0.000000 0.000000] 
+Volume.geometry.rotation_matrix[1]           [0]: [0.000000 1.000000 0.000000] 
+Volume.geometry.rotation_matrix[2]           [0]: [0.000000 0.000000 1.000000] 
+Volume.geometry.focus_data_array.elements[0].Aim             [0]: [0.000000 0.000000 1.000000] 
+
+name of geometry    [1]: box_powder 
+component index     [1]: 8 
+Volume.name         [1]: box_powder 
+Volume.p_physics.is_vacuum           [1]: 0 
+Volume.p_physics.my_absorption       [1]: 1.200000 
+Volume.p_physics.number of processes [1]: 2 
+Volume.geometry.shape                [1]: box 
+Volume.geometry.center.x             [1]: 0.000000 
+Volume.geometry.center.y             [1]: 0.000000 
+Volume.geometry.center.z             [1]: 1.000000 
+Volume.geometry.rotation_matrix[0]           [1]: [1.000000 0.000000 0.000000] 
+Volume.geometry.rotation_matrix[1]           [1]: [0.000000 1.000000 0.000000] 
+Volume.geometry.rotation_matrix[2]           [1]: [0.000000 0.000000 1.000000] 
+Volume.geometry.focus_data_array.elements[0].Aim             [1]: [0.000000 0.000000 1.000000] 
+
+name of geometry    [2]: box_abs 
+component index     [2]: 9 
+Volume.name         [2]: box_abs 
+Volume.p_physics.is_vacuum           [2]: 0 
+Volume.p_physics.my_absorption       [2]: 3.000000 
+Volume.p_physics.number of processes [2]: 0 
+Volume.geometry.shape                [2]: box 
+Volume.geometry.center.x             [2]: -0.040000 
+Volume.geometry.center.y             [2]: 0.000000 
+Volume.geometry.center.z             [2]: 1.000000 
+Volume.geometry.rotation_matrix[0]           [2]: [1.000000 0.000000 0.000000] 
+Volume.geometry.rotation_matrix[1]           [2]: [0.000000 1.000000 0.000000] 
+Volume.geometry.rotation_matrix[2]           [2]: [0.000000 0.000000 1.000000] 
+Volume.geometry.focus_data_array.elements[0].Aim             [2]: [0.000000 0.000000 1.000000] 
+---------------------------------------------------------------------
+number_of_volumes = 4
+number_of_masks = 0
+number_of_masked_volumes = 0
+
+ ---- Overview of the lists generated for each volume ---- 
+List overview for surrounding vacuum
+LIST: Children for Volume                  0 = [1,2,3]
+LIST: Direct_children for Volume           0 = [1,2,3]
+LIST: Intersect_check_list for Volume      0 = [1,2,3]
+LIST: Mask_intersect_list for Volume       0 = []
+LIST: Destinations_list for Volume         0 = []
+LIST: Reduced_destinations_list for Volume 0 = []
+LIST: Next_volume_list for Volume          0 = [1,2,3]
+LIST: mask_list for Volume                 0 = []
+LIST: masked_by_list for Volume            0 = []
+LIST: masked_by_mask_index_list for Volume 0 = []
+      mask_mode for Volume                 0 = 0
+
+List overview for box_inc with box shape made of inc_material
+LIST: Children for Volume                  1 = []
+LIST: Direct_children for Volume           1 = []
+LIST: Intersect_check_list for Volume      1 = []
+LIST: Mask_intersect_list for Volume       1 = []
+LIST: Destinations_list for Volume         1 = [0]
+LIST: Reduced_destinations_list for Volume 1 = []
+LIST: Next_volume_list for Volume          1 = [0]
+      Is_vacuum for Volume                 1 = 0
+      is_mask_volume for Volume            1 = 0
+      is_masked_volume for Volume          1 = 0
+      is_exit_volume for Volume            1 = 0
+LIST: mask_list for Volume                 1 = []
+LIST: masked_by_list for Volume            1 = []
+LIST: masked_by_mask_index_list for Volume 1 = []
+      mask_mode for Volume                 1 = 0
+
+List overview for box_powder with box shape made of powder_material
+LIST: Children for Volume                  2 = []
+LIST: Direct_children for Volume           2 = []
+LIST: Intersect_check_list for Volume      2 = []
+LIST: Mask_intersect_list for Volume       2 = []
+LIST: Destinations_list for Volume         2 = [0]
+LIST: Reduced_destinations_list for Volume 2 = []
+LIST: Next_volume_list for Volume          2 = [0]
+      Is_vacuum for Volume                 2 = 0
+      is_mask_volume for Volume            2 = 0
+      is_masked_volume for Volume          2 = 0
+      is_exit_volume for Volume            2 = 0
+LIST: mask_list for Volume                 2 = []
+LIST: masked_by_list for Volume            2 = []
+LIST: masked_by_mask_index_list for Volume 2 = []
+      mask_mode for Volume                 2 = 0
+
+List overview for box_abs with box shape made of abs_material
+LIST: Children for Volume                  3 = []
+LIST: Direct_children for Volume           3 = []
+LIST: Intersect_check_list for Volume      3 = []
+LIST: Mask_intersect_list for Volume       3 = []
+LIST: Destinations_list for Volume         3 = [0]
+LIST: Reduced_destinations_list for Volume 3 = []
+LIST: Next_volume_list for Volume          3 = [0]
+      Is_vacuum for Volume                 3 = 0
+      is_mask_volume for Volume            3 = 0
+      is_masked_volume for Volume          3 = 0
+      is_exit_volume for Volume            3 = 0
+LIST: mask_list for Volume                 3 = []
+LIST: masked_by_list for Volume            3 = []
+LIST: masked_by_mask_index_list for Volume 3 = []
+      mask_mode for Volume                 3 = 0
+
+Union_master component master initialized sucessfully
+Detector: logger_space_I=1.13138e-09 logger_space_ERR=5.90355e-13 logger_space_N=3.86125e+06 &quot;logger.dat&quot;
+Detector: abs_logger_space_I=4.15749e-11 abs_logger_space_ERR=2.36698e-14 abs_logger_space_N=4.11847e+06 &quot;abs_logger.dat&quot;
+loading system configuration
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">functions</span><span class="o">.</span><span class="n">name_plot_options</span><span class="p">(</span><span class="s2">&quot;logger_space&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">functions</span><span class="o">.</span><span class="n">name_plot_options</span><span class="p">(</span><span class="s2">&quot;abs_logger_space&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plotter</span><span class="o">.</span><span class="n">make_sub_plot</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Plotting data with name logger_space
+Plotting data with name abs_logger_space
+</pre></div>
+</div>
+<img alt="../_images/Union_tutorial_1_processes_and_materials_33_1.png" src="../_images/Union_tutorial_1_processes_and_materials_33_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="interpretation-of-the-data">
+<h3>Interpretation of the data<a class="headerlink" href="#interpretation-of-the-data" title="Permalink to this headline">¶</a></h3>
+<p>Now that the direct beam only hits the center box, all rays that enter the surrounding boxes are scattered from that center box. Since the center box contains a powder, the scattered beam is not homogeneous and most of it is in the form of Bragg peaks with certain scattering angles, and we can see two of these intersecting the surrounding geometries.</p>
+</div>
+<div class="section" id="troubleshooting">
+<h3>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h3>
+<p>In case of issues with the notebooks concerning the Union components or McStasScript it is recommended to:</p>
+<ul class="simple">
+<li><p>Update McStasScript with python -m pip install –upgrade mcstasscript</p></li>
+<li><p>Get newest version of Union components (Both library files and components themselves)</p></li>
+</ul>
+<p>Since the Union components need to collaborate, it is important to have the same version of the libraries and components. The newest version of the components can be found here: https://github.com/McStasMcXtrace/McCode/tree/master/mcstas-comps/contrib/union
+All libraries for McStas are found here: https://github.com/McStasMcXtrace/McCode/tree/master/mcstas-comps/share but only three are needed for the Union components:</p>
+<ul class="simple">
+<li><p>Union_initialization.c</p></li>
+<li><p>Union_functions.c</p></li>
+<li><p>Geometry_functions.c</p></li>
+<li><p>Union_last_functions.c (if on McStas 3.X)</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="McStasScript_tutorial_4_JUMP.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Advanced McStas features: JUMP</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Union_tutorial_2_geometry.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Advanced geometry using the Union components</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Mads Bertelsen<br/>
+    
+        &copy; Copyright 2022, Mads Bertelsen.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

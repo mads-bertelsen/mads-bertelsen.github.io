@@ -1,0 +1,3023 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced geometry using the Union components &#8212; McStasScript  documentation</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Visualizing what happens in Union master" href="Union_tutorial_3_loggers.html" />
+    <link rel="prev" title="The Union components" href="Union_tutorial_1_processes_and_materials.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">McStasScript  documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Getting started
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_started/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_started/installation.html">
+   Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting_started/quick_start.html">
+   Quick start
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  User guide
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../user_guide/instrument_object.html">
+   Instrument object
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../user_guide/component_object.html">
+   Component object
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../user_guide/parameters_and_variables.html">
+   Parameters and variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../user_guide/plotting.html">
+   Plotting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../user_guide/instrument_reader.html">
+   Instrument reader
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  McStasScript Tutorial
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="McStasScript_tutorial_1_the_basics.html">
+   McStasScript introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="McStasScript_tutorial_2_SPLIT.html">
+   Advanced McStas features:  SPLIT
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="McStasScript_tutorial_3_EXTEND_and_WHEN.html">
+   Advanced McStas features: EXTEND and WHEN
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="McStasScript_tutorial_4_JUMP.html">
+   Advanced McStas features: JUMP
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  McStas Union Tutorial
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Union_tutorial_1_processes_and_materials.html">
+   The Union components
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Advanced geometry using the Union components
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Union_tutorial_3_loggers.html">
+   Visualizing what happens in Union master
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Union_tutorial_4_conditionals.html">
+   Using conditional component to modify loggers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Union_tutorial_5_masks.html">
+   Union tutorial on masks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Union_tutorial_6_Exit_and_number_of_activations.html">
+   Advanced geometry component concepts: Exit geometry and number of activations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Union_tutorial_7_Tagging_history.html">
+   Union tagging system
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../_autosummary/mcstasscript.html">
+   mcstasscript
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../_autosummary/mcstasscript.data.html">
+     mcstasscript.data
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.data.data.html">
+       mcstasscript.data.data
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+      <label for="toctree-checkbox-3">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.data.data.McStasData.html">
+         mcstasscript.data.data.McStasData
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.data.data.McStasDataBinned.html">
+         mcstasscript.data.data.McStasDataBinned
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.data.data.McStasDataEvent.html">
+         mcstasscript.data.data.McStasDataEvent
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.data.data.McStasMetaData.html">
+         mcstasscript.data.data.McStasMetaData
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.data.data.McStasPlotOptions.html">
+         mcstasscript.data.data.McStasPlotOptions
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../_autosummary/mcstasscript.helper.html">
+     mcstasscript.helper
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.helper.component_reader.html">
+       mcstasscript.helper.component_reader
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.component_reader.ComponentInfo.html">
+         mcstasscript.helper.component_reader.ComponentInfo
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.component_reader.ComponentReader.html">
+         mcstasscript.helper.component_reader.ComponentReader
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.helper.formatting.html">
+       mcstasscript.helper.formatting
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+      <label for="toctree-checkbox-6">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.formatting.is_legal_filename.html">
+         mcstasscript.helper.formatting.is_legal_filename
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.formatting.is_legal_parameter.html">
+         mcstasscript.helper.formatting.is_legal_parameter
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.formatting.bcolors.html">
+         mcstasscript.helper.formatting.bcolors
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.helper.managed_mcrun.html">
+       mcstasscript.helper.managed_mcrun
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+      <label for="toctree-checkbox-7">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.managed_mcrun.load_metadata.html">
+         mcstasscript.helper.managed_mcrun.load_metadata
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.managed_mcrun.load_monitor.html">
+         mcstasscript.helper.managed_mcrun.load_monitor
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.managed_mcrun.load_results.html">
+         mcstasscript.helper.managed_mcrun.load_results
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.managed_mcrun.ManagedMcrun.html">
+         mcstasscript.helper.managed_mcrun.ManagedMcrun
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.helper.mcstas_objects.html">
+       mcstasscript.helper.mcstas_objects
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+      <label for="toctree-checkbox-8">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.mcstas_objects.Component.html">
+         mcstasscript.helper.mcstas_objects.Component
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.mcstas_objects.DeclareVariable.html">
+         mcstasscript.helper.mcstas_objects.DeclareVariable
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.mcstas_objects.ParameterContainer.html">
+         mcstasscript.helper.mcstas_objects.ParameterContainer
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.helper.mcstas_objects.ParameterVariable.html">
+         mcstasscript.helper.mcstas_objects.ParameterVariable
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../_autosummary/mcstasscript.helper.plot_helper.html">
+       mcstasscript.helper.plot_helper
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.html">
+     mcstasscript.instr_reader
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.control.html">
+       mcstasscript.instr_reader.control
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+      <label for="toctree-checkbox-10">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.control.InstrumentReader.html">
+         mcstasscript.instr_reader.control.InstrumentReader
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.read_declare.html">
+       mcstasscript.instr_reader.read_declare
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+      <label for="toctree-checkbox-11">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.read_declare.DeclareReader.html">
+         mcstasscript.instr_reader.read_declare.DeclareReader
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.read_definition.html">
+       mcstasscript.instr_reader.read_definition
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+      <label for="toctree-checkbox-12">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.read_definition.DefinitionReader.html">
+         mcstasscript.instr_reader.read_definition.DefinitionReader
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.read_finally.html">
+       mcstasscript.instr_reader.read_finally
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+      <label for="toctree-checkbox-13">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.read_finally.FinallyReader.html">
+         mcstasscript.instr_reader.read_finally.FinallyReader
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.read_initialize.html">
+       mcstasscript.instr_reader.read_initialize
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+      <label for="toctree-checkbox-14">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.read_initialize.InitializeReader.html">
+         mcstasscript.instr_reader.read_initialize.InitializeReader
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.read_trace.html">
+       mcstasscript.instr_reader.read_trace
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+      <label for="toctree-checkbox-15">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.read_trace.TraceReader.html">
+         mcstasscript.instr_reader.read_trace.TraceReader
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.util.html">
+       mcstasscript.instr_reader.util
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+      <label for="toctree-checkbox-16">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.instr_reader.util.SectionReader.html">
+         mcstasscript.instr_reader.util.SectionReader
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../_autosummary/mcstasscript.integration_tests.html">
+     mcstasscript.integration_tests
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+    <label for="toctree-checkbox-17">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.integration_tests.test_complex_instrument.html">
+       mcstasscript.integration_tests.test_complex_instrument
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+      <label for="toctree-checkbox-18">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.integration_tests.test_complex_instrument.setup_complex_instrument.html">
+         mcstasscript.integration_tests.test_complex_instrument.setup_complex_instrument
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.integration_tests.test_complex_instrument.FakeChange.html">
+         mcstasscript.integration_tests.test_complex_instrument.FakeChange
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.integration_tests.test_complex_instrument.TestComplexInstrument.html">
+         mcstasscript.integration_tests.test_complex_instrument.TestComplexInstrument
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.integration_tests.test_simple_instrument.html">
+       mcstasscript.integration_tests.test_simple_instrument
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+      <label for="toctree-checkbox-19">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.integration_tests.test_simple_instrument.setup_simple_instrument.html">
+         mcstasscript.integration_tests.test_simple_instrument.setup_simple_instrument
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.integration_tests.test_simple_instrument.setup_simple_instrument_input_path.html">
+         mcstasscript.integration_tests.test_simple_instrument.setup_simple_instrument_input_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.integration_tests.test_simple_instrument.setup_simple_slit_instrument.html">
+         mcstasscript.integration_tests.test_simple_instrument.setup_simple_slit_instrument
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.integration_tests.test_simple_instrument.TestSimpleInstrument.html">
+         mcstasscript.integration_tests.test_simple_instrument.TestSimpleInstrument
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../_autosummary/mcstasscript.interface.html">
+     mcstasscript.interface
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+    <label for="toctree-checkbox-20">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.interface.functions.html">
+       mcstasscript.interface.functions
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+      <label for="toctree-checkbox-21">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.functions.load_data.html">
+         mcstasscript.interface.functions.load_data
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.functions.load_metadata.html">
+         mcstasscript.interface.functions.load_metadata
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.functions.load_monitor.html">
+         mcstasscript.interface.functions.load_monitor
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.functions.name_plot_options.html">
+         mcstasscript.interface.functions.name_plot_options
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.functions.name_search.html">
+         mcstasscript.interface.functions.name_search
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.functions.Configurator.html">
+         mcstasscript.interface.functions.Configurator
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.interface.instr.html">
+       mcstasscript.interface.instr
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+      <label for="toctree-checkbox-22">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.instr.McCode_instr.html">
+         mcstasscript.interface.instr.McCode_instr
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.instr.McStas_instr.html">
+         mcstasscript.interface.instr.McStas_instr
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.instr.McXtrace_instr.html">
+         mcstasscript.interface.instr.McXtrace_instr
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.interface.plotter.html">
+       mcstasscript.interface.plotter
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+      <label for="toctree-checkbox-23">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.plotter.interface.html">
+         mcstasscript.interface.plotter.interface
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.plotter.make_animation.html">
+         mcstasscript.interface.plotter.make_animation
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.plotter.make_plot.html">
+         mcstasscript.interface.plotter.make_plot
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.plotter.make_sub_plot.html">
+         mcstasscript.interface.plotter.make_sub_plot
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.interface.reader.html">
+       mcstasscript.interface.reader
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+      <label for="toctree-checkbox-24">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.interface.reader.McStas_file.html">
+         mcstasscript.interface.reader.McStas_file
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.html">
+     mcstasscript.jb_interface
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+    <label for="toctree-checkbox-25">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.plot_interface.html">
+       mcstasscript.jb_interface.plot_interface
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+      <label for="toctree-checkbox-26">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.plot_interface.ColormapDropdown.html">
+         mcstasscript.jb_interface.plot_interface.ColormapDropdown
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.plot_interface.LogCheckbox.html">
+         mcstasscript.jb_interface.plot_interface.LogCheckbox
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.plot_interface.MonitorDropdown.html">
+         mcstasscript.jb_interface.plot_interface.MonitorDropdown
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.plot_interface.OrdersOfMagField.html">
+         mcstasscript.jb_interface.plot_interface.OrdersOfMagField
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.plot_interface.PlotInterface.html">
+         mcstasscript.jb_interface.plot_interface.PlotInterface
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.simulation_interface.html">
+       mcstasscript.jb_interface.simulation_interface
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+      <label for="toctree-checkbox-27">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.simulation_interface.add_data.html">
+         mcstasscript.jb_interface.simulation_interface.add_data
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.simulation_interface.ParameterWidget.html">
+         mcstasscript.jb_interface.simulation_interface.ParameterWidget
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.simulation_interface.SimInterface.html">
+         mcstasscript.jb_interface.simulation_interface.SimInterface
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.widget_helpers.html">
+       mcstasscript.jb_interface.widget_helpers
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+      <label for="toctree-checkbox-28">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.widget_helpers.get_parameter_default.html">
+         mcstasscript.jb_interface.widget_helpers.get_parameter_default
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.widget_helpers.parameter_has_default.html">
+         mcstasscript.jb_interface.widget_helpers.parameter_has_default
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.jb_interface.widget_helpers.HiddenPrints.html">
+         mcstasscript.jb_interface.widget_helpers.HiddenPrints
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../_autosummary/mcstasscript.tests.html">
+     mcstasscript.tests
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+    <label for="toctree-checkbox-29">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.helpers_for_tests.html">
+       mcstasscript.tests.helpers_for_tests
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+      <label for="toctree-checkbox-30">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.helpers_for_tests.WorkInTestDir.html">
+         mcstasscript.tests.helpers_for_tests.WorkInTestDir
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_ComponentReader.html">
+       mcstasscript.tests.test_ComponentReader
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+      <label for="toctree-checkbox-31">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_ComponentReader.setup_component_reader.html">
+         mcstasscript.tests.test_ComponentReader.setup_component_reader
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_ComponentReader.setup_component_reader_input_path.html">
+         mcstasscript.tests.test_ComponentReader.setup_component_reader_input_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_ComponentReader.TestComponentReader.html">
+         mcstasscript.tests.test_ComponentReader.TestComponentReader
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Configurator.html">
+       mcstasscript.tests.test_Configurator
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+      <label for="toctree-checkbox-32">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Configurator.setup_configurator.html">
+         mcstasscript.tests.test_Configurator.setup_configurator
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Configurator.setup_expected_file.html">
+         mcstasscript.tests.test_Configurator.setup_expected_file
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Configurator.TestConfigurator.html">
+         mcstasscript.tests.test_Configurator.TestConfigurator
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.html">
+       mcstasscript.tests.test_Instr
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+      <label for="toctree-checkbox-33">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_instr_no_path.html">
+         mcstasscript.tests.test_Instr.setup_instr_no_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_instr_root_path.html">
+         mcstasscript.tests.test_Instr.setup_instr_root_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_instr_with_input_path.html">
+         mcstasscript.tests.test_Instr.setup_instr_with_input_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_instr_with_input_path_relative.html">
+         mcstasscript.tests.test_Instr.setup_instr_with_input_path_relative
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_instr_with_path.html">
+         mcstasscript.tests.test_Instr.setup_instr_with_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_populated_instr.html">
+         mcstasscript.tests.test_Instr.setup_populated_instr
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_populated_instr_with_dummy_path.html">
+         mcstasscript.tests.test_Instr.setup_populated_instr_with_dummy_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_populated_with_some_options_instr.html">
+         mcstasscript.tests.test_Instr.setup_populated_with_some_options_instr
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_populated_x_ray_instr.html">
+         mcstasscript.tests.test_Instr.setup_populated_x_ray_instr
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_populated_x_ray_instr_with_dummy_path.html">
+         mcstasscript.tests.test_Instr.setup_populated_x_ray_instr_with_dummy_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_x_ray_instr_no_path.html">
+         mcstasscript.tests.test_Instr.setup_x_ray_instr_no_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_x_ray_instr_root_path.html">
+         mcstasscript.tests.test_Instr.setup_x_ray_instr_root_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.setup_x_ray_instr_with_path.html">
+         mcstasscript.tests.test_Instr.setup_x_ray_instr_with_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr.TestMcStas_instr.html">
+         mcstasscript.tests.test_Instr.TestMcStas_instr
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr_reader.html">
+       mcstasscript.tests.test_Instr_reader
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
+      <label for="toctree-checkbox-34">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr_reader.blockPrint.html">
+         mcstasscript.tests.test_Instr_reader.blockPrint
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr_reader.enablePrint.html">
+         mcstasscript.tests.test_Instr_reader.enablePrint
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr_reader.set_dummy_dir.html">
+         mcstasscript.tests.test_Instr_reader.set_dummy_dir
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr_reader.setup_standard.html">
+         mcstasscript.tests.test_Instr_reader.setup_standard
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr_reader.setup_standard_auto_instr.html">
+         mcstasscript.tests.test_Instr_reader.setup_standard_auto_instr
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Instr_reader.TestInstrReader.html">
+         mcstasscript.tests.test_Instr_reader.TestInstrReader
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_ManagedMcrun.html">
+       mcstasscript.tests.test_ManagedMcrun
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
+      <label for="toctree-checkbox-35">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_ManagedMcrun.TestManagedMcrun.html">
+         mcstasscript.tests.test_ManagedMcrun.TestManagedMcrun
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_ManagedMcrun.Test_load_functions.html">
+         mcstasscript.tests.test_ManagedMcrun.Test_load_functions
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_McStasData.html">
+       mcstasscript.tests.test_McStasData
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
+      <label for="toctree-checkbox-36">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_McStasData.set_dummy_McStasDataBinned_1d.html">
+         mcstasscript.tests.test_McStasData.set_dummy_McStasDataBinned_1d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_McStasData.set_dummy_McStasDataBinned_2d.html">
+         mcstasscript.tests.test_McStasData.set_dummy_McStasDataBinned_2d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_McStasData.set_dummy_MetaDataBinned_1d.html">
+         mcstasscript.tests.test_McStasData.set_dummy_MetaDataBinned_1d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_McStasData.set_dummy_MetaDataBinned_2d.html">
+         mcstasscript.tests.test_McStasData.set_dummy_MetaDataBinned_2d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_McStasData.TestMcStasData.html">
+         mcstasscript.tests.test_McStasData.TestMcStasData
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_McStasMetaData.html">
+       mcstasscript.tests.test_McStasMetaData
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
+      <label for="toctree-checkbox-37">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_McStasMetaData.TestMcStasMetaData.html">
+         mcstasscript.tests.test_McStasMetaData.TestMcStasMetaData
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_McStasPlotOptions.html">
+       mcstasscript.tests.test_McStasPlotOptions
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
+      <label for="toctree-checkbox-38">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_McStasPlotOptions.TestMcStasPlotOptions.html">
+         mcstasscript.tests.test_McStasPlotOptions.TestMcStasPlotOptions
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Plotter.html">
+       mcstasscript.tests.test_Plotter
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
+      <label for="toctree-checkbox-39">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Plotter.get_dummy_McStasDataBinned_1d.html">
+         mcstasscript.tests.test_Plotter.get_dummy_McStasDataBinned_1d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Plotter.get_dummy_McStasDataBinned_2d.html">
+         mcstasscript.tests.test_Plotter.get_dummy_McStasDataBinned_2d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Plotter.get_dummy_MetaDataBinned_1d.html">
+         mcstasscript.tests.test_Plotter.get_dummy_MetaDataBinned_1d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Plotter.get_dummy_MetaDataBinned_2d.html">
+         mcstasscript.tests.test_Plotter.get_dummy_MetaDataBinned_2d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_Plotter.TestPlotterHelpers.html">
+         mcstasscript.tests.test_Plotter.TestPlotterHelpers
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_add_data.html">
+       mcstasscript.tests.test_add_data
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
+      <label for="toctree-checkbox-40">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_add_data.set_dummy_McStasDataBinned_1d.html">
+         mcstasscript.tests.test_add_data.set_dummy_McStasDataBinned_1d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_add_data.set_dummy_McStasDataBinned_2d.html">
+         mcstasscript.tests.test_add_data.set_dummy_McStasDataBinned_2d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_add_data.set_dummy_MetaDataBinned_1d.html">
+         mcstasscript.tests.test_add_data.set_dummy_MetaDataBinned_1d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_add_data.set_dummy_MetaDataBinned_2d.html">
+         mcstasscript.tests.test_add_data.set_dummy_MetaDataBinned_2d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_add_data.Test_add_data.html">
+         mcstasscript.tests.test_add_data.Test_add_data
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_component.html">
+       mcstasscript.tests.test_component
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
+      <label for="toctree-checkbox-41">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_component.setup_Component_all_keywords.html">
+         mcstasscript.tests.test_component.setup_Component_all_keywords
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_component.setup_Component_relative.html">
+         mcstasscript.tests.test_component.setup_Component_relative
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_component.setup_Component_with_parameters.html">
+         mcstasscript.tests.test_component.setup_Component_with_parameters
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_component.TestComponent.html">
+         mcstasscript.tests.test_component.TestComponent
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_declare_variable.html">
+       mcstasscript.tests.test_declare_variable
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
+      <label for="toctree-checkbox-42">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_declare_variable.Test_DeclareVariable.html">
+         mcstasscript.tests.test_declare_variable.Test_DeclareVariable
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.html">
+       mcstasscript.tests.test_dump_and_load
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
+      <label for="toctree-checkbox-43">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_instr_no_path.html">
+         mcstasscript.tests.test_dump_and_load.setup_instr_no_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_instr_root_path.html">
+         mcstasscript.tests.test_dump_and_load.setup_instr_root_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_instr_with_input_path.html">
+         mcstasscript.tests.test_dump_and_load.setup_instr_with_input_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_instr_with_input_path_relative.html">
+         mcstasscript.tests.test_dump_and_load.setup_instr_with_input_path_relative
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_instr_with_path.html">
+         mcstasscript.tests.test_dump_and_load.setup_instr_with_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_populated_instr.html">
+         mcstasscript.tests.test_dump_and_load.setup_populated_instr
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_populated_instr_with_dummy_path.html">
+         mcstasscript.tests.test_dump_and_load.setup_populated_instr_with_dummy_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_populated_with_some_options_instr.html">
+         mcstasscript.tests.test_dump_and_load.setup_populated_with_some_options_instr
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_populated_x_ray_instr.html">
+         mcstasscript.tests.test_dump_and_load.setup_populated_x_ray_instr
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_populated_x_ray_instr_with_dummy_path.html">
+         mcstasscript.tests.test_dump_and_load.setup_populated_x_ray_instr_with_dummy_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_x_ray_instr_no_path.html">
+         mcstasscript.tests.test_dump_and_load.setup_x_ray_instr_no_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_x_ray_instr_root_path.html">
+         mcstasscript.tests.test_dump_and_load.setup_x_ray_instr_root_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.setup_x_ray_instr_with_path.html">
+         mcstasscript.tests.test_dump_and_load.setup_x_ray_instr_with_path
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_dump_and_load.TestDumpAndLoad.html">
+         mcstasscript.tests.test_dump_and_load.TestDumpAndLoad
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_formatting.html">
+       mcstasscript.tests.test_formatting
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
+      <label for="toctree-checkbox-44">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_formatting.TestFormatting.html">
+         mcstasscript.tests.test_formatting.TestFormatting
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.html">
+       mcstasscript.tests.test_functions
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
+      <label for="toctree-checkbox-45">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.set_dummy_McStasDataBinned_1d.html">
+         mcstasscript.tests.test_functions.set_dummy_McStasDataBinned_1d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.set_dummy_McStasDataBinned_2d.html">
+         mcstasscript.tests.test_functions.set_dummy_McStasDataBinned_2d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.set_dummy_MetaDataBinned_1d.html">
+         mcstasscript.tests.test_functions.set_dummy_MetaDataBinned_1d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.set_dummy_MetaDataBinned_2d.html">
+         mcstasscript.tests.test_functions.set_dummy_MetaDataBinned_2d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.setup_McStasData_array.html">
+         mcstasscript.tests.test_functions.setup_McStasData_array
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.setup_McStasData_array_repeat.html">
+         mcstasscript.tests.test_functions.setup_McStasData_array_repeat
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.Test_load_data.html">
+         mcstasscript.tests.test_functions.Test_load_data
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.Test_load_metadata.html">
+         mcstasscript.tests.test_functions.Test_load_metadata
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.Test_load_monitor.html">
+         mcstasscript.tests.test_functions.Test_load_monitor
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.Test_name_plot_options.html">
+         mcstasscript.tests.test_functions.Test_name_plot_options
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_functions.Test_name_search.html">
+         mcstasscript.tests.test_functions.Test_name_search
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_parameter_variable.html">
+       mcstasscript.tests.test_parameter_variable
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
+      <label for="toctree-checkbox-46">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_parameter_variable.Test_ParameterVariable.html">
+         mcstasscript.tests.test_parameter_variable.Test_ParameterVariable
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_plot_interface.html">
+       mcstasscript.tests.test_plot_interface
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
+      <label for="toctree-checkbox-47">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_plot_interface.fake_data.html">
+         mcstasscript.tests.test_plot_interface.fake_data
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_plot_interface.set_dummy_McStasDataBinned_1d.html">
+         mcstasscript.tests.test_plot_interface.set_dummy_McStasDataBinned_1d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_plot_interface.set_dummy_McStasDataBinned_2d.html">
+         mcstasscript.tests.test_plot_interface.set_dummy_McStasDataBinned_2d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_plot_interface.set_dummy_MetaDataBinned_1d.html">
+         mcstasscript.tests.test_plot_interface.set_dummy_MetaDataBinned_1d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_plot_interface.set_dummy_MetaDataBinned_2d.html">
+         mcstasscript.tests.test_plot_interface.set_dummy_MetaDataBinned_2d
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_plot_interface.FakeChange.html">
+         mcstasscript.tests.test_plot_interface.FakeChange
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_plot_interface.TestPlotInterface.html">
+         mcstasscript.tests.test_plot_interface.TestPlotInterface
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_simulation_interface.html">
+       mcstasscript.tests.test_simulation_interface
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
+      <label for="toctree-checkbox-48">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_simulation_interface.setup_instr_root_path_McStas.html">
+         mcstasscript.tests.test_simulation_interface.setup_instr_root_path_McStas
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_simulation_interface.setup_instr_root_path_McXtrace.html">
+         mcstasscript.tests.test_simulation_interface.setup_instr_root_path_McXtrace
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_simulation_interface.setup_populated_instr_McStas.html">
+         mcstasscript.tests.test_simulation_interface.setup_populated_instr_McStas
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_simulation_interface.setup_populated_instr_McXtrace.html">
+         mcstasscript.tests.test_simulation_interface.setup_populated_instr_McXtrace
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_simulation_interface.FakeChange.html">
+         mcstasscript.tests.test_simulation_interface.FakeChange
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_simulation_interface.TestSimulationInterface.html">
+         mcstasscript.tests.test_simulation_interface.TestSimulationInterface
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_widget_helpers.html">
+       mcstasscript.tests.test_widget_helpers
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
+      <label for="toctree-checkbox-49">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.test_widget_helpers.TestWidgetHelpers.html">
+         mcstasscript.tests.test_widget_helpers.TestWidgetHelpers
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../_autosummary/mcstasscript.tests.utilities.html">
+       mcstasscript.tests.utilities
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
+      <label for="toctree-checkbox-50">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../_autosummary/mcstasscript.tests.utilities.work_dir_test.html">
+         mcstasscript.tests.utilities.work_dir_test
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/tutorial/Union_tutorial_2_geometry.ipynb.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/PaNOSC-ViNYL/McStasScript"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/PaNOSC-ViNYL/McStasScript/issues/new?title=Issue%20on%20page%20%2Ftutorial/Union_tutorial_2_geometry.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/PaNOSC-ViNYL/McStasScript/edit/mcstasscript_on_libpyvinyl/docs/tutorial/Union_tutorial_2_geometry.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-up-some-standard-materials">
+   Setting up some standard materials
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set-up-source">
+   Set up source
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#describing-the-geometry-of-a-simple-cryostat">
+   Describing the geometry of a simple cryostat
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#first-geometry-a-sample-in-a-container">
+     First geometry, a sample in a container
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#set-up-loggers-to-check-what-is-going-on">
+     Set up loggers to check what is going on
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#add-master-component">
+     Add master component
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#add-banana-monitor">
+     Add banana monitor
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#run-simulation">
+   Run simulation
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plotting-the-data">
+     Plotting the data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interpretation-of-results">
+     Interpretation of results
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-a-cryostat-around-the-sample-can">
+   Adding a cryostat around the sample can
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adjusting-the-logger-view-to-see-the-larger-cryostat-area">
+     Adjusting the logger view to see the larger cryostat area
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#run-the-updated-instrument-file">
+     Run the updated instrument file
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-the-data-from-the-new-simulation">
+     Plot the data from the new simulation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interpreting-the-data">
+     Interpreting the data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comparing-situation-with-and-without-cryostat">
+     Comparing situation with and without cryostat
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Advanced geometry using the Union components</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-up-some-standard-materials">
+   Setting up some standard materials
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set-up-source">
+   Set up source
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#describing-the-geometry-of-a-simple-cryostat">
+   Describing the geometry of a simple cryostat
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#first-geometry-a-sample-in-a-container">
+     First geometry, a sample in a container
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#set-up-loggers-to-check-what-is-going-on">
+     Set up loggers to check what is going on
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#add-master-component">
+     Add master component
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#add-banana-monitor">
+     Add banana monitor
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#run-simulation">
+   Run simulation
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plotting-the-data">
+     Plotting the data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interpretation-of-results">
+     Interpretation of results
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-a-cryostat-around-the-sample-can">
+   Adding a cryostat around the sample can
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adjusting-the-logger-view-to-see-the-larger-cryostat-area">
+     Adjusting the logger view to see the larger cryostat area
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#run-the-updated-instrument-file">
+     Run the updated instrument file
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-the-data-from-the-new-simulation">
+     Plot the data from the new simulation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interpreting-the-data">
+     Interpreting the data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comparing-situation-with-and-without-cryostat">
+     Comparing situation with and without cryostat
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="advanced-geometry-using-the-union-components">
+<h1>Advanced geometry using the Union components<a class="headerlink" href="#advanced-geometry-using-the-union-components" title="Permalink to this headline">¶</a></h1>
+<p>The Union components allow the user to construct advanced geometry from simple shapes. Each available shape has their own component, here are the currently available geometry components.</p>
+<ul class="simple">
+<li><p>Union_box</p></li>
+<li><p>Union_sphere</p></li>
+<li><p>Union_cylinder</p></li>
+<li><p>Union_cone</p></li>
+</ul>
+<p>They differ in their parameters describing the geometry, but are otherwise identical. In this notebook we will show how to construct hollow geometries with several layers, and that multiple scattering between these quickly result in complex behavior.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mcstasscript.interface</span> <span class="kn">import</span> <span class="n">instr</span><span class="p">,</span> <span class="n">functions</span><span class="p">,</span> <span class="n">plotter</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instrument</span> <span class="o">=</span> <span class="n">instr</span><span class="o">.</span><span class="n">McStas_instr</span><span class="p">(</span><span class="s2">&quot;python_tutorial&quot;</span><span class="p">,</span> <span class="n">input_path</span><span class="o">=</span><span class="s2">&quot;run_folder&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="setting-up-some-standard-materials">
+<h2>Setting up some standard materials<a class="headerlink" href="#setting-up-some-standard-materials" title="Permalink to this headline">¶</a></h2>
+<p>Before setting up the geometry, we need some material definition, here we set up aluminium and a sample powder.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Al_inc</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;Al_inc&quot;</span><span class="p">,</span> <span class="s2">&quot;Incoherent_process&quot;</span><span class="p">)</span>
+<span class="n">Al_inc</span><span class="o">.</span><span class="n">sigma</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="mf">0.0082</span> <span class="c1"># 4 atoms per unit cell</span>
+<span class="n">Al_inc</span><span class="o">.</span><span class="n">unit_cell_volume</span> <span class="o">=</span> <span class="mf">66.4</span>
+
+<span class="n">Al_pow</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;Al_pow&quot;</span><span class="p">,</span> <span class="s2">&quot;Powder_process&quot;</span><span class="p">)</span>
+<span class="n">Al_pow</span><span class="o">.</span><span class="n">reflections</span> <span class="o">=</span> <span class="s1">&#39;&quot;Al.laz&quot;&#39;</span>
+
+<span class="n">Al</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;Al&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_make_material&quot;</span><span class="p">)</span>
+<span class="n">Al</span><span class="o">.</span><span class="n">process_string</span> <span class="o">=</span> <span class="s1">&#39;&quot;Al_inc,Al_pow&quot;&#39;</span>
+<span class="n">Al</span><span class="o">.</span><span class="n">my_absorption</span> <span class="o">=</span> <span class="mi">100</span><span class="o">*</span><span class="mi">4</span><span class="o">*</span><span class="mf">0.231</span><span class="o">/</span><span class="mf">66.4</span> <span class="c1"># barns [m^2 E-28] * Å^3 [m^3 E-30] = [m E-2], correct with factor 100.</span>
+
+<span class="n">Sample_inc</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;Sample_inc&quot;</span><span class="p">,</span> <span class="s2">&quot;Incoherent_process&quot;</span><span class="p">)</span>
+<span class="n">Sample_inc</span><span class="o">.</span><span class="n">sigma</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="mf">3.4176</span>
+<span class="n">Sample_inc</span><span class="o">.</span><span class="n">unit_cell_volume</span> <span class="o">=</span> <span class="mf">1079.1</span>
+
+<span class="n">Sample_pow</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;Sample_pow&quot;</span><span class="p">,</span> <span class="s2">&quot;Powder_process&quot;</span><span class="p">)</span>
+<span class="n">Sample_pow</span><span class="o">.</span><span class="n">reflections</span> <span class="o">=</span> <span class="s1">&#39;&quot;Na2Ca3Al2F14.laz&quot;&#39;</span>
+
+<span class="n">Sample</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;Sample&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_make_material&quot;</span><span class="p">)</span>
+<span class="n">Sample</span><span class="o">.</span><span class="n">process_string</span> <span class="o">=</span> <span class="s1">&#39;&quot;Sample_inc,Sample_pow&quot;&#39;</span>
+<span class="n">Sample</span><span class="o">.</span><span class="n">my_absorption</span> <span class="o">=</span> <span class="mi">100</span><span class="o">*</span><span class="mi">4</span><span class="o">*</span><span class="mf">2.9464</span><span class="o">/</span><span class="mf">1079.1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="set-up-source">
+<h2>Set up source<a class="headerlink" href="#set-up-source" title="Permalink to this headline">¶</a></h2>
+<p>We will also need a source, and allow the wavelength to be tuned with a instrument parameter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">src</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;source&quot;</span><span class="p">,</span> <span class="s2">&quot;Source_div&quot;</span><span class="p">)</span>
+
+<span class="n">src</span><span class="o">.</span><span class="n">xwidth</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">src</span><span class="o">.</span><span class="n">yheight</span> <span class="o">=</span> <span class="mf">0.035</span>
+<span class="n">src</span><span class="o">.</span><span class="n">focus_aw</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">src</span><span class="o">.</span><span class="n">focus_ah</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">src</span><span class="o">.</span><span class="n">lambda0</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span><span class="s2">&quot;wavelength&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="s2">&quot;Wavelength in [Ang]&quot;</span><span class="p">)</span>
+<span class="n">src</span><span class="o">.</span><span class="n">dlambda</span> <span class="o">=</span> <span class="s2">&quot;0.01*wavelength&quot;</span>
+<span class="n">src</span><span class="o">.</span><span class="n">flux</span> <span class="o">=</span> <span class="mf">1E13</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="describing-the-geometry-of-a-simple-cryostat">
+<h2>Describing the geometry of a simple cryostat<a class="headerlink" href="#describing-the-geometry-of-a-simple-cryostat" title="Permalink to this headline">¶</a></h2>
+<p>A cryostat is a complex geometry with several layers to consider. The way geometry is described in the Union components aims to make it easy to describe such systems. This is aciheved by allowing the simple geometries to overlap, and having a value called the priority to determine which is active in a given volume. If two geometries overlap, the overlapping region gets the physics from the geometry with the highest priority. In that way a cryostat model can be created by having a high priority for the sample in the center, and decreasing the priority as we move out.</p>
+<p>The ray tracing algorithm can however not handle if two geometries overlap perfectly, even with a single side. This could be two boxes sharing a side.</p>
+<p>Let us look at the parameters for a Union geometry component.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instrument</span><span class="o">.</span><span class="n">component_help</span><span class="p">(</span><span class="s2">&quot;Union_cylinder&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> ___ Help Union_cylinder ____________________________________________________________
+|<span class=" -Color -Color-Bold">optional parameter</span>|<span class=" -Color -Color-Bold">required parameter</span>|<span class=" -Color -Color-Bold">default value</span>|<span class=" -Color -Color-Bold">user specified value</span>|
+<span class=" -Color -Color-Bold">material_string</span> = <span class=" -Color -Color-Bold">0</span> [] // material name of this volume, defined using 
+                          Union_make_material 
+<span class=" -Color -Color-Bold">priority</span> [1] // priotiry of the volume (can not be the same as another volume) 
+                A high priority is on top of low. 
+<span class=" -Color -Color-Bold">radius</span> [m] // Outer radius volume in (x,z) plane
+<span class=" -Color -Color-Bold">yheight</span> [m] // Cylinder height in (y) direction
+<span class=" -Color -Color-Bold">visualize</span> = <span class=" -Color -Color-Bold">1.0</span> [1] // set to 0 if you wish to hide this geometry in mcdisplay
+<span class=" -Color -Color-Bold">target_index</span> = <span class=" -Color -Color-Bold">0</span> [1] // Relative index of component to focus at, e.g. next is +1
+<span class=" -Color -Color-Bold">target_x</span> = <span class=" -Color -Color-Bold">0.0</span> [m]
+<span class=" -Color -Color-Bold">target_y</span> = <span class=" -Color -Color-Bold">0.0</span> [m] // Position of target to focus at
+<span class=" -Color -Color-Bold">target_z</span> = <span class=" -Color -Color-Bold">0.0</span> [m]
+<span class=" -Color -Color-Bold">focus_aw</span> = <span class=" -Color -Color-Bold">0.0</span> [deg] // horiz. angular dimension of a rectangular area
+<span class=" -Color -Color-Bold">focus_ah</span> = <span class=" -Color -Color-Bold">0.0</span> [deg] // vert. angular dimension of a rectangular area
+<span class=" -Color -Color-Bold">focus_xw</span> = <span class=" -Color -Color-Bold">0.0</span> [m] // horiz. dimension of a rectangular area
+<span class=" -Color -Color-Bold">focus_xh</span> = <span class=" -Color -Color-Bold">0.0</span> [m] // vert. dimension of a rectangular area
+<span class=" -Color -Color-Bold">focus_r</span> = <span class=" -Color -Color-Bold">0.0</span> [m] // focusing on circle with this radius
+<span class=" -Color -Color-Bold">p_interact</span> = <span class=" -Color -Color-Bold">0.0</span> [1] // probability to interact with this geometry [0-1]
+<span class=" -Color -Color-Bold">mask_string</span> = <span class=" -Color -Color-Bold">0</span> [] // Comma seperated list of geometry names which this 
+                      geometry should mask 
+<span class=" -Color -Color-Bold">mask_setting</span> = <span class=" -Color -Color-Bold">0</span> [] // &quot;All&quot; or &quot;Any&quot;, should the masked volume be simulated 
+                       when the ray is in just one mask, or all. 
+<span class=" -Color -Color-Bold">number_of_activations</span> = <span class=" -Color -Color-Bold">1.0</span> [1] // Number of subsequent Union_master components 
+                                   that will simulate this geometry 
+-------------------------------------------------------------------------------------
+</pre></div>
+</div>
+</div>
+</div>
+<p>The geometry components have many parameters due to their flexibility, but only a few are needed for basic use.</p>
+<ul class="simple">
+<li><p>material_string : string for selecting an available material</p></li>
+<li><p>priority : number, in case of overlap the geometry with highest priority decides the material properties</p></li>
+<li><p>geometrical parameters : Here radius and yheight</p></li>
+</ul>
+<p>In addition there is a focusing system where scattering of physical processes that support this can be forced to a certain direction, this is controlled with these parameters, but are rarely used:</p>
+<ul class="simple">
+<li><p>target_index : relative component index of target</p></li>
+<li><p>target_x : if target_index not set, relative x coordinate of target</p></li>
+<li><p>target_y : if target_index not set, relative y coordinate of target</p></li>
+<li><p>target_z : if target_index not set, relative z coordinate of target</p></li>
+<li><p>focus_aw : angular width of focusing cone (either specify angular, box or circular)</p></li>
+<li><p>focus_ah : angular height of focusing cone</p></li>
+<li><p>focus_xw : spatial width of focusing cone (box type focusing)</p></li>
+<li><p>focus_xh : spatial height of focusing</p></li>
+<li><p>focus_r : spatial radius of focusing cone (circular)</p></li>
+</ul>
+<p>Finally there is p_interact, which is used for controlling Monte Carlo sampling frequency of the geometry, as it controls the probability for scattering occurring for any path before or after scattering.</p>
+<p>The remaining parameters including masks and number_of_activations are for advanced rules which will be described in a later tutorial.</p>
+<div class="section" id="first-geometry-a-sample-in-a-container">
+<h3>First geometry, a sample in a container<a class="headerlink" href="#first-geometry-a-sample-in-a-container" title="Permalink to this headline">¶</a></h3>
+<p>We have defined the following materials that are available to us:</p>
+<ul class="simple">
+<li><p>Al</p></li>
+<li><p>Sample</p></li>
+</ul>
+<p>Lets start by building a simple powder container with a lid.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_geometry</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;sample_geometry&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_cylinder&quot;</span><span class="p">)</span>
+<span class="n">sample_geometry</span><span class="o">.</span><span class="n">yheight</span> <span class="o">=</span> <span class="mf">0.03</span>
+<span class="n">sample_geometry</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="mf">0.0075</span>
+<span class="n">sample_geometry</span><span class="o">.</span><span class="n">material_string</span><span class="o">=</span><span class="s1">&#39;&quot;Sample&quot;&#39;</span> 
+<span class="n">sample_geometry</span><span class="o">.</span><span class="n">priority</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">sample_geometry</span><span class="o">.</span><span class="n">set_AT</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">src</span><span class="p">)</span>
+
+<span class="n">container</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;sample_container&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_cylinder&quot;</span><span class="p">,</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">sample_geometry</span><span class="p">)</span>
+<span class="n">container</span><span class="o">.</span><span class="n">yheight</span> <span class="o">=</span> <span class="mf">0.03</span><span class="o">+</span><span class="mf">0.003</span> <span class="c1"># 1.5 mm top and button</span>
+<span class="n">container</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="mf">0.0075</span> <span class="o">+</span> <span class="mf">0.0015</span> <span class="c1"># 1.5 mm sides of container</span>
+<span class="n">container</span><span class="o">.</span><span class="n">material_string</span><span class="o">=</span><span class="s1">&#39;&quot;Al&quot;&#39;</span> 
+<span class="n">container</span><span class="o">.</span><span class="n">priority</span> <span class="o">=</span> <span class="mi">99</span>
+
+<span class="n">container_lid</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;sample_container_lid&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_cylinder&quot;</span><span class="p">)</span>
+<span class="n">container_lid</span><span class="o">.</span><span class="n">set_AT</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.0155</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">container</span><span class="p">)</span>
+<span class="n">container_lid</span><span class="o">.</span><span class="n">yheight</span> <span class="o">=</span> <span class="mf">0.004</span>
+<span class="n">container_lid</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="mf">0.013</span>
+<span class="n">container_lid</span><span class="o">.</span><span class="n">material_string</span><span class="o">=</span><span class="s1">&#39;&quot;Al&quot;&#39;</span> 
+<span class="n">container_lid</span><span class="o">.</span><span class="n">priority</span> <span class="o">=</span> <span class="mi">98</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="set-up-loggers-to-check-what-is-going-on">
+<h3>Set up loggers to check what is going on<a class="headerlink" href="#set-up-loggers-to-check-what-is-going-on" title="Permalink to this headline">¶</a></h3>
+<p>In order to view what geometry we have set up, we set up three loggers that view the scattering projected onto three different planes. These record the spatail distribution of scattering events.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logger_zx</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;logger_space_zx&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_logger_2D_space&quot;</span><span class="p">,</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">sample_geometry</span><span class="p">)</span>
+<span class="n">logger_zx</span><span class="o">.</span><span class="n">D_direction_1</span> <span class="o">=</span> <span class="s1">&#39;&quot;z&quot;&#39;</span>
+<span class="n">logger_zx</span><span class="o">.</span><span class="n">D1_min</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.02</span>
+<span class="n">logger_zx</span><span class="o">.</span><span class="n">D1_max</span> <span class="o">=</span> <span class="mf">0.02</span>
+<span class="n">logger_zx</span><span class="o">.</span><span class="n">n1</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">logger_zx</span><span class="o">.</span><span class="n">D_direction_2</span> <span class="o">=</span> <span class="s1">&#39;&quot;x&quot;&#39;</span>
+<span class="n">logger_zx</span><span class="o">.</span><span class="n">D2_min</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.02</span>
+<span class="n">logger_zx</span><span class="o">.</span><span class="n">D2_max</span> <span class="o">=</span> <span class="mf">0.02</span>
+<span class="n">logger_zx</span><span class="o">.</span><span class="n">n2</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">logger_zx</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;&quot;logger_zx.dat&quot;&#39;</span>
+
+<span class="n">logger_zy</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;logger_space_zy&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_logger_2D_space&quot;</span><span class="p">,</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">sample_geometry</span><span class="p">)</span>
+<span class="n">logger_zy</span><span class="o">.</span><span class="n">D_direction_1</span> <span class="o">=</span> <span class="s1">&#39;&quot;z&quot;&#39;</span>
+<span class="n">logger_zy</span><span class="o">.</span><span class="n">D1_min</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.02</span>
+<span class="n">logger_zy</span><span class="o">.</span><span class="n">D1_max</span> <span class="o">=</span> <span class="mf">0.02</span>
+<span class="n">logger_zy</span><span class="o">.</span><span class="n">n1</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">logger_zy</span><span class="o">.</span><span class="n">D_direction_2</span> <span class="o">=</span> <span class="s1">&#39;&quot;y&quot;&#39;</span>
+<span class="n">logger_zy</span><span class="o">.</span><span class="n">D2_min</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.02</span>
+<span class="n">logger_zy</span><span class="o">.</span><span class="n">D2_max</span> <span class="o">=</span> <span class="mf">0.02</span>
+<span class="n">logger_zy</span><span class="o">.</span><span class="n">n2</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">logger_zy</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;&quot;logger_zy.dat&quot;&#39;</span>
+
+<span class="n">logger_xy</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;logger_space_xy&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_logger_2D_space&quot;</span><span class="p">,</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">sample_geometry</span><span class="p">)</span>
+<span class="n">logger_xy</span><span class="o">.</span><span class="n">D_direction_1</span> <span class="o">=</span> <span class="s1">&#39;&quot;x&quot;&#39;</span>
+<span class="n">logger_xy</span><span class="o">.</span><span class="n">D1_min</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.02</span>
+<span class="n">logger_xy</span><span class="o">.</span><span class="n">D1_max</span> <span class="o">=</span> <span class="mf">0.02</span>
+<span class="n">logger_xy</span><span class="o">.</span><span class="n">n1</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">logger_xy</span><span class="o">.</span><span class="n">D_direction_2</span> <span class="o">=</span> <span class="s1">&#39;&quot;y&quot;&#39;</span>
+<span class="n">logger_xy</span><span class="o">.</span><span class="n">D2_min</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.02</span>
+<span class="n">logger_xy</span><span class="o">.</span><span class="n">D2_max</span> <span class="o">=</span> <span class="mf">0.02</span>
+<span class="n">logger_xy</span><span class="o">.</span><span class="n">n2</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">logger_xy</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;&quot;logger_xy.dat&quot;&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="add-master-component">
+<h3>Add master component<a class="headerlink" href="#add-master-component" title="Permalink to this headline">¶</a></h3>
+<p>We need to remember to add a master component to actually perform the simulation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">master</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;master&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_master&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="add-banana-monitor">
+<h3>Add banana monitor<a class="headerlink" href="#add-banana-monitor" title="Permalink to this headline">¶</a></h3>
+<p>We are also interested in viewing some scattering data, here we add a banana monitor using the Monitor_nD component.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">banana</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;Monitor_nD&quot;</span><span class="p">,</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">sample_geometry</span><span class="p">)</span>
+<span class="n">banana</span><span class="o">.</span><span class="n">xwidth</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="n">banana</span><span class="o">.</span><span class="n">yheight</span> <span class="o">=</span> <span class="mf">0.4</span>
+<span class="n">banana</span><span class="o">.</span><span class="n">restore_neutron</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">banana</span><span class="o">.</span><span class="n">options</span> <span class="o">=</span> <span class="s1">&#39;&quot;theta limits=[5 175] bins=250, banana&quot;&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="run-simulation">
+<h2>Run simulation<a class="headerlink" href="#run-simulation" title="Permalink to this headline">¶</a></h2>
+<p>Now we need to run the simulation to view the geometry we have built.</p>
+<div class="cell tag_scroll-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instrument</span><span class="o">.</span><span class="n">set_parameters</span><span class="p">(</span><span class="n">wavelength</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span>
+<span class="n">instrument</span><span class="o">.</span><span class="n">settings</span><span class="p">(</span><span class="n">ncount</span><span class="o">=</span><span class="mf">3E5</span><span class="p">,</span> <span class="n">output_path</span><span class="o">=</span><span class="s2">&quot;data_folder/union_geometry&quot;</span><span class="p">)</span>
+<span class="n">instrument</span><span class="o">.</span><span class="n">show_settings</span><span class="p">()</span>
+
+<span class="n">instrument</span><span class="o">.</span><span class="n">backengine</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Instrument settings:
+  ncount:           3.00e+05
+  output_path:      data_folder/union_geometry
+  run_path:         run_folder
+  package_path:     /Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1
+  executable_path:  /Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1/bin/
+  executable:       mcrun
+  force_compile:    True
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_geometry_35&quot;
+INFO: Regenerating c-file: python_tutorial.c
+CFLAGS= -I@MCCODE_LIB@/share/
+INFO: Recompiling: ./python_tutorial.out
+mccode-r.c:2837:3: warning: expression result unused [-Wunused-value]
+  *t0;
+  ^~~
+In file included from /Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Incoherent_process.comp:65:
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Union_functions.c:1604:105: warning: incompatible pointer types passing &#39;int (const struct saved_history_struct *, const struct saved_history_struct *)&#39; to parameter of type &#39;int (* _Nonnull)(const void *, const void *)&#39; [-Wincompatible-pointer-types]
+  qsort(total_history.saved_histories,total_history.used_elements,sizeof (struct saved_history_struct), Sample_compare_history_intensities);
+                                                                                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/stdlib.h:161:22: note: passing argument to parameter &#39;__compar&#39; here
+            int (* _Nonnull __compar)(const void *, const void *));
+                            ^
+In file included from /Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Incoherent_process.comp:65:
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Union_functions.c:1613:20: warning: incompatible pointer types passing &#39;struct saved_history_struct *&#39; to parameter of type &#39;struct dynamic_history_list *&#39; [-Wincompatible-pointer-types]
+    printf_history(&amp;total_history.saved_histories[history_iterate]);
+                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+mccode-r.h:219:27: note: expanded from macro &#39;MPI_MASTER&#39;
+#define MPI_MASTER(instr) instr
+                          ^~~~~
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Union_functions.c:1434:50: note: passing argument to parameter &#39;history&#39; here
+void printf_history(struct dynamic_history_list *history) {
+                                                 ^
+In file included from /Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Incoherent_process.comp:65:
+In file included from /Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Union_functions.c:2030:
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:839:1: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+};
+^
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:883:1: warning: non-void function does not return a value [-Wreturn-type]
+};
+^
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:3274:42: warning: if statement has empty body [-Wempty-body]
+    if (dist_to_corner &gt; sphere_2_radius); { sphere_2_radius = dist_to_corner ; }
+                                         ^
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:3274:42: note: put the semicolon on a separate line to silence this warning
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:3276:42: warning: if statement has empty body [-Wempty-body]
+    if (dist_to_corner &gt; sphere_2_radius); { sphere_2_radius = dist_to_corner ; }
+                                         ^
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:3276:42: note: put the semicolon on a separate line to silence this warning
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:3278:42: warning: if statement has empty body [-Wempty-body]
+    if (dist_to_corner &gt; sphere_2_radius); { sphere_2_radius = dist_to_corner ; }
+                                         ^
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:3278:42: note: put the semicolon on a separate line to silence this warning
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:3280:42: warning: if statement has empty body [-Wempty-body]
+    if (dist_to_corner &gt; sphere_2_radius); { sphere_2_radius = dist_to_corner ; }
+                                         ^
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:3280:42: note: put the semicolon on a separate line to silence this warning
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Union_logger_2D_space.comp:574:45: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+  sprintf(this_storage.Detector_2D.Filename,filename);
+                                            ^~~~~~~~
+./python_tutorial.c:14851:18: note: expanded from macro &#39;filename&#39;
+#define filename mcclogger_space_zx_filename
+                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro &#39;sprintf&#39;
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Union_logger_2D_space.comp:574:45: note: treat the string as an argument to avoid this
+  sprintf(this_storage.Detector_2D.Filename,filename);
+                                            ^
+                                            &quot;%s&quot;, 
+./python_tutorial.c:14851:18: note: expanded from macro &#39;filename&#39;
+#define filename mcclogger_space_zx_filename
+                 ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro &#39;sprintf&#39;
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Union_logger_2D_space.comp:574:45: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+  sprintf(this_storage.Detector_2D.Filename,filename);
+                                            ^~~~~~~~
+./python_tutorial.c:15094:18: note: expanded from macro &#39;filename&#39;
+#define filename mcclogger_space_zy_filename
+                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro &#39;sprintf&#39;
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Union_logger_2D_space.comp:574:45: note: treat the string as an argument to avoid this
+  sprintf(this_storage.Detector_2D.Filename,filename);
+                                            ^
+                                            &quot;%s&quot;, 
+./python_tutorial.c:15094:18: note: expanded from macro &#39;filename&#39;
+#define filename mcclogger_space_zy_filename
+                 ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro &#39;sprintf&#39;
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Union_logger_2D_space.comp:574:45: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+  sprintf(this_storage.Detector_2D.Filename,filename);
+                                            ^~~~~~~~
+./python_tutorial.c:15337:18: note: expanded from macro &#39;filename&#39;
+#define filename mcclogger_space_xy_filename
+                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro &#39;sprintf&#39;
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Union_logger_2D_space.comp:574:45: note: treat the string as an argument to avoid this
+  sprintf(this_storage.Detector_2D.Filename,filename);
+                                            ^
+                                            &quot;%s&quot;, 
+./python_tutorial.c:15337:18: note: expanded from macro &#39;filename&#39;
+#define filename mcclogger_space_xy_filename
+                 ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro &#39;sprintf&#39;
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Union_master.comp:788:15: warning: expression result unused [-Wunused-value]
+          if (volume_index_main,Volumes[volume_index_main]-&gt;geometry.is_mask_volume == 0 ||
+              ^~~~~~~~~~~~~~~~~
+mccode-r.h:219:27: note: expanded from macro &#39;MPI_MASTER&#39;
+#define MPI_MASTER(instr) instr
+                          ^~~~~
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Union_master.comp:788:90: warning: expression result unused [-Wunused-value]
+          if (volume_index_main,Volumes[volume_index_main]-&gt;geometry.is_mask_volume == 0 ||
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+mccode-r.h:219:27: note: expanded from macro &#39;MPI_MASTER&#39;
+#define MPI_MASTER(instr) instr
+                          ^~~~~
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Union_master.comp:789:92: warning: expression result unused [-Wunused-value]
+              volume_index_main,Volumes[volume_index_main]-&gt;geometry.is_masked_volume == 0 ||
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+mccode-r.h:219:27: note: expanded from macro &#39;MPI_MASTER&#39;
+#define MPI_MASTER(instr) instr
+                          ^~~~~
+15 warnings generated.
+INFO: ===
+INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_geometry_35
+
+          Opening input file &#39;/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//data/Al.laz&#39; (Table_Read_Offset)
+Table from file &#39;Al.laz&#39; (block 1) is 26 x 18 (x=1:8), constant step. interpolation: linear
+  &#39;# TITLE *Aluminum-Al-[FM3-M] Miller, H.P.jr.;DuMond, J.W.M.[1942] at 298 K; ...&#39;
+PowderN: Al_pow: Reading 26 rows from Al.laz
+PowderN: Al_pow: Read 26 reflections from file &#39;Al.laz&#39;
+PowderN: Al_pow: Vc=66.4 [Angs] sigma_abs=0.924 [barn] sigma_inc=0.0328 [barn] reflections=Al.laz
+Opening input file &#39;/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//data/Na2Ca3Al2F14.laz&#39; (Table_Read_Offset)
+Table from file &#39;Na2Ca3Al2F14.laz&#39; (block 1) is 841 x 18 (x=1:20), constant step. interpolation: linear
+  &#39;# TITLE *-Na2Ca3Al2F14-[I213] Courbion, G.;Ferey, G.[1988] Standard NAC cal ...&#39;
+PowderN: Sample_pow: Reading 841 rows from Na2Ca3Al2F14.laz
+PowderN: Sample_pow: Read 841 reflections from file &#39;Na2Ca3Al2F14.laz&#39;
+PowderN: Sample_pow: Vc=1079.1 [Angs] sigma_abs=11.7856 [barn] sigma_inc=13.6704 [barn] reflections=Na2Ca3Al2F14.laz
+---------------------------------------------------------------------
+global_process_list.num_elements: 4
+name of process [0]: Al_inc 
+component index [0]: 1 
+name of process [1]: Al_pow 
+component index [1]: 2 
+name of process [2]: Sample_inc 
+component index [2]: 4 
+name of process [3]: Sample_pow 
+component index [3]: 5 
+---------------------------------------------------------------------
+global_material_list.num_elements: 2
+name of material    [0]: Al 
+component index     [0]: 3 
+my_absoprtion       [0]: 1.391570 
+number of processes [0]: 2 
+name of material    [1]: Sample 
+component index     [1]: 6 
+my_absoprtion       [1]: 1.092170 
+number of processes [1]: 2 
+---------------------------------------------------------------------
+global_geometry_list.num_elements: 2
+
+name of geometry    [0]: sample_geometry 
+component index     [0]: 8 
+Volume.name         [0]: sample_geometry 
+Volume.p_physics.is_vacuum           [0]: 0 
+Volume.p_physics.my_absorption       [0]: 1.092170 
+Volume.p_physics.number of processes [0]: 2 
+Volume.geometry.shape                [0]: cylinder 
+Volume.geometry.center.x             [0]: 0.000000 
+Volume.geometry.center.y             [0]: 0.000000 
+Volume.geometry.center.z             [0]: 1.000000 
+Volume.geometry.rotation_matrix[0]           [0]: [1.000000 0.000000 0.000000] 
+Volume.geometry.rotation_matrix[1]           [0]: [0.000000 1.000000 0.000000] 
+Volume.geometry.rotation_matrix[2]           [0]: [0.000000 0.000000 1.000000] 
+Volume.geometry.geometry_parameters.cyl_radius [0]: 0.007500 
+Volume.geometry.geometry_parameters.height [0]: 0.030000 
+Volume.geometry.focus_data_array.elements[0].Aim             [0]: [0.000000 0.000000 1.000000] 
+
+name of geometry    [1]: sample_container 
+component index     [1]: 9 
+Volume.name         [1]: sample_container 
+Volume.p_physics.is_vacuum           [1]: 0 
+Volume.p_physics.my_absorption       [1]: 1.391570 
+Volume.p_physics.number of processes [1]: 2 
+Volume.geometry.shape                [1]: cylinder 
+Volume.geometry.center.x             [1]: 0.000000 
+Volume.geometry.center.y             [1]: 0.000000 
+Volume.geometry.center.z             [1]: 1.000000 
+Volume.geometry.rotation_matrix[0]           [1]: [1.000000 0.000000 0.000000] 
+Volume.geometry.rotation_matrix[1]           [1]: [0.000000 1.000000 0.000000] 
+Volume.geometry.rotation_matrix[2]           [1]: [0.000000 0.000000 1.000000] 
+Volume.geometry.geometry_parameters.cyl_radius [1]: 0.009000 
+Volume.geometry.geometry_parameters.height [1]: 0.033000 
+Volume.geometry.focus_data_array.elements[0].Aim             [1]: [0.000000 0.000000 1.000000] 
+
+name of geometry    [2]: sample_container_lid 
+component index     [2]: 10 
+Volume.name         [2]: sample_container_lid 
+Volume.p_physics.is_vacuum           [2]: 0 
+Volume.p_physics.my_absorption       [2]: 1.391570 
+Volume.p_physics.number of processes [2]: 2 
+Volume.geometry.shape                [2]: cylinder 
+Volume.geometry.center.x             [2]: 0.000000 
+Volume.geometry.center.y             [2]: 0.015500 
+Volume.geometry.center.z             [2]: 1.000000 
+Volume.geometry.rotation_matrix[0]           [2]: [1.000000 0.000000 0.000000] 
+Volume.geometry.rotation_matrix[1]           [2]: [0.000000 1.000000 0.000000] 
+Volume.geometry.rotation_matrix[2]           [2]: [0.000000 0.000000 1.000000] 
+Volume.geometry.geometry_parameters.cyl_radius [2]: 0.013000 
+Volume.geometry.geometry_parameters.height [2]: 0.004000 
+Volume.geometry.focus_data_array.elements[0].Aim             [2]: [0.000000 0.000000 1.000000] 
+---------------------------------------------------------------------
+number_of_volumes = 4
+number_of_masks = 0
+number_of_masked_volumes = 0
+
+ ---- Overview of the lists generated for each volume ---- 
+List overview for surrounding vacuum
+LIST: Children for Volume                  0 = [1,2,3]
+LIST: Direct_children for Volume           0 = [2,3]
+LIST: Intersect_check_list for Volume      0 = [2,3]
+LIST: Mask_intersect_list for Volume       0 = []
+LIST: Destinations_list for Volume         0 = []
+LIST: Reduced_destinations_list for Volume 0 = []
+LIST: Next_volume_list for Volume          0 = [2,3]
+LIST: mask_list for Volume                 0 = []
+LIST: masked_by_list for Volume            0 = []
+LIST: masked_by_mask_index_list for Volume 0 = []
+      mask_mode for Volume                 0 = 0
+
+List overview for sample_geometry with cylinder shape made of Sample
+LIST: Children for Volume                  1 = []
+LIST: Direct_children for Volume           1 = []
+LIST: Intersect_check_list for Volume      1 = []
+LIST: Mask_intersect_list for Volume       1 = []
+LIST: Destinations_list for Volume         1 = [2,3]
+LIST: Reduced_destinations_list for Volume 1 = [2,3]
+LIST: Next_volume_list for Volume          1 = [2,3]
+      Is_vacuum for Volume                 1 = 0
+      is_mask_volume for Volume            1 = 0
+      is_masked_volume for Volume          1 = 0
+      is_exit_volume for Volume            1 = 0
+LIST: mask_list for Volume                 1 = []
+LIST: masked_by_list for Volume            1 = []
+LIST: masked_by_mask_index_list for Volume 1 = []
+      mask_mode for Volume                 1 = 0
+
+List overview for sample_container with cylinder shape made of Al
+LIST: Children for Volume                  2 = [1]
+LIST: Direct_children for Volume           2 = [1]
+LIST: Intersect_check_list for Volume      2 = [1]
+LIST: Mask_intersect_list for Volume       2 = []
+LIST: Destinations_list for Volume         2 = [0,3]
+LIST: Reduced_destinations_list for Volume 2 = [3]
+LIST: Next_volume_list for Volume          2 = [0,3,1]
+      Is_vacuum for Volume                 2 = 0
+      is_mask_volume for Volume            2 = 0
+      is_masked_volume for Volume          2 = 0
+      is_exit_volume for Volume            2 = 0
+LIST: mask_list for Volume                 2 = []
+LIST: masked_by_list for Volume            2 = []
+LIST: masked_by_mask_index_list for Volume 2 = []
+      mask_mode for Volume                 2 = 0
+
+List overview for sample_container_lid with cylinder shape made of Al
+LIST: Children for Volume                  3 = []
+LIST: Direct_children for Volume           3 = []
+LIST: Intersect_check_list for Volume      3 = [2]
+LIST: Mask_intersect_list for Volume       3 = []
+LIST: Destinations_list for Volume         3 = [0]
+LIST: Reduced_destinations_list for Volume 3 = []
+LIST: Next_volume_list for Volume          3 = [0,2]
+      Is_vacuum for Volume                 3 = 0
+      is_mask_volume for Volume            3 = 0
+      is_masked_volume for Volume          3 = 0
+      is_exit_volume for Volume            3 = 0
+LIST: mask_list for Volume                 3 = []
+LIST: masked_by_list for Volume            3 = []
+LIST: masked_by_mask_index_list for Volume 3 = []
+      mask_mode for Volume                 3 = 0
+
+Union_master component master initialized sucessfully
+Detector: logger_space_zx_I=17880.5 logger_space_zx_ERR=97.8218 logger_space_zx_N=94969 &quot;logger_zx.dat&quot;
+Detector: logger_space_zy_I=17880.5 logger_space_zy_ERR=97.8218 logger_space_zy_N=94969 &quot;logger_zy.dat&quot;
+Detector: logger_space_xy_I=17880.5 logger_space_xy_ERR=97.8218 logger_space_xy_N=94969 &quot;logger_xy.dat&quot;
+Detector: banana_I=1970.76 banana_ERR=35.5066 banana_N=10893 &quot;banana_1641997759.th&quot;
+loading system configuration
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="plotting-the-data">
+<h3>Plotting the data<a class="headerlink" href="#plotting-the-data" title="Permalink to this headline">¶</a></h3>
+<p>Due to the large differences between the scattered intensity from parts in the direct beam and outside, we use a logarithmic axis to display scattered intensity. We limit it to 4 orders of magnitude below the maximum intensity, otherwise a single very low intensity event can draw the intensity axis out to a large interval making it difficult to see the important nuances.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">functions</span><span class="o">.</span><span class="n">name_plot_options</span><span class="p">(</span><span class="s2">&quot;logger_space_zx&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">orders_of_mag</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">functions</span><span class="o">.</span><span class="n">name_plot_options</span><span class="p">(</span><span class="s2">&quot;logger_space_zy&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">orders_of_mag</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">functions</span><span class="o">.</span><span class="n">name_plot_options</span><span class="p">(</span><span class="s2">&quot;logger_space_xy&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">orders_of_mag</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">plotter</span><span class="o">.</span><span class="n">make_sub_plot</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Plotting data with name logger_space_zx
+Plotting data with name logger_space_zy
+Plotting data with name logger_space_xy
+Plotting data with name banana
+</pre></div>
+</div>
+<img alt="../_images/Union_tutorial_2_geometry_21_1.png" src="../_images/Union_tutorial_2_geometry_21_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="interpretation-of-results">
+<h3>Interpretation of results<a class="headerlink" href="#interpretation-of-results" title="Permalink to this headline">¶</a></h3>
+<p>The beam is narrower than the sample, but taller than the can, so some parts of the sample powder are not directly illuminated, and can thus be seen as a intensity area especially on the zx logger image. The aluminum scatters less, and so lower intensity still.</p>
+</div>
+</div>
+<div class="section" id="adding-a-cryostat-around-the-sample-can">
+<h2>Adding a cryostat around the sample can<a class="headerlink" href="#adding-a-cryostat-around-the-sample-can" title="Permalink to this headline">¶</a></h2>
+<p>We can add a crude model of a cryostat around our sample can by adding more Union geometry components. They have to be before the Union_master in the McStas instrument file, so we use the keyword argument <em>before</em> in the <em>add_component</em> method to specify this when adding the components.</p>
+<p>We also need to designate areas as empty, this is done using the default material Vacuum which has no absorption or scattering processes. In this way we can create several layers by decreasing the priority when going out.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inner_wall</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;cryostat_wall&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_cylinder&quot;</span><span class="p">,</span> <span class="n">before</span><span class="o">=</span><span class="s2">&quot;master&quot;</span><span class="p">)</span>
+<span class="n">inner_wall</span><span class="o">.</span><span class="n">set_AT</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">sample_geometry</span><span class="p">)</span>
+<span class="n">inner_wall</span><span class="o">.</span><span class="n">yheight</span> <span class="o">=</span> <span class="mf">0.12</span>
+<span class="n">inner_wall</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="mf">0.03</span>
+<span class="n">inner_wall</span><span class="o">.</span><span class="n">material_string</span><span class="o">=</span><span class="s1">&#39;&quot;Al&quot;&#39;</span> 
+<span class="n">inner_wall</span><span class="o">.</span><span class="n">priority</span> <span class="o">=</span> <span class="mi">80</span>
+
+<span class="n">inner_wall_vac</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;cryostat_wall_vacuum&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_cylinder&quot;</span><span class="p">,</span> <span class="n">before</span><span class="o">=</span><span class="s2">&quot;master&quot;</span><span class="p">)</span>
+<span class="n">inner_wall_vac</span><span class="o">.</span><span class="n">set_AT</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">sample_geometry</span><span class="p">)</span>
+<span class="n">inner_wall_vac</span><span class="o">.</span><span class="n">yheight</span> <span class="o">=</span> <span class="mf">0.12</span> <span class="o">-</span> <span class="mf">0.008</span>
+<span class="n">inner_wall_vac</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="mf">0.03</span> <span class="o">-</span> <span class="mf">0.002</span>
+<span class="n">inner_wall_vac</span><span class="o">.</span><span class="n">material_string</span><span class="o">=</span><span class="s1">&#39;&quot;Vacuum&quot;&#39;</span> 
+<span class="n">inner_wall_vac</span><span class="o">.</span><span class="n">priority</span> <span class="o">=</span> <span class="mi">81</span>
+
+<span class="n">outer_wall</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;outer_cryostat_wall&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_cylinder&quot;</span><span class="p">,</span> <span class="n">before</span><span class="o">=</span><span class="s2">&quot;master&quot;</span><span class="p">)</span>
+<span class="n">outer_wall</span><span class="o">.</span><span class="n">set_AT</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">sample_geometry</span><span class="p">)</span>
+<span class="n">outer_wall</span><span class="o">.</span><span class="n">yheight</span> <span class="o">=</span> <span class="mf">0.15</span>
+<span class="n">outer_wall</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">outer_wall</span><span class="o">.</span><span class="n">material_string</span><span class="o">=</span><span class="s1">&#39;&quot;Al&quot;&#39;</span> 
+<span class="n">outer_wall</span><span class="o">.</span><span class="n">priority</span> <span class="o">=</span> <span class="mi">60</span>
+
+<span class="n">outer_wall_vac</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;outer_cryostat_wall_vacuum&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_cylinder&quot;</span><span class="p">,</span> <span class="n">before</span><span class="o">=</span><span class="s2">&quot;master&quot;</span><span class="p">)</span>
+<span class="n">outer_wall_vac</span><span class="o">.</span><span class="n">set_AT</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">sample_geometry</span><span class="p">)</span>
+<span class="n">outer_wall_vac</span><span class="o">.</span><span class="n">yheight</span> <span class="o">=</span> <span class="mf">0.15</span> <span class="o">-</span> <span class="mf">0.01</span>
+<span class="n">outer_wall_vac</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="o">-</span> <span class="mf">0.003</span>
+<span class="n">outer_wall_vac</span><span class="o">.</span><span class="n">material_string</span><span class="o">=</span><span class="s1">&#39;&quot;Vacuum&quot;&#39;</span> 
+<span class="n">outer_wall_vac</span><span class="o">.</span><span class="n">priority</span> <span class="o">=</span> <span class="mi">61</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="adjusting-the-logger-view-to-see-the-larger-cryostat-area">
+<h3>Adjusting the logger view to see the larger cryostat area<a class="headerlink" href="#adjusting-the-logger-view-to-see-the-larger-cryostat-area" title="Permalink to this headline">¶</a></h3>
+<p>The loggers were only viewing a small area around the sample can, but this can be expanded as we still have access to the component objects.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logger_zx</span><span class="o">.</span><span class="n">set_parameters</span><span class="p">(</span><span class="n">D1_min</span><span class="o">=-</span><span class="mf">0.12</span><span class="p">,</span> <span class="n">D1_max</span><span class="o">=</span><span class="mf">0.12</span><span class="p">,</span> <span class="n">D2_min</span><span class="o">=-</span><span class="mf">0.12</span><span class="p">,</span> <span class="n">D2_max</span><span class="o">=</span><span class="mf">0.12</span><span class="p">)</span>
+<span class="n">logger_zy</span><span class="o">.</span><span class="n">set_parameters</span><span class="p">(</span><span class="n">D1_min</span><span class="o">=-</span><span class="mf">0.12</span><span class="p">,</span> <span class="n">D1_max</span><span class="o">=</span><span class="mf">0.12</span><span class="p">,</span> <span class="n">D2_min</span><span class="o">=-</span><span class="mf">0.12</span><span class="p">,</span> <span class="n">D2_max</span><span class="o">=</span><span class="mf">0.12</span><span class="p">)</span>
+<span class="n">logger_xy</span><span class="o">.</span><span class="n">set_parameters</span><span class="p">(</span><span class="n">D1_min</span><span class="o">=-</span><span class="mf">0.12</span><span class="p">,</span> <span class="n">D1_max</span><span class="o">=</span><span class="mf">0.12</span><span class="p">,</span> <span class="n">D2_min</span><span class="o">=-</span><span class="mf">0.12</span><span class="p">,</span> <span class="n">D2_max</span><span class="o">=</span><span class="mf">0.12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="run-the-updated-instrument-file">
+<h3>Run the updated instrument file<a class="headerlink" href="#run-the-updated-instrument-file" title="Permalink to this headline">¶</a></h3>
+<p>Run the simulation with the added cryostat, since no parameters or settings are changed it is enough to just call the backengine function and grab the new data.</p>
+<div class="cell tag_scroll-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instrument</span><span class="o">.</span><span class="n">backengine</span><span class="p">()</span>
+<span class="n">data_cryo</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_geometry_36&quot;
+INFO: Regenerating c-file: python_tutorial.c
+CFLAGS= -I@MCCODE_LIB@/share/
+INFO: Recompiling: ./python_tutorial.out
+mccode-r.c:2837:3: warning: expression result unused [-Wunused-value]
+  *t0;
+  ^~~
+In file included from /Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Incoherent_process.comp:65:
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Union_functions.c:1604:105: warning: incompatible pointer types passing &#39;int (const struct saved_history_struct *, const struct saved_history_struct *)&#39; to parameter of type &#39;int (* _Nonnull)(const void *, const void *)&#39; [-Wincompatible-pointer-types]
+  qsort(total_history.saved_histories,total_history.used_elements,sizeof (struct saved_history_struct), Sample_compare_history_intensities);
+                                                                                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/stdlib.h:161:22: note: passing argument to parameter &#39;__compar&#39; here
+            int (* _Nonnull __compar)(const void *, const void *));
+                            ^
+In file included from /Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Incoherent_process.comp:65:
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Union_functions.c:1613:20: warning: incompatible pointer types passing &#39;struct saved_history_struct *&#39; to parameter of type &#39;struct dynamic_history_list *&#39; [-Wincompatible-pointer-types]
+    printf_history(&amp;total_history.saved_histories[history_iterate]);
+                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+mccode-r.h:219:27: note: expanded from macro &#39;MPI_MASTER&#39;
+#define MPI_MASTER(instr) instr
+                          ^~~~~
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Union_functions.c:1434:50: note: passing argument to parameter &#39;history&#39; here
+void printf_history(struct dynamic_history_list *history) {
+                                                 ^
+In file included from /Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Incoherent_process.comp:65:
+In file included from /Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Union_functions.c:2030:
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:839:1: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+};
+^
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:883:1: warning: non-void function does not return a value [-Wreturn-type]
+};
+^
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:3274:42: warning: if statement has empty body [-Wempty-body]
+    if (dist_to_corner &gt; sphere_2_radius); { sphere_2_radius = dist_to_corner ; }
+                                         ^
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:3274:42: note: put the semicolon on a separate line to silence this warning
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:3276:42: warning: if statement has empty body [-Wempty-body]
+    if (dist_to_corner &gt; sphere_2_radius); { sphere_2_radius = dist_to_corner ; }
+                                         ^
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:3276:42: note: put the semicolon on a separate line to silence this warning
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:3278:42: warning: if statement has empty body [-Wempty-body]
+    if (dist_to_corner &gt; sphere_2_radius); { sphere_2_radius = dist_to_corner ; }
+                                         ^
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:3278:42: note: put the semicolon on a separate line to silence this warning
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:3280:42: warning: if statement has empty body [-Wempty-body]
+    if (dist_to_corner &gt; sphere_2_radius); { sphere_2_radius = dist_to_corner ; }
+                                         ^
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//share/Geometry_functions.c:3280:42: note: put the semicolon on a separate line to silence this warning
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Union_logger_2D_space.comp:574:45: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+  sprintf(this_storage.Detector_2D.Filename,filename);
+                                            ^~~~~~~~
+./python_tutorial.c:15483:18: note: expanded from macro &#39;filename&#39;
+#define filename mcclogger_space_zx_filename
+                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro &#39;sprintf&#39;
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Union_logger_2D_space.comp:574:45: note: treat the string as an argument to avoid this
+  sprintf(this_storage.Detector_2D.Filename,filename);
+                                            ^
+                                            &quot;%s&quot;, 
+./python_tutorial.c:15483:18: note: expanded from macro &#39;filename&#39;
+#define filename mcclogger_space_zx_filename
+                 ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro &#39;sprintf&#39;
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Union_logger_2D_space.comp:574:45: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+  sprintf(this_storage.Detector_2D.Filename,filename);
+                                            ^~~~~~~~
+./python_tutorial.c:15726:18: note: expanded from macro &#39;filename&#39;
+#define filename mcclogger_space_zy_filename
+                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro &#39;sprintf&#39;
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Union_logger_2D_space.comp:574:45: note: treat the string as an argument to avoid this
+  sprintf(this_storage.Detector_2D.Filename,filename);
+                                            ^
+                                            &quot;%s&quot;, 
+./python_tutorial.c:15726:18: note: expanded from macro &#39;filename&#39;
+#define filename mcclogger_space_zy_filename
+                 ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro &#39;sprintf&#39;
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Union_logger_2D_space.comp:574:45: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+  sprintf(this_storage.Detector_2D.Filename,filename);
+                                            ^~~~~~~~
+./python_tutorial.c:15969:18: note: expanded from macro &#39;filename&#39;
+#define filename mcclogger_space_xy_filename
+                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro &#39;sprintf&#39;
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^~~~~~~~~~~
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Union_logger_2D_space.comp:574:45: note: treat the string as an argument to avoid this
+  sprintf(this_storage.Detector_2D.Filename,filename);
+                                            ^
+                                            &quot;%s&quot;, 
+./python_tutorial.c:15969:18: note: expanded from macro &#39;filename&#39;
+#define filename mcclogger_space_xy_filename
+                 ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/secure/_stdio.h:47:56: note: expanded from macro &#39;sprintf&#39;
+  __builtin___sprintf_chk (str, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                       ^
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Union_master.comp:788:15: warning: expression result unused [-Wunused-value]
+          if (volume_index_main,Volumes[volume_index_main]-&gt;geometry.is_mask_volume == 0 ||
+              ^~~~~~~~~~~~~~~~~
+mccode-r.h:219:27: note: expanded from macro &#39;MPI_MASTER&#39;
+#define MPI_MASTER(instr) instr
+                          ^~~~~
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Union_master.comp:788:90: warning: expression result unused [-Wunused-value]
+          if (volume_index_main,Volumes[volume_index_main]-&gt;geometry.is_mask_volume == 0 ||
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+mccode-r.h:219:27: note: expanded from macro &#39;MPI_MASTER&#39;
+#define MPI_MASTER(instr) instr
+                          ^~~~~
+/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//contrib/union/Union_master.comp:789:92: warning: expression result unused [-Wunused-value]
+              volume_index_main,Volumes[volume_index_main]-&gt;geometry.is_masked_volume == 0 ||
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+mccode-r.h:219:27: note: expanded from macro &#39;MPI_MASTER&#39;
+#define MPI_MASTER(instr) instr
+                          ^~~~~
+15 warnings generated.
+INFO: ===
+INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_geometry_36
+
+          Opening input file &#39;/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//data/Al.laz&#39; (Table_Read_Offset)
+Table from file &#39;Al.laz&#39; (block 1) is 26 x 18 (x=1:8), constant step. interpolation: linear
+  &#39;# TITLE *Aluminum-Al-[FM3-M] Miller, H.P.jr.;DuMond, J.W.M.[1942] at 298 K; ...&#39;
+PowderN: Al_pow: Reading 26 rows from Al.laz
+PowderN: Al_pow: Read 26 reflections from file &#39;Al.laz&#39;
+PowderN: Al_pow: Vc=66.4 [Angs] sigma_abs=0.924 [barn] sigma_inc=0.0328 [barn] reflections=Al.laz
+Opening input file &#39;/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//data/Na2Ca3Al2F14.laz&#39; (Table_Read_Offset)
+Table from file &#39;Na2Ca3Al2F14.laz&#39; (block 1) is 841 x 18 (x=1:20), constant step. interpolation: linear
+  &#39;# TITLE *-Na2Ca3Al2F14-[I213] Courbion, G.;Ferey, G.[1988] Standard NAC cal ...&#39;
+PowderN: Sample_pow: Reading 841 rows from Na2Ca3Al2F14.laz
+PowderN: Sample_pow: Read 841 reflections from file &#39;Na2Ca3Al2F14.laz&#39;
+PowderN: Sample_pow: Vc=1079.1 [Angs] sigma_abs=11.7856 [barn] sigma_inc=13.6704 [barn] reflections=Na2Ca3Al2F14.laz
+---------------------------------------------------------------------
+global_process_list.num_elements: 4
+name of process [0]: Al_inc 
+component index [0]: 1 
+name of process [1]: Al_pow 
+component index [1]: 2 
+name of process [2]: Sample_inc 
+component index [2]: 4 
+name of process [3]: Sample_pow 
+component index [3]: 5 
+---------------------------------------------------------------------
+global_material_list.num_elements: 2
+name of material    [0]: Al 
+component index     [0]: 3 
+my_absoprtion       [0]: 1.391570 
+number of processes [0]: 2 
+name of material    [1]: Sample 
+component index     [1]: 6 
+my_absoprtion       [1]: 1.092170 
+number of processes [1]: 2 
+---------------------------------------------------------------------
+global_geometry_list.num_elements: 2
+
+name of geometry    [0]: sample_geometry 
+component index     [0]: 8 
+Volume.name         [0]: sample_geometry 
+Volume.p_physics.is_vacuum           [0]: 0 
+Volume.p_physics.my_absorption       [0]: 1.092170 
+Volume.p_physics.number of processes [0]: 2 
+Volume.geometry.shape                [0]: cylinder 
+Volume.geometry.center.x             [0]: 0.000000 
+Volume.geometry.center.y             [0]: 0.000000 
+Volume.geometry.center.z             [0]: 1.000000 
+Volume.geometry.rotation_matrix[0]           [0]: [1.000000 0.000000 0.000000] 
+Volume.geometry.rotation_matrix[1]           [0]: [0.000000 1.000000 0.000000] 
+Volume.geometry.rotation_matrix[2]           [0]: [0.000000 0.000000 1.000000] 
+Volume.geometry.geometry_parameters.cyl_radius [0]: 0.007500 
+Volume.geometry.geometry_parameters.height [0]: 0.030000 
+Volume.geometry.focus_data_array.elements[0].Aim             [0]: [0.000000 0.000000 1.000000] 
+
+name of geometry    [1]: sample_container 
+component index     [1]: 9 
+Volume.name         [1]: sample_container 
+Volume.p_physics.is_vacuum           [1]: 0 
+Volume.p_physics.my_absorption       [1]: 1.391570 
+Volume.p_physics.number of processes [1]: 2 
+Volume.geometry.shape                [1]: cylinder 
+Volume.geometry.center.x             [1]: 0.000000 
+Volume.geometry.center.y             [1]: 0.000000 
+Volume.geometry.center.z             [1]: 1.000000 
+Volume.geometry.rotation_matrix[0]           [1]: [1.000000 0.000000 0.000000] 
+Volume.geometry.rotation_matrix[1]           [1]: [0.000000 1.000000 0.000000] 
+Volume.geometry.rotation_matrix[2]           [1]: [0.000000 0.000000 1.000000] 
+Volume.geometry.geometry_parameters.cyl_radius [1]: 0.009000 
+Volume.geometry.geometry_parameters.height [1]: 0.033000 
+Volume.geometry.focus_data_array.elements[0].Aim             [1]: [0.000000 0.000000 1.000000] 
+
+name of geometry    [2]: sample_container_lid 
+component index     [2]: 10 
+Volume.name         [2]: sample_container_lid 
+Volume.p_physics.is_vacuum           [2]: 0 
+Volume.p_physics.my_absorption       [2]: 1.391570 
+Volume.p_physics.number of processes [2]: 2 
+Volume.geometry.shape                [2]: cylinder 
+Volume.geometry.center.x             [2]: 0.000000 
+Volume.geometry.center.y             [2]: 0.015500 
+Volume.geometry.center.z             [2]: 1.000000 
+Volume.geometry.rotation_matrix[0]           [2]: [1.000000 0.000000 0.000000] 
+Volume.geometry.rotation_matrix[1]           [2]: [0.000000 1.000000 0.000000] 
+Volume.geometry.rotation_matrix[2]           [2]: [0.000000 0.000000 1.000000] 
+Volume.geometry.geometry_parameters.cyl_radius [2]: 0.013000 
+Volume.geometry.geometry_parameters.height [2]: 0.004000 
+Volume.geometry.focus_data_array.elements[0].Aim             [2]: [0.000000 0.000000 1.000000] 
+
+name of geometry    [3]: cryostat_wall 
+component index     [3]: 14 
+Volume.name         [3]: cryostat_wall 
+Volume.p_physics.is_vacuum           [3]: 0 
+Volume.p_physics.my_absorption       [3]: 1.391570 
+Volume.p_physics.number of processes [3]: 2 
+Volume.geometry.shape                [3]: cylinder 
+Volume.geometry.center.x             [3]: 0.000000 
+Volume.geometry.center.y             [3]: 0.000000 
+Volume.geometry.center.z             [3]: 1.000000 
+Volume.geometry.rotation_matrix[0]           [3]: [1.000000 0.000000 0.000000] 
+Volume.geometry.rotation_matrix[1]           [3]: [0.000000 1.000000 0.000000] 
+Volume.geometry.rotation_matrix[2]           [3]: [0.000000 0.000000 1.000000] 
+Volume.geometry.geometry_parameters.cyl_radius [3]: 0.030000 
+Volume.geometry.geometry_parameters.height [3]: 0.120000 
+Volume.geometry.focus_data_array.elements[0].Aim             [3]: [0.000000 0.000000 1.000000] 
+
+name of geometry    [4]: cryostat_wall_vacuum 
+component index     [4]: 15 
+Volume.name         [4]: cryostat_wall_vacuum 
+Volume.p_physics.is_vacuum           [4]: 1 
+Volume.p_physics.my_absorption       [4]: 0.000000 
+Volume.p_physics.number of processes [4]: 0 
+Volume.geometry.shape                [4]: cylinder 
+Volume.geometry.center.x             [4]: 0.000000 
+Volume.geometry.center.y             [4]: 0.000000 
+Volume.geometry.center.z             [4]: 1.000000 
+Volume.geometry.rotation_matrix[0]           [4]: [1.000000 0.000000 0.000000] 
+Volume.geometry.rotation_matrix[1]           [4]: [0.000000 1.000000 0.000000] 
+Volume.geometry.rotation_matrix[2]           [4]: [0.000000 0.000000 1.000000] 
+Volume.geometry.geometry_parameters.cyl_radius [4]: 0.028000 
+Volume.geometry.geometry_parameters.height [4]: 0.112000 
+Volume.geometry.focus_data_array.elements[0].Aim             [4]: [0.000000 0.000000 1.000000] 
+
+name of geometry    [5]: outer_cryostat_wall 
+component index     [5]: 16 
+Volume.name         [5]: outer_cryostat_wall 
+Volume.p_physics.is_vacuum           [5]: 0 
+Volume.p_physics.my_absorption       [5]: 1.391570 
+Volume.p_physics.number of processes [5]: 2 
+Volume.geometry.shape                [5]: cylinder 
+Volume.geometry.center.x             [5]: 0.000000 
+Volume.geometry.center.y             [5]: 0.000000 
+Volume.geometry.center.z             [5]: 1.000000 
+Volume.geometry.rotation_matrix[0]           [5]: [1.000000 0.000000 0.000000] 
+Volume.geometry.rotation_matrix[1]           [5]: [0.000000 1.000000 0.000000] 
+Volume.geometry.rotation_matrix[2]           [5]: [0.000000 0.000000 1.000000] 
+Volume.geometry.geometry_parameters.cyl_radius [5]: 0.100000 
+Volume.geometry.geometry_parameters.height [5]: 0.150000 
+Volume.geometry.focus_data_array.elements[0].Aim             [5]: [0.000000 0.000000 1.000000] 
+
+name of geometry    [6]: outer_cryostat_wall_vacuum 
+component index     [6]: 17 
+Volume.name         [6]: outer_cryostat_wall_vacuum 
+Volume.p_physics.is_vacuum           [6]: 1 
+Volume.p_physics.my_absorption       [6]: 0.000000 
+Volume.p_physics.number of processes [6]: 0 
+Volume.geometry.shape                [6]: cylinder 
+Volume.geometry.center.x             [6]: 0.000000 
+Volume.geometry.center.y             [6]: 0.000000 
+Volume.geometry.center.z             [6]: 1.000000 
+Volume.geometry.rotation_matrix[0]           [6]: [1.000000 0.000000 0.000000] 
+Volume.geometry.rotation_matrix[1]           [6]: [0.000000 1.000000 0.000000] 
+Volume.geometry.rotation_matrix[2]           [6]: [0.000000 0.000000 1.000000] 
+Volume.geometry.geometry_parameters.cyl_radius [6]: 0.097000 
+Volume.geometry.geometry_parameters.height [6]: 0.140000 
+Volume.geometry.focus_data_array.elements[0].Aim             [6]: [0.000000 0.000000 1.000000] 
+---------------------------------------------------------------------
+number_of_volumes = 8
+number_of_masks = 0
+number_of_masked_volumes = 0
+
+ ---- Overview of the lists generated for each volume ---- 
+List overview for surrounding vacuum
+LIST: Children for Volume                  0 = [1,2,3,4,5,6,7]
+LIST: Direct_children for Volume           0 = [6]
+LIST: Intersect_check_list for Volume      0 = [6]
+LIST: Mask_intersect_list for Volume       0 = []
+LIST: Destinations_list for Volume         0 = []
+LIST: Reduced_destinations_list for Volume 0 = []
+LIST: Next_volume_list for Volume          0 = [6]
+LIST: mask_list for Volume                 0 = []
+LIST: masked_by_list for Volume            0 = []
+LIST: masked_by_mask_index_list for Volume 0 = []
+      mask_mode for Volume                 0 = 0
+
+List overview for sample_geometry with cylinder shape made of Sample
+LIST: Children for Volume                  1 = []
+LIST: Direct_children for Volume           1 = []
+LIST: Intersect_check_list for Volume      1 = []
+LIST: Mask_intersect_list for Volume       1 = []
+LIST: Destinations_list for Volume         1 = [2,3]
+LIST: Reduced_destinations_list for Volume 1 = [2,3]
+LIST: Next_volume_list for Volume          1 = [2,3]
+      Is_vacuum for Volume                 1 = 0
+      is_mask_volume for Volume            1 = 0
+      is_masked_volume for Volume          1 = 0
+      is_exit_volume for Volume            1 = 0
+LIST: mask_list for Volume                 1 = []
+LIST: masked_by_list for Volume            1 = []
+LIST: masked_by_mask_index_list for Volume 1 = []
+      mask_mode for Volume                 1 = 0
+
+List overview for sample_container with cylinder shape made of Al
+LIST: Children for Volume                  2 = [1]
+LIST: Direct_children for Volume           2 = [1]
+LIST: Intersect_check_list for Volume      2 = [1]
+LIST: Mask_intersect_list for Volume       2 = []
+LIST: Destinations_list for Volume         2 = [3,5]
+LIST: Reduced_destinations_list for Volume 2 = [5]
+LIST: Next_volume_list for Volume          2 = [3,5,1]
+      Is_vacuum for Volume                 2 = 0
+      is_mask_volume for Volume            2 = 0
+      is_masked_volume for Volume          2 = 0
+      is_exit_volume for Volume            2 = 0
+LIST: mask_list for Volume                 2 = []
+LIST: masked_by_list for Volume            2 = []
+LIST: masked_by_mask_index_list for Volume 2 = []
+      mask_mode for Volume                 2 = 0
+
+List overview for sample_container_lid with cylinder shape made of Al
+LIST: Children for Volume                  3 = []
+LIST: Direct_children for Volume           3 = []
+LIST: Intersect_check_list for Volume      3 = [2]
+LIST: Mask_intersect_list for Volume       3 = []
+LIST: Destinations_list for Volume         3 = [5]
+LIST: Reduced_destinations_list for Volume 3 = [5]
+LIST: Next_volume_list for Volume          3 = [5,2]
+      Is_vacuum for Volume                 3 = 0
+      is_mask_volume for Volume            3 = 0
+      is_masked_volume for Volume          3 = 0
+      is_exit_volume for Volume            3 = 0
+LIST: mask_list for Volume                 3 = []
+LIST: masked_by_list for Volume            3 = []
+LIST: masked_by_mask_index_list for Volume 3 = []
+      mask_mode for Volume                 3 = 0
+
+List overview for cryostat_wall with cylinder shape made of Al
+LIST: Children for Volume                  4 = [1,2,3,5]
+LIST: Direct_children for Volume           4 = [5]
+LIST: Intersect_check_list for Volume      4 = [5]
+LIST: Mask_intersect_list for Volume       4 = []
+LIST: Destinations_list for Volume         4 = [7]
+LIST: Reduced_destinations_list for Volume 4 = [7]
+LIST: Next_volume_list for Volume          4 = [7,5]
+      Is_vacuum for Volume                 4 = 0
+      is_mask_volume for Volume            4 = 0
+      is_masked_volume for Volume          4 = 0
+      is_exit_volume for Volume            4 = 0
+LIST: mask_list for Volume                 4 = []
+LIST: masked_by_list for Volume            4 = []
+LIST: masked_by_mask_index_list for Volume 4 = []
+      mask_mode for Volume                 4 = 0
+
+List overview for cryostat_wall_vacuum with cylinder shape made of Vacuum
+LIST: Children for Volume                  5 = [1,2,3]
+LIST: Direct_children for Volume           5 = [2,3]
+LIST: Intersect_check_list for Volume      5 = [2,3]
+LIST: Mask_intersect_list for Volume       5 = []
+LIST: Destinations_list for Volume         5 = [4]
+LIST: Reduced_destinations_list for Volume 5 = [4]
+LIST: Next_volume_list for Volume          5 = [4,2,3]
+      Is_vacuum for Volume                 5 = 1
+      is_mask_volume for Volume            5 = 0
+      is_masked_volume for Volume          5 = 0
+      is_exit_volume for Volume            5 = 0
+LIST: mask_list for Volume                 5 = []
+LIST: masked_by_list for Volume            5 = []
+LIST: masked_by_mask_index_list for Volume 5 = []
+      mask_mode for Volume                 5 = 0
+
+List overview for outer_cryostat_wall with cylinder shape made of Al
+LIST: Children for Volume                  6 = [1,2,3,4,5,7]
+LIST: Direct_children for Volume           6 = [7]
+LIST: Intersect_check_list for Volume      6 = [7]
+LIST: Mask_intersect_list for Volume       6 = []
+LIST: Destinations_list for Volume         6 = [0]
+LIST: Reduced_destinations_list for Volume 6 = []
+LIST: Next_volume_list for Volume          6 = [0,7]
+      Is_vacuum for Volume                 6 = 0
+      is_mask_volume for Volume            6 = 0
+      is_masked_volume for Volume          6 = 0
+      is_exit_volume for Volume            6 = 0
+LIST: mask_list for Volume                 6 = []
+LIST: masked_by_list for Volume            6 = []
+LIST: masked_by_mask_index_list for Volume 6 = []
+      mask_mode for Volume                 6 = 0
+
+List overview for outer_cryostat_wall_vacuum with cylinder shape made of Vacuum
+LIST: Children for Volume                  7 = [1,2,3,4,5]
+LIST: Direct_children for Volume           7 = [4]
+LIST: Intersect_check_list for Volume      7 = [4]
+LIST: Mask_intersect_list for Volume       7 = []
+LIST: Destinations_list for Volume         7 = [6]
+LIST: Reduced_destinations_list for Volume 7 = [6]
+LIST: Next_volume_list for Volume          7 = [6,4]
+      Is_vacuum for Volume                 7 = 1
+      is_mask_volume for Volume            7 = 0
+      is_masked_volume for Volume          7 = 0
+      is_exit_volume for Volume            7 = 0
+LIST: mask_list for Volume                 7 = []
+LIST: masked_by_list for Volume            7 = []
+LIST: masked_by_mask_index_list for Volume 7 = []
+      mask_mode for Volume                 7 = 0
+
+Union_master component master initialized sucessfully
+Detector: logger_space_zx_I=20735.2 logger_space_zx_ERR=102.125 logger_space_zx_N=117708 &quot;logger_zx.dat&quot;
+Detector: logger_space_zy_I=20735.2 logger_space_zy_ERR=102.125 logger_space_zy_N=117708 &quot;logger_zy.dat&quot;
+Detector: logger_space_xy_I=20735.2 logger_space_xy_ERR=102.125 logger_space_xy_N=117708 &quot;logger_xy.dat&quot;
+Detector: banana_I=1880.6 banana_ERR=29.2573 banana_N=11262 &quot;banana_1641997768.th&quot;
+loading system configuration
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plot-the-data-from-the-new-simulation">
+<h3>Plot the data from the new simulation<a class="headerlink" href="#plot-the-data-from-the-new-simulation" title="Permalink to this headline">¶</a></h3>
+<p>Here we increase the orders of magnitude of intensity plotted on the log plots. Try to play with these values to see how it changes the plots.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plotter</span><span class="o">.</span><span class="n">make_sub_plot</span><span class="p">(</span><span class="n">data_cryo</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span> <span class="n">orders_of_mag</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Plotting data with name logger_space_zx
+Plotting data with name logger_space_zy
+Plotting data with name logger_space_xy
+Plotting data with name banana
+</pre></div>
+</div>
+<img alt="../_images/Union_tutorial_2_geometry_30_1.png" src="../_images/Union_tutorial_2_geometry_30_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="interpreting-the-data">
+<h3>Interpreting the data<a class="headerlink" href="#interpreting-the-data" title="Permalink to this headline">¶</a></h3>
+<p>The different layers of the cryostat both result in scattering from the aluminium the beam has to move through, but also some increase intensity where it illuminated by scattering from the sample.</p>
+</div>
+<div class="section" id="comparing-situation-with-and-without-cryostat">
+<h3>Comparing situation with and without cryostat<a class="headerlink" href="#comparing-situation-with-and-without-cryostat" title="Permalink to this headline">¶</a></h3>
+<p>It could be interesting to see what difference adding the cryostat did to the measured signal in the banana monitor, here we extract the numpy arrays and plot them manually with matplotlib for at direct comparison. Ensure you run the two simulations with the same wavelength in order for a comparison to be meaningful.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">banana_can</span> <span class="o">=</span> <span class="n">functions</span><span class="o">.</span><span class="n">name_search</span><span class="p">(</span><span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="n">banana_cryo</span> <span class="o">=</span> <span class="n">functions</span><span class="o">.</span><span class="n">name_search</span><span class="p">(</span><span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="n">data_cryo</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">copy</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">banana_diff</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">banana_cryo</span><span class="p">)</span>
+<span class="n">banana_diff</span><span class="o">.</span><span class="n">Intensity</span> <span class="o">=</span> <span class="n">banana_cryo</span><span class="o">.</span><span class="n">Intensity</span> <span class="o">-</span> <span class="n">banana_can</span><span class="o">.</span><span class="n">Intensity</span>
+<span class="n">banana_diff</span><span class="o">.</span><span class="n">Error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">banana_cryo</span><span class="o">.</span><span class="n">Error</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">banana_can</span><span class="o">.</span><span class="n">Error</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">banana_can</span><span class="o">.</span><span class="n">xaxis</span><span class="p">,</span> <span class="n">banana_can</span><span class="o">.</span><span class="n">Intensity</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span>
+         <span class="n">banana_cryo</span><span class="o">.</span><span class="n">xaxis</span><span class="p">,</span> <span class="n">banana_cryo</span><span class="o">.</span><span class="n">Intensity</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span>
+         <span class="n">banana_diff</span><span class="o">.</span><span class="n">xaxis</span><span class="p">,</span> <span class="n">banana_diff</span><span class="o">.</span><span class="n">Intensity</span><span class="o">-</span><span class="mf">10.0</span><span class="p">,</span> <span class="s2">&quot;k&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;2Theta [deg]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Intensity [n/s]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Sample in can&quot;</span><span class="p">,</span> <span class="s2">&quot;Sample in can in cryostat&quot;</span><span class="p">,</span> <span class="s2">&quot;Difference displaced to -10&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f8d982c87c0&gt;
+</pre></div>
+</div>
+<img alt="../_images/Union_tutorial_2_geometry_32_1.png" src="../_images/Union_tutorial_2_geometry_32_1.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Union_tutorial_1_processes_and_materials.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">The Union components</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Union_tutorial_3_loggers.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Visualizing what happens in Union master</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Mads Bertelsen<br/>
+    
+        &copy; Copyright 2022, Mads Bertelsen.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
