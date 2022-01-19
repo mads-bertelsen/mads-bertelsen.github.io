@@ -1,0 +1,38 @@
+libpyvinyl.Parameters.Collections.MasterParameter
+=================================================
+
+.. currentmodule:: libpyvinyl.Parameters.Collections
+
+.. autoclass:: MasterParameter
+   :members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~MasterParameter.__init__
+      ~MasterParameter.add_interval
+      ~MasterParameter.add_links
+      ~MasterParameter.add_option
+      ~MasterParameter.clear_intervals
+      ~MasterParameter.clear_options
+      ~MasterParameter.from_dict
+      ~MasterParameter.is_legal
+      ~MasterParameter.print_line
+      ~MasterParameter.print_paramter_constraints
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~MasterParameter.value
+   
+   

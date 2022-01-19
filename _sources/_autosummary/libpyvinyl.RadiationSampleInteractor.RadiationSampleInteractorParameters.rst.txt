@@ -1,0 +1,32 @@
+libpyvinyl.RadiationSampleInteractor.RadiationSampleInteractorParameters
+========================================================================
+
+.. currentmodule:: libpyvinyl.RadiationSampleInteractor
+
+.. autoclass:: RadiationSampleInteractorParameters
+   :members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~RadiationSampleInteractorParameters.__init__
+      ~RadiationSampleInteractorParameters.add
+      ~RadiationSampleInteractorParameters.check_list_type
+      ~RadiationSampleInteractorParameters.check_type
+      ~RadiationSampleInteractorParameters.from_dict
+      ~RadiationSampleInteractorParameters.from_json
+      ~RadiationSampleInteractorParameters.new_parameter
+      ~RadiationSampleInteractorParameters.print_indented
+      ~RadiationSampleInteractorParameters.to_dict
+      ~RadiationSampleInteractorParameters.to_json
+   
+   
+
+   
+   
+   

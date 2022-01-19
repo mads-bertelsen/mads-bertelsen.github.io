@@ -1,0 +1,38 @@
+libpyvinyl.Instrument.Instrument
+================================
+
+.. currentmodule:: libpyvinyl.Instrument
+
+.. autoclass:: Instrument
+   :members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Instrument.__init__
+      ~Instrument.add_calculator
+      ~Instrument.add_master_parameter
+      ~Instrument.list_calculators
+      ~Instrument.list_parameters
+      ~Instrument.remove_calculator
+      ~Instrument.set_base_path
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Instrument.calculators
+      ~Instrument.master
+      ~Instrument.name
+      ~Instrument.parameters
+   
+   

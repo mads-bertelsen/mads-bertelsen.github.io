@@ -1,0 +1,32 @@
+libpyvinyl.Detector.DetectorParameters
+======================================
+
+.. currentmodule:: libpyvinyl.Detector
+
+.. autoclass:: DetectorParameters
+   :members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~DetectorParameters.__init__
+      ~DetectorParameters.add
+      ~DetectorParameters.check_list_type
+      ~DetectorParameters.check_type
+      ~DetectorParameters.from_dict
+      ~DetectorParameters.from_json
+      ~DetectorParameters.new_parameter
+      ~DetectorParameters.print_indented
+      ~DetectorParameters.to_dict
+      ~DetectorParameters.to_json
+   
+   
+
+   
+   
+   

@@ -1,0 +1,32 @@
+libpyvinyl.BeamlinePropagator
+=============================
+
+.. automodule:: libpyvinyl.BeamlinePropagator
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      BeamlinePropagator
+      BeamlinePropagatorParameters
+   
+   
+
+   
+   
+   
+
+
+

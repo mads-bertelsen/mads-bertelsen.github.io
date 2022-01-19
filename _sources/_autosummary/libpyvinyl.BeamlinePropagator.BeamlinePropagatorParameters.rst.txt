@@ -1,0 +1,32 @@
+libpyvinyl.BeamlinePropagator.BeamlinePropagatorParameters
+==========================================================
+
+.. currentmodule:: libpyvinyl.BeamlinePropagator
+
+.. autoclass:: BeamlinePropagatorParameters
+   :members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~BeamlinePropagatorParameters.__init__
+      ~BeamlinePropagatorParameters.add
+      ~BeamlinePropagatorParameters.check_list_type
+      ~BeamlinePropagatorParameters.check_type
+      ~BeamlinePropagatorParameters.from_dict
+      ~BeamlinePropagatorParameters.from_json
+      ~BeamlinePropagatorParameters.new_parameter
+      ~BeamlinePropagatorParameters.print_indented
+      ~BeamlinePropagatorParameters.to_dict
+      ~BeamlinePropagatorParameters.to_json
+   
+   
+
+   
+   
+   

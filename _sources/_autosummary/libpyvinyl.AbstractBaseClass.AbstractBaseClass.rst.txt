@@ -1,0 +1,23 @@
+libpyvinyl.AbstractBaseClass.AbstractBaseClass
+==============================================
+
+.. currentmodule:: libpyvinyl.AbstractBaseClass
+
+.. autoclass:: AbstractBaseClass
+   :members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~AbstractBaseClass.__init__
+   
+   
+
+   
+   
+   

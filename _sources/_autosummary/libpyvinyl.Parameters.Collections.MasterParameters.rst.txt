@@ -1,0 +1,32 @@
+libpyvinyl.Parameters.Collections.MasterParameters
+==================================================
+
+.. currentmodule:: libpyvinyl.Parameters.Collections
+
+.. autoclass:: MasterParameters
+   :members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~MasterParameters.__init__
+      ~MasterParameters.add
+      ~MasterParameters.check_list_type
+      ~MasterParameters.check_type
+      ~MasterParameters.from_dict
+      ~MasterParameters.from_json
+      ~MasterParameters.new_parameter
+      ~MasterParameters.print_indented
+      ~MasterParameters.to_dict
+      ~MasterParameters.to_json
+   
+   
+
+   
+   
+   

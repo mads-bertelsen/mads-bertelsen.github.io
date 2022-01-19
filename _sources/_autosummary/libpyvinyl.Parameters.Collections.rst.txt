@@ -1,0 +1,34 @@
+libpyvinyl.Parameters.Collections
+=================================
+
+.. automodule:: libpyvinyl.Parameters.Collections
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      CalculatorParameters
+      InstrumentParameters
+      MasterParameter
+      MasterParameters
+   
+   
+
+   
+   
+   
+
+
+

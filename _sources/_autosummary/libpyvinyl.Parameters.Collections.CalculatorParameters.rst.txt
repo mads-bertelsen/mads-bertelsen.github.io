@@ -1,0 +1,32 @@
+libpyvinyl.Parameters.Collections.CalculatorParameters
+======================================================
+
+.. currentmodule:: libpyvinyl.Parameters.Collections
+
+.. autoclass:: CalculatorParameters
+   :members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~CalculatorParameters.__init__
+      ~CalculatorParameters.add
+      ~CalculatorParameters.check_list_type
+      ~CalculatorParameters.check_type
+      ~CalculatorParameters.from_dict
+      ~CalculatorParameters.from_json
+      ~CalculatorParameters.new_parameter
+      ~CalculatorParameters.print_indented
+      ~CalculatorParameters.to_dict
+      ~CalculatorParameters.to_json
+   
+   
+
+   
+   
+   

@@ -1,0 +1,29 @@
+libpyvinyl.Parameters.Collections.InstrumentParameters
+======================================================
+
+.. currentmodule:: libpyvinyl.Parameters.Collections
+
+.. autoclass:: InstrumentParameters
+   :members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~InstrumentParameters.__init__
+      ~InstrumentParameters.add
+      ~InstrumentParameters.add_master_parameter
+      ~InstrumentParameters.from_dict
+      ~InstrumentParameters.from_json
+      ~InstrumentParameters.to_dict
+      ~InstrumentParameters.to_json
+   
+   
+
+   
+   
+   

@@ -1,0 +1,35 @@
+libpyvinyl.BeamlinePropagator.BeamlinePropagator
+================================================
+
+.. currentmodule:: libpyvinyl.BeamlinePropagator
+
+.. autoclass:: BeamlinePropagator
+   :members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~BeamlinePropagator.__init__
+      ~BeamlinePropagator.backengine
+      ~BeamlinePropagator.dump
+      ~BeamlinePropagator.run_from_cli
+      ~BeamlinePropagator.saveH5
+      ~BeamlinePropagator.set_parameters
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~BeamlinePropagator.data
+      ~BeamlinePropagator.parameters
+   
+   

@@ -1,0 +1,39 @@
+﻿libpyvinyl
+==========
+
+.. automodule:: libpyvinyl
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :template: custom-module-template.rst
+   :recursive:
+
+   libpyvinyl.AbstractBaseClass
+   libpyvinyl.BaseCalculator
+   libpyvinyl.BeamlinePropagator
+   libpyvinyl.Detector
+   libpyvinyl.Instrument
+   libpyvinyl.Parameters
+   libpyvinyl.RadiationSampleInteractor
+   libpyvinyl.SignalGenerator
+

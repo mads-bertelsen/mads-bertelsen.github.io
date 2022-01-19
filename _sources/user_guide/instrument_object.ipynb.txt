@@ -15,11 +15,11 @@
    "metadata": {},
    "source": [
     "## Initialization\n",
-    "When an instrument object is created the only required argument is the name of the instrument which will be used for the instrument filename. There are however a number of keyword arguments that can be used to provide more informaton and alter the behavior.\n",
+    "An instrument object is created with the [McStas_instr](../_autosummary/mcstasscript.interface.instr.McStas_instr.rst) or [McXtrace_instr](../_autosummary/mcstasscript.interface.instr.McXtrace_instr.rst) class in the instr module. When an instrument object is created the only required argument is the name of the instrument which will be used for the instrument filename. There are however a number of keyword arguments that can be used to provide more information and alter the behavior.\n",
     "\n",
     "| Keyword argument | Type | Default | Description |\n",
     "| --- | --- | --- | --- |\n",
-    "| author | str |\"Python Instrument Generator\" | Name that will apear as author in instrument files |\n",
+    "| author | str |\"Python Instrument Generator\" | Name that will appear as author in instrument files |\n",
     "| origin | str |\"ESS DMSC\" | String that will appear as origin in instrument files |\n",
     "| input_path | str | \".\" | Folder which is considered workspace for McStas / McXtrace |\n",
     "| output_path | str | instrument_name | Name of data folder written by simulation |\n",
@@ -58,7 +58,7 @@
    "metadata": {},
    "source": [
     "### Using settings method\n",
-    "The instrument object has a settings method which can update some settings after initialization. The current settings can always be viewed with *show_settings*.\n",
+    "The instrument object has a *setting* method which can update some settings after initialization. The current settings can always be viewed with *show_settings*.\n",
     "\n",
     "| Keyword argument | Type | Default | Description |\n",
     "| --- | --- | --- | --- |\n",
@@ -173,11 +173,11 @@
    "metadata": {},
    "source": [
     "## Initialize section\n",
-    "One of the great advantages for the McStas / McXtrace packages is the initialize section of the instrument where calculations can be performed before the ray-tracing simulation starts. One could for example calculate appropriate angles to reach a certain bragg peak at a given wavelength. This would involve defining some declare variables, using these in the initialize section and then assigning them as component inputs.\n",
+    "One of the great advantages for the McStas / McXtrace packages is the initialize section of the instrument where calculations can be performed before the ray-tracing simulation starts. One could for example calculate appropriate angles to reach a certain Bragg peak at a given wavelength. This would involve defining some declare variables, using these in the initialize section and then assigning them as component inputs.\n",
     "\n",
     "In McStasScript many calculations can be performed directly in Python, and so typically the initialize section is used less, but it is still useful and available through McStasScript.\n",
     "\n",
-    "The instrument object has the method *append_initialize* which adds a line of code to the initialize. This line is copied directly into the instrument file, so it follows C syntax. Remember the semicolon! In addition there is *add_declare_var* to specify the declared variables needed. When declare variables are defined an object is returned which can be used when refering to that variable."
+    "The instrument object has the method *append_initialize* which adds a line of code to the initialize. This line is copied directly into the instrument file, so it follows C syntax. Remember the semicolon! In addition there is *add_declare_var* to specify the declared variables needed. When declare variables are defined an object is returned which can be used when referring to that variable."
    ]
   },
   {
@@ -363,7 +363,7 @@
    "metadata": {},
    "source": [
     "## Adding components\n",
-    "One adds components to the instrument using *add_component* which takes the name of the component instance for the instrument, followed by the name of the component in the library. Notice that it is not allowed to add two components with the same instance name, meaning rerunning this cell would raise an exception. "
+    "One adds components to the instrument using *add_component* which takes the name of the component instance for the instrument, followed by the name of the component in the library. When adding a component, a [component](../_autosummary/mcstasscript.helper.mcstas_objects.Component.rst) object is returned, and how these can be manipulated is discussed on the [component object page](component_object.ipynb). Notice that it is not allowed to add two components with the same instance name, meaning rerunning this cell would raise an exception. "
    ]
   },
   {
@@ -426,7 +426,7 @@
    "id": "outdoor-motor",
    "metadata": {},
    "source": [
-    "There are a number of keyword arguments allowed when adding a component. These will mainly be discussed in connection to the *component* object, but a few are relevant for the instrument, because the handle in what order components are sequenced in the instrument. To illustrate this we add a slit and a guide to the instrument at reasonable positions. Notice these new components are added at the end of the instrument."
+    "There are a number of keyword arguments allowed when adding a component. These will mainly be discussed on the [component object page](component_object.ipynb), but a few are relevant for the instrument, because the handle in what order components are sequenced in the instrument. To illustrate this we add a slit and a guide to the instrument at reasonable positions. Notice these new components are added at the end of the instrument."
    ]
   },
   {
@@ -692,7 +692,7 @@
    "metadata": {},
    "source": [
     "## Visualizing the instrument\n",
-    "It is possible to visualize the instrument using mcdisplay, yet this opens a new window and is not yet implemented in such a way that it is shown in the notebook. The *show_instrument* method is used, and one can choose the format. Be aware that the parameters set for the insturment is used for the visualization."
+    "It is possible to visualize the instrument using mcdisplay, yet this opens a new window and is not yet implemented in such a way that it is shown in the notebook. The *show_instrument* method is used, and one can choose the format. Be aware that the parameters set for the instrument is used for the visualization."
    ]
   },
   {
@@ -796,6 +796,7 @@
   }
  ],
  "metadata": {
+  "celltoolbar": "Tags",
   "kernelspec": {
    "display_name": "Python 3",
    "language": "python",

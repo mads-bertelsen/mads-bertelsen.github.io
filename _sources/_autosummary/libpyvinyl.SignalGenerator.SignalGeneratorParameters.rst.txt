@@ -1,0 +1,32 @@
+libpyvinyl.SignalGenerator.SignalGeneratorParameters
+====================================================
+
+.. currentmodule:: libpyvinyl.SignalGenerator
+
+.. autoclass:: SignalGeneratorParameters
+   :members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SignalGeneratorParameters.__init__
+      ~SignalGeneratorParameters.add
+      ~SignalGeneratorParameters.check_list_type
+      ~SignalGeneratorParameters.check_type
+      ~SignalGeneratorParameters.from_dict
+      ~SignalGeneratorParameters.from_json
+      ~SignalGeneratorParameters.new_parameter
+      ~SignalGeneratorParameters.print_indented
+      ~SignalGeneratorParameters.to_dict
+      ~SignalGeneratorParameters.to_json
+   
+   
+
+   
+   
+   
