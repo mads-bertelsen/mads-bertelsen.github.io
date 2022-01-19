@@ -1982,7 +1982,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/user_guide/plotting_example_16&quot;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/user_guide/plotting_example_18&quot;
 INFO: Regenerating c-file: data_example.c
 CFLAGS=
 INFO: Recompiling: ./data_example.out
@@ -1991,9 +1991,9 @@ mccode-r.c:2837:3: warning: expression result unused [-Wunused-value]
   ^~~
 1 warning generated.
 INFO: ===
-Warning: 440243 events were removed in Component[4] PSD=PSD_monitor()
+Warning: 439638 events were removed in Component[4] PSD=PSD_monitor()
          (negative time, miss next components, rounding errors, Nan, Inf).
-INFO: Placing instr file copy data_example.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/user_guide/plotting_example_16
+INFO: Placing instr file copy data_example.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/user_guide/plotting_example_18
 
       Opening input file &#39;/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//data/Na2Ca3Al2F14.laz&#39; (Table_Read_Offset)
 Table from file &#39;Na2Ca3Al2F14.laz&#39; (block 1) is 841 x 18 (x=1:20), constant step. interpolation: linear
@@ -2001,8 +2001,8 @@ Table from file &#39;Na2Ca3Al2F14.laz&#39; (block 1) is 841 x 18 (x=1:20), const
 PowderN: sample: Reading 841 rows from Na2Ca3Al2F14.laz
 PowderN: sample: Read 841 reflections from file &#39;Na2Ca3Al2F14.laz&#39;
 PowderN: sample: Vc=1079.1 [Angs] sigma_abs=11.7856 [barn] sigma_inc=13.6704 [barn] reflections=Na2Ca3Al2F14.laz
-Detector: banana_I=3.7942e-07 banana_ERR=2.1329e-09 banana_N=102033 &quot;banana.dat&quot;
-Detector: PSD_I=7.23678e-06 PSD_ERR=1.85966e-08 PSD_N=284189 &quot;psd.dat&quot;
+Detector: banana_I=3.81307e-07 banana_ERR=2.13979e-09 banana_N=102017 &quot;banana.dat&quot;
+Detector: PSD_I=7.21216e-06 PSD_ERR=1.85395e-08 PSD_N=284906 &quot;psd.dat&quot;
 PowderN: sample: Info: you may highly improve the computation efficiency by using
     SPLIT 263 COMPONENT sample=PowderN(...)
   in the instrument description data_example.instr.
@@ -2019,8 +2019,8 @@ loading system configuration
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[
-McStasData: banana type: 1D  I:3.7942e-07 E:2.1329e-09 N:102033, 
-McStasData: PSD type: 2D  I:7.23678e-06 E:1.85966e-08 N:284189]
+McStasData: banana type: 1D  I:3.81307e-07 E:2.13979e-09 N:102017, 
+McStasData: PSD type: 2D  I:7.21216e-06 E:1.85395e-08 N:284906]
 </pre></div>
 </div>
 </div>
@@ -2063,7 +2063,7 @@ Plotting data with name PSD
 </div>
 <div class="section" id="customizing-plots">
 <h2>Customizing plots<a class="headerlink" href="#customizing-plots" title="Permalink to this headline">¶</a></h2>
-<p>As described in the data section of the documentation, the <span class="xref myst">McStasData</span> objects contain preferences on how they should be plotted. The same keywords can however be given to the plotters to override these preferences. When plotting a list of <span class="xref myst">McStasData</span> objects, a list can be given for each keyword.</p>
+<p>As described in the data section of the documentation, the <a class="reference internal" href="../_autosummary/mcstasscript.data.data.McStasData.html"><span class="doc std std-doc">McStasData</span></a> objects contain preferences on how they should be plotted. The same keywords can however be given to the plotters to override these preferences. When plotting a list of <a class="reference internal" href="../_autosummary/mcstasscript.data.data.McStasData.html"><span class="doc std std-doc">McStasData</span></a> objects, a list can be given for each keyword.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plotter</span><span class="o">.</span><span class="n">make_sub_plot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">],</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
@@ -2080,7 +2080,7 @@ Plotting data with name PSD
 </div>
 <div class="section" id="available-keywords">
 <h3>Available keywords<a class="headerlink" href="#available-keywords" title="Permalink to this headline">¶</a></h3>
-<p>The keywords available to customize plotting are the same as can be set for <em>plot_options</em> in <span class="xref myst">McStasData</span>. There are however a few additional keywords for controlling figure size and fontsize.</p>
+<p>The keywords available to customize plotting are the same as can be set for <em>plot_options</em> in <a class="reference internal" href="../_autosummary/mcstasscript.data.data.McStasData.html"><span class="doc std std-doc">McStasData</span></a>. There are however a few additional keywords for controlling figure size and fontsize.</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Keyword argument</p></th>

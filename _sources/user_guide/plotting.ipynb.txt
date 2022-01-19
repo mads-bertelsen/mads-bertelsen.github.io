@@ -15,7 +15,7 @@
   {
    "cell_type": "code",
    "execution_count": 2,
-   "id": "neither-stability",
+   "id": "perfect-hours",
    "metadata": {
     "tags": [
      "hide-input"
@@ -48,7 +48,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "human-contrast",
+   "id": "catholic-distribution",
    "metadata": {},
    "source": [
     "### Performing the simulation\n",
@@ -58,7 +58,7 @@
   {
    "cell_type": "code",
    "execution_count": 9,
-   "id": "worthy-military",
+   "id": "general-chance",
    "metadata": {
     "scrolled": true,
     "tags": [
@@ -110,7 +110,7 @@
   {
    "cell_type": "code",
    "execution_count": 10,
-   "id": "rolled-night",
+   "id": "retired-tiffany",
    "metadata": {},
    "outputs": [
     {
@@ -129,7 +129,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "chemical-english",
+   "id": "alpine-arnold",
    "metadata": {},
    "source": [
     "## make_plot and make_sub_plot\n",
@@ -139,7 +139,7 @@
   {
    "cell_type": "code",
    "execution_count": 11,
-   "id": "affecting-bikini",
+   "id": "literary-costs",
    "metadata": {},
    "outputs": [
     {
@@ -181,7 +181,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "adjustable-peninsula",
+   "id": "norwegian-growth",
    "metadata": {},
    "source": [
     "The second available plotter is [*make_sub_plot*](../_autosummary/mcstasscript.interface.plotter.make_sub_plot.rst), it makes a single figure that includes plot of all given [McStasData](../_autosummary/mcstasscript.data.data.McStasData.rst) as subplots. This works best with between 1 and 9 monitors, as more tend to become difficult to read."
@@ -190,7 +190,7 @@
   {
    "cell_type": "code",
    "execution_count": 12,
-   "id": "abstract-stations",
+   "id": "pretty-transcription",
    "metadata": {},
    "outputs": [
     {
@@ -220,17 +220,17 @@
   },
   {
    "cell_type": "markdown",
-   "id": "consistent-paint",
+   "id": "behind-pleasure",
    "metadata": {},
    "source": [
     "## Customizing plots\n",
-    "As described in the data section of the documentation, the [McStasData](../_autosummary/mcstasscript.helper.data.McStasData.rst) objects contain preferences on how they should be plotted. The same keywords can however be given to the plotters to override these preferences. When plotting a list of [McStasData](../_autosummary/mcstasscript.helper.data.McStasData.rst) objects, a list can be given for each keyword."
+    "As described in the data section of the documentation, the [McStasData](../_autosummary/mcstasscript.data.data.McStasData.rst) objects contain preferences on how they should be plotted. The same keywords can however be given to the plotters to override these preferences. When plotting a list of [McStasData](../_autosummary/mcstasscript.data.data.McStasData.rst) objects, a list can be given for each keyword."
    ]
   },
   {
    "cell_type": "code",
    "execution_count": 14,
-   "id": "popular-involvement",
+   "id": "natural-transition",
    "metadata": {},
    "outputs": [
     {
@@ -260,11 +260,11 @@
   },
   {
    "cell_type": "markdown",
-   "id": "cognitive-button",
+   "id": "backed-mirror",
    "metadata": {},
    "source": [
     "### Available keywords\n",
-    "The keywords available to customize plotting are the same as can be set for *plot_options* in [McStasData](../_autosummary/mcstasscript.helper.data.McStasData.rst). There are however a few additional keywords for controlling figure size and fontsize.\n",
+    "The keywords available to customize plotting are the same as can be set for *plot_options* in [McStasData](../_autosummary/mcstasscript.data.data.McStasData.rst). There are however a few additional keywords for controlling figure size and fontsize.\n",
     "\n",
     "| Keyword argument | Type | Default | Description |\n",
     "| --- | --- | --- | --- |\n",
@@ -287,7 +287,15 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "recovered-currency",
+   "id": "declared-welsh",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "dedicated-addiction",
    "metadata": {},
    "outputs": [],
    "source": []

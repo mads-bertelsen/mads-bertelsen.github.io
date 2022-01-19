@@ -36,6 +36,6 @@ with open("run_folder/Union_history.dat") as file:
 [0m[1;32m    323[0m         [0;31m# keep undecoded input until the next call[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
 [1;32m    324[0m         [0mself[0m[0;34m.[0m[0mbuffer[0m [0;34m=[0m [0mdata[0m[0;34m[[0m[0mconsumed[0m[0;34m:[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mUnicodeDecodeError[0m: 'utf-8' codec can't decode byte 0x95 in position 428: invalid start byte
-UnicodeDecodeError: 'utf-8' codec can't decode byte 0x95 in position 428: invalid start byte
+[0;31mUnicodeDecodeError[0m: 'utf-8' codec can't decode byte 0xfa in position 432: invalid start byte
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xfa in position 432: invalid start byte
 

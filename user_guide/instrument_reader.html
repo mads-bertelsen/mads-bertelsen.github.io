@@ -1944,10 +1944,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>double wavelength  = 1.5  
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>double wavelength  = 1.2  
 source Source_simple AT (0, 0, 0)   ABSOLUTE       
 sample PowderN       AT (0, 0, 5)   RELATIVE source
 banana Monitor_nD    AT (0, 0, 0)   RELATIVE sample
+events Monitor_nD    AT (0, 0, 0)   RELATIVE sample
 PSD    PSD_monitor   AT (0, 0, 0.1) RELATIVE sample
 </pre></div>
 </div>
@@ -1982,7 +1983,7 @@ the content to ensure it is as expected.
 from mcstasscript.interface import instr, plotter, functions
 
 data_example = instr.McStas_instr(&quot;data_example_generated&quot;)
-data_example.add_parameter(&quot;double&quot;, &quot;wavelength&quot;, value=1.5)
+data_example.add_parameter(&quot;double&quot;, &quot;wavelength&quot;, value=1.2)
 
 source = data_example.add_component(&quot;source&quot;, &quot;Source_simple&quot;)
 source.yheight = 0.03
@@ -1991,13 +1992,14 @@ source.dist = 5
 source.focus_xw = 0.015
 source.focus_yh = 0.03
 source.lambda0 = &quot;wavelength&quot;
-source.dlambda = 0.02
+source.dlambda = 0.1
 source.set_AT([&#39;0&#39;, &#39;0&#39;, &#39;0&#39;], RELATIVE=&quot;ABSOLUTE&quot;)
 
 sample = data_example.add_component(&quot;sample&quot;, &quot;PowderN&quot;)
 sample.reflections = &quot;\&quot;Na2Ca3Al2F14.laz\&quot;&quot;
 sample.radius = 0.015
-sample.yheight = 0.024
+sample.yheight = 0.03
+sample.barns = 0
 sample.set_AT([&#39;0&#39;, &#39;0&#39;, &#39;5&#39;], RELATIVE=&quot;source&quot;)
 
 banana = data_example.add_component(&quot;banana&quot;, &quot;Monitor_nD&quot;)
@@ -2008,12 +2010,20 @@ banana.options = &quot;\&quot;theta limits=[5 175] bins=250, banana\&quot;&quot;
 banana.filename = &quot;\&quot;banana.dat\&quot;&quot;
 banana.set_AT([&#39;0&#39;, &#39;0&#39;, &#39;0&#39;], RELATIVE=&quot;sample&quot;)
 
+events = data_example.add_component(&quot;events&quot;, &quot;Monitor_nD&quot;)
+events.xwidth = 0.5
+events.yheight = 0.5
+events.restore_neutron = 1
+events.options = &quot;\&quot;list all auto, x y z vx vy vz t\&quot;&quot;
+events.filename = &quot;\&quot;events.dat\&quot;&quot;
+events.set_AT([&#39;0&#39;, &#39;0&#39;, &#39;0&#39;], RELATIVE=&quot;sample&quot;)
+
 PSD = data_example.add_component(&quot;PSD&quot;, &quot;PSD_monitor&quot;)
 PSD.nx = 100
 PSD.ny = 100
 PSD.filename = &quot;\&quot;psd.dat\&quot;&quot;
-PSD.xwidth = 0.075
-PSD.yheight = 0.048
+PSD.xwidth = 0.045
+PSD.yheight = 0.06
 PSD.restore_neutron = 1
 PSD.set_AT([&#39;0&#39;, &#39;0&#39;, &#39;0.1&#39;], RELATIVE=&quot;sample&quot;)
 </pre></div>
