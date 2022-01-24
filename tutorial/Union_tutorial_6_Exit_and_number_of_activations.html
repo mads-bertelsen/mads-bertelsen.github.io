@@ -2012,14 +2012,15 @@
 
 <span class="n">Al</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;Al&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_make_material&quot;</span><span class="p">)</span>
 <span class="n">Al</span><span class="o">.</span><span class="n">process_string</span> <span class="o">=</span> <span class="s1">&#39;&quot;Al_inc,Al_pow&quot;&#39;</span>
-<span class="n">Al</span><span class="o">.</span><span class="n">my_absorption</span> <span class="o">=</span> <span class="mi">100</span><span class="o">*</span><span class="mf">0.231</span><span class="o">/</span><span class="mf">66.4</span> <span class="c1"># barns [m^2 E-28] * Å^3 [m^3 E-30] = [m E-2], correct with factor 100.</span>
+<span class="n">Al</span><span class="o">.</span><span class="n">my_absorption</span> <span class="o">=</span> <span class="mi">100</span><span class="o">*</span><span class="mf">0.231</span><span class="o">/</span><span class="mf">66.4</span> <span class="c1"># barns [m^2 E-28]*Å^3 [m^3 E-30]=[m E-2], factor 100</span>
 
 <span class="n">src</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;source&quot;</span><span class="p">,</span> <span class="s2">&quot;Source_div&quot;</span><span class="p">)</span>
 <span class="n">src</span><span class="o">.</span><span class="n">xwidth</span> <span class="o">=</span> <span class="mf">0.01</span>
 <span class="n">src</span><span class="o">.</span><span class="n">yheight</span> <span class="o">=</span> <span class="mf">0.035</span>
 <span class="n">src</span><span class="o">.</span><span class="n">focus_aw</span> <span class="o">=</span> <span class="mf">0.01</span>
 <span class="n">src</span><span class="o">.</span><span class="n">focus_ah</span> <span class="o">=</span> <span class="mf">0.01</span>
-<span class="n">src</span><span class="o">.</span><span class="n">lambda0</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span><span class="s2">&quot;wavelength&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="s2">&quot;Wavelength in [Ang]&quot;</span><span class="p">)</span>
+<span class="n">src</span><span class="o">.</span><span class="n">lambda0</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span><span class="s2">&quot;wavelength&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span>
+                                       <span class="n">comment</span><span class="o">=</span><span class="s2">&quot;Wavelength in [Ang]&quot;</span><span class="p">)</span>
 <span class="n">src</span><span class="o">.</span><span class="n">dlambda</span> <span class="o">=</span> <span class="s2">&quot;0.01*wavelength&quot;</span>
 <span class="n">src</span><span class="o">.</span><span class="n">flux</span> <span class="o">=</span> <span class="mf">1E13</span>
 
@@ -2030,7 +2031,8 @@
 <span class="n">sample_volume</span><span class="o">.</span><span class="n">priority</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">sample_volume</span><span class="o">.</span><span class="n">set_AT</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">src</span><span class="p">)</span>
 
-<span class="n">container</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;sample_container&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_cylinder&quot;</span><span class="p">,</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">sample_volume</span><span class="p">)</span>
+<span class="n">container</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;sample_container&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_cylinder&quot;</span><span class="p">)</span>
+<span class="n">container</span><span class="o">.</span><span class="n">set_RELATIVE</span><span class="p">(</span><span class="n">sample_volume</span><span class="p">)</span>
 <span class="n">container</span><span class="o">.</span><span class="n">yheight</span> <span class="o">=</span> <span class="mf">0.03</span><span class="o">+</span><span class="mf">0.003</span> <span class="c1"># 1.5 mm top and button</span>
 <span class="n">container</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="mf">0.0075</span> <span class="o">+</span> <span class="mf">0.0015</span> <span class="c1"># 1.5 mm sides of container</span>
 <span class="n">container</span><span class="o">.</span><span class="n">material_string</span><span class="o">=</span><span class="s1">&#39;&quot;Al&quot;&#39;</span> 
@@ -2057,7 +2059,8 @@
 <span class="n">inner_wall_vac</span><span class="o">.</span><span class="n">material_string</span><span class="o">=</span><span class="s1">&#39;&quot;Vacuum&quot;&#39;</span> 
 <span class="n">inner_wall_vac</span><span class="o">.</span><span class="n">priority</span> <span class="o">=</span> <span class="mi">81</span>
 
-<span class="n">logger_zx</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;logger_space_zx&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_logger_2D_space&quot;</span><span class="p">,</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">sample_volume</span><span class="p">)</span>
+<span class="n">logger_zx</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;logger_space_zx&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_logger_2D_space&quot;</span><span class="p">)</span>
+<span class="n">logger_zx</span><span class="o">.</span><span class="n">set_RELATIVE</span><span class="p">(</span><span class="n">sample_volume</span><span class="p">)</span>
 <span class="n">logger_zx</span><span class="o">.</span><span class="n">D_direction_1</span> <span class="o">=</span> <span class="s1">&#39;&quot;z&quot;&#39;</span>
 <span class="n">logger_zx</span><span class="o">.</span><span class="n">D1_min</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.04</span>
 <span class="n">logger_zx</span><span class="o">.</span><span class="n">D1_max</span> <span class="o">=</span> <span class="mf">0.04</span>
@@ -2068,7 +2071,8 @@
 <span class="n">logger_zx</span><span class="o">.</span><span class="n">n2</span> <span class="o">=</span> <span class="mi">300</span>
 <span class="n">logger_zx</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;&quot;logger_zx.dat&quot;&#39;</span>
 
-<span class="n">logger_zy</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;logger_space_zy&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_logger_2D_space&quot;</span><span class="p">,</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">sample_volume</span><span class="p">)</span>
+<span class="n">logger_zy</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;logger_space_zy&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_logger_2D_space&quot;</span><span class="p">)</span>
+<span class="n">logger_zy</span><span class="o">.</span><span class="n">set_RELATIVE</span><span class="p">(</span><span class="n">sample_volume</span><span class="p">)</span>
 <span class="n">logger_zy</span><span class="o">.</span><span class="n">D_direction_1</span> <span class="o">=</span> <span class="s1">&#39;&quot;z&quot;&#39;</span>
 <span class="n">logger_zy</span><span class="o">.</span><span class="n">D1_min</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.04</span>
 <span class="n">logger_zy</span><span class="o">.</span><span class="n">D1_max</span> <span class="o">=</span> <span class="mf">0.04</span>
@@ -2093,7 +2097,7 @@
 <div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instrument</span><span class="o">.</span><span class="n">set_parameters</span><span class="p">(</span><span class="n">wavelength</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span>
-<span class="n">instrument</span><span class="o">.</span><span class="n">settings</span><span class="p">(</span><span class="n">ncount</span><span class="o">=</span><span class="mf">3E5</span><span class="p">,</span> <span class="n">output_path</span><span class="o">=</span><span class="s2">&quot;data_folder/union_external&quot;</span><span class="p">)</span>
+<span class="n">instrument</span><span class="o">.</span><span class="n">settings</span><span class="p">(</span><span class="n">ncount</span><span class="o">=</span><span class="mf">3E6</span><span class="p">,</span> <span class="n">output_path</span><span class="o">=</span><span class="s2">&quot;data_folder/union_external&quot;</span><span class="p">)</span>
 
 <span class="n">instrument</span><span class="o">.</span><span class="n">backengine</span><span class="p">()</span>
 <span class="n">data_empty</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">data</span>
@@ -2101,7 +2105,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_external_67&quot;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_external_83&quot;
 INFO: Regenerating c-file: python_tutorial.c
 CFLAGS= -I@MCCODE_LIB@/share/
 INFO: Recompiling: ./python_tutorial.out
@@ -2207,7 +2211,7 @@ mccode-r.h:219:27: note: expanded from macro &#39;MPI_MASTER&#39;
                           ^~~~~
 14 warnings generated.
 INFO: ===
-INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_external_67
+INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_external_83
 
           Opening input file &#39;/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//data/Al.laz&#39; (Table_Read_Offset)
 Table from file &#39;Al.laz&#39; (block 1) is 26 x 18 (x=1:8), constant step. interpolation: linear
@@ -2419,9 +2423,9 @@ LIST: masked_by_mask_index_list for Volume 5 = []
       mask_mode for Volume                 5 = 0
 
 Union_master component master initialized sucessfully
-Detector: logger_space_zx_I=3292.68 logger_space_zx_ERR=25.7099 logger_space_zx_N=17178 &quot;logger_zx.dat&quot;
-Detector: logger_space_zy_I=3292.68 logger_space_zy_ERR=25.7099 logger_space_zy_N=17178 &quot;logger_zy.dat&quot;
-Detector: banana_I=328.387 banana_ERR=8.0987 banana_N=1727 &quot;banana_1642606243.th&quot;
+Detector: logger_space_zx_I=3321.32 logger_space_zx_ERR=8.15394 logger_space_zx_N=173857 &quot;logger_zx.dat&quot;
+Detector: logger_space_zy_I=3321.32 logger_space_zy_ERR=8.15394 logger_space_zy_N=173857 &quot;logger_zy.dat&quot;
+Detector: banana_I=320.363 banana_ERR=2.52676 banana_N=16883 &quot;banana_1643034667.th&quot;
 loading system configuration
 </pre></div>
 </div>
@@ -2467,7 +2471,7 @@ Plotting data with name logger_space_zy
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_external_68&quot;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_external_84&quot;
 INFO: Regenerating c-file: python_tutorial.c
 CFLAGS= -I@MCCODE_LIB@/share/
 INFO: Recompiling: ./python_tutorial.out
@@ -2573,7 +2577,7 @@ mccode-r.h:219:27: note: expanded from macro &#39;MPI_MASTER&#39;
                           ^~~~~
 14 warnings generated.
 INFO: ===
-INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_external_68
+INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_external_84
 
           Opening input file &#39;/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//data/Al.laz&#39; (Table_Read_Offset)
 Table from file &#39;Al.laz&#39; (block 1) is 26 x 18 (x=1:8), constant step. interpolation: linear
@@ -2785,9 +2789,9 @@ LIST: masked_by_mask_index_list for Volume 5 = []
       mask_mode for Volume                 5 = 0
 
 Union_master component master initialized sucessfully
-Detector: logger_space_zx_I=2190.77 logger_space_zx_ERR=20.9517 logger_space_zx_N=11452 &quot;logger_zx.dat&quot;
-Detector: logger_space_zy_I=2190.77 logger_space_zy_ERR=20.9517 logger_space_zy_N=11452 &quot;logger_zy.dat&quot;
-Detector: banana_I=219.318 banana_ERR=6.62773 banana_N=1150 &quot;banana_1642606251.th&quot;
+Detector: logger_space_zx_I=2175.12 logger_space_zx_ERR=6.606 logger_space_zx_N=113535 &quot;logger_zx.dat&quot;
+Detector: logger_space_zy_I=2175.12 logger_space_zy_ERR=6.606 logger_space_zy_N=113535 &quot;logger_zy.dat&quot;
+Detector: banana_I=215.908 banana_ERR=2.07725 banana_N=11331 &quot;banana_1643034681.th&quot;
 loading system configuration
 </pre></div>
 </div>
@@ -2840,7 +2844,7 @@ Plotting data with name logger_space_zy
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_external_69&quot;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_external_85&quot;
 INFO: Regenerating c-file: python_tutorial.c
 CFLAGS= -I@MCCODE_LIB@/share/
 INFO: Recompiling: ./python_tutorial.out
@@ -2946,7 +2950,7 @@ mccode-r.h:219:27: note: expanded from macro &#39;MPI_MASTER&#39;
                           ^~~~~
 14 warnings generated.
 INFO: ===
-INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_external_69
+INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_external_85
 
           Opening input file &#39;/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//data/Al.laz&#39; (Table_Read_Offset)
 Table from file &#39;Al.laz&#39; (block 1) is 26 x 18 (x=1:8), constant step. interpolation: linear
@@ -3164,9 +3168,9 @@ Table from file &#39;Na2Ca3Al2F14.laz&#39; (block 1) is 841 x 18 (x=1:20), const
 PowderN: sample: Reading 841 rows from Na2Ca3Al2F14.laz
 PowderN: sample: Read 841 reflections from file &#39;Na2Ca3Al2F14.laz&#39;
 PowderN: sample: Vc=1079.1 [Angs] sigma_abs=11.7856 [barn] sigma_inc=13.6704 [barn] reflections=Na2Ca3Al2F14.laz
-Detector: logger_space_zx_I=2193.14 logger_space_zx_ERR=20.9879 logger_space_zx_N=11431 &quot;logger_zx.dat&quot;
-Detector: logger_space_zy_I=2193.14 logger_space_zy_ERR=20.9879 logger_space_zy_N=11431 &quot;logger_zy.dat&quot;
-Detector: banana_I=1689.38 banana_ERR=16.1347 banana_N=32244 &quot;banana_1642606259.th&quot;
+Detector: logger_space_zx_I=2174.23 logger_space_zx_ERR=6.60592 logger_space_zx_N=113444 &quot;logger_zx.dat&quot;
+Detector: logger_space_zy_I=2174.23 logger_space_zy_ERR=6.60592 logger_space_zy_N=113444 &quot;logger_zy.dat&quot;
+Detector: banana_I=1677.53 banana_ERR=5.02931 banana_N=322602 &quot;banana_1643034696.th&quot;
 PowderN: sample: Info: you may highly improve the computation efficiency by using
     SPLIT 37 COMPONENT sample=PowderN(...)
   in the instrument description python_tutorial.instr.
@@ -3235,7 +3239,7 @@ Plotting data with name logger_space_zy
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_external_70&quot;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_external_86&quot;
 INFO: Regenerating c-file: python_tutorial.c
 CFLAGS= -I@MCCODE_LIB@/share/
 INFO: Recompiling: ./python_tutorial.out
@@ -3359,7 +3363,7 @@ mccode-r.h:219:27: note: expanded from macro &#39;MPI_MASTER&#39;
                           ^~~~~
 17 warnings generated.
 INFO: ===
-INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_external_70
+INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_external_86
 
           Opening input file &#39;/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//data/Al.laz&#39; (Table_Read_Offset)
 Table from file &#39;Al.laz&#39; (block 1) is 26 x 18 (x=1:8), constant step. interpolation: linear
@@ -3748,9 +3752,9 @@ LIST: masked_by_mask_index_list for Volume 4 = []
 
 Union_master component master_after_sample initialized sucessfully
 WARNING: Ray started in volume &#39;&#39;sample_container&#39;&#39; rather than the surrounding vacuum in component master_after_sample. This warning is only shown once.
-Detector: logger_space_zx_I=3732.17 logger_space_zx_ERR=41.1779 logger_space_zx_N=29914 &quot;logger_zx.dat&quot;
-Detector: logger_space_zy_I=3732.17 logger_space_zy_ERR=41.1779 logger_space_zy_N=29914 &quot;logger_zy.dat&quot;
-Detector: banana_I=1662.55 banana_ERR=18.7765 banana_N=30823 &quot;banana_1642606268.th&quot;
+Detector: logger_space_zx_I=3798.31 logger_space_zx_ERR=13.2331 logger_space_zx_N=300833 &quot;logger_zx.dat&quot;
+Detector: logger_space_zy_I=3798.31 logger_space_zy_ERR=13.2331 logger_space_zy_N=300833 &quot;logger_zy.dat&quot;
+Detector: banana_I=1657.16 banana_ERR=5.93314 banana_N=305551 &quot;banana_1643034712.th&quot;
 WARNING: No Union_master component defined after Union volume named sample_volume_replace, this components did not affect the simulation in any way.
 PowderN: sample: Info: you may highly improve the computation efficiency by using
     SPLIT 37 COMPONENT sample=PowderN(...)
@@ -3807,7 +3811,7 @@ Plotting data with name logger_space_zy
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7faf38d34a00&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fbdf9239ac0&gt;
 </pre></div>
 </div>
 <img alt="../_images/Union_tutorial_6_Exit_and_number_of_activations_23_1.png" src="../_images/Union_tutorial_6_Exit_and_number_of_activations_23_1.png" />

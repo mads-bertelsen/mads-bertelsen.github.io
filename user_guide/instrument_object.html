@@ -2551,7 +2551,7 @@ ROTATED [0, 0.5, 0] RELATIVE guide
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/user_guide/instr_name_data_21&quot;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/user_guide/instr_name_data_27&quot;
 INFO: Regenerating c-file: instr_name.c
 CFLAGS=
 INFO: Recompiling: ./instr_name.out
@@ -2563,7 +2563,7 @@ mccode-r.c:2837:3: warning: expression result unused [-Wunused-value]
   ^~~
 2 warnings generated.
 INFO: ===
-INFO: Placing instr file copy instr_name.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/user_guide/instr_name_data_21
+INFO: Placing instr file copy instr_name.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/user_guide/instr_name_data_27
 
 Simulation &#39;instr_name&#39; (instr_name.instr): running on 4 nodes (master is &#39;CI0021617&#39;, MPI version 3.1).
 Detector: PSD_I=0.114429 PSD_ERR=0.000144614 PSD_N=626113 &quot;PSD.dat&quot;
@@ -2597,7 +2597,7 @@ McStasData: PSD type: 2D  I:0.114429 E:0.000144614 N:626113]
 </div>
 <div class="section" id="visualizing-the-instrument">
 <h2>Visualizing the instrument<a class="headerlink" href="#visualizing-the-instrument" title="Permalink to this headline">¶</a></h2>
-<p>It is possible to visualize the instrument using mcdisplay, yet this opens a new window and is not yet implemented in such a way that it is shown in the notebook. The <em>show_instrument</em> method is used, and one can choose the format. Be aware that the parameters set for the instrument is used for the visualization.</p>
+<p>It is possible to visualize the instrument using the visualization features in McStas / McXtrace. If done in a Jupyter Notebook, the visualization can be viewed in the notebook. The <em>show_instrument</em> method is used, and one can choose the format with the keyword <em>format</em> which can be either “window” or “webgl”. When using window format a new window is opened with 2D visualization, and with the webgl format a 3D viewer is opened in a new browser tab. Be aware that the parameters set for the instrument is used for the visualization.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instrument</span><span class="o">.</span><span class="n">show_instrument</span><span class="p">()</span>
@@ -2605,45 +2605,29 @@ McStasData: PSD type: 2D  I:0.114429 E:0.000144614 N:626113]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>loading system configuration
-
-INFO: Using directory: &quot;instr_name_20220119_163201&quot;
-INFO: Regenerating c-file: instr_name.c
-CFLAGS=
-INFO: Recompiling: ./instr_name.out
-mccode-r.c:2837:3: warning: expression result unused [-Wunused-value]
-*t0;
-^~~
-1 warning generated.
-INFO: ===
-instrument definition parsed
-reading particle data...
-
-Component                         source AT (0,0,0)    0 m from origin
-Component                            PSD AT (0,0,1.9)    1.9 m from origin
-Component                    source_slit AT (0,0,2)    2 m from origin
-Component                          guide AT (0,0,2.1)    2.1 m from origin
-Component                        guide_2 AT (0,0,12.11)    12.11 m from origin
-Detector: PSD_I=0.119404 PSD_ERR=0.00852885 PSD_N=196 &quot;PSD.dat&quot;
-Thanks for using McStasScript!
-loading system configuration
-
-starting particle parsing
-ended particle parsing
-</pre></div>
+<div class="output text_html">
+<iframe
+    width="800"
+    height="450"
+    src="./instr_name_mcdisplay_3/index.html"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instrument</span><span class="o">.</span><span class="n">show_instrument</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;webgl&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instrument</span><span class="o">.</span><span class="n">show_instrument</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;window&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>loading system configuration
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1/bin/../tools/Python/mcdisplay/pyqtgraph/mcdisplay.py:292: DeprecationWarning: GraphicsWindow is deprecated, use GraphicsLayoutWidget instead,will be removed in 0.13
+  window = pg.GraphicsWindow()
 
-INFO: Using directory: &quot;instr_name_20220119_163203&quot;
+loading system configuration
+
+INFO: Using directory: &quot;instr_name_mcdisplay_4&quot;
 INFO: Regenerating c-file: instr_name.c
 CFLAGS=
 INFO: Recompiling: ./instr_name.out
@@ -2660,16 +2644,52 @@ Component                            PSD AT (0,0,1.9)    1.9 m from origin
 Component                    source_slit AT (0,0,2)    2 m from origin
 Component                          guide AT (0,0,2.1)    2.1 m from origin
 Component                        guide_2 AT (0,0,12.11)    12.11 m from origin
-Detector: PSD_I=0.11514 PSD_ERR=0.00837517 PSD_N=189 &quot;PSD.dat&quot;
+Detector: PSD_I=0.124278 PSD_ERR=0.0150709 PSD_N=68 &quot;PSD.dat&quot;
 Thanks for using McStasScript!
 loading system configuration
 
 starting particle parsing
 ended particle parsing
+
+q            - quit
+p            - save png
+s            - save svg
+space        - next ray
+click        - enter subplot
+right-click  - exit subplot
+h/F1         - show component list
+
+q            - quit
+p            - save png
+s            - save svg
+space        - next ray
+click        - enter subplot
+right-click  - exit subplot
+h/F1         - show component list
+wrapped C/C++ object of type ScatterPlotItem has been deleted
 </pre></div>
 </div>
 </div>
 </div>
+<p>When using the 3D view, use these controls to manipulate the view:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Action</p></th>
+<th class="head"><p>Effect on view</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Hold left click and drag</p></td>
+<td><p>Rotate</p></td>
+</tr>
+<tr class="row-odd"><td><p>Hold right click and drag</p></td>
+<td><p>Move</p></td>
+</tr>
+<tr class="row-even"><td><p>Hold mouse wheel and drag up/down</p></td>
+<td><p>Zoom in/out</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="dump-and-load-an-instrument-object">
 <h2>Dump and load an instrument object<a class="headerlink" href="#dump-and-load-an-instrument-object" title="Permalink to this headline">¶</a></h2>

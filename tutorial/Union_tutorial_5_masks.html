@@ -1963,7 +1963,7 @@
 
 <span class="n">Al</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;Al&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_make_material&quot;</span><span class="p">)</span>
 <span class="n">Al</span><span class="o">.</span><span class="n">process_string</span> <span class="o">=</span> <span class="s1">&#39;&quot;Al_inc,Al_pow&quot;&#39;</span>
-<span class="n">Al</span><span class="o">.</span><span class="n">my_absorption</span> <span class="o">=</span> <span class="mi">100</span><span class="o">*</span><span class="mf">0.231</span><span class="o">/</span><span class="mf">66.4</span> <span class="c1"># barns [m^2 E-28] * Å^3 [m^3 E-30] = [m E-2], correct with factor 100.</span>
+<span class="n">Al</span><span class="o">.</span><span class="n">my_absorption</span> <span class="o">=</span> <span class="mi">100</span><span class="o">*</span><span class="mf">0.231</span><span class="o">/</span><span class="mf">66.4</span> <span class="c1"># barns [m^2 E-28]*Å^3 [m^3 E-30]=[m E-2], factor 100</span>
 
 <span class="n">src</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;source&quot;</span><span class="p">,</span> <span class="s2">&quot;Source_div&quot;</span><span class="p">)</span>
 
@@ -1973,7 +1973,8 @@
 <span class="n">src</span><span class="o">.</span><span class="n">focus_ah</span> <span class="o">=</span> <span class="mf">0.01</span>
 
 
-<span class="n">src</span><span class="o">.</span><span class="n">lambda0</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span><span class="s2">&quot;wavelength&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="s2">&quot;Wavelength in [Ang]&quot;</span><span class="p">)</span>
+<span class="n">src</span><span class="o">.</span><span class="n">lambda0</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span><span class="s2">&quot;wavelength&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span>
+                                       <span class="n">comment</span><span class="o">=</span><span class="s2">&quot;Wavelength in [Ang]&quot;</span><span class="p">)</span>
 <span class="n">src</span><span class="o">.</span><span class="n">dlambda</span> <span class="o">=</span> <span class="s2">&quot;0.01*wavelength&quot;</span>
 <span class="n">src</span><span class="o">.</span><span class="n">flux</span> <span class="o">=</span> <span class="mf">1E13</span>
 
@@ -1991,7 +1992,8 @@
 <span class="n">wall_vac</span><span class="o">.</span><span class="n">material_string</span><span class="o">=</span><span class="s1">&#39;&quot;Vacuum&quot;&#39;</span> 
 <span class="n">wall_vac</span><span class="o">.</span><span class="n">priority</span> <span class="o">=</span> <span class="mi">50</span>
 
-<span class="n">logger_zx</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;logger_space_zx&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_logger_2D_space&quot;</span><span class="p">,</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">wall</span><span class="p">)</span>
+<span class="n">logger_zx</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;logger_space_zx&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_logger_2D_space&quot;</span><span class="p">)</span>
+<span class="n">logger_zx</span><span class="o">.</span><span class="n">set_RELATIVE</span><span class="p">(</span><span class="n">wall</span><span class="p">)</span>
 <span class="n">logger_zx</span><span class="o">.</span><span class="n">D_direction_1</span> <span class="o">=</span> <span class="s1">&#39;&quot;z&quot;&#39;</span>
 <span class="n">logger_zx</span><span class="o">.</span><span class="n">D1_min</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.12</span>
 <span class="n">logger_zx</span><span class="o">.</span><span class="n">D1_max</span> <span class="o">=</span> <span class="mf">0.12</span>
@@ -2009,7 +2011,7 @@
 </div>
 <div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instrument</span><span class="o">.</span><span class="n">settings</span><span class="p">(</span><span class="n">ncount</span><span class="o">=</span><span class="mf">2E5</span><span class="p">,</span> <span class="n">output_path</span><span class="o">=</span><span class="s2">&quot;data_folder/union_masks&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instrument</span><span class="o">.</span><span class="n">settings</span><span class="p">(</span><span class="n">ncount</span><span class="o">=</span><span class="mf">2E6</span><span class="p">,</span> <span class="n">output_path</span><span class="o">=</span><span class="s2">&quot;data_folder/union_masks&quot;</span><span class="p">)</span>
 
 <span class="n">instrument</span><span class="o">.</span><span class="n">backengine</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">data</span>
@@ -2017,7 +2019,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_masks_47&quot;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_masks_59&quot;
 INFO: Regenerating c-file: python_tutorial.c
 CFLAGS= -I@MCCODE_LIB@/share/
 INFO: Recompiling: ./python_tutorial.out
@@ -2104,7 +2106,7 @@ mccode-r.h:219:27: note: expanded from macro &#39;MPI_MASTER&#39;
                           ^~~~~
 13 warnings generated.
 INFO: ===
-INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_masks_47
+INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_masks_59
 
     Opening input file &#39;/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//data/Al.laz&#39; (Table_Read_Offset)
 Table from file &#39;Al.laz&#39; (block 1) is 26 x 18 (x=1:8), constant step. interpolation: linear
@@ -2214,7 +2216,7 @@ LIST: masked_by_mask_index_list for Volume 2 = []
       mask_mode for Volume                 2 = 0
 
 Union_master component master initialized sucessfully
-Detector: logger_space_zx_I=1438.09 logger_space_zx_ERR=13.8994 logger_space_zx_N=11127 &quot;logger_zx.dat&quot;
+Detector: logger_space_zx_I=1445.44 logger_space_zx_ERR=4.40658 logger_space_zx_N=111592 &quot;logger_zx.dat&quot;
 loading system configuration
 </pre></div>
 </div>
@@ -2276,7 +2278,7 @@ loading system configuration
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_masks_48&quot;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_masks_60&quot;
 INFO: Regenerating c-file: python_tutorial.c
 CFLAGS= -I@MCCODE_LIB@/share/
 INFO: Recompiling: ./python_tutorial.out
@@ -2363,7 +2365,7 @@ mccode-r.h:219:27: note: expanded from macro &#39;MPI_MASTER&#39;
                           ^~~~~
 13 warnings generated.
 INFO: ===
-INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_masks_48
+INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_masks_60
 
     Opening input file &#39;/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//data/Al.laz&#39; (Table_Read_Offset)
 Table from file &#39;Al.laz&#39; (block 1) is 26 x 18 (x=1:8), constant step. interpolation: linear
@@ -2536,7 +2538,7 @@ LIST: masked_by_mask_index_list for Volume 4 = []
       mask_mode for Volume                 4 = 1
 
 Union_master component master initialized sucessfully
-Detector: logger_space_zx_I=1325.49 logger_space_zx_ERR=13.3437 logger_space_zx_N=10217 &quot;logger_zx.dat&quot;
+Detector: logger_space_zx_I=1312.02 logger_space_zx_ERR=4.19837 logger_space_zx_N=101154 &quot;logger_zx.dat&quot;
 loading system configuration
 </pre></div>
 </div>
@@ -2594,7 +2596,7 @@ loading system configuration
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_masks_49&quot;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_masks_61&quot;
 INFO: Regenerating c-file: python_tutorial.c
 CFLAGS= -I@MCCODE_LIB@/share/
 INFO: Recompiling: ./python_tutorial.out
@@ -2681,7 +2683,7 @@ mccode-r.h:219:27: note: expanded from macro &#39;MPI_MASTER&#39;
                           ^~~~~
 13 warnings generated.
 INFO: ===
-INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_masks_49
+INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_masks_61
 
     Opening input file &#39;/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//data/Al.laz&#39; (Table_Read_Offset)
 Table from file &#39;Al.laz&#39; (block 1) is 26 x 18 (x=1:8), constant step. interpolation: linear
@@ -2951,7 +2953,7 @@ LIST: masked_by_mask_index_list for Volume 7 = []
       mask_mode for Volume                 7 = 1
 
 Union_master component master initialized sucessfully
-Detector: logger_space_zx_I=1131.98 logger_space_zx_ERR=12.3318 logger_space_zx_N=9430 &quot;logger_zx.dat&quot;
+Detector: logger_space_zx_I=1144.37 logger_space_zx_ERR=3.92102 logger_space_zx_N=94766 &quot;logger_zx.dat&quot;
 loading system configuration
 </pre></div>
 </div>
@@ -2986,7 +2988,7 @@ loading system configuration
 
 <span class="n">Al</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;Al&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_make_material&quot;</span><span class="p">)</span>
 <span class="n">Al</span><span class="o">.</span><span class="n">process_string</span> <span class="o">=</span> <span class="s1">&#39;&quot;Al_inc,Al_pow&quot;&#39;</span>
-<span class="n">Al</span><span class="o">.</span><span class="n">my_absorption</span> <span class="o">=</span> <span class="mi">100</span><span class="o">*</span><span class="mf">0.231</span><span class="o">/</span><span class="mf">66.4</span> <span class="c1"># barns [m^2 E-28] * Å^3 [m^3 E-30] = [m E-2], correct with factor 100.</span>
+<span class="n">Al</span><span class="o">.</span><span class="n">my_absorption</span> <span class="o">=</span> <span class="mi">100</span><span class="o">*</span><span class="mf">0.231</span><span class="o">/</span><span class="mf">66.4</span> <span class="c1"># barns [m^2 E-28]*Å^3 [m^3 E-30]=[m E-2], factor 100</span>
 
 <span class="n">src</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;source&quot;</span><span class="p">,</span> <span class="s2">&quot;Source_div&quot;</span><span class="p">)</span>
 
@@ -3026,7 +3028,8 @@ loading system configuration
 <span class="n">cyl_mask</span><span class="o">.</span><span class="n">mask_string</span><span class="o">=</span><span class="s1">&#39;&quot;box&quot;&#39;</span> 
 <span class="n">cyl_mask</span><span class="o">.</span><span class="n">priority</span> <span class="o">=</span> <span class="mi">51</span>
 
-<span class="n">logger_zx</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;logger_space_zx&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_logger_2D_space&quot;</span><span class="p">,</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">box</span><span class="p">)</span>
+<span class="n">logger_zx</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;logger_space_zx&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_logger_2D_space&quot;</span><span class="p">)</span>
+<span class="n">logger_zx</span><span class="o">.</span><span class="n">set_RELATIVE</span><span class="p">(</span><span class="n">box</span><span class="p">)</span>
 <span class="n">logger_zx</span><span class="o">.</span><span class="n">D_direction_1</span> <span class="o">=</span> <span class="s1">&#39;&quot;z&quot;&#39;</span>
 <span class="n">logger_zx</span><span class="o">.</span><span class="n">D1_min</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.12</span>
 <span class="n">logger_zx</span><span class="o">.</span><span class="n">D1_max</span> <span class="o">=</span> <span class="mf">0.12</span>
@@ -3046,7 +3049,7 @@ loading system configuration
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/python_tutorial_data_6&quot;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/python_tutorial_data_10&quot;
 INFO: Regenerating c-file: python_tutorial.c
 CFLAGS= -I@MCCODE_LIB@/share/
 INFO: Recompiling: ./python_tutorial.out
@@ -3133,7 +3136,7 @@ mccode-r.h:219:27: note: expanded from macro &#39;MPI_MASTER&#39;
                           ^~~~~
 13 warnings generated.
 INFO: ===
-INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/python_tutorial_data_6
+INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/python_tutorial_data_10
 
     Opening input file &#39;/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//data/Al.laz&#39; (Table_Read_Offset)
 Table from file &#39;Al.laz&#39; (block 1) is 26 x 18 (x=1:8), constant step. interpolation: linear
@@ -3267,7 +3270,7 @@ LIST: masked_by_mask_index_list for Volume 3 = []
       mask_mode for Volume                 3 = 1
 
 Union_master component master initialized sucessfully
-Detector: logger_space_zx_I=3988.35 logger_space_zx_ERR=10.3498 logger_space_zx_N=158877 &quot;logger_zx.dat&quot;
+Detector: logger_space_zx_I=3981.94 logger_space_zx_ERR=10.3415 logger_space_zx_N=158557 &quot;logger_zx.dat&quot;
 loading system configuration
 </pre></div>
 </div>

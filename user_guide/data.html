@@ -2034,7 +2034,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/user_guide/data_example_22&quot;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/user_guide/data_example_26&quot;
 INFO: Regenerating c-file: data_example.c
 CFLAGS=
 INFO: Recompiling: ./data_example.out
@@ -2043,9 +2043,9 @@ mccode-r.c:2837:3: warning: expression result unused [-Wunused-value]
   ^~~
 1 warning generated.
 INFO: ===
-Warning: 55471 events were removed in Component[5] PSD=PSD_monitor()
+Warning: 55036 events were removed in Component[5] PSD=PSD_monitor()
          (negative time, miss next components, rounding errors, Nan, Inf).
-INFO: Placing instr file copy data_example.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/user_guide/data_example_22
+INFO: Placing instr file copy data_example.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/user_guide/data_example_26
 
       Opening input file &#39;/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//data/Na2Ca3Al2F14.laz&#39; (Table_Read_Offset)
 Table from file &#39;Na2Ca3Al2F14.laz&#39; (block 1) is 841 x 18 (x=1:20), constant step. interpolation: linear
@@ -2055,9 +2055,9 @@ PowderN: sample: Powder file probably of type Lazy Pulver (laz)
 WARNING: but F2 unit is set to barns=0 (fm^2). Intensity might be 100 times too low.
 PowderN: sample: Read 841 reflections from file &#39;Na2Ca3Al2F14.laz&#39;
 PowderN: sample: Vc=1079.1 [Angs] sigma_abs=11.7856 [barn] sigma_inc=13.6704 [barn] reflections=Na2Ca3Al2F14.laz
-Detector: banana_I=3.11941e-07 banana_ERR=7.2866e-09 banana_N=13242 &quot;banana.dat&quot;
+Detector: banana_I=2.90994e-07 banana_ERR=6.99956e-09 banana_N=13068 &quot;banana.dat&quot;
 Events:   &quot;events_dat_list.p.x.y.z.vx.vy.vz.t&quot;
-Detector: PSD_I=5.0335e-05 PSD_ERR=5.0549e-07 PSD_N=10490 &quot;psd.dat&quot;
+Detector: PSD_I=5.12194e-05 PSD_ERR=5.09927e-07 PSD_N=10682 &quot;psd.dat&quot;
 PowderN: sample: Info: you may highly improve the computation efficiency by using
     SPLIT 504 COMPONENT sample=PowderN(...)
   in the instrument description data_example.instr.
@@ -2080,9 +2080,9 @@ loading system configuration
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[
-McStasData: banana type: 1D  I:3.11941e-07 E:7.2866e-09 N:13242, 
-McStasDataEvent: events with 43982 events. Variables: p x y z vx vy vz t, 
-McStasData: PSD type: 2D  I:5.0335e-05 E:5.0549e-07 N:10490]
+McStasData: banana type: 1D  I:2.90994e-07 E:6.99956e-09 N:13068, 
+McStasDataEvent: events with 43611 events. Variables: p x y z vx vy vz t, 
+McStasData: PSD type: 2D  I:5.12194e-05 E:5.09927e-07 N:10682]
 </pre></div>
 </div>
 </div>
@@ -2090,7 +2090,7 @@ McStasData: PSD type: 2D  I:5.0335e-05 E:5.0549e-07 N:10490]
 </div>
 <div class="section" id="mcstasdata-objects">
 <h2>McStasData objects<a class="headerlink" href="#mcstasdata-objects" title="Permalink to this headline">¶</a></h2>
-<p>The data retrieved from the instrument object is in the form of a list that contains <a class="reference internal" href="../_autosummary/mcstasscript.data.data.McStasData.html"><span class="doc std std-doc">McStasData</span></a> and <a class="reference internal" href="../_autosummary/mcstasscript.data.data.McStasDataEvent.html"><span class="doc std std-doc">McStasDataEvent</span></a> objects. The McStasScript module <a class="reference internal" href="../_autosummary/mcstasscript.interface.functions.html"><span class="doc std std-doc"><em>functions</em></span></a> contains a function called <span class="xref myst"><em>name_search</em></span> which can be used to select a certain element of such a data list. It will match the component name first and if no match is found it will check for match with the filename. Here <a class="reference internal" href="../_autosummary/mcstasscript.interface.functions.name_search.html"><span class="doc std std-doc"><em>name_search</em></span></a> is used to retrieve the PSD <a class="reference internal" href="../_autosummary/mcstasscript.data.data.McStasData.html"><span class="doc std std-doc">McStasData</span></a> object.</p>
+<p>The data retrieved from the instrument object is in the form of a list that contains <a class="reference internal" href="../_autosummary/mcstasscript.data.data.McStasData.html"><span class="doc std std-doc">McStasData</span></a> and <a class="reference internal" href="../_autosummary/mcstasscript.data.data.McStasDataEvent.html"><span class="doc std std-doc">McStasDataEvent</span></a> objects. The McStasScript module <a class="reference internal" href="../_autosummary/mcstasscript.interface.functions.html"><span class="doc std std-doc"><em>functions</em></span></a> contains a function called <a class="reference internal" href="../_autosummary/mcstasscript.interface.functions.name_search.html"><span class="doc std std-doc"><em>name_search</em></span></a> which can be used to select a certain element of such a data list. It will match the component name first and if no match is found it will check for match with the filename. Here <a class="reference internal" href="../_autosummary/mcstasscript.interface.functions.name_search.html"><span class="doc std std-doc"><em>name_search</em></span></a> is used to retrieve the PSD <a class="reference internal" href="../_autosummary/mcstasscript.data.data.McStasData.html"><span class="doc std std-doc">McStasData</span></a> object.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PSD</span> <span class="o">=</span> <span class="n">functions</span><span class="o">.</span><span class="n">name_search</span><span class="p">(</span><span class="s2">&quot;PSD&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
@@ -2133,8 +2133,8 @@ Instrument parameters:
 metadata object
 component_name: events
 filename: events_dat_list.p.x.y.z.vx.vy.vz.t
-2D data of dimension (8, 43982)
-  [1.0: 43982.0] List of neutron events
+2D data of dimension (8, 43611)
+  [1.0: 43611.0] List of neutron events
   [1.0: 8.0] p x y z vx vy vz t
 Instrument parameters: 
  wavelength = 1.2
@@ -2158,7 +2158,7 @@ Instrument parameters:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Date&#39;: &#39;Wed Jan 19 16:31:32 2022 (1642606292)&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Date&#39;: &#39;Mon Jan 24 15:32:30 2022 (1643034750)&#39;,
  &#39;type&#39;: &#39;array_2d(100, 100)&#39;,
  &#39;Source&#39;: &#39;data_example (data_example.instr)&#39;,
  &#39;component&#39;: &#39;PSD&#39;,
@@ -2166,9 +2166,9 @@ Instrument parameters:
  &#39;title&#39;: &#39;PSD monitor&#39;,
  &#39;Ncount&#39;: &#39;100000&#39;,
  &#39;filename&#39;: &#39;psd.dat&#39;,
- &#39;statistics&#39;: &#39;X0=0.00524653; dX=0.442136; Y0=0.0104797; dY=0.875608;&#39;,
- &#39;signal&#39;: &#39;Min=0; Max=8.62421e-08; Mean=5.0335e-09;&#39;,
- &#39;values&#39;: &#39;5.0335e-05 5.0549e-07 10490&#39;,
+ &#39;statistics&#39;: &#39;X0=-0.00354167; dX=0.443375; Y0=-0.0188432; dY=0.886438;&#39;,
+ &#39;signal&#39;: &#39;Min=0; Max=7.6222e-08; Mean=5.12194e-09;&#39;,
+ &#39;values&#39;: &#39;5.12194e-05 5.09927e-07 10682&#39;,
  &#39;xvar&#39;: &#39;X&#39;,
  &#39;yvar&#39;: &#39;Y&#39;,
  &#39;xlabel&#39;: &#39;X position [cm]&#39;,
@@ -2208,38 +2208,38 @@ Instrument parameters:
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intensity
 [[0.00000000e+00 0.00000000e+00 0.00000000e+00 ... 0.00000000e+00
   0.00000000e+00 0.00000000e+00]
- [0.00000000e+00 0.00000000e+00 0.00000000e+00 ... 3.52324352e-12
+ [0.00000000e+00 0.00000000e+00 0.00000000e+00 ... 0.00000000e+00
   0.00000000e+00 0.00000000e+00]
- [0.00000000e+00 4.81188134e-12 0.00000000e+00 ... 0.00000000e+00
+ [0.00000000e+00 0.00000000e+00 1.48330228e-12 ... 0.00000000e+00
   0.00000000e+00 0.00000000e+00]
  ...
  [0.00000000e+00 0.00000000e+00 0.00000000e+00 ... 0.00000000e+00
-  0.00000000e+00 0.00000000e+00]
- [0.00000000e+00 0.00000000e+00 5.05758685e-12 ... 1.25766362e-11
+  0.00000000e+00 1.64507430e-12]
+ [0.00000000e+00 0.00000000e+00 0.00000000e+00 ... 0.00000000e+00
   0.00000000e+00 0.00000000e+00]
  [0.00000000e+00 0.00000000e+00 0.00000000e+00 ... 0.00000000e+00
   0.00000000e+00 0.00000000e+00]]
 Error
 [[0.00000000e+00 0.00000000e+00 0.00000000e+00 ... 0.00000000e+00
   0.00000000e+00 0.00000000e+00]
- [0.00000000e+00 0.00000000e+00 0.00000000e+00 ... 3.52324352e-12
+ [0.00000000e+00 0.00000000e+00 0.00000000e+00 ... 0.00000000e+00
   0.00000000e+00 0.00000000e+00]
- [0.00000000e+00 4.81188134e-12 0.00000000e+00 ... 0.00000000e+00
+ [0.00000000e+00 0.00000000e+00 1.48330228e-12 ... 0.00000000e+00
   0.00000000e+00 0.00000000e+00]
  ...
  [0.00000000e+00 0.00000000e+00 0.00000000e+00 ... 0.00000000e+00
-  0.00000000e+00 0.00000000e+00]
- [0.00000000e+00 0.00000000e+00 5.05758685e-12 ... 1.25766362e-11
+  0.00000000e+00 1.64507430e-12]
+ [0.00000000e+00 0.00000000e+00 0.00000000e+00 ... 0.00000000e+00
   0.00000000e+00 0.00000000e+00]
  [0.00000000e+00 0.00000000e+00 0.00000000e+00 ... 0.00000000e+00
   0.00000000e+00 0.00000000e+00]]
 Ncount
 [[0. 0. 0. ... 0. 0. 0.]
- [0. 0. 0. ... 1. 0. 0.]
- [0. 1. 0. ... 0. 0. 0.]
- ...
  [0. 0. 0. ... 0. 0. 0.]
- [0. 0. 1. ... 1. 0. 0.]
+ [0. 0. 1. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 0. 1.]
+ [0. 0. 0. ... 0. 0. 0.]
  [0. 0. 0. ... 0. 0. 0.]]
 </pre></div>
 </div>
@@ -2253,19 +2253,19 @@ Ncount
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Events [[ 1.25255126e-12 -1.30838931e-02  4.73594294e-03 ... -1.48329305e+03
-  -2.52254578e+03  1.40951598e-03]
- [ 8.32675012e-15 -4.51739730e-03  1.01488955e-02 ...  3.06323865e+03
-  -5.79725487e+02  1.56705629e-03]
- [ 1.84885939e-10 -2.23830305e-03 -8.37769388e-03 ... -2.77125589e+03
-   1.53455811e+03  1.53639584e-03]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Events [[ 1.67238430e-13  5.14770914e-03  1.44004355e-02 ...  2.03183298e+03
+  -2.89181031e+03  1.41248953e-03]
+ [ 8.58732409e-12 -7.60565650e-03  1.67315140e-02 ...  1.57054786e+03
+   3.10302061e+03  1.41938316e-03]
+ [ 1.52630499e-13 -1.28598717e-02 -1.67650066e-02 ... -3.03545913e+03
+   6.53934622e+02  1.43256860e-03]
  ...
- [ 3.28428731e-12  2.96021502e-03 -8.28041596e-03 ... -6.55196770e+02
-  -3.22542021e+03  1.40241713e-03]
- [ 3.80499424e-13  3.79551397e-02 -1.47052811e-02 ... -1.32079244e+03
-   8.55116435e+02  1.64970069e-03]
- [ 3.43652419e-13  9.06050931e-03  3.68980653e-03 ...  2.29386922e+03
-  -1.06716099e+03  1.48887821e-03]]
+ [ 6.60315098e-12  2.13063408e-02  8.32328439e-03 ... -1.09116934e+02
+   2.25544564e+03  1.46194628e-03]
+ [ 1.57326483e-13 -3.67573186e-03 -1.08592179e-02 ...  6.03071437e+02
+  -3.28447613e+03  1.48897151e-03]
+ [ 5.09119182e-12  1.29516928e-03 -1.02528786e-02 ...  2.35636939e+02
+   2.89123612e+03  1.53530978e-03]]
 </pre></div>
 </div>
 </div>
@@ -2278,7 +2278,7 @@ Ncount
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/user_guide/data_example_22&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/user_guide/data_example_26&#39;
 </pre></div>
 </div>
 </div>

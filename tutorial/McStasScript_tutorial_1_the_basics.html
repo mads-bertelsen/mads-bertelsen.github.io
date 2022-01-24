@@ -2427,8 +2427,11 @@ AT [0, 0, 0] ABSOLUTE
 <p>The default type for instrument parameters is a double (floating point number), but other types can be selected if necessary by providing a type string before, here we also provide an example of an integer.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wavelength</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span><span class="s2">&quot;wavelength&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="s2">&quot;Wavelength in [Ang]&quot;</span><span class="p">)</span>
-<span class="n">order</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span><span class="s2">&quot;int&quot;</span><span class="p">,</span> <span class="s2">&quot;order&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="s2">&quot;Monochromator order, integer&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wavelength</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span><span class="s2">&quot;wavelength&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span>
+                                      <span class="n">comment</span><span class="o">=</span><span class="s2">&quot;Wavelength in [Ang]&quot;</span><span class="p">)</span>
+
+<span class="n">order</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span><span class="s2">&quot;int&quot;</span><span class="p">,</span> <span class="s2">&quot;order&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                                 <span class="n">comment</span><span class="o">=</span><span class="s2">&quot;Monochromator order, integer&quot;</span><span class="p">)</span>
 <span class="n">instrument</span><span class="o">.</span><span class="n">show_parameters</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -2588,7 +2591,8 @@ ROTATED [0, &#39;mono_rotation&#39;, 0] RELATIVE guide
 <p>We now add a powder sample using the PowderN component placed relative to our newly defiend beam direction. The chosen powder is Na2Ca3Al2F14 which is a standard sample due to its large number of available reflections.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;sample&quot;</span><span class="p">,</span> <span class="s2">&quot;PowderN&quot;</span><span class="p">,</span> <span class="n">AT</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">],</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">beam_direction</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;sample&quot;</span><span class="p">,</span> <span class="s2">&quot;PowderN&quot;</span><span class="p">,</span>
+                                  <span class="n">AT</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">],</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">beam_direction</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2703,7 +2707,7 @@ monitor  PSD_monitor        AT      (0, 0, 0.1)           RELATIVE sample
 <p>The <em>backengine</em> method takes no parameters and just performs the simulation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instrument</span><span class="o">.</span><span class="n">set_parameters</span><span class="p">(</span><span class="n">wavelength</span><span class="o">=</span><span class="mf">2.8</span><span class="p">)</span> <span class="c1"># Set parameters</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instrument</span><span class="o">.</span><span class="n">set_parameters</span><span class="p">(</span><span class="n">wavelength</span><span class="o">=</span><span class="mf">2.8</span><span class="p">)</span>
 <span class="n">instrument</span><span class="o">.</span><span class="n">show_parameters</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -2717,14 +2721,14 @@ int order       = 1    // Monochromator order, integer
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instrument</span><span class="o">.</span><span class="n">settings</span><span class="p">(</span><span class="n">ncount</span><span class="o">=</span><span class="mf">5E5</span><span class="p">,</span> <span class="n">output_path</span><span class="o">=</span><span class="s2">&quot;data_folder/mcstas_basics&quot;</span><span class="p">)</span> <span class="c1"># Settings</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instrument</span><span class="o">.</span><span class="n">settings</span><span class="p">(</span><span class="n">ncount</span><span class="o">=</span><span class="mf">5E6</span><span class="p">,</span> <span class="n">output_path</span><span class="o">=</span><span class="s2">&quot;data_folder/mcstas_basics&quot;</span><span class="p">)</span>
 <span class="n">instrument</span><span class="o">.</span><span class="n">show_settings</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Instrument settings:
-  ncount:           5.00e+05
+  ncount:           5.00e+06
   output_path:      data_folder/mcstas_basics
   run_path:         run_folder
   package_path:     /Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1
@@ -2742,7 +2746,7 @@ int order       = 1    // Monochromator order, integer
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/mcstas_basics_22&quot;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/mcstas_basics_26&quot;
 INFO: Regenerating c-file: python_tutorial.c
 CFLAGS=
 INFO: Recompiling: ./python_tutorial.out
@@ -2751,9 +2755,9 @@ mccode-r.c:2837:3: warning: expression result unused [-Wunused-value]
   ^~~
 1 warning generated.
 INFO: ===
-Warning: 6390 events were removed in Component[7] monitor=PSD_monitor()
+Warning: 64084 events were removed in Component[7] monitor=PSD_monitor()
          (negative time, miss next components, rounding errors, Nan, Inf).
-INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/mcstas_basics_22
+INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/mcstas_basics_26
 
       monochromator rotation = 22.4519 deg
 Opening input file &#39;/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//data/Na2Ca3Al2F14.laz&#39; (Table_Read_Offset)
@@ -2762,8 +2766,8 @@ Table from file &#39;Na2Ca3Al2F14.laz&#39; (block 1) is 841 x 18 (x=1:20), const
 PowderN: sample: Reading 841 rows from Na2Ca3Al2F14.laz
 PowderN: sample: Read 841 reflections from file &#39;Na2Ca3Al2F14.laz&#39;
 PowderN: sample: Vc=1079.1 [Angs] sigma_abs=11.7856 [barn] sigma_inc=13.6704 [barn] reflections=Na2Ca3Al2F14.laz
-Detector: banana_I=1.29965e-06 banana_ERR=6.88408e-08 banana_N=1014 &quot;banana.dat&quot;
-Detector: monitor_I=4.08563e-05 monitor_ERR=8.56997e-07 monitor_N=4949 &quot;psd.dat&quot;
+Detector: banana_I=1.37359e-06 banana_ERR=2.26526e-08 banana_N=10784 &quot;banana.dat&quot;
+Detector: monitor_I=4.0691e-05 monitor_ERR=2.69744e-07 monitor_N=49412 &quot;psd.dat&quot;
 PowderN: sample: Info: you may highly improve the computation efficiency by using
     SPLIT 47 COMPONENT sample=PowderN(...)
   in the instrument description python_tutorial.instr.
@@ -2857,7 +2861,7 @@ Plotting data with name monitor
 * 
 * %Identification
 * Written by: Python McStas Instrument Generator
-* Date: 16:26:47 on January 19, 2022
+* Date: 15:26:10 on January 24, 2022
 * Origin: ESS DMSC
 * %INSTRUMENT_SITE: Generated_instruments
 * 

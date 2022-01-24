@@ -2393,7 +2393,7 @@ harmonize input with other simulation engines.</p>
 <td><p>Appends code to trace section, only used in write_c_files</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#id11" title="mcstasscript.interface.instr.McCode_instr.backengine"><code class="xref py py-obj docutils literal notranslate"><span class="pre">backengine</span></code></a>()</p></td>
-<td><p>Runs McStas instrument described by this class, saves data in data attribute</p></td>
+<td><p>Runs instrument with McStas / McXtrace, saves data in data attribute</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#id12" title="mcstasscript.interface.instr.McCode_instr.component_help"><code class="xref py py-obj docutils literal notranslate"><span class="pre">component_help</span></code></a>(name, **kwargs)</p></td>
 <td><p>Method for showing parameters for a component before adding it to the instrument</p></td>
@@ -2479,7 +2479,7 @@ harmonize input with other simulation engines.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#id34" title="mcstasscript.interface.instr.McCode_instr.show_components"><code class="xref py py-obj docutils literal notranslate"><span class="pre">show_components</span></code></a>(*args)</p></td>
 <td><p>Helper method that shows available components to the user</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#id35" title="mcstasscript.interface.instr.McCode_instr.show_instrument"><code class="xref py py-obj docutils literal notranslate"><span class="pre">show_instrument</span></code></a>(*args, **kwargs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#id35" title="mcstasscript.interface.instr.McCode_instr.show_instrument"><code class="xref py py-obj docutils literal notranslate"><span class="pre">show_instrument</span></code></a>([format, width, height])</p></td>
 <td><p>Uses mcdisplay to show the instrument in web browser</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#mcstasscript.interface.instr.McCode_instr.show_parameters" title="mcstasscript.interface.instr.McCode_instr.show_parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">show_parameters</span></code></a>([line_length])</p></td>
@@ -2732,8 +2732,7 @@ code.  No new line is made with this call.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="id11">
 <span class="sig-name descname"><span class="pre">backengine</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id11" title="Permalink to this definition">¶</a></dt>
-<dd><p>Runs McStas instrument described by this class, saves data in data
-attribute</p>
+<dd><p>Runs instrument with McStas / McXtrace, saves data in data attribute</p>
 <p>This method will write the instrument to disk and then run it using
 the mcrun command of the system. Settings are set using settings
 method.</p>
@@ -3139,8 +3138,19 @@ the first input, components in that category are printed.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="id35">
-<span class="sig-name descname"><span class="pre">show_instrument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id35" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">show_instrument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'webgl'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">800</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">450</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id35" title="Permalink to this definition">¶</a></dt>
 <dd><p>Uses mcdisplay to show the instrument in web browser</p>
+<p>If this method is performed from a jupyter notebook and use the webgl
+format the interface will be shown in the notebook using an IFrame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Keyword Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>format</strong> (<em>str</em>) – ‘webgl’ or ‘window’ format for display</p></li>
+<li><p><strong>width</strong> (<em>int</em>) – width of IFrame if used in notebook</p></li>
+<li><p><strong>height</strong> (<em>int</em>) – height of IFrame if used in notebook</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">

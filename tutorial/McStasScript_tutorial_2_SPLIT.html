@@ -1865,8 +1865,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Adding the SPLIT keyword
+  <a class="reference internal nav-link" href="#caution-on-split-value">
+   Caution on split value
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1920,8 +1920,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Adding the SPLIT keyword
+  <a class="reference internal nav-link" href="#caution-on-split-value">
+   Caution on split value
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1963,7 +1963,8 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instrument</span> <span class="o">=</span> <span class="n">instr</span><span class="o">.</span><span class="n">McStas_instr</span><span class="p">(</span><span class="s2">&quot;python_tutorial&quot;</span><span class="p">,</span> <span class="n">input_path</span><span class="o">=</span><span class="s2">&quot;run_folder&quot;</span><span class="p">,</span> <span class="n">output_path</span><span class="o">=</span><span class="s2">&quot;data_folder/mcstas_SPLIT&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instrument</span> <span class="o">=</span> <span class="n">instr</span><span class="o">.</span><span class="n">McStas_instr</span><span class="p">(</span><span class="s2">&quot;python_tutorial&quot;</span><span class="p">,</span> <span class="n">input_path</span><span class="o">=</span><span class="s2">&quot;run_folder&quot;</span><span class="p">,</span>
+                                <span class="n">output_path</span><span class="o">=</span><span class="s2">&quot;data_folder/mcstas_SPLIT&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2030,19 +2031,17 @@
 <p>Here we run the simulation with very few neutrons to show problematic sampling.</p>
 <div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instrument</span><span class="o">.</span><span class="n">settings</span><span class="p">(</span><span class="n">ncount</span><span class="o">=</span><span class="mf">1E5</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instrument</span><span class="o">.</span><span class="n">settings</span><span class="p">(</span><span class="n">ncount</span><span class="o">=</span><span class="mf">1E6</span><span class="p">)</span>
 
 <span class="n">instrument</span><span class="o">.</span><span class="n">set_parameters</span><span class="p">(</span><span class="n">wavelength</span><span class="o">=</span><span class="mf">2.8</span><span class="p">)</span>
                           
 <span class="n">instrument</span><span class="o">.</span><span class="n">backengine</span><span class="p">()</span>
 <span class="n">data_low</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">data</span>
-
-<span class="n">plotter</span><span class="o">.</span><span class="n">make_sub_plot</span><span class="p">(</span><span class="n">data_low</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/mcstas_SPLIT_96&quot;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/mcstas_SPLIT_132&quot;
 INFO: Regenerating c-file: python_tutorial.c
 CFLAGS=
 INFO: Recompiling: ./python_tutorial.out
@@ -2051,7 +2050,7 @@ mccode-r.c:2837:3: warning: expression result unused [-Wunused-value]
   ^~~
 1 warning generated.
 INFO: ===
-INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/mcstas_SPLIT_96
+INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/mcstas_SPLIT_132
 
       monochromator rotation = 22.4519 deg
 [python_tutorial] Initialize
@@ -2063,18 +2062,28 @@ PowderN: sample: Read 841 reflections from file &#39;Na2Ca3Al2F14.laz&#39;
 PowderN: sample: Vc=1079.1 [Angs] sigma_abs=11.7856 [barn] sigma_inc=13.6704 [barn] reflections=Na2Ca3Al2F14.laz
 
 Save [python_tutorial]
-Detector: banana_I=2.37412e-06 banana_ERR=3.31032e-07 banana_N=141 &quot;banana.dat&quot;
+Detector: banana_I=2.40247e-06 banana_ERR=1.04411e-07 banana_N=1444 &quot;banana.dat&quot;
 
-Finally [python_tutorial: /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/mcstas_SPLIT_96]. Time: 0 [s] 
+Finally [python_tutorial: /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/mcstas_SPLIT_132]. Time: 0 [s] 
 PowderN: sample: Info: you may highly improve the computation efficiency by using
     SPLIT 47 COMPONENT sample=PowderN(...)
   in the instrument description python_tutorial.instr.
 loading system configuration
-
-Plotting data with name banana
 </pre></div>
 </div>
-<img alt="../_images/McStasScript_tutorial_2_SPLIT_6_1.png" src="../_images/McStasScript_tutorial_2_SPLIT_6_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plotter</span><span class="o">.</span><span class="n">make_sub_plot</span><span class="p">(</span><span class="n">data_low</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Plotting data with name banana
+</pre></div>
+</div>
+<img alt="../_images/McStasScript_tutorial_2_SPLIT_7_1.png" src="../_images/McStasScript_tutorial_2_SPLIT_7_1.png" />
 </div>
 </div>
 </div>
@@ -2097,7 +2106,7 @@ Plotting data with name banana
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/mcstas_SPLIT_97&quot;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/mcstas_SPLIT_133&quot;
 INFO: Regenerating c-file: python_tutorial.c
 Info:    Defining SPLIT from sample=PowderN() to END in instrument python_tutorial
 CFLAGS=
@@ -2107,7 +2116,7 @@ mccode-r.c:2837:3: warning: expression result unused [-Wunused-value]
   ^~~
 1 warning generated.
 INFO: ===
-INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/mcstas_SPLIT_97
+INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/mcstas_SPLIT_133
 
       monochromator rotation = 22.4519 deg
 [python_tutorial] Initialize
@@ -2119,9 +2128,9 @@ PowderN: sample: Read 841 reflections from file &#39;Na2Ca3Al2F14.laz&#39;
 PowderN: sample: Vc=1079.1 [Angs] sigma_abs=11.7856 [barn] sigma_inc=13.6704 [barn] reflections=Na2Ca3Al2F14.laz
 
 Save [python_tutorial]
-Detector: banana_I=2.71411e-06 banana_ERR=6.91779e-08 banana_N=4491 &quot;banana.dat&quot;
+Detector: banana_I=2.6649e-06 banana_ERR=2.14881e-08 banana_N=44958 &quot;banana.dat&quot;
 
-Finally [python_tutorial: /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/mcstas_SPLIT_97]. Time: 0 [s] 
+Finally [python_tutorial: /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/mcstas_SPLIT_133]. Time: 2 [s] 
 PowderN: sample: Info: you may highly improve the computation efficiency by using
     SPLIT 47 COMPONENT sample=PowderN(...)
   in the instrument description python_tutorial.instr.
@@ -2140,12 +2149,12 @@ loading system configuration
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Plotting data with name banana
 </pre></div>
 </div>
-<img alt="../_images/McStasScript_tutorial_2_SPLIT_10_1.png" src="../_images/McStasScript_tutorial_2_SPLIT_10_1.png" />
+<img alt="../_images/McStasScript_tutorial_2_SPLIT_11_1.png" src="../_images/McStasScript_tutorial_2_SPLIT_11_1.png" />
 </div>
 </div>
 </div>
-<div class="section" id="id1">
-<h2>Adding the SPLIT keyword<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="caution-on-split-value">
+<h2>Caution on split value<a class="headerlink" href="#caution-on-split-value" title="Permalink to this headline">¶</a></h2>
 <p>It is however possible to mismanage splitting, mainly by simulating a too few rays and splitting too much. Here we do this on purpose to see how such data would look.</p>
 <div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
@@ -2159,7 +2168,7 @@ loading system configuration
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/mcstas_SPLIT_98&quot;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/mcstas_SPLIT_134&quot;
 INFO: Regenerating c-file: python_tutorial.c
 Info:    Defining SPLIT from sample=PowderN() to END in instrument python_tutorial
 CFLAGS=
@@ -2169,9 +2178,9 @@ mccode-r.c:2837:3: warning: expression result unused [-Wunused-value]
   ^~~
 1 warning generated.
 INFO: ===
-Warning: Number of events 2.98e+06 reaching SPLIT position Component[6] sample=PowderN()
+Warning: Number of events 3.23e+06 reaching SPLIT position Component[6] sample=PowderN()
          is probably too low. Increase Ncount.
-INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/mcstas_SPLIT_98
+INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/mcstas_SPLIT_134
 
       monochromator rotation = 22.4519 deg
 [python_tutorial] Initialize
@@ -2183,9 +2192,9 @@ PowderN: sample: Read 841 reflections from file &#39;Na2Ca3Al2F14.laz&#39;
 PowderN: sample: Vc=1079.1 [Angs] sigma_abs=11.7856 [barn] sigma_inc=13.6704 [barn] reflections=Na2Ca3Al2F14.laz
 
 Save [python_tutorial]
-Detector: banana_I=2.25395e-06 banana_ERR=3.49386e-08 banana_N=11988 &quot;banana.dat&quot;
+Detector: banana_I=1.32205e-06 banana_ERR=2.60934e-08 banana_N=8073 &quot;banana.dat&quot;
 
-Finally [python_tutorial: /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/mcstas_SPLIT_98]. Time: 0 [s] 
+Finally [python_tutorial: /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/mcstas_SPLIT_134]. Time: 0 [s] 
 loading system configuration
 </pre></div>
 </div>
@@ -2201,7 +2210,7 @@ loading system configuration
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Plotting data with name banana
 </pre></div>
 </div>
-<img alt="../_images/McStasScript_tutorial_2_SPLIT_13_1.png" src="../_images/McStasScript_tutorial_2_SPLIT_13_1.png" />
+<img alt="../_images/McStasScript_tutorial_2_SPLIT_14_1.png" src="../_images/McStasScript_tutorial_2_SPLIT_14_1.png" />
 </div>
 </div>
 </div>
@@ -2211,7 +2220,7 @@ loading system configuration
 <div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample</span><span class="o">.</span><span class="n">set_SPLIT</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">instrument</span><span class="o">.</span><span class="n">settings</span><span class="p">(</span><span class="n">ncount</span><span class="o">=</span><span class="mf">1E5</span><span class="p">)</span> <span class="c1">#1E7</span>
+<span class="n">instrument</span><span class="o">.</span><span class="n">settings</span><span class="p">(</span><span class="n">ncount</span><span class="o">=</span><span class="mf">2E7</span><span class="p">)</span>
                           
 <span class="n">instrument</span><span class="o">.</span><span class="n">backengine</span><span class="p">()</span>
 <span class="n">data_ref</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">data</span>
@@ -2219,7 +2228,7 @@ loading system configuration
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/mcstas_SPLIT_99&quot;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/mcstas_SPLIT_135&quot;
 INFO: Regenerating c-file: python_tutorial.c
 Info:    Defining SPLIT from sample=PowderN() to END in instrument python_tutorial
 CFLAGS=
@@ -2229,7 +2238,7 @@ mccode-r.c:2837:3: warning: expression result unused [-Wunused-value]
   ^~~
 1 warning generated.
 INFO: ===
-INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/mcstas_SPLIT_99
+INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/mcstas_SPLIT_135
 
       monochromator rotation = 22.4519 deg
 [python_tutorial] Initialize
@@ -2241,9 +2250,9 @@ PowderN: sample: Read 841 reflections from file &#39;Na2Ca3Al2F14.laz&#39;
 PowderN: sample: Vc=1079.1 [Angs] sigma_abs=11.7856 [barn] sigma_inc=13.6704 [barn] reflections=Na2Ca3Al2F14.laz
 
 Save [python_tutorial]
-Detector: banana_I=3.0529e-06 banana_ERR=4.27997e-07 banana_N=144 &quot;banana.dat&quot;
+Detector: banana_I=2.61247e-06 banana_ERR=2.64303e-08 banana_N=29336 &quot;banana.dat&quot;
 
-Finally [python_tutorial: /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/mcstas_SPLIT_99]. Time: 0 [s] 
+Finally [python_tutorial: /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/mcstas_SPLIT_135]. Time: 10 [s] 
 PowderN: sample: Info: you may highly improve the computation efficiency by using
     SPLIT 47 COMPONENT sample=PowderN(...)
   in the instrument description python_tutorial.instr.
@@ -2262,7 +2271,7 @@ loading system configuration
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Plotting data with name banana
 </pre></div>
 </div>
-<img alt="../_images/McStasScript_tutorial_2_SPLIT_16_1.png" src="../_images/McStasScript_tutorial_2_SPLIT_16_1.png" />
+<img alt="../_images/McStasScript_tutorial_2_SPLIT_17_1.png" src="../_images/McStasScript_tutorial_2_SPLIT_17_1.png" />
 </div>
 </div>
 </div>
@@ -2286,28 +2295,27 @@ loading system configuration
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Low statistics&quot;</span><span class="p">,</span> <span class="s2">&quot;High statistics reference&quot;</span><span class="p">])</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">banana_reasonable</span><span class="o">.</span><span class="n">xaxis</span><span class="p">,</span> <span class="n">banana_reasonable</span><span class="o">.</span><span class="n">Intensity</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">banana_reasonable</span><span class="o">.</span><span class="n">Error</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">banana_reasonable</span><span class="o">.</span><span class="n">xaxis</span><span class="p">,</span> <span class="n">banana_reasonable</span><span class="o">.</span><span class="n">Intensity</span><span class="p">,</span>
+             <span class="n">yerr</span><span class="o">=</span><span class="n">banana_reasonable</span><span class="o">.</span><span class="n">Error</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">banana_ref</span><span class="o">.</span><span class="n">xaxis</span><span class="p">,</span> <span class="n">banana_ref</span><span class="o">.</span><span class="n">Intensity</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">banana_ref</span><span class="o">.</span><span class="n">Error</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;2Theta [deg]&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Intensity [n/s]&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Low statistics with SPLIT&quot;</span><span class="p">,</span> <span class="s2">&quot;High statistics reference&quot;</span><span class="p">])</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">banana_unreasonable</span><span class="o">.</span><span class="n">xaxis</span><span class="p">,</span> <span class="n">banana_unreasonable</span><span class="o">.</span><span class="n">Intensity</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">banana_unreasonable</span><span class="o">.</span><span class="n">Error</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">banana_unreasonable</span><span class="o">.</span><span class="n">xaxis</span><span class="p">,</span> <span class="n">banana_unreasonable</span><span class="o">.</span><span class="n">Intensity</span><span class="p">,</span>
+             <span class="n">yerr</span><span class="o">=</span><span class="n">banana_unreasonable</span><span class="o">.</span><span class="n">Error</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">banana_ref</span><span class="o">.</span><span class="n">xaxis</span><span class="p">,</span> <span class="n">banana_ref</span><span class="o">.</span><span class="n">Intensity</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">banana_ref</span><span class="o">.</span><span class="n">Error</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;2Theta [deg]&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Intensity [n/s]&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Very low statistics with unreasonable SPLIT&quot;</span><span class="p">,</span> <span class="s2">&quot;High statistics reference&quot;</span><span class="p">])</span>
+<span class="n">l</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Very low statistics with unreasonable SPLIT&quot;</span><span class="p">,</span> <span class="s2">&quot;High statistics reference&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fed786a3820&gt;
-</pre></div>
-</div>
-<img alt="../_images/McStasScript_tutorial_2_SPLIT_18_1.png" src="../_images/McStasScript_tutorial_2_SPLIT_18_1.png" />
-<img alt="../_images/McStasScript_tutorial_2_SPLIT_18_2.png" src="../_images/McStasScript_tutorial_2_SPLIT_18_2.png" />
-<img alt="../_images/McStasScript_tutorial_2_SPLIT_18_3.png" src="../_images/McStasScript_tutorial_2_SPLIT_18_3.png" />
+<img alt="../_images/McStasScript_tutorial_2_SPLIT_19_0.png" src="../_images/McStasScript_tutorial_2_SPLIT_19_0.png" />
+<img alt="../_images/McStasScript_tutorial_2_SPLIT_19_1.png" src="../_images/McStasScript_tutorial_2_SPLIT_19_1.png" />
+<img alt="../_images/McStasScript_tutorial_2_SPLIT_19_2.png" src="../_images/McStasScript_tutorial_2_SPLIT_19_2.png" />
 </div>
 </div>
 </div>

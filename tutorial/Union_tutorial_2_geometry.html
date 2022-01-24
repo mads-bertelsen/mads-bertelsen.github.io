@@ -1914,6 +1914,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#viewing-the-instrument">
+     Viewing the instrument
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#run-the-updated-instrument-file">
      Run the updated instrument file
     </a>
@@ -2020,6 +2025,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#viewing-the-instrument">
+     Viewing the instrument
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#run-the-updated-instrument-file">
      Run the updated instrument file
     </a>
@@ -2088,7 +2098,7 @@
 
 <span class="n">Al</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;Al&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_make_material&quot;</span><span class="p">)</span>
 <span class="n">Al</span><span class="o">.</span><span class="n">process_string</span> <span class="o">=</span> <span class="s1">&#39;&quot;Al_inc,Al_pow&quot;&#39;</span>
-<span class="n">Al</span><span class="o">.</span><span class="n">my_absorption</span> <span class="o">=</span> <span class="mi">100</span><span class="o">*</span><span class="mi">4</span><span class="o">*</span><span class="mf">0.231</span><span class="o">/</span><span class="mf">66.4</span> <span class="c1"># barns [m^2 E-28] * Å^3 [m^3 E-30] = [m E-2], correct with factor 100.</span>
+<span class="n">Al</span><span class="o">.</span><span class="n">my_absorption</span> <span class="o">=</span> <span class="mi">100</span><span class="o">*</span><span class="mi">4</span><span class="o">*</span><span class="mf">0.231</span><span class="o">/</span><span class="mf">66.4</span> <span class="c1"># barns [m^2 E-28]*Å^3 [m^3 E-30]=[m E-2]</span>
 
 <span class="n">Sample_inc</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;Sample_inc&quot;</span><span class="p">,</span> <span class="s2">&quot;Incoherent_process&quot;</span><span class="p">)</span>
 <span class="n">Sample_inc</span><span class="o">.</span><span class="n">sigma</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="mf">3.4176</span>
@@ -2116,7 +2126,8 @@
 <span class="n">src</span><span class="o">.</span><span class="n">yheight</span> <span class="o">=</span> <span class="mf">0.035</span>
 <span class="n">src</span><span class="o">.</span><span class="n">focus_aw</span> <span class="o">=</span> <span class="mf">0.01</span>
 <span class="n">src</span><span class="o">.</span><span class="n">focus_ah</span> <span class="o">=</span> <span class="mf">0.01</span>
-<span class="n">src</span><span class="o">.</span><span class="n">lambda0</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span><span class="s2">&quot;wavelength&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="s2">&quot;Wavelength in [Ang]&quot;</span><span class="p">)</span>
+<span class="n">src</span><span class="o">.</span><span class="n">lambda0</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span><span class="s2">&quot;wavelength&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span>
+                                       <span class="n">comment</span><span class="o">=</span><span class="s2">&quot;Wavelength in [Ang]&quot;</span><span class="p">)</span>
 <span class="n">src</span><span class="o">.</span><span class="n">dlambda</span> <span class="o">=</span> <span class="s2">&quot;0.01*wavelength&quot;</span>
 <span class="n">src</span><span class="o">.</span><span class="n">flux</span> <span class="o">=</span> <span class="mf">1E13</span>
 </pre></div>
@@ -2203,7 +2214,8 @@
 <span class="n">sample_geometry</span><span class="o">.</span><span class="n">priority</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">sample_geometry</span><span class="o">.</span><span class="n">set_AT</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">src</span><span class="p">)</span>
 
-<span class="n">container</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;sample_container&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_cylinder&quot;</span><span class="p">,</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">sample_geometry</span><span class="p">)</span>
+<span class="n">container</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;sample_container&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_cylinder&quot;</span><span class="p">)</span>
+<span class="n">container</span><span class="o">.</span><span class="n">set_RELATIVE</span><span class="p">(</span><span class="n">sample_geometry</span><span class="p">)</span>
 <span class="n">container</span><span class="o">.</span><span class="n">yheight</span> <span class="o">=</span> <span class="mf">0.03</span><span class="o">+</span><span class="mf">0.003</span> <span class="c1"># 1.5 mm top and button</span>
 <span class="n">container</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="mf">0.0075</span> <span class="o">+</span> <span class="mf">0.0015</span> <span class="c1"># 1.5 mm sides of container</span>
 <span class="n">container</span><span class="o">.</span><span class="n">material_string</span><span class="o">=</span><span class="s1">&#39;&quot;Al&quot;&#39;</span> 
@@ -2225,7 +2237,8 @@
 <p>In order to view what geometry we have set up, we set up three loggers that view the scattering projected onto three different planes. These record the spatail distribution of scattering events.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logger_zx</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;logger_space_zx&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_logger_2D_space&quot;</span><span class="p">,</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">sample_geometry</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logger_zx</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;logger_space_zx&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_logger_2D_space&quot;</span><span class="p">)</span>
+<span class="n">logger_zx</span><span class="o">.</span><span class="n">set_RELATIVE</span><span class="p">(</span><span class="n">sample_geometry</span><span class="p">)</span>
 <span class="n">logger_zx</span><span class="o">.</span><span class="n">D_direction_1</span> <span class="o">=</span> <span class="s1">&#39;&quot;z&quot;&#39;</span>
 <span class="n">logger_zx</span><span class="o">.</span><span class="n">D1_min</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.02</span>
 <span class="n">logger_zx</span><span class="o">.</span><span class="n">D1_max</span> <span class="o">=</span> <span class="mf">0.02</span>
@@ -2236,7 +2249,8 @@
 <span class="n">logger_zx</span><span class="o">.</span><span class="n">n2</span> <span class="o">=</span> <span class="mi">300</span>
 <span class="n">logger_zx</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;&quot;logger_zx.dat&quot;&#39;</span>
 
-<span class="n">logger_zy</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;logger_space_zy&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_logger_2D_space&quot;</span><span class="p">,</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">sample_geometry</span><span class="p">)</span>
+<span class="n">logger_zy</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;logger_space_zy&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_logger_2D_space&quot;</span><span class="p">)</span>
+<span class="n">logger_zy</span><span class="o">.</span><span class="n">set_RELATIVE</span><span class="p">(</span><span class="n">sample_geometry</span><span class="p">)</span>
 <span class="n">logger_zy</span><span class="o">.</span><span class="n">D_direction_1</span> <span class="o">=</span> <span class="s1">&#39;&quot;z&quot;&#39;</span>
 <span class="n">logger_zy</span><span class="o">.</span><span class="n">D1_min</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.02</span>
 <span class="n">logger_zy</span><span class="o">.</span><span class="n">D1_max</span> <span class="o">=</span> <span class="mf">0.02</span>
@@ -2247,7 +2261,8 @@
 <span class="n">logger_zy</span><span class="o">.</span><span class="n">n2</span> <span class="o">=</span> <span class="mi">300</span>
 <span class="n">logger_zy</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;&quot;logger_zy.dat&quot;&#39;</span>
 
-<span class="n">logger_xy</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;logger_space_xy&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_logger_2D_space&quot;</span><span class="p">,</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">sample_geometry</span><span class="p">)</span>
+<span class="n">logger_xy</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;logger_space_xy&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_logger_2D_space&quot;</span><span class="p">)</span>
+<span class="n">logger_xy</span><span class="o">.</span><span class="n">set_RELATIVE</span><span class="p">(</span><span class="n">sample_geometry</span><span class="p">)</span>
 <span class="n">logger_xy</span><span class="o">.</span><span class="n">D_direction_1</span> <span class="o">=</span> <span class="s1">&#39;&quot;x&quot;&#39;</span>
 <span class="n">logger_xy</span><span class="o">.</span><span class="n">D1_min</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.02</span>
 <span class="n">logger_xy</span><span class="o">.</span><span class="n">D1_max</span> <span class="o">=</span> <span class="mf">0.02</span>
@@ -2295,7 +2310,7 @@
 <div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instrument</span><span class="o">.</span><span class="n">set_parameters</span><span class="p">(</span><span class="n">wavelength</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span>
-<span class="n">instrument</span><span class="o">.</span><span class="n">settings</span><span class="p">(</span><span class="n">ncount</span><span class="o">=</span><span class="mf">3E5</span><span class="p">,</span> <span class="n">output_path</span><span class="o">=</span><span class="s2">&quot;data_folder/union_geometry&quot;</span><span class="p">)</span>
+<span class="n">instrument</span><span class="o">.</span><span class="n">settings</span><span class="p">(</span><span class="n">ncount</span><span class="o">=</span><span class="mf">3E6</span><span class="p">,</span> <span class="n">output_path</span><span class="o">=</span><span class="s2">&quot;data_folder/union_geometry&quot;</span><span class="p">)</span>
 <span class="n">instrument</span><span class="o">.</span><span class="n">show_settings</span><span class="p">()</span>
 
 <span class="n">instrument</span><span class="o">.</span><span class="n">backengine</span><span class="p">()</span>
@@ -2305,7 +2320,7 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Instrument settings:
-  ncount:           3.00e+05
+  ncount:           3.00e+06
   output_path:      data_folder/union_geometry
   run_path:         run_folder
   package_path:     /Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1
@@ -2314,7 +2329,7 @@
   force_compile:    True
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_geometry_43&quot;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_geometry_51&quot;
 INFO: Regenerating c-file: python_tutorial.c
 CFLAGS= -I@MCCODE_LIB@/share/
 INFO: Recompiling: ./python_tutorial.out
@@ -2439,7 +2454,7 @@ mccode-r.h:219:27: note: expanded from macro &#39;MPI_MASTER&#39;
                           ^~~~~
 15 warnings generated.
 INFO: ===
-INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_geometry_43
+INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_geometry_51
 
           Opening input file &#39;/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//data/Al.laz&#39; (Table_Read_Offset)
 Table from file &#39;Al.laz&#39; (block 1) is 26 x 18 (x=1:8), constant step. interpolation: linear
@@ -2597,10 +2612,10 @@ LIST: masked_by_mask_index_list for Volume 3 = []
       mask_mode for Volume                 3 = 0
 
 Union_master component master initialized sucessfully
-Detector: logger_space_zx_I=17727.8 logger_space_zx_ERR=95.8438 logger_space_zx_N=95097 &quot;logger_zx.dat&quot;
-Detector: logger_space_zy_I=17727.8 logger_space_zy_ERR=95.8438 logger_space_zy_N=95097 &quot;logger_zy.dat&quot;
-Detector: logger_space_xy_I=17727.8 logger_space_xy_ERR=95.8438 logger_space_xy_N=95097 &quot;logger_xy.dat&quot;
-Detector: banana_I=1938.04 banana_ERR=31.6551 banana_N=10835 &quot;banana_1642606078.th&quot;
+Detector: logger_space_zx_I=17778.5 logger_space_zx_ERR=30.9148 logger_space_zx_N=951239 &quot;logger_zx.dat&quot;
+Detector: logger_space_zy_I=17778.5 logger_space_zy_ERR=30.9148 logger_space_zy_N=951239 &quot;logger_zy.dat&quot;
+Detector: logger_space_xy_I=17778.5 logger_space_xy_ERR=30.9148 logger_space_xy_N=951239 &quot;logger_xy.dat&quot;
+Detector: banana_I=1947.97 banana_ERR=10.1193 banana_N=108595 &quot;banana_1643034470.th&quot;
 loading system configuration
 </pre></div>
 </div>
@@ -2640,28 +2655,32 @@ Plotting data with name banana
 <p>We also need to designate areas as empty, this is done using the default material Vacuum which has no absorption or scattering processes. In this way we can create several layers by decreasing the priority when going out.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inner_wall</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;cryostat_wall&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_cylinder&quot;</span><span class="p">,</span> <span class="n">before</span><span class="o">=</span><span class="s2">&quot;master&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inner_wall</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;cryostat_wall&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_cylinder&quot;</span><span class="p">,</span>
+                                      <span class="n">before</span><span class="o">=</span><span class="s2">&quot;master&quot;</span><span class="p">)</span>
 <span class="n">inner_wall</span><span class="o">.</span><span class="n">set_AT</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">sample_geometry</span><span class="p">)</span>
 <span class="n">inner_wall</span><span class="o">.</span><span class="n">yheight</span> <span class="o">=</span> <span class="mf">0.12</span>
 <span class="n">inner_wall</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="mf">0.03</span>
 <span class="n">inner_wall</span><span class="o">.</span><span class="n">material_string</span><span class="o">=</span><span class="s1">&#39;&quot;Al&quot;&#39;</span> 
 <span class="n">inner_wall</span><span class="o">.</span><span class="n">priority</span> <span class="o">=</span> <span class="mi">80</span>
 
-<span class="n">inner_wall_vac</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;cryostat_wall_vacuum&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_cylinder&quot;</span><span class="p">,</span> <span class="n">before</span><span class="o">=</span><span class="s2">&quot;master&quot;</span><span class="p">)</span>
+<span class="n">inner_wall_vac</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;cryostat_wall_vacuum&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_cylinder&quot;</span><span class="p">,</span>
+                                          <span class="n">before</span><span class="o">=</span><span class="s2">&quot;master&quot;</span><span class="p">)</span>
 <span class="n">inner_wall_vac</span><span class="o">.</span><span class="n">set_AT</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">sample_geometry</span><span class="p">)</span>
 <span class="n">inner_wall_vac</span><span class="o">.</span><span class="n">yheight</span> <span class="o">=</span> <span class="mf">0.12</span> <span class="o">-</span> <span class="mf">0.008</span>
 <span class="n">inner_wall_vac</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="mf">0.03</span> <span class="o">-</span> <span class="mf">0.002</span>
 <span class="n">inner_wall_vac</span><span class="o">.</span><span class="n">material_string</span><span class="o">=</span><span class="s1">&#39;&quot;Vacuum&quot;&#39;</span> 
 <span class="n">inner_wall_vac</span><span class="o">.</span><span class="n">priority</span> <span class="o">=</span> <span class="mi">81</span>
 
-<span class="n">outer_wall</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;outer_cryostat_wall&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_cylinder&quot;</span><span class="p">,</span> <span class="n">before</span><span class="o">=</span><span class="s2">&quot;master&quot;</span><span class="p">)</span>
+<span class="n">outer_wall</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;outer_cryostat_wall&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_cylinder&quot;</span><span class="p">,</span>
+                                      <span class="n">before</span><span class="o">=</span><span class="s2">&quot;master&quot;</span><span class="p">)</span>
 <span class="n">outer_wall</span><span class="o">.</span><span class="n">set_AT</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">sample_geometry</span><span class="p">)</span>
 <span class="n">outer_wall</span><span class="o">.</span><span class="n">yheight</span> <span class="o">=</span> <span class="mf">0.15</span>
 <span class="n">outer_wall</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="mf">0.1</span>
 <span class="n">outer_wall</span><span class="o">.</span><span class="n">material_string</span><span class="o">=</span><span class="s1">&#39;&quot;Al&quot;&#39;</span> 
 <span class="n">outer_wall</span><span class="o">.</span><span class="n">priority</span> <span class="o">=</span> <span class="mi">60</span>
 
-<span class="n">outer_wall_vac</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;outer_cryostat_wall_vacuum&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_cylinder&quot;</span><span class="p">,</span> <span class="n">before</span><span class="o">=</span><span class="s2">&quot;master&quot;</span><span class="p">)</span>
+<span class="n">outer_wall_vac</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;outer_cryostat_wall_vacuum&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_cylinder&quot;</span><span class="p">,</span>
+                                          <span class="n">before</span><span class="o">=</span><span class="s2">&quot;master&quot;</span><span class="p">)</span>
 <span class="n">outer_wall_vac</span><span class="o">.</span><span class="n">set_AT</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">sample_geometry</span><span class="p">)</span>
 <span class="n">outer_wall_vac</span><span class="o">.</span><span class="n">yheight</span> <span class="o">=</span> <span class="mf">0.15</span> <span class="o">-</span> <span class="mf">0.01</span>
 <span class="n">outer_wall_vac</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="o">-</span> <span class="mf">0.003</span>
@@ -2684,6 +2703,27 @@ Plotting data with name banana
 </div>
 </div>
 </div>
+<div class="section" id="viewing-the-instrument">
+<h3>Viewing the instrument<a class="headerlink" href="#viewing-the-instrument" title="Permalink to this headline">¶</a></h3>
+<p>The instrument can be viewed with the <em>show_instrument</em> method. The mock cryostat and detector can be seen in a 3D view.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instrument</span><span class="o">.</span><span class="n">show_instrument</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="800"
+    height="450"
+    src="run_folder/python_tutorial_mcdisplay_1/index.html"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+</div>
 <div class="section" id="run-the-updated-instrument-file">
 <h3>Run the updated instrument file<a class="headerlink" href="#run-the-updated-instrument-file" title="Permalink to this headline">¶</a></h3>
 <p>Run the simulation with the added cryostat, since no parameters or settings are changed it is enough to just call the backengine function and grab the new data.</p>
@@ -2695,7 +2735,7 @@ Plotting data with name banana
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_geometry_44&quot;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_geometry_52&quot;
 INFO: Regenerating c-file: python_tutorial.c
 CFLAGS= -I@MCCODE_LIB@/share/
 INFO: Recompiling: ./python_tutorial.out
@@ -2820,7 +2860,7 @@ mccode-r.h:219:27: note: expanded from macro &#39;MPI_MASTER&#39;
                           ^~~~~
 15 warnings generated.
 INFO: ===
-INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_geometry_44
+INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_geometry_52
 
           Opening input file &#39;/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//data/Al.laz&#39; (Table_Read_Offset)
 Table from file &#39;Al.laz&#39; (block 1) is 26 x 18 (x=1:8), constant step. interpolation: linear
@@ -3114,10 +3154,10 @@ LIST: masked_by_mask_index_list for Volume 7 = []
       mask_mode for Volume                 7 = 0
 
 Union_master component master initialized sucessfully
-Detector: logger_space_zx_I=20966.7 logger_space_zx_ERR=101.172 logger_space_zx_N=118052 &quot;logger_zx.dat&quot;
-Detector: logger_space_zy_I=20966.7 logger_space_zy_ERR=101.172 logger_space_zy_N=118052 &quot;logger_zy.dat&quot;
-Detector: logger_space_xy_I=20966.7 logger_space_xy_ERR=101.172 logger_space_xy_N=118052 &quot;logger_xy.dat&quot;
-Detector: banana_I=1875.3 banana_ERR=28.5894 banana_N=11166 &quot;banana_1642606087.th&quot;
+Detector: logger_space_zx_I=20818.7 logger_space_zx_ERR=31.518 logger_space_zx_N=1.17982e+06 &quot;logger_zx.dat&quot;
+Detector: logger_space_zy_I=20818.7 logger_space_zy_ERR=31.518 logger_space_zy_N=1.17982e+06 &quot;logger_zy.dat&quot;
+Detector: logger_space_xy_I=20818.7 logger_space_xy_ERR=31.518 logger_space_xy_N=1.17982e+06 &quot;logger_xy.dat&quot;
+Detector: banana_I=1893.37 banana_ERR=9.49961 banana_N=112632 &quot;banana_1643034493.th&quot;
 loading system configuration
 </pre></div>
 </div>
@@ -3140,7 +3180,7 @@ Plotting data with name logger_space_xy
 Plotting data with name banana
 </pre></div>
 </div>
-<img alt="../_images/Union_tutorial_2_geometry_30_1.png" src="../_images/Union_tutorial_2_geometry_30_1.png" />
+<img alt="../_images/Union_tutorial_2_geometry_32_1.png" src="../_images/Union_tutorial_2_geometry_32_1.png" />
 </div>
 </div>
 </div>
@@ -3169,15 +3209,12 @@ Plotting data with name banana
          <span class="n">banana_diff</span><span class="o">.</span><span class="n">xaxis</span><span class="p">,</span> <span class="n">banana_diff</span><span class="o">.</span><span class="n">Intensity</span><span class="o">-</span><span class="mf">10.0</span><span class="p">,</span> <span class="s2">&quot;k&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;2Theta [deg]&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Intensity [n/s]&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Sample in can&quot;</span><span class="p">,</span> <span class="s2">&quot;Sample in can in cryostat&quot;</span><span class="p">,</span> <span class="s2">&quot;Difference displaced to -10&quot;</span><span class="p">])</span>
+<span class="n">l</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Sample in can&quot;</span><span class="p">,</span> <span class="s2">&quot;Sample in can in cryostat&quot;</span><span class="p">,</span> <span class="s2">&quot;Difference displaced to -10&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fa4785490a0&gt;
-</pre></div>
-</div>
-<img alt="../_images/Union_tutorial_2_geometry_32_1.png" src="../_images/Union_tutorial_2_geometry_32_1.png" />
+<img alt="../_images/Union_tutorial_2_geometry_34_0.png" src="../_images/Union_tutorial_2_geometry_34_0.png" />
 </div>
 </div>
 </div>

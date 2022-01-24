@@ -2148,13 +2148,15 @@ No components found in this category! Available categories:
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">src</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;source&quot;</span><span class="p">,</span> <span class="s2">&quot;Source_div&quot;</span><span class="p">)</span>
 
-<span class="n">source_width</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span><span class="s2">&quot;source_width&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="s2">&quot;Width of source in [m]&quot;</span><span class="p">)</span>
+<span class="n">source_width</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span><span class="s2">&quot;source_width&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span>
+                                        <span class="n">comment</span><span class="o">=</span><span class="s2">&quot;Width of source in [m]&quot;</span><span class="p">)</span>
 <span class="n">src</span><span class="o">.</span><span class="n">xwidth</span> <span class="o">=</span> <span class="n">source_width</span>
 <span class="n">src</span><span class="o">.</span><span class="n">yheight</span> <span class="o">=</span> <span class="mf">0.03</span>
 <span class="n">src</span><span class="o">.</span><span class="n">focus_aw</span> <span class="o">=</span> <span class="mf">0.01</span>
 <span class="n">src</span><span class="o">.</span><span class="n">focus_ah</span> <span class="o">=</span> <span class="mf">0.01</span>
 
-<span class="n">src</span><span class="o">.</span><span class="n">lambda0</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span><span class="s2">&quot;wavelength&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="s2">&quot;Wavelength in [Ang]&quot;</span><span class="p">)</span>
+<span class="n">src</span><span class="o">.</span><span class="n">lambda0</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span><span class="s2">&quot;wavelength&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span>
+                                       <span class="n">comment</span><span class="o">=</span><span class="s2">&quot;Wavelength in [Ang]&quot;</span><span class="p">)</span>
 <span class="n">src</span><span class="o">.</span><span class="n">dlambda</span> <span class="o">=</span> <span class="s2">&quot;0.001*wavelength&quot;</span>
 </pre></div>
 </div>
@@ -2163,7 +2165,7 @@ No components found in this category! Available categories:
 </div>
 <div class="section" id="adding-geometries-that-use-the-material-definitions">
 <h2>Adding geometries that use the material definitions<a class="headerlink" href="#adding-geometries-that-use-the-material-definitions" title="Permalink to this headline">¶</a></h2>
-<p>Here we add three boxes, each using a different material definition and placed next to one another. The <em>material_string</em> parameter is used to specify the material name. The <em>priority</em> parameter will be explained later, as it is only important when geometries overlap, here they are spatially separated, yet the priorties must still be unique.</p>
+<p>Here we add three boxes, each using a different material definition and placed next to one another. The <em>material_string</em> parameter is used to specify the material name. The <em>priority</em> parameter will be explained later, as it is only important when geometries overlap, here they are spatially separated, yet the priorities must still be unique.</p>
 <p>It is important to note that these three boxes will be simulated simultaneously in the McStas simulation flow, so no need for GROUP statements to have these in parallel. Because they are simulated simultaneously, a ray can go from one to another, which would not be possible with a standard GROUP.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2242,7 +2244,8 @@ No components found in this category! Available categories:
 <p>The parameters for the abs_logger are very similar, so the two are added here.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logger</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;logger_space&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_logger_2D_space&quot;</span><span class="p">,</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="s2">&quot;box_powder&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logger</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;logger_space&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_logger_2D_space&quot;</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">set_RELATIVE</span><span class="p">(</span><span class="s2">&quot;box_powder&quot;</span><span class="p">)</span>
 <span class="n">logger</span><span class="o">.</span><span class="n">D_direction_1</span> <span class="o">=</span> <span class="s1">&#39;&quot;z&quot;&#39;</span>
 <span class="n">logger</span><span class="o">.</span><span class="n">D1_min</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.04</span>
 <span class="n">logger</span><span class="o">.</span><span class="n">D1_max</span> <span class="o">=</span> <span class="mf">0.04</span>
@@ -2253,7 +2256,8 @@ No components found in this category! Available categories:
 <span class="n">logger</span><span class="o">.</span><span class="n">n2</span> <span class="o">=</span> <span class="mi">400</span>
 <span class="n">logger</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;&quot;logger.dat&quot;&#39;</span>
 
-<span class="n">logger</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;abs_logger_space&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_abs_logger_2D_space&quot;</span><span class="p">,</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="s2">&quot;box_powder&quot;</span><span class="p">)</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;abs_logger_space&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_abs_logger_2D_space&quot;</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">set_RELATIVE</span><span class="p">(</span><span class="s2">&quot;box_powder&quot;</span><span class="p">)</span>
 <span class="n">logger</span><span class="o">.</span><span class="n">D_direction_1</span> <span class="o">=</span> <span class="s1">&#39;&quot;z&quot;&#39;</span>
 <span class="n">logger</span><span class="o">.</span><span class="n">D1_min</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.04</span>
 <span class="n">logger</span><span class="o">.</span><span class="n">D1_max</span> <span class="o">=</span> <span class="mf">0.04</span>
@@ -2315,7 +2319,7 @@ No components found in this category! Available categories:
 <div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instrument</span><span class="o">.</span><span class="n">set_parameters</span><span class="p">(</span><span class="n">wavelength</span><span class="o">=</span><span class="mf">8.0</span><span class="p">)</span>
-<span class="n">instrument</span><span class="o">.</span><span class="n">settings</span><span class="p">(</span><span class="n">ncount</span><span class="o">=</span><span class="mf">3E5</span><span class="p">,</span> <span class="n">output_path</span><span class="o">=</span><span class="s2">&quot;data_folder/union_materials&quot;</span><span class="p">)</span>
+<span class="n">instrument</span><span class="o">.</span><span class="n">settings</span><span class="p">(</span><span class="n">ncount</span><span class="o">=</span><span class="mf">3E6</span><span class="p">,</span> <span class="n">output_path</span><span class="o">=</span><span class="s2">&quot;data_folder/union_materials&quot;</span><span class="p">)</span>
 <span class="n">instrument</span><span class="o">.</span><span class="n">show_settings</span><span class="p">()</span>
 
 <span class="n">instrument</span><span class="o">.</span><span class="n">backengine</span><span class="p">()</span>
@@ -2325,7 +2329,7 @@ No components found in this category! Available categories:
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Instrument settings:
-  ncount:           3.00e+05
+  ncount:           3.00e+06
   output_path:      data_folder/union_materials
   run_path:         run_folder
   package_path:     /Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1
@@ -2334,7 +2338,7 @@ No components found in this category! Available categories:
   force_compile:    True
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_materials_33&quot;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_materials_41&quot;
 INFO: Regenerating c-file: python_tutorial.c
 CFLAGS= -I@MCCODE_LIB@/share/
 INFO: Recompiling: ./python_tutorial.out
@@ -2440,7 +2444,7 @@ mccode-r.h:219:27: note: expanded from macro &#39;MPI_MASTER&#39;
                           ^~~~~
 14 warnings generated.
 INFO: ===
-INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_materials_33
+INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_materials_41
 
     Opening input file &#39;/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//data/Cu.laz&#39; (Table_Read_Offset)
 Table from file &#39;Cu.laz&#39; (block 1) is 19 x 18 (x=1:6), constant step. interpolation: linear
@@ -2586,8 +2590,8 @@ LIST: masked_by_mask_index_list for Volume 3 = []
       mask_mode for Volume                 3 = 0
 
 Union_master component master initialized sucessfully
-Detector: logger_space_I=3.20772e-09 logger_space_ERR=1.47899e-11 logger_space_N=48018 &quot;logger.dat&quot;
-Detector: abs_logger_space_I=1.6975e-09 abs_logger_space_ERR=6.23308e-12 abs_logger_space_N=108938 &quot;abs_logger.dat&quot;
+Detector: logger_space_I=3.15603e-09 logger_space_ERR=4.63676e-12 logger_space_N=473036 &quot;logger.dat&quot;
+Detector: abs_logger_space_I=1.70931e-09 abs_logger_space_ERR=1.97838e-12 abs_logger_space_N=1.08758e+06 &quot;abs_logger.dat&quot;
 loading system configuration
 </pre></div>
 </div>
@@ -2638,7 +2642,7 @@ Plotting data with name abs_logger_space
   force_compile:    True
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_materials_34&quot;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_materials_42&quot;
 INFO: Regenerating c-file: python_tutorial.c
 CFLAGS= -I@MCCODE_LIB@/share/
 INFO: Recompiling: ./python_tutorial.out
@@ -2744,7 +2748,7 @@ mccode-r.h:219:27: note: expanded from macro &#39;MPI_MASTER&#39;
                           ^~~~~
 14 warnings generated.
 INFO: ===
-INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_materials_34
+INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_materials_42
 
     Opening input file &#39;/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//data/Cu.laz&#39; (Table_Read_Offset)
 Table from file &#39;Cu.laz&#39; (block 1) is 19 x 18 (x=1:6), constant step. interpolation: linear
@@ -2890,8 +2894,8 @@ LIST: masked_by_mask_index_list for Volume 3 = []
       mask_mode for Volume                 3 = 0
 
 Union_master component master initialized sucessfully
-Detector: logger_space_I=1.132e-09 logger_space_ERR=5.9047e-13 logger_space_N=3.86432e+06 &quot;logger.dat&quot;
-Detector: abs_logger_space_I=4.15965e-11 abs_logger_space_ERR=2.36675e-14 abs_logger_space_N=4.12187e+06 &quot;abs_logger.dat&quot;
+Detector: logger_space_I=1.13111e-09 logger_space_ERR=5.9016e-13 logger_space_N=3.8625e+06 &quot;logger.dat&quot;
+Detector: abs_logger_space_I=4.15608e-11 abs_logger_space_ERR=2.36513e-14 abs_logger_space_N=4.11993e+06 &quot;abs_logger.dat&quot;
 loading system configuration
 </pre></div>
 </div>
@@ -2926,7 +2930,7 @@ Plotting data with name abs_logger_space
 <li><p>Get newest version of Union components (Both library files and components themselves)</p></li>
 </ul>
 <p>Since the Union components need to collaborate, it is important to have the same version of the libraries and components. The newest version of the components can be found here: https://github.com/McStasMcXtrace/McCode/tree/master/mcstas-comps/contrib/union
-All libraries for McStas are found here: https://github.com/McStasMcXtrace/McCode/tree/master/mcstas-comps/share but only three are needed for the Union components:</p>
+All libraries for McStas are found here: https://github.com/McStasMcXtrace/McCode/tree/master/mcstas-comps/share but only a few are needed for the Union components:</p>
 <ul class="simple">
 <li><p>Union_initialization.c</p></li>
 <li><p>Union_functions.c</p></li>

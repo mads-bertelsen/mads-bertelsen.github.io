@@ -2,7 +2,7 @@
  "cells": [
   {
    "cell_type": "markdown",
-   "id": "coated-control",
+   "id": "russian-transparency",
    "metadata": {},
    "source": [
     "# Data\n",
@@ -15,7 +15,7 @@
   {
    "cell_type": "code",
    "execution_count": 1,
-   "id": "wanted-applicant",
+   "id": "substantial-weekly",
    "metadata": {
     "tags": [
      "hide-input"
@@ -40,7 +40,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "antique-injection",
+   "id": "sized-henry",
    "metadata": {},
    "source": [
     "### Example monitors\n",
@@ -50,7 +50,7 @@
   {
    "cell_type": "code",
    "execution_count": 2,
-   "id": "stunning-fellowship",
+   "id": "apart-duration",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -62,7 +62,7 @@
   {
    "cell_type": "code",
    "execution_count": 3,
-   "id": "numeric-egyptian",
+   "id": "collaborative-police",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -74,7 +74,7 @@
   {
    "cell_type": "code",
    "execution_count": 4,
-   "id": "activated-panic",
+   "id": "urban-traffic",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -86,7 +86,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "breathing-devon",
+   "id": "center-middle",
    "metadata": {},
    "source": [
     "### Performing the simulation\n",
@@ -96,7 +96,7 @@
   {
    "cell_type": "code",
    "execution_count": 5,
-   "id": "substantial-paste",
+   "id": "finished-employment",
    "metadata": {
     "scrolled": true,
     "tags": [
@@ -147,7 +147,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "alike-separation",
+   "id": "separate-dress",
    "metadata": {},
    "source": [
     "## Getting the data\n",
@@ -157,7 +157,7 @@
   {
    "cell_type": "code",
    "execution_count": 6,
-   "id": "incorrect-medicine",
+   "id": "charged-recovery",
    "metadata": {},
    "outputs": [
     {
@@ -178,17 +178,17 @@
   },
   {
    "cell_type": "markdown",
-   "id": "caroline-department",
+   "id": "interracial-lancaster",
    "metadata": {},
    "source": [
     "## McStasData objects\n",
-    "The data retrieved from the instrument object is in the form of a list that contains [McStasData](../_autosummary/mcstasscript.data.data.McStasData.rst) and [McStasDataEvent](../_autosummary/mcstasscript.data.data.McStasDataEvent.rst) objects. The McStasScript module [*functions*](../_autosummary/mcstasscript.interface.functions.rst) contains a function called [*name_search*](../_autosummary/mcstasscript.functions.name_search.rst) which can be used to select a certain element of such a data list. It will match the component name first and if no match is found it will check for match with the filename. Here [*name_search*](../_autosummary/mcstasscript.interface.functions.name_search.rst) is used to retrieve the PSD [McStasData](../_autosummary/mcstasscript.data.data.McStasData.rst) object."
+    "The data retrieved from the instrument object is in the form of a list that contains [McStasData](../_autosummary/mcstasscript.data.data.McStasData.rst) and [McStasDataEvent](../_autosummary/mcstasscript.data.data.McStasDataEvent.rst) objects. The McStasScript module [*functions*](../_autosummary/mcstasscript.interface.functions.rst) contains a function called [*name_search*](../_autosummary/mcstasscript.interface.functions.name_search.rst) which can be used to select a certain element of such a data list. It will match the component name first and if no match is found it will check for match with the filename. Here [*name_search*](../_autosummary/mcstasscript.interface.functions.name_search.rst) is used to retrieve the PSD [McStasData](../_autosummary/mcstasscript.data.data.McStasData.rst) object."
    ]
   },
   {
    "cell_type": "code",
    "execution_count": 7,
-   "id": "australian-electric",
+   "id": "knowing-schedule",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -199,7 +199,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "incoming-charity",
+   "id": "competitive-conversion",
    "metadata": {},
    "source": [
     "### Accessing metadata\n",
@@ -209,7 +209,7 @@
   {
    "cell_type": "code",
    "execution_count": 8,
-   "id": "processed-choice",
+   "id": "official-major",
    "metadata": {},
    "outputs": [
     {
@@ -254,7 +254,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "unique-alexander",
+   "id": "virgin-profit",
    "metadata": {},
    "source": [
     "The metadata object has attributes which can be accessed as well. The info attribute is a dict with the raw metadata read from the file.\n",
@@ -270,7 +270,7 @@
   {
    "cell_type": "code",
    "execution_count": 9,
-   "id": "mature-penguin",
+   "id": "previous-theme",
    "metadata": {
     "scrolled": true
    },
@@ -311,7 +311,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "comfortable-apple",
+   "id": "acknowledged-orlando",
    "metadata": {},
    "source": [
     "### Accessing the data\n",
@@ -325,7 +325,7 @@
   {
    "cell_type": "code",
    "execution_count": 10,
-   "id": "spare-embassy",
+   "id": "composite-property",
    "metadata": {},
    "outputs": [
     {
@@ -384,7 +384,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "distributed-guess",
+   "id": "central-democracy",
    "metadata": {},
    "source": [
     "McStasDataEvent objecst stores event data, and for this reason does not have *Error* or *Ncount*. The event information is contained in a 2D Numpy array in the *Intensity* and *Events* attributes. "
@@ -393,7 +393,7 @@
   {
    "cell_type": "code",
    "execution_count": 11,
-   "id": "colored-giving",
+   "id": "closed-tumor",
    "metadata": {},
    "outputs": [
     {
@@ -422,7 +422,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "looking-second",
+   "id": "registered-vocabulary",
    "metadata": {},
    "source": [
     "The original path to the data is also contained within the McStasData object and can be returned with get_data_location."
@@ -431,7 +431,7 @@
   {
    "cell_type": "code",
    "execution_count": 12,
-   "id": "short-sullivan",
+   "id": "adverse-demonstration",
    "metadata": {},
    "outputs": [
     {
@@ -451,7 +451,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "grateful-headline",
+   "id": "dated-heritage",
    "metadata": {},
    "source": [
     "### Plotting \n",
@@ -461,7 +461,7 @@
   {
    "cell_type": "code",
    "execution_count": 13,
-   "id": "sensitive-cabinet",
+   "id": "furnished-juice",
    "metadata": {},
    "outputs": [
     {
@@ -487,7 +487,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "direct-affect",
+   "id": "educated-template",
    "metadata": {},
    "source": [
     "The plotter module of McStasScript can plot a McStasData object directly."
@@ -496,7 +496,7 @@
   {
    "cell_type": "code",
    "execution_count": 14,
-   "id": "angry-graph",
+   "id": "religious-chambers",
    "metadata": {},
    "outputs": [
     {
@@ -525,7 +525,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "spread-boost",
+   "id": "green-nancy",
    "metadata": {},
    "source": [
     "The *plot_options* can be updated with *set_plot_options* that takes keyword arguments."
@@ -534,7 +534,7 @@
   {
    "cell_type": "code",
    "execution_count": 15,
-   "id": "stopped-replication",
+   "id": "blessed-sandwich",
    "metadata": {},
    "outputs": [
     {
@@ -564,7 +564,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "brilliant-knife",
+   "id": "northern-ethernet",
    "metadata": {},
    "source": [
     "The *set_plot_options* takes the following keyword arguments. Some will only apply for 2D data, for example *orders_of_mag*.\n",
@@ -588,7 +588,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "frequent-journal",
+   "id": "frozen-participation",
    "metadata": {},
    "outputs": [],
    "source": []
@@ -596,7 +596,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "convinced-depression",
+   "id": "banner-fitting",
    "metadata": {},
    "outputs": [],
    "source": []

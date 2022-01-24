@@ -1,0 +1,185 @@
+Traceback (most recent call last):
+  File "/Users/madsbertelsen/opt/anaconda3/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/Users/madsbertelsen/opt/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 1112, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/madsbertelsen/opt/anaconda3/lib/python3.8/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Users/madsbertelsen/opt/anaconda3/lib/python3.8/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/Users/madsbertelsen/opt/anaconda3/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/Users/madsbertelsen/opt/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 553, in async_execute
+    await self.async_execute_cell(
+  File "/Users/madsbertelsen/opt/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 857, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/Users/madsbertelsen/opt/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 760, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Set up Al material with incoherent and powder
+Al_incoherent = instrument.add_component("Al_incoherent", "Incoherent_process")
+Al_incoherent.sigma = "4*0.0082"
+Al_incoherent.packing_factor = 1
+Al_incoherent.unit_cell_volume = 66.4
+
+Al_powder = instrument.add_component("Al_powder", "Powder_process")
+Al_powder.reflections = "\"Al.laz\""
+
+Al = instrument.add_component("Al", "Union_make_material")
+Al.process_string = '"Al_incoherent,Al_powder"'
+Al.my_absorption = "100*4*0.231/66.4"
+
+# Set up YBaCuO with incoherent and single crystal
+YBaCuO_incoherent = instrument.add_component("YBaCuO_incoherent", "Incoherent_process")
+YBaCuO_incoherent.sigma = 2.105
+YBaCuO_incoherent.unit_cell_volume = 173.28
+
+YBaCuO_crystal = instrument.add_component("YBaCuO_crystal", "Single_crystal_process")
+YBaCuO_crystal.set_parameters(
+{"ax" : 3.816, "ay" : 0, "az" : 0,
+ "bx" : 0, "by" : 3.886, "bz" : 0,
+ "cx" : 0, "cy" : 0, "cz" : 11.677,
+ "delta_d_d" : 5E-4, "mosaic" : 30, "barns" : 1,
+ "reflections" : '"YBaCuO.lau"'})
+
+YBaCuO = instrument.add_component("YBaCuO", "Union_make_material")
+YBaCuO.process_string = '"YBaCuO_incoherent,YBaCuO_crystal"'
+YBaCuO.my_absorption = 100*14.82/173.28
+
+src = instrument.add_component("source", "Source_div")
+src.xwidth = 0.01
+src.yheight = 0.035
+src.focus_aw = 0.01
+src.focus_ah = 0.01
+
+instrument.add_parameter("wavelength", value=5.0, comment="Wavelength in [Ang]")
+src.lambda0 = instrument.add_parameter("wavelength", value=5.0,
+                                       comment="Wavelength in [Ang]")
+src.dlambda = "0.01*wavelength"
+src.flux = 1E13
+
+# At a reference point to build the cryostat around
+cryostat_center = instrument.add_component("cryostat_center", "Arm")
+cryostat_center.set_AT([0, 0, 1], RELATIVE=src)
+
+# Parameter for controlling sample rotation
+A3_angle = instrument.add_parameter("A3_angle", value=0)
+
+sample = instrument.add_component("sample", "Union_box")
+sample.set_AT([0, 0, 0], RELATIVE=cryostat_center)
+sample.set_ROTATED([0, A3_angle, 0], RELATIVE=cryostat_center)
+sample.xwidth = 0.015
+sample.yheight = 0.032
+sample.zdepth = 0.012
+sample.material_string = '"YBaCuO"'
+sample.priority = 200
+
+# Setting up two layers of cryostat
+inner_cryostat_wall = instrument.add_component("inner_cryostat_wall", "Union_cylinder")
+inner_cryostat_wall.material_string = "\"Al\""
+inner_cryostat_wall.priority = 12
+inner_cryostat_wall.radius = 0.0621
+inner_cryostat_wall.yheight = 0.16
+inner_cryostat_wall.p_interact = 0.20
+inner_cryostat_wall.set_AT([0, 0.01, 0], RELATIVE=cryostat_center)
+
+inner_cryostat_vacuum = instrument.add_component("inner_cryostat_vacuum", "Union_cylinder")
+inner_cryostat_vacuum.material_string = "\"Vacuum\""
+inner_cryostat_vacuum.priority = 13
+inner_cryostat_vacuum.radius = 0.06
+inner_cryostat_vacuum.yheight = 0.15
+inner_cryostat_vacuum.set_AT([0, 0.01, 0], RELATIVE=cryostat_center)
+
+outer_cryostat_wall = instrument.add_component("outer_cryostat_wall", "Union_cylinder")
+outer_cryostat_wall.material_string = "\"Al\""
+outer_cryostat_wall.priority = 10
+outer_cryostat_wall.radius = 0.180
+outer_cryostat_wall.yheight = 0.355
+outer_cryostat_wall.p_interact = 0.20
+outer_cryostat_wall.set_AT([0, 0.032, 0], RELATIVE=cryostat_center)
+
+outer_cryostat_vacuum = instrument.add_component("outer_cryostat_vacuum", "Union_cylinder")
+outer_cryostat_vacuum.material_string = "\"Vacuum\""
+outer_cryostat_vacuum.priority = 11
+outer_cryostat_vacuum.radius = 0.178
+outer_cryostat_vacuum.yheight = 0.355
+outer_cryostat_vacuum.set_AT([0, 0.037, 0], RELATIVE=cryostat_center)
+
+# Set up loggers
+logger_space_zx = instrument.add_component("logger_space_zx", "Union_logger_2D_space")
+logger_space_zx.n1 = 150
+logger_space_zx.n2 = 150
+logger_space_zx.D1_min = -0.2
+logger_space_zx.D1_max = 0.2
+logger_space_zx.D2_min = -0.2
+logger_space_zx.D2_max = 0.2
+logger_space_zx.D_direction_1 = '"z"'
+logger_space_zx.D_direction_2 = '"x"'
+logger_space_zx.filename = '"logger_zx.dat"'
+logger_space_zx.logger_conditional_extend_index = 1
+logger_space_zx.set_AT([0, 0, 0], RELATIVE=cryostat_center)
+
+logger_space_zy = instrument.add_component("logger_space_zy", "Union_logger_2D_space")
+logger_space_zy.n1 = 150
+logger_space_zy.n2 = 150
+logger_space_zy.D1_min = -0.2
+logger_space_zy.D1_max = 0.2
+logger_space_zy.D2_min = -0.15
+logger_space_zy.D2_max = 0.2
+logger_space_zy.D_direction_1 = '"z"'
+logger_space_zy.D_direction_2 = '"y"'
+logger_space_zy.filename = '"logger_zy.dat"'
+logger_space_zy.logger_conditional_extend_index = 1
+logger_space_zy.set_AT([0, 0, 0], RELATIVE=cryostat_center)
+
+logger_2DQ = instrument.add_component("logger_2DQ_sample", "Union_logger_2DQ")
+logger_2DQ.Q_direction_1 = '"z"'
+logger_2DQ.Q1_min = -4.0
+logger_2DQ.Q1_max = 4.0
+logger_2DQ.n1 = 100
+logger_2DQ.Q_direction_2 = '"x"'
+logger_2DQ.Q2_min = -4.0
+logger_2DQ.Q2_max = 4.0
+logger_2DQ.n2 = 100
+logger_2DQ.target_geometry = '"sample"'
+logger_2DQ.filename = '"logger_2DQ_sample.dat"'
+
+logger_2DQ = instrument.add_component("logger_2DQ_environment", "Union_logger_2DQ")
+logger_2DQ.Q_direction_1 = '"z"'
+logger_2DQ.Q1_min = -4.0
+logger_2DQ.Q1_max = 4.0
+logger_2DQ.n1 = 100
+logger_2DQ.Q_direction_2 = '"x"'
+logger_2DQ.Q2_min = -4.0
+logger_2DQ.Q2_max = 4.0
+logger_2DQ.n2 = 100
+logger_2DQ.target_geometry = '"inner_cryostat_wall,outer_cryostat_wall"'
+logger_2DQ.filename = '"logger_2DQ_all.dat"'
+
+logger_time_all = instrument.add_component("logger_time_all", "Union_logger_1D")
+logger_time_all.n1 = 600
+logger_time_all.min_value = 0.0008
+logger_time_all.max_value = 0.0015
+logger_time_all.filename = '"scattering_time.dat"'
+
+master = instrument.add_component("master", "Union_master")
+
+# Adding a banana - tof detector
+banana_detector = instrument.add_component("banana_detector", "Monitor_nD",
+banana_detector.set_RELATIVE(cryostat_center)
+banana_detector.xwidth = 1
+banana_detector.yheight = 0.2
+banana_detector.restore_neutron = 1
+options = '"banana, theta limits=[-180,180] bins=361, t limits=[0.0011 0.0025] bins=500"'
+banana_detector.options = options
+banana_detector.filename = '"tof_b.dat"'
+------------------
+
+[0;36m  File [0;32m"<ipython-input-2-6d0816cbf4c1>"[0;36m, line [0;32m152[0m
+[0;31m    banana_detector.xwidth = 1[0m
+[0m    ^[0m
+[0;31mSyntaxError[0m[0;31m:[0m invalid syntax
+
+SyntaxError: invalid syntax (<ipython-input-2-6d0816cbf4c1>, line 152)
+

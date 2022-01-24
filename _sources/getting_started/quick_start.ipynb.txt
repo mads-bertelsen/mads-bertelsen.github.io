@@ -269,7 +269,7 @@
     }
    ],
    "source": [
-    "sample.set_AT(3, RELATIVE=source)\n",
+    "sample.set_AT(5, RELATIVE=source)\n",
     "sample.set_parameters(R=120, xwidth=0.01, yheight=0.01, zdepth=0.01,\n",
     "                      target_index=1, focus_xw=0.5, focus_yh=0.5)\n",
     "print(sample)"

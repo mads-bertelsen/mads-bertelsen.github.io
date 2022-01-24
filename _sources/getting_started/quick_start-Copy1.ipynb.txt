@@ -1,0 +1,1393 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "delayed-biodiversity",
+   "metadata": {},
+   "source": [
+    "# Quick start\n",
+    "This section is a quick start guide that will show the basic functionality of McStasScript. It assumes the user is already familiar with McStas itself, if this is not the case, it is recommended to start with the tutorial which can serve as an introduction to both McStas and McStasScript.\n",
+    "\n",
+    "## Importing the package\n",
+    "The package includes an interface folder that contains the modules which the  user is meant to use directly."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "dense-internet",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from mcstasscript.interface import instr, functions, plotter"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "exotic-sandwich",
+   "metadata": {},
+   "source": [
+    "## Creating the first instrument object\n",
+    "Now the package can be used. Start with creating a new instrument, just needs a name. For a McXtrace instrument use McXtrace_instr instead."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "disabled-canon",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "instrument = instr.McStas_instr(\"first_instrument\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "known-depression",
+   "metadata": {},
+   "source": [
+    "### Finding a component\n",
+    "The instrument object loads the available McStas components, so it can show these in order to help the user."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "adult-assignment",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Here are the available component categories:\n",
+      " contrib\n",
+      " misc\n",
+      " monitors\n",
+      " obsolete\n",
+      " optics\n",
+      " samples\n",
+      " sources\n",
+      " union\n",
+      "Call show_components(category_name) to display\n"
+     ]
+    }
+   ],
+   "source": [
+    "instrument.show_components()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "fatal-climate",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Here are all components in the sources category.\n",
+      " Adapt_check     Moderator           Source_Optimizer   Source_gen\n",
+      " ESS_butterfly   Monitor_Optimizer   Source_adapt       Source_simple\n",
+      " ESS_moderator   Source_Maxwell_3    Source_div         \n"
+     ]
+    }
+   ],
+   "source": [
+    "instrument.show_components(\"sources\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "powerful-rover",
+   "metadata": {},
+   "source": [
+    "### Adding the first component\n",
+    "McStas components can be added to the instrument, here we add a source and ask for help on the parameters."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "instructional-liquid",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      " ___ Help Source_simple _____________________________________________________________\n",
+      "|\u001b[1moptional parameter\u001b[0m|\u001b[1m\u001b[4mrequired parameter\u001b[0m\u001b[0m|\u001b[1m\u001b[94mdefault value\u001b[0m\u001b[0m|\u001b[1m\u001b[92muser specified value\u001b[0m\u001b[0m|\n",
+      "\u001b[1mradius\u001b[0m = \u001b[1m\u001b[94m0.1\u001b[0m\u001b[0m [m] // Radius of circle in (x,y,0) plane where neutrons are \n",
+      "                    generated. \n",
+      "\u001b[1myheight\u001b[0m = \u001b[1m\u001b[94m0.0\u001b[0m\u001b[0m [m] // Height of rectangle in (x,y,0) plane where neutrons are \n",
+      "                     generated. \n",
+      "\u001b[1mxwidth\u001b[0m = \u001b[1m\u001b[94m0.0\u001b[0m\u001b[0m [m] // Width of rectangle in (x,y,0) plane where neutrons are \n",
+      "                    generated. \n",
+      "\u001b[1mdist\u001b[0m = \u001b[1m\u001b[94m0.0\u001b[0m\u001b[0m [m] // Distance to target along z axis.\n",
+      "\u001b[1mfocus_xw\u001b[0m = \u001b[1m\u001b[94m0.045\u001b[0m\u001b[0m [m] // Width of target\n",
+      "\u001b[1mfocus_yh\u001b[0m = \u001b[1m\u001b[94m0.12\u001b[0m\u001b[0m [m] // Height of target\n",
+      "\u001b[1mE0\u001b[0m = \u001b[1m\u001b[94m0.0\u001b[0m\u001b[0m [meV] // Mean energy of neutrons.\n",
+      "\u001b[1mdE\u001b[0m = \u001b[1m\u001b[94m0.0\u001b[0m\u001b[0m [meV] // Energy half spread of neutrons (flat or gaussian sigma).\n",
+      "\u001b[1mlambda0\u001b[0m = \u001b[1m\u001b[94m0.0\u001b[0m\u001b[0m [AA] // Mean wavelength of neutrons.\n",
+      "\u001b[1mdlambda\u001b[0m = \u001b[1m\u001b[94m0.0\u001b[0m\u001b[0m [AA] // Wavelength half spread of neutrons.\n",
+      "\u001b[1mflux\u001b[0m = \u001b[1m\u001b[94m1.0\u001b[0m\u001b[0m [1/(s*cm**2*st*energy unit)] // flux per energy unit, Angs or meV if \n",
+      "                                           flux=0, the source emits 1 in 4*PI whole \n",
+      "                                           space. \n",
+      "\u001b[1mgauss\u001b[0m = \u001b[1m\u001b[94m0.0\u001b[0m\u001b[0m [1] // Gaussian (1) or Flat (0) energy/wavelength distribution\n",
+      "\u001b[1mtarget_index\u001b[0m = \u001b[1m\u001b[94m1\u001b[0m\u001b[0m [1] // relative index of component to focus at, e.g. next is \n",
+      "                        +1 this is used to compute 'dist' automatically. \n",
+      "-------------------------------------------------------------------------------------\n"
+     ]
+    }
+   ],
+   "source": [
+    "source = instrument.add_component(\"source\", \"Source_simple\")\n",
+    "source.show_parameters()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "noble-colleague",
+   "metadata": {},
+   "source": [
+    "### Set parameters\n",
+    "The parameters of the component object are adjustable directly through the attributes of the object."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "continued-denial",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "COMPONENT source = Source_simple\n",
+      "  \u001b[1myheight\u001b[0m = \u001b[1m\u001b[92m0.03\u001b[0m\u001b[0m [m]\n",
+      "  \u001b[1mxwidth\u001b[0m = \u001b[1m\u001b[92m0.03\u001b[0m\u001b[0m [m]\n",
+      "  \u001b[1mdist\u001b[0m = \u001b[1m\u001b[92m5\u001b[0m\u001b[0m [m]\n",
+      "  \u001b[1mfocus_xw\u001b[0m = \u001b[1m\u001b[92m0.01\u001b[0m\u001b[0m [m]\n",
+      "  \u001b[1mfocus_yh\u001b[0m = \u001b[1m\u001b[92m0.01\u001b[0m\u001b[0m [m]\n",
+      "  \u001b[1mlambda0\u001b[0m = \u001b[1m\u001b[92m3\u001b[0m\u001b[0m [AA]\n",
+      "  \u001b[1mdlambda\u001b[0m = \u001b[1m\u001b[92m2.2\u001b[0m\u001b[0m [AA]\n",
+      "AT [0, 0, 0] ABSOLUTE\n"
+     ]
+    }
+   ],
+   "source": [
+    "source.xwidth = 0.03\n",
+    "source.yheight = 0.03\n",
+    "source.lambda0 = 3\n",
+    "source.dlambda = 2.2\n",
+    "source.dist = 5\n",
+    "source.focus_xw = 0.01\n",
+    "source.focus_yh = 0.01\n",
+    "print(source)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "interior-better",
+   "metadata": {},
+   "source": [
+    "### Instrument parameters\n",
+    "It is possible to add instrument parameters that can be adjusted when running the simulation or adjusted using the widget interface."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "atlantic-capital",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "COMPONENT source = Source_simple\n",
+      "  \u001b[1myheight\u001b[0m = \u001b[1m\u001b[92m0.03\u001b[0m\u001b[0m [m]\n",
+      "  \u001b[1mxwidth\u001b[0m = \u001b[1m\u001b[92m0.03\u001b[0m\u001b[0m [m]\n",
+      "  \u001b[1mdist\u001b[0m = \u001b[1m\u001b[92m5\u001b[0m\u001b[0m [m]\n",
+      "  \u001b[1mfocus_xw\u001b[0m = \u001b[1m\u001b[92m0.01\u001b[0m\u001b[0m [m]\n",
+      "  \u001b[1mfocus_yh\u001b[0m = \u001b[1m\u001b[92m0.01\u001b[0m\u001b[0m [m]\n",
+      "  \u001b[1mlambda0\u001b[0m = \u001b[1m\u001b[92mwavelength\u001b[0m\u001b[0m [AA]\n",
+      "  \u001b[1mdlambda\u001b[0m = \u001b[1m\u001b[92m0.1*wavelength\u001b[0m\u001b[0m [AA]\n",
+      "AT [0, 0, 0] ABSOLUTE\n"
+     ]
+    }
+   ],
+   "source": [
+    "wavelength = instrument.add_parameter(\"wavelength\", value=3, comment=\"Wavelength in AA\")\n",
+    "source.lambda0 = wavelength\n",
+    "source.dlambda = \"0.1*wavelength\"\n",
+    "print(source)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "selective-recovery",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      " ___ Help Source_simple _____________________________________________________________\n",
+      "|\u001b[1moptional parameter\u001b[0m|\u001b[1m\u001b[4mrequired parameter\u001b[0m\u001b[0m|\u001b[1m\u001b[94mdefault value\u001b[0m\u001b[0m|\u001b[1m\u001b[92muser specified value\u001b[0m\u001b[0m|\n",
+      "\u001b[1mradius\u001b[0m = \u001b[1m\u001b[94m0.1\u001b[0m\u001b[0m [m] // Radius of circle in (x,y,0) plane where neutrons are \n",
+      "                    generated. \n",
+      "\u001b[1myheight\u001b[0m = \u001b[1m\u001b[92m0.03\u001b[0m\u001b[0m [m] // Height of rectangle in (x,y,0) plane where neutrons are \n",
+      "                      generated. \n",
+      "\u001b[1mxwidth\u001b[0m = \u001b[1m\u001b[92m0.03\u001b[0m\u001b[0m [m] // Width of rectangle in (x,y,0) plane where neutrons are \n",
+      "                     generated. \n",
+      "\u001b[1mdist\u001b[0m = \u001b[1m\u001b[92m5\u001b[0m\u001b[0m [m] // Distance to target along z axis.\n",
+      "\u001b[1mfocus_xw\u001b[0m = \u001b[1m\u001b[92m0.01\u001b[0m\u001b[0m [m] // Width of target\n",
+      "\u001b[1mfocus_yh\u001b[0m = \u001b[1m\u001b[92m0.01\u001b[0m\u001b[0m [m] // Height of target\n",
+      "\u001b[1mE0\u001b[0m = \u001b[1m\u001b[94m0.0\u001b[0m\u001b[0m [meV] // Mean energy of neutrons.\n",
+      "\u001b[1mdE\u001b[0m = \u001b[1m\u001b[94m0.0\u001b[0m\u001b[0m [meV] // Energy half spread of neutrons (flat or gaussian sigma).\n",
+      "\u001b[1mlambda0\u001b[0m = \u001b[1m\u001b[92mwavelength\u001b[0m\u001b[0m [AA] // Mean wavelength of neutrons.\n",
+      "\u001b[1mdlambda\u001b[0m = \u001b[1m\u001b[92m0.1*wavelength\u001b[0m\u001b[0m [AA] // Wavelength half spread of neutrons.\n",
+      "\u001b[1mflux\u001b[0m = \u001b[1m\u001b[94m1.0\u001b[0m\u001b[0m [1/(s*cm**2*st*energy unit)] // flux per energy unit, Angs or meV if \n",
+      "                                           flux=0, the source emits 1 in 4*PI whole \n",
+      "                                           space. \n",
+      "\u001b[1mgauss\u001b[0m = \u001b[1m\u001b[94m0.0\u001b[0m\u001b[0m [1] // Gaussian (1) or Flat (0) energy/wavelength distribution\n",
+      "\u001b[1mtarget_index\u001b[0m = \u001b[1m\u001b[94m1\u001b[0m\u001b[0m [1] // relative index of component to focus at, e.g. next is \n",
+      "                        +1 this is used to compute 'dist' automatically. \n",
+      "-------------------------------------------------------------------------------------\n"
+     ]
+    }
+   ],
+   "source": [
+    "source.show_parameters()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "practical-somewhere",
+   "metadata": {},
+   "source": [
+    "### Inserting a sample component\n",
+    "A sample component is added as any other component, but here we place it relative to the source. A SANS sample is used, it focuses to a detector (chosen with target_index) with a width of focus_xw and height of focus_yh."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "changing-funds",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "sample = instrument.add_component(\"sans_sample\", \"Sans_spheres\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "after-reliance",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "COMPONENT sans_sample = Sans_spheres\n",
+      "  \u001b[1mR\u001b[0m = \u001b[1m\u001b[92m120\u001b[0m\u001b[0m [AA]\n",
+      "  \u001b[1mxwidth\u001b[0m = \u001b[1m\u001b[92m0.01\u001b[0m\u001b[0m [m]\n",
+      "  \u001b[1myheight\u001b[0m = \u001b[1m\u001b[92m0.01\u001b[0m\u001b[0m [m]\n",
+      "  \u001b[1mzdepth\u001b[0m = \u001b[1m\u001b[92m0.01\u001b[0m\u001b[0m [m]\n",
+      "  \u001b[1mtarget_index\u001b[0m = \u001b[1m\u001b[92m1\u001b[0m\u001b[0m [1]\n",
+      "  \u001b[1mfocus_xw\u001b[0m = \u001b[1m\u001b[92m0.5\u001b[0m\u001b[0m [m]\n",
+      "  \u001b[1mfocus_yh\u001b[0m = \u001b[1m\u001b[92m0.5\u001b[0m\u001b[0m [m]\n",
+      "AT [0, 0, 5] RELATIVE source\n"
+     ]
+    }
+   ],
+   "source": [
+    "sample.set_AT(source.dist, RELATIVE=source)\n",
+    "sample.set_parameters(R=120, xwidth=0.01, yheight=0.01, zdepth=0.01,\n",
+    "                      target_index=1, focus_xw=0.5, focus_yh=0.5)\n",
+    "print(sample)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "million-shoot",
+   "metadata": {},
+   "source": [
+    "### Adding a monitor\n",
+    "The monitor can be placed relative to the sample, and even use the attributes from the sample to define its size so that the two always match. When setting a filename, it has to be a string also in the generated code, so use double quotation marks as shown here."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "characteristic-spectacular",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "PSD = instrument.add_component(\"PSD\", \"PSD_monitor\")\n",
+    "PSD.set_AT([0, 0, 5], RELATIVE=sample)\n",
+    "PSD.set_parameters(xwidth=sample.focus_xw, yheight=sample.focus_yh, filename='\"PSD.dat\"')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "mechanical-burlington",
+   "metadata": {},
+   "source": [
+    "## Setting up the simulation\n",
+    "The instrument now contains a source, a sample and a monitor, this is enough for a simple demonstration."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "wicked-terrorism",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      " wavelength  = 3  // Wavelength in AA\n"
+     ]
+    }
+   ],
+   "source": [
+    "instrument.show_parameters()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "postal-advocate",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "instrument.set_parameters(wavelength=4)\n",
+    "instrument.settings(ncount=2E6)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "requested-translation",
+   "metadata": {},
+   "source": [
+    "### Performing the simulation\n",
+    "In order to start the simulation the *backengine* method is called. If the simulation is successful, the data will be placed in the *data* attribute, otherwise this attribute will contain None."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "durable-printer",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "INFO: Using directory: \"/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/getting_started/first_instrument_data_14\"\n",
+      "INFO: Regenerating c-file: first_instrument.c\n",
+      "CFLAGS=\n",
+      "INFO: Recompiling: ./first_instrument.out\n",
+      "mccode-r.c:2837:3: warning: expression result unused [-Wunused-value]\n",
+      "  *t0;\n",
+      "  ^~~\n",
+      "1 warning generated.\n",
+      "INFO: ===\n",
+      "INFO: Placing instr file copy first_instrument.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/getting_started/first_instrument_data_14\n",
+      "\n",
+      "Detector: PSD_I=2.94743e-31 PSD_ERR=1.93544e-33 PSD_N=1.99994e+06 \"PSD.dat\"\n",
+      "loading system configuration\n",
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "instrument.backengine()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "detailed-ontario",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "data = instrument.data"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "frozen-circle",
+   "metadata": {},
+   "source": [
+    "## Plot the data\n",
+    "The data can be plotted with the *make_sub_plot* function from the plotter module."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "christian-detail",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Plotting data with name PSD\n"
+     ]
+    },
+    {
+     "data": {
+      "image/png": "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\n",
+      "text/plain": [
+       "<Figure size 936x504 with 2 Axes>"
+      ]
+     },
+     "metadata": {
+      "needs_background": "light"
+     },
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "plotter.make_sub_plot(data, log=True)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "critical-rebound",
+   "metadata": {},
+   "source": [
+    "### Access the data\n",
+    "The data is a list of McStasData objects and can be accessed directly."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "gothic-water",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[\n",
+      "McStasData: PSD type: 2D  I:2.94743e-31 E:1.93544e-33 N:1.99994e+06]\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(data)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "common-overhead",
+   "metadata": {},
+   "source": [
+    "It is possible to search through the data list with the *name_search* function to retrieve the desired data object. "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "id": "colonial-thompson",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "PSD_data = functions.name_search(\"PSD\", data)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "american-crash",
+   "metadata": {},
+   "source": [
+    "The intensities can then be accessed directly, along with Error and Ncount. "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "id": "exempt-lincoln",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([[6.84187331e-38, 3.77889856e-38, 7.34935822e-38, ...,\n",
+       "        4.65629342e-38, 5.90193146e-38, 7.43527115e-38],\n",
+       "       [5.64741051e-38, 5.40917050e-38, 8.68218230e-38, ...,\n",
+       "        3.81841050e-38, 5.19564738e-38, 5.38229632e-38],\n",
+       "       [5.06316113e-38, 6.67163143e-38, 7.45413771e-38, ...,\n",
+       "        8.19936762e-38, 5.54221727e-38, 6.40231477e-38],\n",
+       "       ...,\n",
+       "       [6.43932205e-38, 5.51357962e-38, 1.10983333e-37, ...,\n",
+       "        6.26414806e-38, 5.36001549e-38, 5.49572229e-38],\n",
+       "       [4.77256509e-38, 4.98853552e-38, 6.64620658e-38, ...,\n",
+       "        5.32052456e-38, 4.94468346e-38, 6.08952141e-38],\n",
+       "       [4.99933422e-38, 4.97922491e-38, 4.95131505e-38, ...,\n",
+       "        6.75855017e-38, 3.73104315e-38, 4.43581308e-38]])"
+      ]
+     },
+     "execution_count": 19,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "PSD_data.Intensity"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "unavailable-secretariat",
+   "metadata": {},
+   "source": [
+    "Metadata is also available as a dict."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "id": "mediterranean-guatemala",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Date : Fri Jan 21 16:21:44 2022 (1642778504)\n",
+      "type : array_2d(90, 90)\n",
+      "Source : first_instrument (first_instrument.instr)\n",
+      "component : PSD\n",
+      "position : 0 0 10\n",
+      "title : PSD monitor\n",
+      "Ncount : 2000000\n",
+      "filename : PSD.dat\n",
+      "statistics : X0=0.0210688; dX=4.16439; Y0=0.0150399; dY=4.158;\n",
+      "signal : Min=3.73104e-38; Max=1.30317e-33; Mean=3.6388e-35;\n",
+      "values : 2.94743e-31 1.93544e-33 1.99994e+06\n",
+      "xvar : X\n",
+      "yvar : Y\n",
+      "xlabel : X position [cm]\n",
+      "ylabel : Y position [cm]\n",
+      "zvar : I\n",
+      "zlabel : Signal per bin\n",
+      "xylimits : -25 25 -25 25\n",
+      "variables : I I_err N\n",
+      "Parameters : {'wavelength': 4.0}\n"
+     ]
+    }
+   ],
+   "source": [
+    "info_dict = PSD_data.metadata.info\n",
+    "for field, info in info_dict.items():\n",
+    "    print(field, \":\", info)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "coupled-sailing",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "id": "broken-toronto",
+   "metadata": {
+    "scrolled": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "\n",
+      "loading system configuration\n",
+      "\n",
+      "INFO: Using directory: \"first_instrument_mcdisplay_8\"\n",
+      "INFO: Regenerating c-file: first_instrument.c\n",
+      "CFLAGS=\n",
+      "INFO: Recompiling: ./first_instrument.out\n",
+      "mccode-r.c:2837:3: warning: expression result unused [-Wunused-value]\n",
+      "*t0;\n",
+      "^~~\n",
+      "1 warning generated.\n",
+      "INFO: ===\n",
+      "instrument definition parsed\n",
+      "reading particle data...\n",
+      "\n",
+      "Component                         source AT (0,0,0)    0 m from origin\n",
+      "Component                    sans_sample AT (0,0,5)    5 m from origin\n",
+      "Component                            PSD AT (0,0,10)    10 m from origin\n",
+      "Detector: PSD_I=3.09348e-31 PSD_ERR=1.31679e-31 PSD_N=300 \"PSD.dat\"\n",
+      "loading system configuration\n",
+      "\n",
+      "starting particle parsing\n",
+      "ended particle parsing\n",
+      "\n"
+     ]
+    },
+    {
+     "data": {
+      "text/html": [
+       "\n",
+       "        <iframe\n",
+       "            width=\"800\"\n",
+       "            height=\"548\"\n",
+       "            src=\"./first_instrument_mcdisplay_8/index.html\"\n",
+       "            frameborder=\"0\"\n",
+       "            allowfullscreen\n",
+       "        ></iframe>\n",
+       "        "
+      ],
+      "text/plain": [
+       "<IPython.lib.display.IFrame at 0x7feb9080bd30>"
+      ]
+     },
+     "execution_count": 21,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "instrument.show_instrument(width=800, height=548)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "id": "optional-ensemble",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<!DOCTYPE html>\n",
+       "<html>\n",
+       "<head>\n",
+       "\t<meta charset=utf-8>\n",
+       "\t<style>\n",
+       "\t\tbody { margin: 0; }\n",
+       "\t\tcanvas { width: 100%; height: 100% }\n",
+       "\t</style>\n",
+       "</head>\n",
+       "<body>\n",
+       "\t<script src=\"three.min.js\"></script>\n",
+       "\t<script src=\"dat.gui.min.js\"></script>\n",
+       "\t<script src=\"OrbitControls.js\"></script>\n",
+       "\t<script src=\"Lut.js\"></script>\n",
+       "\t<script src=\"jquery.min.js\"></script>\n",
+       "\t<script src=\"_mcdisplay.js\"></script>\n",
+       "\t<script src=\"_instr.js\"></script>\n",
+       "\t<script src=\"_particles.js\"></script>\n",
+       "\n",
+       "\t<script>\n",
+       "        var campos_x = -26.3, campos_y = 26.3, campos_z = 26.3;\n",
+       "        var box_x1 = 0, box_x2 = 3, box_y1 = -0.3, box_y2 = 0.3, box_z1 = 49, box_z2 = 53;\n",
+       "        var invert_canvas = false;\n",
+       "        campos_x = -3.75, campos_y = 4.0, campos_z = 4.0; // line written by SimpleWriter\n",
+       "        box_x1 = -0.25, box_x2 = 0.25, box_y1 = -0.25, box_y2 = 0.25, box_z1 = 0.0, box_z2 = 8.0; // line written by SimpleWriter\n",
+       "false\n",
+       "        var box_lst = [box_x1, box_x2, box_y1, box_y2, box_z1, box_z2];\n",
+       "        var controller = new Controller(campos_x, campos_y, campos_z, box_lst, invert_canvas);\n",
+       "        var viewmodel = controller.viewmodel;\n",
+       "\n",
+       "\t\t// UI event handlers interacting only(!!) with the viewmodel.\n",
+       "\t\t// TODO: implement callbacks\n",
+       "\t\tvar handlePlayPause = function()\n",
+       "\t\t{\n",
+       "\t\t\tif (viewmodel.playBack == PlayBack.RUN)\n",
+       "\t\t\t{\n",
+       "\t\t\t\tviewmodel.setPlayBack(PlayBack.PAUSE);\n",
+       "\t\t\t}\n",
+       "\t\t\telse\n",
+       "\t\t\t{\n",
+       "\t\t\t\tviewmodel.setPlayBack(PlayBack.RUN);\n",
+       "\t\t\t}\n",
+       "\t\t}\n",
+       "\t\tvar handleNext = function()\n",
+       "\t\t{\n",
+       "\t\t\tviewmodel.setPlayBack(PlayBack.PAUSE);\n",
+       "\t\t\tviewmodel.setRayIdx(viewmodel.getRayIdx() + 1);\n",
+       "\t\t}\n",
+       "\t\tvar handlePrev = function()\n",
+       "\t\t{\n",
+       "\t\t\tviewmodel.setPlayBack(PlayBack.PAUSE);\n",
+       "\t\t\tviewmodel.setRayIdx(viewmodel.getRayIdx() - 1);\n",
+       "\t\t}\n",
+       "\t\tvar handleKeepChanged = function(checked)\n",
+       "\t\t{\n",
+       "\t\t\tif (checked)\n",
+       "\t\t\t{\n",
+       "\t\t\t\tviewmodel.setDisplayMode(DisplayMode.KEEP);\n",
+       "\t\t\t}\n",
+       "\t\t\telse\n",
+       "\t\t\t{\n",
+       "\t\t\t\tviewmodel.setDisplayMode(DisplayMode.SINGLE);\n",
+       "\t\t\t}\n",
+       "\t\t}\n",
+       "\t\tvar handleShowBBChanged = function(checked)\n",
+       "\t\t{\n",
+       "\t\t\tconsole.log(\"bounding box: \" + checked);\n",
+       "\t\t\tviewmodel.setShowBoundingBox(checked);\n",
+       "\t\t}\n",
+       "\t\tvar handleShowScatterCubesChanged = function(checked)\n",
+       "\t\t{\n",
+       "\t\t\tconsole.log(\"scatter cubes: \" + checked);\n",
+       "\t\t\tviewmodel.setShowScatterCubes(checked);\n",
+       "\t\t}\n",
+       "\t\tvar handleViewTop = function()\n",
+       "\t\t{\n",
+       "\t\t\tcontroller.setViewTop();\n",
+       "\t\t}\n",
+       "\t\tvar handleViewSide = function()\n",
+       "\t\t{\n",
+       "\t\t\tcontroller.setViewSide();\n",
+       "\t\t}\n",
+       "\t\tvar handleViewHome = function()\n",
+       "\t\t{\n",
+       "\t\t\tcontroller.setViewHome();\n",
+       "\t\t}\n",
+       "\t</script>\n",
+       "\n",
+       "\t<div id=\"gui\" style=\"width: auto; background-color: black;\">\n",
+       "\t\t<label id=\"lblInstrInfo\" style=\"color: white;\">(instr)</label>\n",
+       "\t</div>\n",
+       "\t<div id=\"gui\" style=\"width: auto; background-color: black;\">\n",
+       "\t\t<button id=\"btnPrev\", onclick=\"handlePrev();\" style=\"width: 90px;\">Previous</button>\n",
+       "\t\t<button id=\"btnPlayPause\", onclick=\"handlePlayPause();\" style=\"width: 90px;\">Play/Pause</button>\n",
+       "\t\t<button id=\"btnNext\", onclick=\"handleNext();\" style=\"width: 90px;\">Next</button>\n",
+       "\t\t<label id=\"lblRayIdxText\" style=\"color: white;\">Ray index</label>\n",
+       "\t\t<label id=\"lblRayIdx\" style=\"color: white; background-color: black; width: 27px; text-align: right; display: inline-block;\">(idx)</label>\n",
+       "\t\t<label id=\"lblMaxRayIdx\" style=\"color: white; background-color: black; display: inline-block;\">(max_idx)</label>\n",
+       "\t\t<label id=\"lblKeep\" style=\"color: white; background-color: black; display: inline-block; text-align:right; width: 140px;\">\n",
+       "\t\t\tKeep rays<input id=\"cbxKeep\" type=\"checkbox\">\n",
+       "\t\t</label>\n",
+       "\t\t<label id=\"lblScatterCubes\" style=\"color: white; background-color: black; display: inline-block; text-align:right; width: 140px;\">\n",
+       "\t\t\tScatter Markers<input id=\"cbxScattCub\" type=\"checkbox\">\n",
+       "\t\t</label>\n",
+       "\t\t<label id=\"lblView\" style=\"color: white; background-color: black; display: inline-block; text-align:right; width: 120px;\">Reset view:</label>\n",
+       "\t\t<button id=\"btnHome\", onclick=\"handleViewHome();\" style=\"width: 60px;\">Home</button>\n",
+       "\t\t<button id=\"btnSide\", onclick=\"handleViewSide();\" style=\"width: 60px;\">Side</button>\n",
+       "\t\t<button id=\"btnTop\", onclick=\"handleViewTop();\" style=\"width: 60px;\">Top</button>\n",
+       "\t\t<label id=\"lblView\" style=\"color: white; background-color: black; display: inline-block; text-align:right; width: 120px;\">Show BB</label>\n",
+       "\t\t<input id=\"cbxBoundingbox\" type=\"checkbox\">\n",
+       "\t</div>\n",
+       "\t<div id=\"3dcanvas\"></div>\n",
+       "\n",
+       "\t<script>\n",
+       "\t\t// gui synchronization class\n",
+       "\t\t//\n",
+       "\t\tvar UpdateGui = function()\n",
+       "\t\t{\n",
+       "\t\t\tthis.vm_version = -1;\n",
+       "\t\t\tthis.viewmodel = viewmodel;\n",
+       "\t\t}\n",
+       "\t\tUpdateGui.prototype.update = function()\n",
+       "\t\t{\n",
+       "\t\t\t// return if viewmodel is constant\n",
+       "\t\t\tif (this.vm_version == this.viewmodel.getUpdateVersion()) { return; }\n",
+       "\n",
+       "\t\t\tthis.vm_version = this.viewmodel.getUpdateVersion();\n",
+       "\n",
+       "\t\t\t// update playback mode\n",
+       "\t\t\tvar pb = this.viewmodel.getPlayBack();\n",
+       "\t\t\tif (pb == PlayBack.RUN)\n",
+       "\t\t\t{\n",
+       "\t\t\t\tbtn = document.getElementById(\"btnPlayPause\");\n",
+       "\t\t\t\tbtn.innerHTML = \"Pause\";\n",
+       "\t\t\t}\n",
+       "\t\t\tif (pb == PlayBack.PAUSE)\n",
+       "\t\t\t{\n",
+       "\t\t\t\tbtn = document.getElementById(\"btnPlayPause\");\n",
+       "\t\t\t\tbtn.innerHTML = \"Play\";\n",
+       "\t\t\t}\n",
+       "\t\t\t// update ray index\n",
+       "\t\t\tlbl = document.getElementById(\"lblRayIdx\");\n",
+       "\t\t\tlbl.innerHTML = this.viewmodel.getRayIdx();\n",
+       "\n",
+       "\t\t\t// update keep ckeckbox\n",
+       "\t\t\tcbxKeep = document.getElementById(\"cbxKeep\");\n",
+       "\t\t\tvar dm = this.viewmodel.getDisplayMode();\n",
+       "\t\t\tif (dm == DisplayMode.SINGLE)\n",
+       "\t\t\t{\n",
+       "\t\t\t\tcbxKeep.checked = false;\n",
+       "\t\t\t}\n",
+       "\t\t\telse\n",
+       "\t\t\t{\n",
+       "\t\t\t\tcbxKeep.checked = true;\n",
+       "\t\t\t}\n",
+       "\n",
+       "\t\t\t// update show/hide scatter cubes\n",
+       "\t\t\tcbxScattCub = document.getElementById(\"cbxScattCub\");\n",
+       "\t\t\tcbxScattCub.checked = this.viewmodel.getShowScatterCubes();\n",
+       "\n",
+       "\t\t\t// update bounding box checkbox\n",
+       "\t\t\tcbxBoundingbox = document.getElementById(\"cbxBoundingbox\");\n",
+       "\t\t\tcbxBoundingbox.checked = this.viewmodel.getShowBoundingBox();\n",
+       "\t\t}\n",
+       "\t\tvar upd = new UpdateGui();\n",
+       "\n",
+       "\t\t// set up static ui\n",
+       "\t\tlblInstrInfo = document.getElementById(\"lblInstrInfo\");\n",
+       "\t\tlblInstrInfo.innerHTML = MCDATA_instrdata[\"cmd\"];\n",
+       "\t\tlblMaxRayIdx = document.getElementById(\"lblMaxRayIdx\");\n",
+       "\t\tlblMaxRayIdx.innerHTML = '/ ' + (MCDATA_particledata[\"numrays\"] - 1);\n",
+       "\n",
+       "\t\t// set keep checkbox event handler\n",
+       "\t\tcbxKeep = document.getElementById(\"cbxKeep\");\n",
+       "\t\tcbxKeep.addEventListener(\"change\", function () { handleKeepChanged(cbxKeep.checked) });\n",
+       "\n",
+       "\t\t// set show bounding box event handler\n",
+       "\t\tcbxBoundingbox = document.getElementById(\"cbxBoundingbox\");\n",
+       "\t\tcbxBoundingbox.addEventListener(\"change\", function () { handleShowBBChanged(cbxBoundingbox.checked) });\n",
+       "\n",
+       "\t\t// set show bounding box event handler\n",
+       "\t\tcbxScattCub = document.getElementById(\"cbxScattCub\");\n",
+       "\t\tcbxScattCub.addEventListener(\"change\", function () { handleShowScatterCubesChanged(cbxScattCub.checked) });\n",
+       "\n",
+       "\t\t// call the mcdisplay app!\n",
+       "\t\tcontroller.setUpdateGuiFunc(upd.update);\n",
+       "\t\tcontroller.run();\n",
+       "    </script>\n",
+       "</body>\n",
+       "</html>"
+      ],
+      "text/plain": [
+       "<IPython.core.display.HTML object>"
+      ]
+     },
+     "execution_count": 22,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "from IPython.display import HTML\n",
+    "\n",
+    "HTML(filename=\"first_instrument_20220121_144434/index.html\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "id": "every-potato",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<!DOCTYPE html>\n",
+       "<html>\n",
+       "<head>\n",
+       "\t<meta charset=utf-8>\n",
+       "\t<style>\n",
+       "\t\tbody { margin: 0; }\n",
+       "\t\tcanvas { width: 100%; height: 100% }\n",
+       "\t</style>\n",
+       "</head>\n",
+       "<body>\n",
+       "\t<script src=\"three.min.js\"></script>\n",
+       "\t<script src=\"dat.gui.min.js\"></script>\n",
+       "\t<script src=\"OrbitControls.js\"></script>\n",
+       "\t<script src=\"Lut.js\"></script>\n",
+       "\t<script src=\"jquery.min.js\"></script>\n",
+       "\t<script src=\"_mcdisplay.js\"></script>\n",
+       "\t<script src=\"_instr.js\"></script>\n",
+       "\t<script src=\"_particles.js\"></script>\n",
+       "\n",
+       "\t<script>\n",
+       "        var campos_x = -26.3, campos_y = 26.3, campos_z = 26.3;\n",
+       "        var box_x1 = 0, box_x2 = 3, box_y1 = -0.3, box_y2 = 0.3, box_z1 = 49, box_z2 = 53;\n",
+       "        var invert_canvas = false;\n",
+       "        campos_x = -3.75, campos_y = 4.0, campos_z = 4.0; // line written by SimpleWriter\n",
+       "        box_x1 = -0.25, box_x2 = 0.25, box_y1 = -0.25, box_y2 = 0.25, box_z1 = 0.0, box_z2 = 8.0; // line written by SimpleWriter\n",
+       "false\n",
+       "        var box_lst = [box_x1, box_x2, box_y1, box_y2, box_z1, box_z2];\n",
+       "        var controller = new Controller(campos_x, campos_y, campos_z, box_lst, invert_canvas);\n",
+       "        var viewmodel = controller.viewmodel;\n",
+       "\n",
+       "\t\t// UI event handlers interacting only(!!) with the viewmodel.\n",
+       "\t\t// TODO: implement callbacks\n",
+       "\t\tvar handlePlayPause = function()\n",
+       "\t\t{\n",
+       "\t\t\tif (viewmodel.playBack == PlayBack.RUN)\n",
+       "\t\t\t{\n",
+       "\t\t\t\tviewmodel.setPlayBack(PlayBack.PAUSE);\n",
+       "\t\t\t}\n",
+       "\t\t\telse\n",
+       "\t\t\t{\n",
+       "\t\t\t\tviewmodel.setPlayBack(PlayBack.RUN);\n",
+       "\t\t\t}\n",
+       "\t\t}\n",
+       "\t\tvar handleNext = function()\n",
+       "\t\t{\n",
+       "\t\t\tviewmodel.setPlayBack(PlayBack.PAUSE);\n",
+       "\t\t\tviewmodel.setRayIdx(viewmodel.getRayIdx() + 1);\n",
+       "\t\t}\n",
+       "\t\tvar handlePrev = function()\n",
+       "\t\t{\n",
+       "\t\t\tviewmodel.setPlayBack(PlayBack.PAUSE);\n",
+       "\t\t\tviewmodel.setRayIdx(viewmodel.getRayIdx() - 1);\n",
+       "\t\t}\n",
+       "\t\tvar handleKeepChanged = function(checked)\n",
+       "\t\t{\n",
+       "\t\t\tif (checked)\n",
+       "\t\t\t{\n",
+       "\t\t\t\tviewmodel.setDisplayMode(DisplayMode.KEEP);\n",
+       "\t\t\t}\n",
+       "\t\t\telse\n",
+       "\t\t\t{\n",
+       "\t\t\t\tviewmodel.setDisplayMode(DisplayMode.SINGLE);\n",
+       "\t\t\t}\n",
+       "\t\t}\n",
+       "\t\tvar handleShowBBChanged = function(checked)\n",
+       "\t\t{\n",
+       "\t\t\tconsole.log(\"bounding box: \" + checked);\n",
+       "\t\t\tviewmodel.setShowBoundingBox(checked);\n",
+       "\t\t}\n",
+       "\t\tvar handleShowScatterCubesChanged = function(checked)\n",
+       "\t\t{\n",
+       "\t\t\tconsole.log(\"scatter cubes: \" + checked);\n",
+       "\t\t\tviewmodel.setShowScatterCubes(checked);\n",
+       "\t\t}\n",
+       "\t\tvar handleViewTop = function()\n",
+       "\t\t{\n",
+       "\t\t\tcontroller.setViewTop();\n",
+       "\t\t}\n",
+       "\t\tvar handleViewSide = function()\n",
+       "\t\t{\n",
+       "\t\t\tcontroller.setViewSide();\n",
+       "\t\t}\n",
+       "\t\tvar handleViewHome = function()\n",
+       "\t\t{\n",
+       "\t\t\tcontroller.setViewHome();\n",
+       "\t\t}\n",
+       "\t</script>\n",
+       "\n",
+       "\t<div id=\"gui\" style=\"width: auto; background-color: black;\">\n",
+       "\t\t<label id=\"lblInstrInfo\" style=\"color: white;\">(instr)</label>\n",
+       "\t</div>\n",
+       "\t<div id=\"gui\" style=\"width: auto; background-color: black;\">\n",
+       "\t\t<button id=\"btnPrev\", onclick=\"handlePrev();\" style=\"width: 90px;\">Previous</button>\n",
+       "\t\t<button id=\"btnPlayPause\", onclick=\"handlePlayPause();\" style=\"width: 90px;\">Play/Pause</button>\n",
+       "\t\t<button id=\"btnNext\", onclick=\"handleNext();\" style=\"width: 90px;\">Next</button>\n",
+       "\t\t<label id=\"lblRayIdxText\" style=\"color: white;\">Ray index</label>\n",
+       "\t\t<label id=\"lblRayIdx\" style=\"color: white; background-color: black; width: 27px; text-align: right; display: inline-block;\">(idx)</label>\n",
+       "\t\t<label id=\"lblMaxRayIdx\" style=\"color: white; background-color: black; display: inline-block;\">(max_idx)</label>\n",
+       "\t\t<label id=\"lblKeep\" style=\"color: white; background-color: black; display: inline-block; text-align:right; width: 140px;\">\n",
+       "\t\t\tKeep rays<input id=\"cbxKeep\" type=\"checkbox\">\n",
+       "\t\t</label>\n",
+       "\t\t<label id=\"lblScatterCubes\" style=\"color: white; background-color: black; display: inline-block; text-align:right; width: 140px;\">\n",
+       "\t\t\tScatter Markers<input id=\"cbxScattCub\" type=\"checkbox\">\n",
+       "\t\t</label>\n",
+       "\t\t<label id=\"lblView\" style=\"color: white; background-color: black; display: inline-block; text-align:right; width: 120px;\">Reset view:</label>\n",
+       "\t\t<button id=\"btnHome\", onclick=\"handleViewHome();\" style=\"width: 60px;\">Home</button>\n",
+       "\t\t<button id=\"btnSide\", onclick=\"handleViewSide();\" style=\"width: 60px;\">Side</button>\n",
+       "\t\t<button id=\"btnTop\", onclick=\"handleViewTop();\" style=\"width: 60px;\">Top</button>\n",
+       "\t\t<label id=\"lblView\" style=\"color: white; background-color: black; display: inline-block; text-align:right; width: 120px;\">Show BB</label>\n",
+       "\t\t<input id=\"cbxBoundingbox\" type=\"checkbox\">\n",
+       "\t</div>\n",
+       "\t<div id=\"3dcanvas\"></div>\n",
+       "\n",
+       "\t<script>\n",
+       "\t\t// gui synchronization class\n",
+       "\t\t//\n",
+       "\t\tvar UpdateGui = function()\n",
+       "\t\t{\n",
+       "\t\t\tthis.vm_version = -1;\n",
+       "\t\t\tthis.viewmodel = viewmodel;\n",
+       "\t\t}\n",
+       "\t\tUpdateGui.prototype.update = function()\n",
+       "\t\t{\n",
+       "\t\t\t// return if viewmodel is constant\n",
+       "\t\t\tif (this.vm_version == this.viewmodel.getUpdateVersion()) { return; }\n",
+       "\n",
+       "\t\t\tthis.vm_version = this.viewmodel.getUpdateVersion();\n",
+       "\n",
+       "\t\t\t// update playback mode\n",
+       "\t\t\tvar pb = this.viewmodel.getPlayBack();\n",
+       "\t\t\tif (pb == PlayBack.RUN)\n",
+       "\t\t\t{\n",
+       "\t\t\t\tbtn = document.getElementById(\"btnPlayPause\");\n",
+       "\t\t\t\tbtn.innerHTML = \"Pause\";\n",
+       "\t\t\t}\n",
+       "\t\t\tif (pb == PlayBack.PAUSE)\n",
+       "\t\t\t{\n",
+       "\t\t\t\tbtn = document.getElementById(\"btnPlayPause\");\n",
+       "\t\t\t\tbtn.innerHTML = \"Play\";\n",
+       "\t\t\t}\n",
+       "\t\t\t// update ray index\n",
+       "\t\t\tlbl = document.getElementById(\"lblRayIdx\");\n",
+       "\t\t\tlbl.innerHTML = this.viewmodel.getRayIdx();\n",
+       "\n",
+       "\t\t\t// update keep ckeckbox\n",
+       "\t\t\tcbxKeep = document.getElementById(\"cbxKeep\");\n",
+       "\t\t\tvar dm = this.viewmodel.getDisplayMode();\n",
+       "\t\t\tif (dm == DisplayMode.SINGLE)\n",
+       "\t\t\t{\n",
+       "\t\t\t\tcbxKeep.checked = false;\n",
+       "\t\t\t}\n",
+       "\t\t\telse\n",
+       "\t\t\t{\n",
+       "\t\t\t\tcbxKeep.checked = true;\n",
+       "\t\t\t}\n",
+       "\n",
+       "\t\t\t// update show/hide scatter cubes\n",
+       "\t\t\tcbxScattCub = document.getElementById(\"cbxScattCub\");\n",
+       "\t\t\tcbxScattCub.checked = this.viewmodel.getShowScatterCubes();\n",
+       "\n",
+       "\t\t\t// update bounding box checkbox\n",
+       "\t\t\tcbxBoundingbox = document.getElementById(\"cbxBoundingbox\");\n",
+       "\t\t\tcbxBoundingbox.checked = this.viewmodel.getShowBoundingBox();\n",
+       "\t\t}\n",
+       "\t\tvar upd = new UpdateGui();\n",
+       "\n",
+       "\t\t// set up static ui\n",
+       "\t\tlblInstrInfo = document.getElementById(\"lblInstrInfo\");\n",
+       "\t\tlblInstrInfo.innerHTML = MCDATA_instrdata[\"cmd\"];\n",
+       "\t\tlblMaxRayIdx = document.getElementById(\"lblMaxRayIdx\");\n",
+       "\t\tlblMaxRayIdx.innerHTML = '/ ' + (MCDATA_particledata[\"numrays\"] - 1);\n",
+       "\n",
+       "\t\t// set keep checkbox event handler\n",
+       "\t\tcbxKeep = document.getElementById(\"cbxKeep\");\n",
+       "\t\tcbxKeep.addEventListener(\"change\", function () { handleKeepChanged(cbxKeep.checked) });\n",
+       "\n",
+       "\t\t// set show bounding box event handler\n",
+       "\t\tcbxBoundingbox = document.getElementById(\"cbxBoundingbox\");\n",
+       "\t\tcbxBoundingbox.addEventListener(\"change\", function () { handleShowBBChanged(cbxBoundingbox.checked) });\n",
+       "\n",
+       "\t\t// set show bounding box event handler\n",
+       "\t\tcbxScattCub = document.getElementById(\"cbxScattCub\");\n",
+       "\t\tcbxScattCub.addEventListener(\"change\", function () { handleShowScatterCubesChanged(cbxScattCub.checked) });\n",
+       "\n",
+       "\t\t// call the mcdisplay app!\n",
+       "\t\tcontroller.setUpdateGuiFunc(upd.update);\n",
+       "\t\tcontroller.run();\n",
+       "    </script>\n",
+       "</body>\n",
+       "</html>"
+      ],
+      "text/plain": [
+       "<IPython.core.display.HTML object>"
+      ]
+     },
+     "execution_count": 23,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "import os\n",
+    "os.chdir(\"first_instrument_20220121_144434\")\n",
+    "HTML(filename=\"index.html\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "id": "configured-playing",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from IPython.display import IFrame"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "id": "worldwide-novel",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['index.html',\n",
+       " 'three.min.js',\n",
+       " 'dat.gui.min.js',\n",
+       " 'jquery.min.js',\n",
+       " '_particles.js',\n",
+       " '_instr.js',\n",
+       " 'OrbitControls.js',\n",
+       " '_mcdisplay.js',\n",
+       " 'Lut.js']"
+      ]
+     },
+     "execution_count": 25,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "os.listdir()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "id": "eligible-anchor",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "\n",
+       "        <iframe\n",
+       "            width=\"950\"\n",
+       "            height=\"700\"\n",
+       "            src=\"first_instrument_20220121_144434/index.html?scrolling=no\"\n",
+       "            frameborder=\"0\"\n",
+       "            allowfullscreen\n",
+       "        ></iframe>\n",
+       "        "
+      ],
+      "text/plain": [
+       "<IPython.lib.display.IFrame at 0x7febc0725a30>"
+      ]
+     },
+     "execution_count": 26,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "IFrame(src=\"first_instrument_20220121_144434/index.html\", width=950, height=700, scrolling=\"no\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "id": "laughing-strength",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from IPython import display"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 28,
+   "id": "great-mediterranean",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "os.chdir(\"..\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "id": "streaming-chrome",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['installation.ipynb',\n",
+       " 'first_instrument_data_3',\n",
+       " 'first_instrument_data_4',\n",
+       " 'first_instrument_data_12',\n",
+       " 'first_instrument_data_13',\n",
+       " 'first_instrument_data_5',\n",
+       " 'first_instrument_data_2',\n",
+       " 'first_instrument_data_14',\n",
+       " 'first_instrument_data',\n",
+       " 'overview.ipynb',\n",
+       " 'first_instrument_mcdisplay_2',\n",
+       " 'first_instrument_mcdisplay_5',\n",
+       " 'first_instrument_mcdisplay_4',\n",
+       " 'first_instrument_mcdisplay_3',\n",
+       " 'first_instrument_mcdisplay',\n",
+       " 'quick_start.ipynb',\n",
+       " 'first_instrument.out',\n",
+       " 'first_instrument.c',\n",
+       " 'first_instrument_data_9',\n",
+       " 'first_instrument_data_7',\n",
+       " 'first_instrument_data_11',\n",
+       " 'first_instrument_data_0',\n",
+       " 'first_instrument.out.dSYM',\n",
+       " 'first_instrument_data_1',\n",
+       " 'first_instrument_data_10',\n",
+       " 'first_instrument_data_6',\n",
+       " 'first_instrument_data_8',\n",
+       " '.ipynb_checkpoints',\n",
+       " 'quick_start-Copy1.ipynb',\n",
+       " 'first_instrument_mcdisplay_8',\n",
+       " 'first_instrument_mcdisplay_6',\n",
+       " 'first_instrument_mcdisplay_1',\n",
+       " 'first_instrument_20220121_144434',\n",
+       " 'first_instrument_mcdisplay_0',\n",
+       " 'first_instrument_mcdisplay_7',\n",
+       " 'first_instrument.instr']"
+      ]
+     },
+     "execution_count": 29,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "os.listdir()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 30,
+   "id": "italic-transcription",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Help on class IFrame in module IPython.lib.display:\n",
+      "\n",
+      "class IFrame(builtins.object)\n",
+      " |  IFrame(src, width, height, **kwargs)\n",
+      " |  \n",
+      " |  Generic class to embed an iframe in an IPython notebook\n",
+      " |  \n",
+      " |  Methods defined here:\n",
+      " |  \n",
+      " |  __init__(self, src, width, height, **kwargs)\n",
+      " |      Initialize self.  See help(type(self)) for accurate signature.\n",
+      " |  \n",
+      " |  ----------------------------------------------------------------------\n",
+      " |  Data descriptors defined here:\n",
+      " |  \n",
+      " |  __dict__\n",
+      " |      dictionary for instance variables (if defined)\n",
+      " |  \n",
+      " |  __weakref__\n",
+      " |      list of weak references to the object (if defined)\n",
+      " |  \n",
+      " |  ----------------------------------------------------------------------\n",
+      " |  Data and other attributes defined here:\n",
+      " |  \n",
+      " |  iframe = '\\n        <iframe\\n            width=\"{width}\"\\n   ...      ...\n",
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "help(IFrame)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 31,
+   "id": "genuine-guest",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'ZMQInteractiveShell'"
+      ]
+     },
+     "execution_count": 31,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "get_ipython().__class__.__name__"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 32,
+   "id": "judicial-course",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<script>\n",
+       "IPython.notebook.kernel.execute(\"cell_width=\"+($( \".cell\").width()))\n",
+       "</script>"
+      ],
+      "text/plain": [
+       "<IPython.core.display.HTML object>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "from IPython.display import display, HTML\n",
+    "js = \"\"\"<script>\n",
+    "IPython.notebook.kernel.execute(\"cell_width=\"+($( \".cell\").width()))\n",
+    "</script>\"\"\"\n",
+    "display(HTML(js))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 33,
+   "id": "capital-threshold",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "NameError",
+     "evalue": "name 'cell_width' is not defined",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+      "\u001b[0;32m<ipython-input-33-e37111202c01>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mcell_width\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+      "\u001b[0;31mNameError\u001b[0m: name 'cell_width' is not defined"
+     ]
+    }
+   ],
+   "source": [
+    "print(cell_width)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "aggressive-reducing",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.8"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

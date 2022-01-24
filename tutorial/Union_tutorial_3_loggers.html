@@ -2069,7 +2069,7 @@
 
 <span class="n">Al</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;Al&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_make_material&quot;</span><span class="p">)</span>
 <span class="n">Al</span><span class="o">.</span><span class="n">process_string</span> <span class="o">=</span> <span class="s1">&#39;&quot;Al_inc,Al_pow&quot;&#39;</span>
-<span class="n">Al</span><span class="o">.</span><span class="n">my_absorption</span> <span class="o">=</span> <span class="mi">100</span><span class="o">*</span><span class="mf">0.231</span><span class="o">/</span><span class="mf">66.4</span> <span class="c1"># barns [m^2 E-28] * Å^3 [m^3 E-30] = [m E-2], correct with factor 100.</span>
+<span class="n">Al</span><span class="o">.</span><span class="n">my_absorption</span> <span class="o">=</span> <span class="mi">100</span><span class="o">*</span><span class="mf">0.231</span><span class="o">/</span><span class="mf">66.4</span> <span class="c1"># barns [m^2 E-28]*Å^3[m^3 E-30]=[m E-2], factor 100</span>
 
 <span class="n">Sample_inc</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;Sample_inc&quot;</span><span class="p">,</span> <span class="s2">&quot;Incoherent_process&quot;</span><span class="p">)</span>
 <span class="n">Sample_inc</span><span class="o">.</span><span class="n">sigma</span> <span class="o">=</span> <span class="mf">3.4176</span>
@@ -2087,7 +2087,8 @@
 <span class="n">src</span><span class="o">.</span><span class="n">yheight</span> <span class="o">=</span> <span class="mf">0.035</span>
 <span class="n">src</span><span class="o">.</span><span class="n">focus_aw</span> <span class="o">=</span> <span class="mf">0.01</span>
 <span class="n">src</span><span class="o">.</span><span class="n">focus_ah</span> <span class="o">=</span> <span class="mf">0.01</span>
-<span class="n">src</span><span class="o">.</span><span class="n">lambda0</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span><span class="s2">&quot;wavelength&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="s2">&quot;Wavelength in [Ang]&quot;</span><span class="p">)</span>
+<span class="n">src</span><span class="o">.</span><span class="n">lambda0</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_parameter</span><span class="p">(</span><span class="s2">&quot;wavelength&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span>
+                                       <span class="n">comment</span><span class="o">=</span><span class="s2">&quot;Wavelength in [Ang]&quot;</span><span class="p">)</span>
 <span class="n">src</span><span class="o">.</span><span class="n">dlambda</span> <span class="o">=</span> <span class="s2">&quot;0.01*wavelength&quot;</span>
 <span class="n">src</span><span class="o">.</span><span class="n">flux</span> <span class="o">=</span> <span class="mf">1E13</span>
 
@@ -2098,7 +2099,8 @@
 <span class="n">sample_geometry</span><span class="o">.</span><span class="n">priority</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">sample_geometry</span><span class="o">.</span><span class="n">set_AT</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">src</span><span class="p">)</span>
 
-<span class="n">container</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;sample_container&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_cylinder&quot;</span><span class="p">,</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">sample_geometry</span><span class="p">)</span>
+<span class="n">container</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;sample_container&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_cylinder&quot;</span><span class="p">)</span>
+<span class="n">container</span><span class="o">.</span><span class="n">set_RELATIVE</span><span class="p">(</span><span class="n">sample_geometry</span><span class="p">)</span>
 <span class="n">container</span><span class="o">.</span><span class="n">yheight</span> <span class="o">=</span> <span class="mf">0.03</span><span class="o">+</span><span class="mf">0.003</span> <span class="c1"># 1.5 mm top and button</span>
 <span class="n">container</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="mf">0.0075</span> <span class="o">+</span> <span class="mf">0.0015</span> <span class="c1"># 1.5 mm sides of container</span>
 <span class="n">container</span><span class="o">.</span><span class="n">material_string</span><span class="o">=</span><span class="s1">&#39;&quot;Al&quot;&#39;</span> 
@@ -2263,7 +2265,8 @@ No components found in this category! Available categories:
 <p>One can select which two axis to record using <em>D_direction_1</em> and <em>D_direction_2</em>, and the range with for example <em>D1_min</em> and <em>D1_max</em>. When spatial information is recorded it is also important to place the logger at an appropriate position, here we center it on the sample position.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logger_zx</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;logger_space_zx&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_logger_2D_space&quot;</span><span class="p">,</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">sample_geometry</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logger_zx</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;logger_space_zx&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_logger_2D_space&quot;</span><span class="p">)</span>
+<span class="n">logger_zx</span><span class="o">.</span><span class="n">set_RELATIVE</span><span class="p">(</span><span class="n">sample_geometry</span><span class="p">)</span>
 <span class="n">logger_zx</span><span class="o">.</span><span class="n">D_direction_1</span> <span class="o">=</span> <span class="s1">&#39;&quot;z&quot;&#39;</span>
 <span class="n">logger_zx</span><span class="o">.</span><span class="n">D1_min</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.12</span>
 <span class="n">logger_zx</span><span class="o">.</span><span class="n">D1_max</span> <span class="o">=</span> <span class="mf">0.12</span>
@@ -2274,7 +2277,8 @@ No components found in this category! Available categories:
 <span class="n">logger_zx</span><span class="o">.</span><span class="n">n2</span> <span class="o">=</span> <span class="mi">300</span>
 <span class="n">logger_zx</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;&quot;logger_zx.dat&quot;&#39;</span>
 
-<span class="n">logger_zy</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;logger_space_zy&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_logger_2D_space&quot;</span><span class="p">,</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">sample_geometry</span><span class="p">)</span>
+<span class="n">logger_zy</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;logger_space_zy&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_logger_2D_space&quot;</span><span class="p">)</span>
+<span class="n">logger_zy</span><span class="o">.</span><span class="n">set_RELATIVE</span><span class="p">(</span><span class="n">sample_geometry</span><span class="p">)</span>
 <span class="n">logger_zy</span><span class="o">.</span><span class="n">D_direction_1</span> <span class="o">=</span> <span class="s1">&#39;&quot;z&quot;&#39;</span>
 <span class="n">logger_zy</span><span class="o">.</span><span class="n">D1_min</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.12</span>
 <span class="n">logger_zy</span><span class="o">.</span><span class="n">D1_max</span> <span class="o">=</span> <span class="mf">0.12</span>
@@ -2297,7 +2301,7 @@ No components found in this category! Available categories:
 <div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">instrument</span><span class="o">.</span><span class="n">set_parameters</span><span class="p">(</span><span class="n">wavelength</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span>
-<span class="n">instrument</span><span class="o">.</span><span class="n">settings</span><span class="p">(</span><span class="n">ncount</span><span class="o">=</span><span class="mf">3E5</span><span class="p">,</span> <span class="n">output_path</span><span class="o">=</span><span class="s2">&quot;data_folder/union_loggers&quot;</span><span class="p">)</span>
+<span class="n">instrument</span><span class="o">.</span><span class="n">settings</span><span class="p">(</span><span class="n">ncount</span><span class="o">=</span><span class="mf">3E6</span><span class="p">,</span> <span class="n">output_path</span><span class="o">=</span><span class="s2">&quot;data_folder/union_loggers&quot;</span><span class="p">)</span>
 
 <span class="n">instrument</span><span class="o">.</span><span class="n">backengine</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">data</span>
@@ -2305,7 +2309,7 @@ No components found in this category! Available categories:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_loggers_85&quot;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_loggers_105&quot;
 INFO: Regenerating c-file: python_tutorial.c
 CFLAGS= -I@MCCODE_LIB@/share/
 INFO: Recompiling: ./python_tutorial.out
@@ -2411,7 +2415,7 @@ mccode-r.h:219:27: note: expanded from macro &#39;MPI_MASTER&#39;
                           ^~~~~
 14 warnings generated.
 INFO: ===
-INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_loggers_85
+INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_loggers_105
 
     Opening input file &#39;/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//data/Al.laz&#39; (Table_Read_Offset)
 Table from file &#39;Al.laz&#39; (block 1) is 26 x 18 (x=1:8), constant step. interpolation: linear
@@ -2705,8 +2709,8 @@ LIST: masked_by_mask_index_list for Volume 7 = []
       mask_mode for Volume                 7 = 0
 
 Union_master component master initialized sucessfully
-Detector: logger_space_zx_I=20524 logger_space_zx_ERR=104.87 logger_space_zx_N=100694 &quot;logger_zx.dat&quot;
-Detector: logger_space_zy_I=20524 logger_space_zy_ERR=104.87 logger_space_zy_N=100694 &quot;logger_zy.dat&quot;
+Detector: logger_space_zx_I=20502.4 logger_space_zx_ERR=33.5925 logger_space_zx_N=1.01004e+06 &quot;logger_zx.dat&quot;
+Detector: logger_space_zy_I=20502.4 logger_space_zy_ERR=33.5925 logger_space_zy_N=1.01004e+06 &quot;logger_zy.dat&quot;
 loading system configuration
 </pre></div>
 </div>
@@ -2747,7 +2751,7 @@ Plotting data with name logger_space_zy
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_loggers_86&quot;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_loggers_106&quot;
 INFO: Regenerating c-file: python_tutorial.c
 CFLAGS= -I@MCCODE_LIB@/share/
 INFO: Recompiling: ./python_tutorial.out
@@ -2853,7 +2857,7 @@ mccode-r.h:219:27: note: expanded from macro &#39;MPI_MASTER&#39;
                           ^~~~~
 14 warnings generated.
 INFO: ===
-INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_loggers_86
+INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_loggers_106
 
     Opening input file &#39;/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//data/Al.laz&#39; (Table_Read_Offset)
 Table from file &#39;Al.laz&#39; (block 1) is 26 x 18 (x=1:8), constant step. interpolation: linear
@@ -3147,8 +3151,8 @@ LIST: masked_by_mask_index_list for Volume 7 = []
       mask_mode for Volume                 7 = 0
 
 Union_master component master initialized sucessfully
-Detector: logger_space_zx_I=3795.17 logger_space_zx_ERR=30.7636 logger_space_zx_N=19991 &quot;logger_zx.dat&quot;
-Detector: logger_space_zy_I=14897 logger_space_zy_ERR=95.4096 logger_space_zy_N=71367 &quot;logger_zy.dat&quot;
+Detector: logger_space_zx_I=3819.84 logger_space_zx_ERR=9.94759 logger_space_zx_N=200683 &quot;logger_zx.dat&quot;
+Detector: logger_space_zy_I=14821.6 logger_space_zy_ERR=30.871 logger_space_zy_N=711405 &quot;logger_zy.dat&quot;
 loading system configuration
 </pre></div>
 </div>
@@ -3178,7 +3182,7 @@ Plotting data with name logger_space_zy
 <li><p>order_volume_process : Match given number of scattering events, only counting events in current volume with current process</p></li>
 </ul>
 <p>We can modify our previous loggers to test out these features. The zx logger viewing from above will keep the target, but we remove the sample target on the zy logger, which is done by setting the <em>taget_geometry</em> to NULL. We choose to look at the second scattering event.</p>
-<div class="cell docutils container">
+<div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logger_zx</span><span class="o">.</span><span class="n">order_total</span> <span class="o">=</span> <span class="mi">2</span>
 
@@ -3191,7 +3195,7 @@ Plotting data with name logger_space_zy
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_loggers_87&quot;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_loggers_107&quot;
 INFO: Regenerating c-file: python_tutorial.c
 CFLAGS= -I@MCCODE_LIB@/share/
 INFO: Recompiling: ./python_tutorial.out
@@ -3297,7 +3301,7 @@ mccode-r.h:219:27: note: expanded from macro &#39;MPI_MASTER&#39;
                           ^~~~~
 14 warnings generated.
 INFO: ===
-INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_loggers_87
+INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_loggers_107
 
     Opening input file &#39;/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//data/Al.laz&#39; (Table_Read_Offset)
 Table from file &#39;Al.laz&#39; (block 1) is 26 x 18 (x=1:8), constant step. interpolation: linear
@@ -3591,8 +3595,8 @@ LIST: masked_by_mask_index_list for Volume 7 = []
       mask_mode for Volume                 7 = 0
 
 Union_master component master initialized sucessfully
-Detector: logger_space_zx_I=742.406 logger_space_zx_ERR=16.3496 logger_space_zx_N=4028 &quot;logger_zx.dat&quot;
-Detector: logger_space_zy_I=2721.27 logger_space_zy_ERR=49.947 logger_space_zy_N=13894 &quot;logger_zy.dat&quot;
+Detector: logger_space_zx_I=722.93 logger_space_zx_ERR=5.11563 logger_space_zx_N=39579 &quot;logger_zx.dat&quot;
+Detector: logger_space_zy_I=2792.71 logger_space_zy_ERR=16.3402 logger_space_zy_N=140167 &quot;logger_zy.dat&quot;
 loading system configuration
 </pre></div>
 </div>
@@ -3631,7 +3635,8 @@ Plotting data with name logger_space_zy
 <span class="n">logger_1D</span><span class="o">.</span><span class="n">n1</span> <span class="o">=</span> <span class="mi">300</span>
 <span class="n">logger_1D</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;&quot;logger_1D_time.dat&quot;&#39;</span>
 
-<span class="n">abs_logger_zx</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;abs_logger_space_zx&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_abs_logger_2D_space&quot;</span><span class="p">,</span><span class="n">before</span><span class="o">=</span><span class="s2">&quot;master&quot;</span><span class="p">)</span>
+<span class="n">abs_logger_zx</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;abs_logger_space_zx&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_abs_logger_2D_space&quot;</span><span class="p">,</span>
+                                         <span class="n">before</span><span class="o">=</span><span class="s2">&quot;master&quot;</span><span class="p">)</span>
 <span class="n">abs_logger_zx</span><span class="o">.</span><span class="n">set_AT</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">RELATIVE</span><span class="o">=</span><span class="n">sample_geometry</span><span class="p">)</span>
 <span class="n">abs_logger_zx</span><span class="o">.</span><span class="n">D_direction_1</span> <span class="o">=</span> <span class="s1">&#39;&quot;z&quot;&#39;</span>
 <span class="n">abs_logger_zx</span><span class="o">.</span><span class="n">D1_min</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.12</span>
@@ -3654,7 +3659,8 @@ Plotting data with name logger_space_zy
 <span class="n">logger_2DQ</span><span class="o">.</span><span class="n">n2</span> <span class="o">=</span> <span class="mi">200</span>
 <span class="n">logger_2DQ</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;&quot;logger_2DQ.dat&quot;&#39;</span>
 
-<span class="n">logger_2D_kf</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;logger_2D_kf&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_logger_2D_kf&quot;</span><span class="p">,</span> <span class="n">before</span><span class="o">=</span><span class="s2">&quot;master&quot;</span><span class="p">)</span>
+<span class="n">logger_2D_kf</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;logger_2D_kf&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_logger_2D_kf&quot;</span><span class="p">,</span>
+                                        <span class="n">before</span><span class="o">=</span><span class="s2">&quot;master&quot;</span><span class="p">)</span>
 <span class="n">logger_2D_kf</span><span class="o">.</span><span class="n">Q_direction_1</span> <span class="o">=</span> <span class="s1">&#39;&quot;z&quot;&#39;</span>
 <span class="n">logger_2D_kf</span><span class="o">.</span><span class="n">Q1_min</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.5</span>
 <span class="n">logger_2D_kf</span><span class="o">.</span><span class="n">Q1_max</span> <span class="o">=</span> <span class="mf">2.5</span>
@@ -3679,7 +3685,7 @@ Plotting data with name logger_space_zy
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_loggers_88&quot;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_loggers_108&quot;
 INFO: Regenerating c-file: python_tutorial.c
 CFLAGS= -I@MCCODE_LIB@/share/
 INFO: Recompiling: ./python_tutorial.out
@@ -3861,7 +3867,7 @@ mccode-r.h:219:27: note: expanded from macro &#39;MPI_MASTER&#39;
                           ^~~~~
 18 warnings generated.
 INFO: ===
-INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_loggers_88
+INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_loggers_108
 
     Opening input file &#39;/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//data/Al.laz&#39; (Table_Read_Offset)
 Table from file &#39;Al.laz&#39; (block 1) is 26 x 18 (x=1:8), constant step. interpolation: linear
@@ -4155,12 +4161,12 @@ LIST: masked_by_mask_index_list for Volume 7 = []
       mask_mode for Volume                 7 = 0
 
 Union_master component master initialized sucessfully
-Detector: logger_space_zx_I=720.039 logger_space_zx_ERR=16.1394 logger_space_zx_N=3967 &quot;logger_zx.dat&quot;
-Detector: logger_space_zy_I=2754.96 logger_space_zy_ERR=51.1158 logger_space_zy_N=13925 &quot;logger_zy.dat&quot;
-Detector: logger_1D_I=20326.8 logger_1D_ERR=108.852 logger_1D_N=100813 &quot;logger_1D_time.dat&quot;
-Detector: abs_logger_space_zx_I=953.07 abs_logger_space_zx_ERR=4.2103 abs_logger_space_zx_N=100813 &quot;abs_logger_zx.dat&quot;
-Detector: logger_2DQ_I=20326.8 logger_2DQ_ERR=108.852 logger_2DQ_N=100813 &quot;logger_2DQ.dat&quot;
-Detector: logger_2D_kf_I=20326.8 logger_2D_kf_ERR=108.852 logger_2D_kf_N=100813 &quot;logger_2D_kf.dat&quot;
+Detector: logger_space_zx_I=731.034 logger_space_zx_ERR=5.1256 logger_space_zx_N=39959 &quot;logger_zx.dat&quot;
+Detector: logger_space_zy_I=2807.92 logger_space_zy_ERR=16.2272 logger_space_zy_N=139962 &quot;logger_zy.dat&quot;
+Detector: logger_1D_I=20544.7 logger_1D_ERR=33.4262 logger_1D_N=1.01030e+06 &quot;logger_1D_time.dat&quot;
+Detector: abs_logger_space_zx_I=959.611 abs_logger_space_zx_ERR=1.35663 abs_logger_space_zx_N=1.01030e+06 &quot;abs_logger_zx.dat&quot;
+Detector: logger_2DQ_I=20544.7 logger_2DQ_ERR=33.4262 logger_2DQ_N=1.01030e+06 &quot;logger_2DQ.dat&quot;
+Detector: logger_2D_kf_I=20544.7 logger_2D_kf_ERR=33.4262 logger_2D_kf_N=1.01030e+06 &quot;logger_2D_kf.dat&quot;
 loading system configuration
 </pre></div>
 </div>
@@ -4219,7 +4225,8 @@ Plotting data with name logger_2D_kf
 <p>The Union_logger_2D_space_time for example sets up a number of Union_logger_2D_space monitors that are limited to specific time intervals. This can be used to make an animation of the monitor, which we will demonstrate here.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">log_2D_st</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;logger_2D_space_time&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_logger_2D_space_time&quot;</span><span class="p">,</span> <span class="n">before</span><span class="o">=</span><span class="s2">&quot;master&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">log_2D_st</span> <span class="o">=</span> <span class="n">instrument</span><span class="o">.</span><span class="n">add_component</span><span class="p">(</span><span class="s2">&quot;logger_2D_space_time&quot;</span><span class="p">,</span> <span class="s2">&quot;Union_logger_2D_space_time&quot;</span><span class="p">,</span>
+                                     <span class="n">before</span><span class="o">=</span><span class="s2">&quot;master&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -4252,7 +4259,7 @@ Plotting data with name logger_2D_kf
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_loggers_89&quot;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: Using directory: &quot;/Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_loggers_109&quot;
 INFO: Regenerating c-file: python_tutorial.c
 CFLAGS= -I@MCCODE_LIB@/share/
 INFO: Recompiling: ./python_tutorial.out
@@ -4453,7 +4460,7 @@ mccode-r.h:219:27: note: expanded from macro &#39;MPI_MASTER&#39;
                           ^~~~~
 19 warnings generated.
 INFO: ===
-INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_loggers_89
+INFO: Placing instr file copy python_tutorial.instr in dataset /Users/madsbertelsen/PaNOSC/McStasScript/github/McStasScript/docs/source/tutorial/data_folder/union_loggers_109
 
     Opening input file &#39;/Applications/McStas-2.7.1.app/Contents/Resources/mcstas/2.7.1//data/Al.laz&#39; (Table_Read_Offset)
 Table from file &#39;Al.laz&#39; (block 1) is 26 x 18 (x=1:8), constant step. interpolation: linear
@@ -4748,42 +4755,42 @@ LIST: masked_by_mask_index_list for Volume 7 = []
       mask_mode for Volume                 7 = 0
 
 Union_master component master initialized sucessfully
-Detector: logger_space_zx_I=737.737 logger_space_zx_ERR=16.4628 logger_space_zx_N=3997 &quot;logger_zx.dat&quot;
-Detector: logger_space_zy_I=2874.74 logger_space_zy_ERR=53.6641 logger_space_zy_N=13933 &quot;logger_zy.dat&quot;
-Detector: logger_1D_I=20680 logger_1D_ERR=107.994 logger_1D_N=100783 &quot;logger_1D_time.dat&quot;
-Detector: abs_logger_space_zx_I=961.793 abs_logger_space_zx_ERR=4.44361 abs_logger_space_zx_N=100783 &quot;abs_logger_zx.dat&quot;
-Detector: logger_2DQ_I=20680 logger_2DQ_ERR=107.994 logger_2DQ_N=100783 &quot;logger_2DQ.dat&quot;
-Detector: logger_2D_kf_I=20680 logger_2D_kf_ERR=107.994 logger_2D_kf_N=100783 &quot;logger_2D_kf.dat&quot;
-Detector: logger_2D_space_time_I=11.0124 logger_2D_space_time_ERR=1.51947 logger_2D_space_time_N=56 &quot;logger_2D_space_time.dat_0&quot;
-Detector: logger_2D_space_time_I=13.7924 logger_2D_space_time_ERR=1.7644 logger_2D_space_time_N=64 &quot;logger_2D_space_time.dat_1&quot;
-Detector: logger_2D_space_time_I=200.99 logger_2D_space_time_ERR=6.33424 logger_2D_space_time_N=1054 &quot;logger_2D_space_time.dat_2&quot;
-Detector: logger_2D_space_time_I=511.019 logger_2D_space_time_ERR=10.106 logger_2D_space_time_N=2677 &quot;logger_2D_space_time.dat_3&quot;
-Detector: logger_2D_space_time_I=5219.52 logger_2D_space_time_ERR=52.0694 logger_2D_space_time_N=24955 &quot;logger_2D_space_time.dat_4&quot;
-Detector: logger_2D_space_time_I=9874.45 logger_2D_space_time_ERR=76.3148 logger_2D_space_time_N=47389 &quot;logger_2D_space_time.dat_5&quot;
-Detector: logger_2D_space_time_I=1896.61 logger_2D_space_time_ERR=39.5858 logger_2D_space_time_N=9055 &quot;logger_2D_space_time.dat_6&quot;
-Detector: logger_2D_space_time_I=500.637 logger_2D_space_time_ERR=27.3639 logger_2D_space_time_N=2539 &quot;logger_2D_space_time.dat_7&quot;
-Detector: logger_2D_space_time_I=84.4019 logger_2D_space_time_ERR=7.23365 logger_2D_space_time_N=457 &quot;logger_2D_space_time.dat_8&quot;
-Detector: logger_2D_space_time_I=76.6338 logger_2D_space_time_ERR=6.54101 logger_2D_space_time_N=359 &quot;logger_2D_space_time.dat_9&quot;
-Detector: logger_2D_space_time_I=82.025 logger_2D_space_time_ERR=6.28493 logger_2D_space_time_N=389 &quot;logger_2D_space_time.dat_10&quot;
-Detector: logger_2D_space_time_I=493.765 logger_2D_space_time_ERR=11.4743 logger_2D_space_time_N=2606 &quot;logger_2D_space_time.dat_11&quot;
-Detector: logger_2D_space_time_I=495.631 logger_2D_space_time_ERR=11.1436 logger_2D_space_time_N=2697 &quot;logger_2D_space_time.dat_12&quot;
-Detector: logger_2D_space_time_I=87.8897 logger_2D_space_time_ERR=6.57221 logger_2D_space_time_N=484 &quot;logger_2D_space_time.dat_13&quot;
-Detector: logger_2D_space_time_I=27.4201 logger_2D_space_time_ERR=2.85147 logger_2D_space_time_N=184 &quot;logger_2D_space_time.dat_14&quot;
-Detector: logger_2D_space_time_I=11.4037 logger_2D_space_time_ERR=1.80615 logger_2D_space_time_N=78 &quot;logger_2D_space_time.dat_15&quot;
-Detector: logger_2D_space_time_I=5.60373 logger_2D_space_time_ERR=1.50829 logger_2D_space_time_N=35 &quot;logger_2D_space_time.dat_16&quot;
-Detector: logger_2D_space_time_I=2.39504 logger_2D_space_time_ERR=0.785219 logger_2D_space_time_N=17 &quot;logger_2D_space_time.dat_17&quot;
-Detector: logger_2D_space_time_I=0.460075 logger_2D_space_time_ERR=0.338806 logger_2D_space_time_N=3 &quot;logger_2D_space_time.dat_18&quot;
-Detector: logger_2D_space_time_I=0.678057 logger_2D_space_time_ERR=0.278287 logger_2D_space_time_N=7 &quot;logger_2D_space_time.dat_19&quot;
-Detector: logger_2D_space_time_I=0 logger_2D_space_time_ERR=0 logger_2D_space_time_N=0 &quot;logger_2D_space_time.dat_20&quot;
-Detector: logger_2D_space_time_I=0.246909 logger_2D_space_time_ERR=0.174951 logger_2D_space_time_N=2 &quot;logger_2D_space_time.dat_21&quot;
-Detector: logger_2D_space_time_I=0 logger_2D_space_time_ERR=0 logger_2D_space_time_N=0 &quot;logger_2D_space_time.dat_22&quot;
-Detector: logger_2D_space_time_I=0.181477 logger_2D_space_time_ERR=0.181477 logger_2D_space_time_N=1 &quot;logger_2D_space_time.dat_23&quot;
-Detector: logger_2D_space_time_I=0 logger_2D_space_time_ERR=0 logger_2D_space_time_N=0 &quot;logger_2D_space_time.dat_24&quot;
-Detector: logger_2D_space_time_I=0 logger_2D_space_time_ERR=0 logger_2D_space_time_N=0 &quot;logger_2D_space_time.dat_25&quot;
-Detector: logger_2D_space_time_I=0.299364 logger_2D_space_time_ERR=0.221087 logger_2D_space_time_N=2 &quot;logger_2D_space_time.dat_26&quot;
-Detector: logger_2D_space_time_I=0.160359 logger_2D_space_time_ERR=0.113616 logger_2D_space_time_N=2 &quot;logger_2D_space_time.dat_27&quot;
-Detector: logger_2D_space_time_I=0 logger_2D_space_time_ERR=0 logger_2D_space_time_N=0 &quot;logger_2D_space_time.dat_28&quot;
-Detector: logger_2D_space_time_I=0 logger_2D_space_time_ERR=0 logger_2D_space_time_N=0 &quot;logger_2D_space_time.dat_29&quot;
+Detector: logger_space_zx_I=729.604 logger_space_zx_ERR=5.1047 logger_space_zx_N=40113 &quot;logger_zx.dat&quot;
+Detector: logger_space_zy_I=2796.84 logger_space_zy_ERR=16.2524 logger_space_zy_N=140384 &quot;logger_zy.dat&quot;
+Detector: logger_1D_I=20486.7 logger_1D_ERR=33.8524 logger_1D_N=1.00968e+06 &quot;logger_1D_time.dat&quot;
+Detector: abs_logger_space_zx_I=958.024 abs_logger_space_zx_ERR=1.40096 abs_logger_space_zx_N=1.00968e+06 &quot;abs_logger_zx.dat&quot;
+Detector: logger_2DQ_I=20486.7 logger_2DQ_ERR=33.8524 logger_2DQ_N=1.00968e+06 &quot;logger_2DQ.dat&quot;
+Detector: logger_2D_kf_I=20486.7 logger_2D_kf_ERR=33.8524 logger_2D_kf_N=1.00968e+06 &quot;logger_2D_kf.dat&quot;
+Detector: logger_2D_space_time_I=12.8922 logger_2D_space_time_ERR=0.522567 logger_2D_space_time_N=648 &quot;logger_2D_space_time.dat_0&quot;
+Detector: logger_2D_space_time_I=10.6716 logger_2D_space_time_ERR=0.48575 logger_2D_space_time_N=506 &quot;logger_2D_space_time.dat_1&quot;
+Detector: logger_2D_space_time_I=198.812 logger_2D_space_time_ERR=2.00195 logger_2D_space_time_N=10317 &quot;logger_2D_space_time.dat_2&quot;
+Detector: logger_2D_space_time_I=525.174 logger_2D_space_time_ERR=3.24727 logger_2D_space_time_N=27390 &quot;logger_2D_space_time.dat_3&quot;
+Detector: logger_2D_space_time_I=5137.12 logger_2D_space_time_ERR=16.2226 logger_2D_space_time_N=249606 &quot;logger_2D_space_time.dat_4&quot;
+Detector: logger_2D_space_time_I=9822.77 logger_2D_space_time_ERR=24.0694 logger_2D_space_time_N=477099 &quot;logger_2D_space_time.dat_5&quot;
+Detector: logger_2D_space_time_I=1858.42 logger_2D_space_time_ERR=13.9729 logger_2D_space_time_N=90439 &quot;logger_2D_space_time.dat_6&quot;
+Detector: logger_2D_space_time_I=497.26 logger_2D_space_time_ERR=5.15668 logger_2D_space_time_N=25746 &quot;logger_2D_space_time.dat_7&quot;
+Detector: logger_2D_space_time_I=82.9468 logger_2D_space_time_ERR=2.15507 logger_2D_space_time_N=4293 &quot;logger_2D_space_time.dat_8&quot;
+Detector: logger_2D_space_time_I=68.5405 logger_2D_space_time_ERR=1.86961 logger_2D_space_time_N=3300 &quot;logger_2D_space_time.dat_9&quot;
+Detector: logger_2D_space_time_I=77.4035 logger_2D_space_time_ERR=2.00903 logger_2D_space_time_N=3677 &quot;logger_2D_space_time.dat_10&quot;
+Detector: logger_2D_space_time_I=496.047 logger_2D_space_time_ERR=3.60549 logger_2D_space_time_N=26070 &quot;logger_2D_space_time.dat_11&quot;
+Detector: logger_2D_space_time_I=505.454 logger_2D_space_time_ERR=3.76311 logger_2D_space_time_N=27027 &quot;logger_2D_space_time.dat_12&quot;
+Detector: logger_2D_space_time_I=77.451 logger_2D_space_time_ERR=1.88798 logger_2D_space_time_N=4694 &quot;logger_2D_space_time.dat_13&quot;
+Detector: logger_2D_space_time_I=27.2625 logger_2D_space_time_ERR=1.33087 logger_2D_space_time_N=1630 &quot;logger_2D_space_time.dat_14&quot;
+Detector: logger_2D_space_time_I=9.05998 logger_2D_space_time_ERR=0.532149 logger_2D_space_time_N=577 &quot;logger_2D_space_time.dat_15&quot;
+Detector: logger_2D_space_time_I=3.8571 logger_2D_space_time_ERR=0.281003 logger_2D_space_time_N=280 &quot;logger_2D_space_time.dat_16&quot;
+Detector: logger_2D_space_time_I=2.68646 logger_2D_space_time_ERR=0.240741 logger_2D_space_time_N=187 &quot;logger_2D_space_time.dat_17&quot;
+Detector: logger_2D_space_time_I=1.19298 logger_2D_space_time_ERR=0.146299 logger_2D_space_time_N=86 &quot;logger_2D_space_time.dat_18&quot;
+Detector: logger_2D_space_time_I=0.409319 logger_2D_space_time_ERR=0.122593 logger_2D_space_time_N=28 &quot;logger_2D_space_time.dat_19&quot;
+Detector: logger_2D_space_time_I=0.259659 logger_2D_space_time_ERR=0.0693727 logger_2D_space_time_N=22 &quot;logger_2D_space_time.dat_20&quot;
+Detector: logger_2D_space_time_I=0.166602 logger_2D_space_time_ERR=0.0487479 logger_2D_space_time_N=15 &quot;logger_2D_space_time.dat_21&quot;
+Detector: logger_2D_space_time_I=0.118489 logger_2D_space_time_ERR=0.045062 logger_2D_space_time_N=9 &quot;logger_2D_space_time.dat_22&quot;
+Detector: logger_2D_space_time_I=0.11861 logger_2D_space_time_ERR=0.0419353 logger_2D_space_time_N=10 &quot;logger_2D_space_time.dat_23&quot;
+Detector: logger_2D_space_time_I=0.133192 logger_2D_space_time_ERR=0.0445012 logger_2D_space_time_N=10 &quot;logger_2D_space_time.dat_24&quot;
+Detector: logger_2D_space_time_I=0.150269 logger_2D_space_time_ERR=0.101689 logger_2D_space_time_N=8 &quot;logger_2D_space_time.dat_25&quot;
+Detector: logger_2D_space_time_I=0.03626 logger_2D_space_time_ERR=0.0256397 logger_2D_space_time_N=2 &quot;logger_2D_space_time.dat_26&quot;
+Detector: logger_2D_space_time_I=0.049442 logger_2D_space_time_ERR=0.0298925 logger_2D_space_time_N=4 &quot;logger_2D_space_time.dat_27&quot;
+Detector: logger_2D_space_time_I=0.0364039 logger_2D_space_time_ERR=0.021049 logger_2D_space_time_N=3 &quot;logger_2D_space_time.dat_28&quot;
+Detector: logger_2D_space_time_I=0.0033265 logger_2D_space_time_ERR=0.0033265 logger_2D_space_time_N=1 &quot;logger_2D_space_time.dat_29&quot;
 Detector: logger_2D_space_time_I=0 logger_2D_space_time_ERR=0 logger_2D_space_time_N=0 &quot;logger_2D_space_time.dat_30&quot;
 Detector: logger_2D_space_time_I=0 logger_2D_space_time_ERR=0 logger_2D_space_time_N=0 &quot;logger_2D_space_time.dat_31&quot;
 Detector: logger_2D_space_time_I=0 logger_2D_space_time_ERR=0 logger_2D_space_time_N=0 &quot;logger_2D_space_time.dat_32&quot;
@@ -4813,7 +4820,7 @@ loading system configuration
 </pre></div>
 </div>
 <img alt="../_images/Union_tutorial_3_loggers_30_1.png" src="../_images/Union_tutorial_3_loggers_30_1.png" />
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-01-19 16:29:03,802 WARNING:MovieWriter imagemagick unavailable; using Pillow instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-01-24 15:30:01,219 WARNING:MovieWriter imagemagick unavailable; using Pillow instead.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saving animation with filename : &quot;animation_demo.gif&quot;
