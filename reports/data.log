@@ -1,0 +1,32 @@
+Traceback (most recent call last):
+  File "/Users/madsbertelsen/opt/anaconda3/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/Users/madsbertelsen/opt/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 1112, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/madsbertelsen/opt/anaconda3/lib/python3.8/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Users/madsbertelsen/opt/anaconda3/lib/python3.8/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/Users/madsbertelsen/opt/anaconda3/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/Users/madsbertelsen/opt/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 553, in async_execute
+    await self.async_execute_cell(
+  File "/Users/madsbertelsen/opt/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 857, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/Users/madsbertelsen/opt/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 760, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+PSD.set_plot_options(log=True, top_lim=1.5, bottom_lim=-1.5, colormap="hot", orders_of_mag=2)
+plotter.make_plot(PSD)
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+[0;32m<ipython-input-15-b16143d88576>[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0mPSD[0m[0;34m.[0m[0mset_plot_options[0m[0;34m([0m[0mlog[0m[0;34m=[0m[0;32mTrue[0m[0;34m,[0m [0mtop_lim[0m[0;34m=[0m[0;36m1.5[0m[0;34m,[0m [0mbottom_lim[0m[0;34m=[0m[0;34m-[0m[0;36m1.5[0m[0;34m,[0m [0mcolormap[0m[0;34m=[0m[0;34m"hot"[0m[0;34m,[0m [0morders_of_mag[0m[0;34m=[0m[0;36m2[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 2[0;31m [0mplotter[0m[0;34m.[0m[0mmake_plot[0m[0;34m([0m[0mPSD[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m
+[0;31mNameError[0m: name 'plotter' is not defined
+NameError: name 'plotter' is not defined
+

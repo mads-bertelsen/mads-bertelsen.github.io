@@ -17,14 +17,28 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-print(cell_width)
+ms.make_sub_plot(data, log=True)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m<ipython-input-33-e37111202c01>[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0mprint[0m[0;34m([0m[0mcell_width[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;31mAttributeError[0m                            Traceback (most recent call last)
+[0;32m<ipython-input-16-5b17676ac509>[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0mms[0m[0;34m.[0m[0mmake_sub_plot[0m[0;34m([0m[0mdata[0m[0;34m,[0m [0mlog[0m[0;34m=[0m[0;32mTrue[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m
-[0;31mNameError[0m: name 'cell_width' is not defined
-NameError: name 'cell_width' is not defined
+[0;32m~/PaNOSC/McStasScript/github/McStasScript/mcstasscript/interface/plotter.py[0m in [0;36mmake_sub_plot[0;34m(data_list, **kwargs)[0m
+[1;32m     46[0m     """
+[1;32m     47[0m [0;34m[0m[0m
+[0;32m---> 48[0;31m     [0mfigsize[0m[0;34m,[0m [0mdata_list[0m [0;34m=[0m [0m_handle_kwargs[0m[0;34m([0m[0mdata_list[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     49[0m [0;34m[0m[0m
+[1;32m     50[0m     [0mnumber_of_plots[0m [0;34m=[0m [0mlen[0m[0;34m([0m[0mdata_list[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/PaNOSC/McStasScript/github/McStasScript/mcstasscript/helper/plot_helper.py[0m in [0;36m_handle_kwargs[0;34m(data_list, **kwargs)[0m
+[1;32m    249[0m                 [0;32mfor[0m [0mdata[0m [0;32min[0m [0mdata_list[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    250[0m                     [0minput_kwarg[0m [0;34m=[0m [0;34m{[0m[0moption[0m[0;34m:[0m [0mgiven_option[0m[0;34m}[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 251[0;31m                     [0mdata[0m[0;34m.[0m[0mset_plot_options[0m[0;34m([0m[0;34m**[0m[0minput_kwarg[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    252[0m [0;34m[0m[0m
+[1;32m    253[0m             [0;31m# Remove option from kwargs[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mAttributeError[0m: 'NoneType' object has no attribute 'set_plot_options'
+AttributeError: 'NoneType' object has no attribute 'set_plot_options'
 
