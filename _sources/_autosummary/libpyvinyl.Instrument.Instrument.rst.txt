@@ -1,4 +1,4 @@
-libpyvinyl.Instrument.Instrument
+﻿libpyvinyl.Instrument.Instrument
 ================================
 
 .. currentmodule:: libpyvinyl.Instrument
@@ -20,7 +20,8 @@ libpyvinyl.Instrument.Instrument
       ~Instrument.list_calculators
       ~Instrument.list_parameters
       ~Instrument.remove_calculator
-      ~Instrument.set_base_path
+      ~Instrument.run
+      ~Instrument.set_instrument_base_dir
    
    
 

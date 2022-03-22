@@ -1,4 +1,4 @@
-mcstasscript.helper
+﻿mcstasscript.helper
 ===================
 
 .. automodule:: mcstasscript.helper
@@ -33,4 +33,5 @@ mcstasscript.helper
    mcstasscript.helper.managed_mcrun
    mcstasscript.helper.mcstas_objects
    mcstasscript.helper.plot_helper
+   mcstasscript.helper.unpickler
 

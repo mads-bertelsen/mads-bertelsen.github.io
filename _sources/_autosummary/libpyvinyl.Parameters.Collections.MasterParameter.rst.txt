@@ -21,6 +21,10 @@ libpyvinyl.Parameters.Collections.MasterParameter
       ~MasterParameter.clear_intervals
       ~MasterParameter.clear_options
       ~MasterParameter.from_dict
+      ~MasterParameter.get_intervals
+      ~MasterParameter.get_intervals_are_legal
+      ~MasterParameter.get_options
+      ~MasterParameter.get_options_are_legal
       ~MasterParameter.is_legal
       ~MasterParameter.print_line
       ~MasterParameter.print_paramter_constraints
@@ -33,6 +37,9 @@ libpyvinyl.Parameters.Collections.MasterParameter
 
    .. autosummary::
    
+      ~MasterParameter.pint_value
+      ~MasterParameter.unit
       ~MasterParameter.value
+      ~MasterParameter.value_no_conversion
    
    

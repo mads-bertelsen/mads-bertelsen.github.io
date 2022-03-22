@@ -1,0 +1,6 @@
+libpyvinyl.Parameters.Collections.quantity\_decode
+==================================================
+
+.. currentmodule:: libpyvinyl.Parameters.Collections
+
+.. autofunction:: quantity_decode

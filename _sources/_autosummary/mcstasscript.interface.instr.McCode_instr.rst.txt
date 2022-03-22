@@ -30,16 +30,19 @@
       ~McCode_instr.component_help
       ~McCode_instr.copy_component
       ~McCode_instr.dump
+      ~McCode_instr.from_dump
       ~McCode_instr.get_component
       ~McCode_instr.get_interface_data
       ~McCode_instr.get_last_component
+      ~McCode_instr.init_parameters
       ~McCode_instr.interface
       ~McCode_instr.print_component
       ~McCode_instr.print_component_short
       ~McCode_instr.print_components
-      ~McCode_instr.run_from_cli
+      ~McCode_instr.reset_parameters
       ~McCode_instr.run_full_instrument
       ~McCode_instr.saveH5
+      ~McCode_instr.set_calculator_base_dir
       ~McCode_instr.set_component_AT
       ~McCode_instr.set_component_GROUP
       ~McCode_instr.set_component_JUMP
@@ -51,6 +54,11 @@
       ~McCode_instr.set_component_c_code_before
       ~McCode_instr.set_component_comment
       ~McCode_instr.set_component_parameter
+      ~McCode_instr.set_input
+      ~McCode_instr.set_instrument_base_dir
+      ~McCode_instr.set_output_data_types
+      ~McCode_instr.set_output_filenames
+      ~McCode_instr.set_output_keys
       ~McCode_instr.set_parameters
       ~McCode_instr.settings
       ~McCode_instr.settings_string
@@ -70,7 +78,17 @@
 
    .. autosummary::
    
+      ~McCode_instr.base_dir
+      ~McCode_instr.calculator_base_dir
       ~McCode_instr.data
+      ~McCode_instr.input
+      ~McCode_instr.instrument_base_dir
+      ~McCode_instr.name
+      ~McCode_instr.output
+      ~McCode_instr.output_data_types
+      ~McCode_instr.output_file_paths
+      ~McCode_instr.output_filenames
+      ~McCode_instr.output_keys
       ~McCode_instr.parameters
    
    

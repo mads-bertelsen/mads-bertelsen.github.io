@@ -1,4 +1,4 @@
-libpyvinyl.Parameters.Collections
+﻿libpyvinyl.Parameters.Collections
 =================================
 
 .. automodule:: libpyvinyl.Parameters.Collections
@@ -8,6 +8,14 @@ libpyvinyl.Parameters.Collections
    
 
    
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:
+   
+      quantity_decode
+      quantity_encode
    
    
 

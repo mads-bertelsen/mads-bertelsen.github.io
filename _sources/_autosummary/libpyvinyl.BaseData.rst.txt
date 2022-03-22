@@ -1,0 +1,37 @@
+libpyvinyl.BaseData
+===================
+
+.. automodule:: libpyvinyl.BaseData
+
+   
+   
+   .. rubric:: Module Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      data_dict
+      expected_data
+      file_format_class
+      file_format_kwargs
+      filename
+      key
+      mapping_content
+      mapping_type
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

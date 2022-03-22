@@ -1,0 +1,28 @@
+libpyvinyl.BaseFormat.BaseFormat
+================================
+
+.. currentmodule:: libpyvinyl.BaseFormat
+
+.. autoclass:: BaseFormat
+   :members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~BaseFormat.__init__
+      ~BaseFormat.convert
+      ~BaseFormat.direct_convert_formats
+      ~BaseFormat.format_register
+      ~BaseFormat.read
+      ~BaseFormat.write
+   
+   
+
+   
+   
+   

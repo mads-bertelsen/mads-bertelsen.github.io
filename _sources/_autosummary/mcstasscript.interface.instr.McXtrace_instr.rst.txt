@@ -30,16 +30,19 @@
       ~McXtrace_instr.component_help
       ~McXtrace_instr.copy_component
       ~McXtrace_instr.dump
+      ~McXtrace_instr.from_dump
       ~McXtrace_instr.get_component
       ~McXtrace_instr.get_interface_data
       ~McXtrace_instr.get_last_component
+      ~McXtrace_instr.init_parameters
       ~McXtrace_instr.interface
       ~McXtrace_instr.print_component
       ~McXtrace_instr.print_component_short
       ~McXtrace_instr.print_components
-      ~McXtrace_instr.run_from_cli
+      ~McXtrace_instr.reset_parameters
       ~McXtrace_instr.run_full_instrument
       ~McXtrace_instr.saveH5
+      ~McXtrace_instr.set_calculator_base_dir
       ~McXtrace_instr.set_component_AT
       ~McXtrace_instr.set_component_GROUP
       ~McXtrace_instr.set_component_JUMP
@@ -51,6 +54,11 @@
       ~McXtrace_instr.set_component_c_code_before
       ~McXtrace_instr.set_component_comment
       ~McXtrace_instr.set_component_parameter
+      ~McXtrace_instr.set_input
+      ~McXtrace_instr.set_instrument_base_dir
+      ~McXtrace_instr.set_output_data_types
+      ~McXtrace_instr.set_output_filenames
+      ~McXtrace_instr.set_output_keys
       ~McXtrace_instr.set_parameters
       ~McXtrace_instr.settings
       ~McXtrace_instr.settings_string
@@ -70,7 +78,17 @@
 
    .. autosummary::
    
+      ~McXtrace_instr.base_dir
+      ~McXtrace_instr.calculator_base_dir
       ~McXtrace_instr.data
+      ~McXtrace_instr.input
+      ~McXtrace_instr.instrument_base_dir
+      ~McXtrace_instr.name
+      ~McXtrace_instr.output
+      ~McXtrace_instr.output_data_types
+      ~McXtrace_instr.output_file_paths
+      ~McXtrace_instr.output_filenames
+      ~McXtrace_instr.output_keys
       ~McXtrace_instr.parameters
    
    

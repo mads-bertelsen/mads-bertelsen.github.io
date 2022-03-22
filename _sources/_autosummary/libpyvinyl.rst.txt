@@ -30,10 +30,8 @@
 
    libpyvinyl.AbstractBaseClass
    libpyvinyl.BaseCalculator
-   libpyvinyl.BeamlinePropagator
-   libpyvinyl.Detector
+   libpyvinyl.BaseData
+   libpyvinyl.BaseFormat
    libpyvinyl.Instrument
    libpyvinyl.Parameters
-   libpyvinyl.RadiationSampleInteractor
-   libpyvinyl.SignalGenerator
 

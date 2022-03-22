@@ -30,16 +30,19 @@
       ~McStas_instr.component_help
       ~McStas_instr.copy_component
       ~McStas_instr.dump
+      ~McStas_instr.from_dump
       ~McStas_instr.get_component
       ~McStas_instr.get_interface_data
       ~McStas_instr.get_last_component
+      ~McStas_instr.init_parameters
       ~McStas_instr.interface
       ~McStas_instr.print_component
       ~McStas_instr.print_component_short
       ~McStas_instr.print_components
-      ~McStas_instr.run_from_cli
+      ~McStas_instr.reset_parameters
       ~McStas_instr.run_full_instrument
       ~McStas_instr.saveH5
+      ~McStas_instr.set_calculator_base_dir
       ~McStas_instr.set_component_AT
       ~McStas_instr.set_component_GROUP
       ~McStas_instr.set_component_JUMP
@@ -51,6 +54,11 @@
       ~McStas_instr.set_component_c_code_before
       ~McStas_instr.set_component_comment
       ~McStas_instr.set_component_parameter
+      ~McStas_instr.set_input
+      ~McStas_instr.set_instrument_base_dir
+      ~McStas_instr.set_output_data_types
+      ~McStas_instr.set_output_filenames
+      ~McStas_instr.set_output_keys
       ~McStas_instr.set_parameters
       ~McStas_instr.settings
       ~McStas_instr.settings_string
@@ -70,7 +78,17 @@
 
    .. autosummary::
    
+      ~McStas_instr.base_dir
+      ~McStas_instr.calculator_base_dir
       ~McStas_instr.data
+      ~McStas_instr.input
+      ~McStas_instr.instrument_base_dir
+      ~McStas_instr.name
+      ~McStas_instr.output
+      ~McStas_instr.output_data_types
+      ~McStas_instr.output_file_paths
+      ~McStas_instr.output_filenames
+      ~McStas_instr.output_keys
       ~McStas_instr.parameters
    
    

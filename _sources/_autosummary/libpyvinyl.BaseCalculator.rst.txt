@@ -10,7 +10,17 @@ libpyvinyl.BaseCalculator
    .. autosummary::
       :toctree:
    
+      base_dir
+      calculator_base_dir
       data
+      input
+      instrument_base_dir
+      name
+      output
+      output_data_types
+      output_file_paths
+      output_filenames
+      output_keys
       parameters
    
    

@@ -89,8 +89,8 @@
    "id": "center-middle",
    "metadata": {},
    "source": [
-    "### Performing the simulation\n",
-    "The simulation is executed using the *backengine* method with a low number of neutrons."
+    "## Generating data\n",
+    "The simulation is executed using the *backengine* method with a low number of neutrons. The data is returned by the *backengine* method, but will contain None if the simulation failed. "
    ]
   },
   {
@@ -142,16 +142,7 @@
    ],
    "source": [
     "instrument.settings(ncount=1E5, output_path=\"data_example\")\n",
-    "instrument.backengine()"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "separate-dress",
-   "metadata": {},
-   "source": [
-    "## Getting the data\n",
-    "After a simulation has been performed with an instrument object, the data is held by the instrument object in the *data* attribute. It can be retrieved by accessing it directly. If a simulation failed, the *data* attribute will contain None."
+    "data = instrument.backengine()"
    ]
   },
   {
@@ -172,7 +163,6 @@
     }
    ],
    "source": [
-    "data = instrument.data\n",
     "print(data)"
    ]
   },

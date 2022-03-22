@@ -1,4 +1,4 @@
-libpyvinyl.Parameters.Parameter
+﻿libpyvinyl.Parameters.Parameter
 ===============================
 
 .. automodule:: libpyvinyl.Parameters.Parameter
@@ -10,7 +10,10 @@ libpyvinyl.Parameters.Parameter
    .. autosummary::
       :toctree:
    
+      pint_value
+      unit
       value
+      value_no_conversion
    
    
 
