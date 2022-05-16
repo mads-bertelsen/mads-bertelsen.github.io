@@ -29,6 +29,7 @@
    :recursive:
 
    mcstasscript.helper.component_reader
+   mcstasscript.helper.exceptions
    mcstasscript.helper.formatting
    mcstasscript.helper.managed_mcrun
    mcstasscript.helper.mcstas_objects

@@ -1,4 +1,4 @@
-mcstasscript.tests.test\_Instr.TestMcStas\_instr
+﻿mcstasscript.tests.test\_Instr.TestMcStas\_instr
 ================================================
 
 .. currentmodule:: mcstasscript.tests.test_Instr
@@ -81,6 +81,8 @@ mcstasscript.tests.test\_Instr.TestMcStas\_instr
       ~TestMcStas_instr.subTest
       ~TestMcStas_instr.tearDown
       ~TestMcStas_instr.tearDownClass
+      ~TestMcStas_instr.test_RELATIVE_error
+      ~TestMcStas_instr.test_RELATIVE_error_and_checks_false
       ~TestMcStas_instr.test_add_component_simple
       ~TestMcStas_instr.test_add_component_simple_after
       ~TestMcStas_instr.test_add_component_simple_after_error
@@ -88,7 +90,10 @@ mcstasscript.tests.test\_Instr.TestMcStas\_instr
       ~TestMcStas_instr.test_add_component_simple_before_error
       ~TestMcStas_instr.test_add_component_simple_double_naming_error
       ~TestMcStas_instr.test_add_component_simple_keyword
-      ~TestMcStas_instr.test_append_component_EXTEND
+      ~TestMcStas_instr.test_available_components_folder
+      ~TestMcStas_instr.test_available_components_input_path_custom
+      ~TestMcStas_instr.test_available_components_input_path_simple
+      ~TestMcStas_instr.test_available_components_simple
       ~TestMcStas_instr.test_complex_initialize
       ~TestMcStas_instr.test_component_help
       ~TestMcStas_instr.test_copy_component_keywords
@@ -102,12 +107,11 @@ mcstasscript.tests.test\_Instr.TestMcStas\_instr
       ~TestMcStas_instr.test_get_last_component_simple
       ~TestMcStas_instr.test_load_config_file
       ~TestMcStas_instr.test_load_config_file_x_ray
+      ~TestMcStas_instr.test_load_libpyvinyl_parameters
+      ~TestMcStas_instr.test_move_component
       ~TestMcStas_instr.test_print_component
       ~TestMcStas_instr.test_print_component_short
-      ~TestMcStas_instr.test_print_components_complex
-      ~TestMcStas_instr.test_print_components_complex_2lines
-      ~TestMcStas_instr.test_print_components_complex_3lines
-      ~TestMcStas_instr.test_print_components_simple
+      ~TestMcStas_instr.test_remove_component
       ~TestMcStas_instr.test_run_backengine_basic
       ~TestMcStas_instr.test_run_backengine_existing_folder
       ~TestMcStas_instr.test_run_full_instrument_complex
@@ -115,21 +119,9 @@ mcstasscript.tests.test\_Instr.TestMcStas\_instr
       ~TestMcStas_instr.test_run_full_instrument_overwrite_default
       ~TestMcStas_instr.test_run_full_instrument_required_par_error
       ~TestMcStas_instr.test_run_full_instrument_x_ray_basic
-      ~TestMcStas_instr.test_set_c_code_after
-      ~TestMcStas_instr.test_set_c_code_before
-      ~TestMcStas_instr.test_set_component_AT
-      ~TestMcStas_instr.test_set_component_GROUP
-      ~TestMcStas_instr.test_set_component_JUMP
-      ~TestMcStas_instr.test_set_component_RELATIVE
-      ~TestMcStas_instr.test_set_component_ROTATED
-      ~TestMcStas_instr.test_set_component_SPLIT
-      ~TestMcStas_instr.test_set_component_WHEN
-      ~TestMcStas_instr.test_set_component_comment
-      ~TestMcStas_instr.test_set_component_parameter
-      ~TestMcStas_instr.test_set_component_parameter_error
-      ~TestMcStas_instr.test_show_components_folder
-      ~TestMcStas_instr.test_show_components_input_path_custom
-      ~TestMcStas_instr.test_show_components_input_path_simple
+      ~TestMcStas_instr.test_show_components_complex
+      ~TestMcStas_instr.test_show_components_complex_2lines
+      ~TestMcStas_instr.test_show_components_complex_3lines
       ~TestMcStas_instr.test_show_components_simple
       ~TestMcStas_instr.test_show_instrument_basic
       ~TestMcStas_instr.test_show_parameters

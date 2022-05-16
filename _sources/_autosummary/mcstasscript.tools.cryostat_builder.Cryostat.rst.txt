@@ -1,0 +1,33 @@
+mcstasscript.tools.cryostat\_builder.Cryostat
+=============================================
+
+.. currentmodule:: mcstasscript.tools.cryostat_builder
+
+.. autoclass:: Cryostat
+   :members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Cryostat.__init__
+      ~Cryostat.add_animation
+      ~Cryostat.add_layer
+      ~Cryostat.add_radius
+      ~Cryostat.add_spatial_loggers
+      ~Cryostat.add_time_histogram
+      ~Cryostat.add_y_plane
+      ~Cryostat.build
+      ~Cryostat.find_cryostat_dimensions
+      ~Cryostat.set_AT
+      ~Cryostat.set_ROTATED
+   
+   
+
+   
+   
+   

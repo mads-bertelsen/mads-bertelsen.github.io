@@ -1,4 +1,4 @@
-mcstasscript.tests.test\_component.TestComponent
+﻿mcstasscript.tests.test\_component.TestComponent
 ================================================
 
 .. currentmodule:: mcstasscript.tests.test_component
@@ -112,6 +112,7 @@ mcstasscript.tests.test\_component.TestComponent
       ~TestComponent.test_Component_write_to_file_include
       ~TestComponent.test_Component_write_to_file_simple
       ~TestComponent.test_component_basic_init_set_parameters
+      ~TestComponent.test_component_error_check
    
    
 

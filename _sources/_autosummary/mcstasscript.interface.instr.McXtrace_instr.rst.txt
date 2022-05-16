@@ -18,7 +18,6 @@
       ~McXtrace_instr.add_component
       ~McXtrace_instr.add_declare_var
       ~McXtrace_instr.add_parameter
-      ~McXtrace_instr.append_component_EXTEND
       ~McXtrace_instr.append_declare
       ~McXtrace_instr.append_finally
       ~McXtrace_instr.append_finally_no_new_line
@@ -26,34 +25,26 @@
       ~McXtrace_instr.append_initialize_no_new_line
       ~McXtrace_instr.append_trace
       ~McXtrace_instr.append_trace_no_new_line
+      ~McXtrace_instr.available_components
       ~McXtrace_instr.backengine
+      ~McXtrace_instr.check_for_errors
       ~McXtrace_instr.component_help
       ~McXtrace_instr.copy_component
       ~McXtrace_instr.dump
       ~McXtrace_instr.from_dump
       ~McXtrace_instr.get_component
-      ~McXtrace_instr.get_interface_data
       ~McXtrace_instr.get_last_component
+      ~McXtrace_instr.has_errors
       ~McXtrace_instr.init_parameters
-      ~McXtrace_instr.interface
+      ~McXtrace_instr.move_component
       ~McXtrace_instr.print_component
       ~McXtrace_instr.print_component_short
       ~McXtrace_instr.print_components
+      ~McXtrace_instr.remove_component
       ~McXtrace_instr.reset_parameters
       ~McXtrace_instr.run_full_instrument
       ~McXtrace_instr.saveH5
       ~McXtrace_instr.set_calculator_base_dir
-      ~McXtrace_instr.set_component_AT
-      ~McXtrace_instr.set_component_GROUP
-      ~McXtrace_instr.set_component_JUMP
-      ~McXtrace_instr.set_component_RELATIVE
-      ~McXtrace_instr.set_component_ROTATED
-      ~McXtrace_instr.set_component_SPLIT
-      ~McXtrace_instr.set_component_WHEN
-      ~McXtrace_instr.set_component_c_code_after
-      ~McXtrace_instr.set_component_c_code_before
-      ~McXtrace_instr.set_component_comment
-      ~McXtrace_instr.set_component_parameter
       ~McXtrace_instr.set_input
       ~McXtrace_instr.set_instrument_base_dir
       ~McXtrace_instr.set_output_data_types

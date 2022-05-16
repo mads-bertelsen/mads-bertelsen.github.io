@@ -1,0 +1,6 @@
+mcstasscript.tools.ncrystal\_union.add\_ncrystal\_union\_material
+=================================================================
+
+.. currentmodule:: mcstasscript.tools.ncrystal_union
+
+.. autofunction:: add_ncrystal_union_material

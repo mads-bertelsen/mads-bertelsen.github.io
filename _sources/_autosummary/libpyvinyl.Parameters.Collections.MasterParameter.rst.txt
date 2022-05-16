@@ -1,4 +1,4 @@
-libpyvinyl.Parameters.Collections.MasterParameter
+﻿libpyvinyl.Parameters.Collections.MasterParameter
 =================================================
 
 .. currentmodule:: libpyvinyl.Parameters.Collections
@@ -27,7 +27,7 @@ libpyvinyl.Parameters.Collections.MasterParameter
       ~MasterParameter.get_options_are_legal
       ~MasterParameter.is_legal
       ~MasterParameter.print_line
-      ~MasterParameter.print_paramter_constraints
+      ~MasterParameter.print_parameter_constraints
    
    
 

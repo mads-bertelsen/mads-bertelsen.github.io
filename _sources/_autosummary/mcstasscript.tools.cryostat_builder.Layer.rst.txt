@@ -1,0 +1,26 @@
+mcstasscript.tools.cryostat\_builder.Layer
+==========================================
+
+.. currentmodule:: mcstasscript.tools.cryostat_builder
+
+.. autoclass:: Layer
+   :members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Layer.__init__
+      ~Layer.add_window
+      ~Layer.check_radius_input
+      ~Layer.count_inputs
+   
+   
+
+   
+   
+   

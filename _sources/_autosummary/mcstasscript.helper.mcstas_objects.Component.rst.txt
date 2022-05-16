@@ -16,8 +16,8 @@ mcstasscript.helper.mcstas\_objects.Component
    
       ~Component.__init__
       ~Component.append_EXTEND
+      ~Component.check_parameters
       ~Component.print_long
-      ~Component.print_long_deprecated
       ~Component.print_short
       ~Component.set_AT
       ~Component.set_AT_RELATIVE

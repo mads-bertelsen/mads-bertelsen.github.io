@@ -9,6 +9,14 @@ mcstasscript.helper.mcstas\_objects
 
    
    
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:
+   
+      provide_parameter
+      write_parameter
+   
    
 
    
@@ -21,8 +29,6 @@ mcstasscript.helper.mcstas\_objects
    
       Component
       DeclareVariable
-      ParameterContainer
-      ParameterVariable
    
    
 

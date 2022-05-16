@@ -26,11 +26,11 @@ ms.make_sub_plot(data, log=True)
 [0;32m----> 1[0;31m [0mms[0m[0;34m.[0m[0mmake_sub_plot[0m[0;34m([0m[0mdata[0m[0;34m,[0m [0mlog[0m[0;34m=[0m[0;32mTrue[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m
 [0;32m~/PaNOSC/McStasScript/github/McStasScript/mcstasscript/interface/plotter.py[0m in [0;36mmake_sub_plot[0;34m(data_list, **kwargs)[0m
-[1;32m     46[0m     """
-[1;32m     47[0m [0;34m[0m[0m
-[0;32m---> 48[0;31m     [0mfigsize[0m[0;34m,[0m [0mdata_list[0m [0;34m=[0m [0m_handle_kwargs[0m[0;34m([0m[0mdata_list[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     49[0m [0;34m[0m[0m
-[1;32m     50[0m     [0mnumber_of_plots[0m [0;34m=[0m [0mlen[0m[0;34m([0m[0mdata_list[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     45[0m     """
+[1;32m     46[0m [0;34m[0m[0m
+[0;32m---> 47[0;31m     [0mfigsize[0m[0;34m,[0m [0mdata_list[0m [0;34m=[0m [0m_handle_kwargs[0m[0;34m([0m[0mdata_list[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     48[0m [0;34m[0m[0m
+[1;32m     49[0m     [0mnumber_of_plots[0m [0;34m=[0m [0mlen[0m[0;34m([0m[0mdata_list[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
 [0;32m~/PaNOSC/McStasScript/github/McStasScript/mcstasscript/helper/plot_helper.py[0m in [0;36m_handle_kwargs[0;34m(data_list, **kwargs)[0m
 [1;32m    249[0m                 [0;32mfor[0m [0mdata[0m [0;32min[0m [0mdata_list[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m

@@ -1,4 +1,4 @@
-mcstasscript.tests.test\_ManagedMcrun.TestManagedMcrun
+﻿mcstasscript.tests.test\_ManagedMcrun.TestManagedMcrun
 ======================================================
 
 .. currentmodule:: mcstasscript.tests.test_ManagedMcrun
@@ -102,6 +102,7 @@ mcstasscript.tests.test\_ManagedMcrun.TestManagedMcrun
       ~TestManagedMcrun.test_ManagedMcrun_run_simulation_compile
       ~TestManagedMcrun.test_ManagedMcrun_run_simulation_no_standard
       ~TestManagedMcrun.test_ManagedMcrun_run_simulation_parameters
+      ~TestManagedMcrun.test_ManagedMcrun_run_simulation_with_gravity
    
    
 

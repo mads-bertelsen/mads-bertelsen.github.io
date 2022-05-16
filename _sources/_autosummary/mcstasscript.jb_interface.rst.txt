@@ -1,4 +1,4 @@
-mcstasscript.jb\_interface
+﻿mcstasscript.jb\_interface
 ==========================
 
 .. automodule:: mcstasscript.jb_interface
@@ -29,6 +29,7 @@ mcstasscript.jb\_interface
    :recursive:
 
    mcstasscript.jb_interface.plot_interface
+   mcstasscript.jb_interface.show_interface
    mcstasscript.jb_interface.simulation_interface
    mcstasscript.jb_interface.widget_helpers
 

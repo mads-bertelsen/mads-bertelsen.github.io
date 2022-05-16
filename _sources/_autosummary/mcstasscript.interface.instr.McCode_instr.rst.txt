@@ -18,7 +18,6 @@
       ~McCode_instr.add_component
       ~McCode_instr.add_declare_var
       ~McCode_instr.add_parameter
-      ~McCode_instr.append_component_EXTEND
       ~McCode_instr.append_declare
       ~McCode_instr.append_finally
       ~McCode_instr.append_finally_no_new_line
@@ -26,34 +25,26 @@
       ~McCode_instr.append_initialize_no_new_line
       ~McCode_instr.append_trace
       ~McCode_instr.append_trace_no_new_line
+      ~McCode_instr.available_components
       ~McCode_instr.backengine
+      ~McCode_instr.check_for_errors
       ~McCode_instr.component_help
       ~McCode_instr.copy_component
       ~McCode_instr.dump
       ~McCode_instr.from_dump
       ~McCode_instr.get_component
-      ~McCode_instr.get_interface_data
       ~McCode_instr.get_last_component
+      ~McCode_instr.has_errors
       ~McCode_instr.init_parameters
-      ~McCode_instr.interface
+      ~McCode_instr.move_component
       ~McCode_instr.print_component
       ~McCode_instr.print_component_short
       ~McCode_instr.print_components
+      ~McCode_instr.remove_component
       ~McCode_instr.reset_parameters
       ~McCode_instr.run_full_instrument
       ~McCode_instr.saveH5
       ~McCode_instr.set_calculator_base_dir
-      ~McCode_instr.set_component_AT
-      ~McCode_instr.set_component_GROUP
-      ~McCode_instr.set_component_JUMP
-      ~McCode_instr.set_component_RELATIVE
-      ~McCode_instr.set_component_ROTATED
-      ~McCode_instr.set_component_SPLIT
-      ~McCode_instr.set_component_WHEN
-      ~McCode_instr.set_component_c_code_after
-      ~McCode_instr.set_component_c_code_before
-      ~McCode_instr.set_component_comment
-      ~McCode_instr.set_component_parameter
       ~McCode_instr.set_input
       ~McCode_instr.set_instrument_base_dir
       ~McCode_instr.set_output_data_types

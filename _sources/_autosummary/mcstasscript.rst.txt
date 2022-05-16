@@ -35,4 +35,5 @@
    mcstasscript.interface
    mcstasscript.jb_interface
    mcstasscript.tests
+   mcstasscript.tools
 

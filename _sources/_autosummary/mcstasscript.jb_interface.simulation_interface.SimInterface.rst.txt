@@ -1,4 +1,4 @@
-mcstasscript.jb\_interface.simulation\_interface.SimInterface
+﻿mcstasscript.jb\_interface.simulation\_interface.SimInterface
 =============================================================
 
 .. currentmodule:: mcstasscript.jb_interface.simulation_interface
@@ -15,6 +15,7 @@ mcstasscript.jb\_interface.simulation\_interface.SimInterface
    .. autosummary::
    
       ~SimInterface.__init__
+      ~SimInterface.get_data
       ~SimInterface.make_live_checkmark
       ~SimInterface.make_mpi_field
       ~SimInterface.make_ncount_field

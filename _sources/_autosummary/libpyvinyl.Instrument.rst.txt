@@ -1,25 +1,27 @@
-libpyvinyl.Instrument
+﻿libpyvinyl.Instrument
 =====================
 
 .. automodule:: libpyvinyl.Instrument
 
    
    
-   
-
-   
-   
-   
-
-   
-   
-   .. rubric:: Classes
+   .. rubric:: Module Attributes
 
    .. autosummary::
       :toctree:
-      :template: custom-class-template.rst
    
-      Instrument
+      calculators
+      master
+      name
+      parameters
+   
+   
+
+   
+   
+   
+
+   
    
    
 
