@@ -1,4 +1,4 @@
-﻿mcstasscript.helper.mcstas\_objects.ParameterVariable
+mcstasscript.helper.mcstas\_objects.ParameterVariable
 =====================================================
 
 .. currentmodule:: mcstasscript.helper.mcstas_objects
@@ -20,10 +20,6 @@
       ~ParameterVariable.clear_intervals
       ~ParameterVariable.clear_options
       ~ParameterVariable.from_dict
-      ~ParameterVariable.get_intervals
-      ~ParameterVariable.get_intervals_are_legal
-      ~ParameterVariable.get_options
-      ~ParameterVariable.get_options_are_legal
       ~ParameterVariable.is_legal
       ~ParameterVariable.print_line
       ~ParameterVariable.print_paramter_constraints
@@ -37,9 +33,6 @@
 
    .. autosummary::
    
-      ~ParameterVariable.pint_value
-      ~ParameterVariable.unit
       ~ParameterVariable.value
-      ~ParameterVariable.value_no_conversion
    
    

@@ -1,4 +1,4 @@
-mcstasscript.interface.plotter
+﻿mcstasscript.interface.plotter
 ==============================
 
 .. automodule:: mcstasscript.interface.plotter

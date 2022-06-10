@@ -1,4 +1,4 @@
-﻿mcstasscript.jb\_interface
+mcstasscript.jb\_interface
 ==========================
 
 .. automodule:: mcstasscript.jb_interface

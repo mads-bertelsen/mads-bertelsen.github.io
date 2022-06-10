@@ -1,4 +1,4 @@
-﻿mcstasscript.tools
+mcstasscript.tools
 ==================
 
 .. automodule:: mcstasscript.tools

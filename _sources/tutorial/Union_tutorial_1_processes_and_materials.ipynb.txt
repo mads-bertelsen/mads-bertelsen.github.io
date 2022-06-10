@@ -171,6 +171,22 @@
     "| abs_material    | Only has absorption                                              |\n",
     "| powder_material | Has both incoherent and powder process in addition to absorption |\n",
     "\n",
+    "The instrument diagram can show the components and their underlying connections. Connections between Union components are shown on the right side. From the diagram it is clear the same incoherent process is used in both inc_material and powder_material. In most cases a user would make individual incoherent processes for each material to set independent incoherent cross sections. It is also visible that powder_material contains two processes and abs_material contains none."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "instrument.show_diagram()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
     "Let us defined a quick test instrument to see these materials are behaving as expected. First we add a source."
    ]
   },
@@ -230,6 +246,22 @@
     "box_inc.zdepth = 0.03\n",
     "box_inc.material_string = '\"abs_material\"'\n",
     "box_inc.priority = 12"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Let us take another look at how this changed the instrument diagram. The three geometries have been added, and each have a line to their material component. "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "instrument.show_diagram()"
    ]
   },
   {
@@ -311,6 +343,22 @@
    "outputs": [],
    "source": [
     "master = instrument.add_component(\"master\", \"Union_master\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Although the Union_master component is not told specifically what geometry components to simulate, it picks up the relevant information from the components added before it. The instrument diagram shows these hidden connections."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "instrument.show_diagram()"
    ]
   },
   {

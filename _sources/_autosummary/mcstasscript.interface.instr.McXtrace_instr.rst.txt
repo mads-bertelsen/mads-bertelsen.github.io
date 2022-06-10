@@ -54,6 +54,7 @@
       ~McXtrace_instr.settings
       ~McXtrace_instr.settings_string
       ~McXtrace_instr.show_components
+      ~McXtrace_instr.show_diagram
       ~McXtrace_instr.show_instrument
       ~McXtrace_instr.show_parameters
       ~McXtrace_instr.show_settings
@@ -80,6 +81,7 @@
       ~McXtrace_instr.output_file_paths
       ~McXtrace_instr.output_filenames
       ~McXtrace_instr.output_keys
+      ~McXtrace_instr.output_path
       ~McXtrace_instr.parameters
    
    

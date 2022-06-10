@@ -1,4 +1,4 @@
-﻿mcstasscript.interface
+mcstasscript.interface
 ======================
 
 .. automodule:: mcstasscript.interface

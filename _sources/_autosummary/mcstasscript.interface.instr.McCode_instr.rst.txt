@@ -54,6 +54,7 @@
       ~McCode_instr.settings
       ~McCode_instr.settings_string
       ~McCode_instr.show_components
+      ~McCode_instr.show_diagram
       ~McCode_instr.show_instrument
       ~McCode_instr.show_parameters
       ~McCode_instr.show_settings
@@ -80,6 +81,7 @@
       ~McCode_instr.output_file_paths
       ~McCode_instr.output_filenames
       ~McCode_instr.output_keys
+      ~McCode_instr.output_path
       ~McCode_instr.parameters
    
    

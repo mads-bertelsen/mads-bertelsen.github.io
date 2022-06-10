@@ -54,6 +54,7 @@
       ~McStas_instr.settings
       ~McStas_instr.settings_string
       ~McStas_instr.show_components
+      ~McStas_instr.show_diagram
       ~McStas_instr.show_instrument
       ~McStas_instr.show_parameters
       ~McStas_instr.show_settings
@@ -80,6 +81,7 @@
       ~McStas_instr.output_file_paths
       ~McStas_instr.output_filenames
       ~McStas_instr.output_keys
+      ~McStas_instr.output_path
       ~McStas_instr.parameters
    
    
