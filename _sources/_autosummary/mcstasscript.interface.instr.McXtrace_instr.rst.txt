@@ -18,6 +18,7 @@
       ~McXtrace_instr.add_component
       ~McXtrace_instr.add_declare_var
       ~McXtrace_instr.add_parameter
+      ~McXtrace_instr.add_user_var
       ~McXtrace_instr.append_declare
       ~McXtrace_instr.append_finally
       ~McXtrace_instr.append_finally_no_new_line
@@ -37,9 +38,11 @@
       ~McXtrace_instr.has_errors
       ~McXtrace_instr.init_parameters
       ~McXtrace_instr.move_component
+      ~McXtrace_instr.move_user_vars_to_declare
       ~McXtrace_instr.print_component
       ~McXtrace_instr.print_component_short
       ~McXtrace_instr.print_components
+      ~McXtrace_instr.read_instrument_file
       ~McXtrace_instr.remove_component
       ~McXtrace_instr.reset_parameters
       ~McXtrace_instr.run_full_instrument
@@ -56,6 +59,7 @@
       ~McXtrace_instr.show_components
       ~McXtrace_instr.show_diagram
       ~McXtrace_instr.show_instrument
+      ~McXtrace_instr.show_instrument_file
       ~McXtrace_instr.show_parameters
       ~McXtrace_instr.show_settings
       ~McXtrace_instr.show_variables

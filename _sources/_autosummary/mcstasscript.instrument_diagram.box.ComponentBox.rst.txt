@@ -1,0 +1,32 @@
+mcstasscript.instrument\_diagram.box.ComponentBox
+=================================================
+
+.. currentmodule:: mcstasscript.instrument_diagram.box
+
+.. autoclass:: ComponentBox
+   :members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ComponentBox.__init__
+      ~ComponentBox.calculate_bbox_dimensions
+      ~ComponentBox.get_text_end
+      ~ComponentBox.get_text_start
+      ~ComponentBox.plot_box
+      ~ComponentBox.set_background_color
+      ~ComponentBox.set_box_height
+      ~ComponentBox.set_box_indent
+      ~ComponentBox.set_x
+      ~ComponentBox.set_y
+   
+   
+
+   
+   
+   

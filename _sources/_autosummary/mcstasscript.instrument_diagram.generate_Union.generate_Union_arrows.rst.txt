@@ -1,0 +1,6 @@
+mcstasscript.instrument\_diagram.generate\_Union.generate\_Union\_arrows
+========================================================================
+
+.. currentmodule:: mcstasscript.instrument_diagram.generate_Union
+
+.. autofunction:: generate_Union_arrows

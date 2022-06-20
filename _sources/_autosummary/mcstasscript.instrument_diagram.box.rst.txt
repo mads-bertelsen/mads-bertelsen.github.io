@@ -1,0 +1,31 @@
+mcstasscript.instrument\_diagram.box
+====================================
+
+.. automodule:: mcstasscript.instrument_diagram.box
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      ComponentBox
+   
+   
+
+   
+   
+   
+
+
+

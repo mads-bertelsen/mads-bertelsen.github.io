@@ -1,0 +1,42 @@
+mcstasscript.instrument\_diagram
+================================
+
+.. automodule:: mcstasscript.instrument_diagram
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :template: custom-module-template.rst
+   :recursive:
+
+   mcstasscript.instrument_diagram.arrow
+   mcstasscript.instrument_diagram.box
+   mcstasscript.instrument_diagram.canvas
+   mcstasscript.instrument_diagram.component_description
+   mcstasscript.instrument_diagram.connections
+   mcstasscript.instrument_diagram.generate_AT
+   mcstasscript.instrument_diagram.generate_GROUP
+   mcstasscript.instrument_diagram.generate_JUMP
+   mcstasscript.instrument_diagram.generate_ROTATED
+   mcstasscript.instrument_diagram.generate_Union
+   mcstasscript.instrument_diagram.make_diagram
+

@@ -1,0 +1,31 @@
+mcstasscript.instrument\_diagram.arrow
+======================================
+
+.. automodule:: mcstasscript.instrument_diagram.arrow
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      Arrow
+   
+   
+
+   
+   
+   
+
+
+

@@ -1,0 +1,6 @@
+mcstasscript.instrument\_diagram.make\_diagram.instrument\_diagram
+==================================================================
+
+.. currentmodule:: mcstasscript.instrument_diagram.make_diagram
+
+.. autofunction:: instrument_diagram

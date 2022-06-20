@@ -1,4 +1,4 @@
-﻿mcstasscript.tests
+mcstasscript.tests
 ==================
 
 .. automodule:: mcstasscript.tests
@@ -48,6 +48,7 @@
    mcstasscript.tests.test_parameter_variable
    mcstasscript.tests.test_plot_interface
    mcstasscript.tests.test_simulation_interface
+   mcstasscript.tests.test_user_var
    mcstasscript.tests.test_widget_helpers
    mcstasscript.tests.utilities
 

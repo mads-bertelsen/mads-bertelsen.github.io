@@ -1,0 +1,30 @@
+mcstasscript.instrument\_diagram.generate\_GROUP
+================================================
+
+.. automodule:: mcstasscript.instrument_diagram.generate_GROUP
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:
+   
+      generate_GROUP_arrows
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

@@ -1,0 +1,30 @@
+mcstasscript.instrument\_diagram.generate\_AT
+=============================================
+
+.. automodule:: mcstasscript.instrument_diagram.generate_AT
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:
+   
+      generate_AT_arrows
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

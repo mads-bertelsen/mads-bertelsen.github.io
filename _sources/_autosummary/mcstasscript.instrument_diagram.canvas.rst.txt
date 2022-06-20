@@ -1,0 +1,31 @@
+mcstasscript.instrument\_diagram.canvas
+=======================================
+
+.. automodule:: mcstasscript.instrument_diagram.canvas
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      DiagramCanvas
+   
+   
+
+   
+   
+   
+
+
+

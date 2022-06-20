@@ -1,0 +1,6 @@
+mcstasscript.instrument\_diagram.generate\_ROTATED.generate\_ROTATED\_arrows
+============================================================================
+
+.. currentmodule:: mcstasscript.instrument_diagram.generate_ROTATED
+
+.. autofunction:: generate_ROTATED_arrows

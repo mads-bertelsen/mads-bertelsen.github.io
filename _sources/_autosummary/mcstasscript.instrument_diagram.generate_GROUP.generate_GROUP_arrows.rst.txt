@@ -1,0 +1,6 @@
+mcstasscript.instrument\_diagram.generate\_GROUP.generate\_GROUP\_arrows
+========================================================================
+
+.. currentmodule:: mcstasscript.instrument_diagram.generate_GROUP
+
+.. autofunction:: generate_GROUP_arrows

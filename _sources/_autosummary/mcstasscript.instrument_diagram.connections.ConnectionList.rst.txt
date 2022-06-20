@@ -1,0 +1,30 @@
+mcstasscript.instrument\_diagram.connections.ConnectionList
+===========================================================
+
+.. currentmodule:: mcstasscript.instrument_diagram.connections
+
+.. autoclass:: ConnectionList
+   :members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ConnectionList.__init__
+      ~ConnectionList.add
+      ~ConnectionList.distribute_lane_numbers
+      ~ConnectionList.get_connections
+      ~ConnectionList.get_origins
+      ~ConnectionList.get_pairs
+      ~ConnectionList.get_targets
+      ~ConnectionList.get_targets_for_origin
+   
+   
+
+   
+   
+   

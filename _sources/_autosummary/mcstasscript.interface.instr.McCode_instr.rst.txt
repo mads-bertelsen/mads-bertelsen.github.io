@@ -18,6 +18,7 @@
       ~McCode_instr.add_component
       ~McCode_instr.add_declare_var
       ~McCode_instr.add_parameter
+      ~McCode_instr.add_user_var
       ~McCode_instr.append_declare
       ~McCode_instr.append_finally
       ~McCode_instr.append_finally_no_new_line
@@ -37,9 +38,11 @@
       ~McCode_instr.has_errors
       ~McCode_instr.init_parameters
       ~McCode_instr.move_component
+      ~McCode_instr.move_user_vars_to_declare
       ~McCode_instr.print_component
       ~McCode_instr.print_component_short
       ~McCode_instr.print_components
+      ~McCode_instr.read_instrument_file
       ~McCode_instr.remove_component
       ~McCode_instr.reset_parameters
       ~McCode_instr.run_full_instrument
@@ -56,6 +59,7 @@
       ~McCode_instr.show_components
       ~McCode_instr.show_diagram
       ~McCode_instr.show_instrument
+      ~McCode_instr.show_instrument_file
       ~McCode_instr.show_parameters
       ~McCode_instr.show_settings
       ~McCode_instr.show_variables

@@ -102,6 +102,8 @@
       ~TestMcStas_instr.test_copy_component_simple_object
       ~TestMcStas_instr.test_create_component_instance_complex
       ~TestMcStas_instr.test_create_component_instance_simple
+      ~TestMcStas_instr.test_declare_block_add_user_variable
+      ~TestMcStas_instr.test_declare_var_block_add_parameter
       ~TestMcStas_instr.test_get_component_simple
       ~TestMcStas_instr.test_get_component_simple_error
       ~TestMcStas_instr.test_get_last_component_simple
@@ -109,6 +111,8 @@
       ~TestMcStas_instr.test_load_config_file_x_ray
       ~TestMcStas_instr.test_load_libpyvinyl_parameters
       ~TestMcStas_instr.test_move_component
+      ~TestMcStas_instr.test_parameter_block_add_declare_variable
+      ~TestMcStas_instr.test_parameter_block_add_user_variable
       ~TestMcStas_instr.test_print_component
       ~TestMcStas_instr.test_print_component_short
       ~TestMcStas_instr.test_remove_component
@@ -126,8 +130,9 @@
       ~TestMcStas_instr.test_show_instrument_basic
       ~TestMcStas_instr.test_show_parameters
       ~TestMcStas_instr.test_show_parameters_line_break
-      ~TestMcStas_instr.test_simple_add_declare_parameter
+      ~TestMcStas_instr.test_simple_add_declare_variable
       ~TestMcStas_instr.test_simple_add_parameter
+      ~TestMcStas_instr.test_simple_add_user_variable
       ~TestMcStas_instr.test_simple_append_declare
       ~TestMcStas_instr.test_simple_append_declare_var_mix
       ~TestMcStas_instr.test_simple_append_finally
@@ -137,6 +142,8 @@
       ~TestMcStas_instr.test_simple_append_trace
       ~TestMcStas_instr.test_simple_append_trace_no_new_line
       ~TestMcStas_instr.test_simple_initialize
+      ~TestMcStas_instr.test_user_var_block_add_declare_variable
+      ~TestMcStas_instr.test_user_var_block_add_parameter
       ~TestMcStas_instr.test_write_c_files_simple
       ~TestMcStas_instr.test_write_full_instrument_simple
       ~TestMcStas_instr.test_x_ray_run_full_instrument_basic

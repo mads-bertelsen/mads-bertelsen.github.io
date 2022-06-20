@@ -1,0 +1,25 @@
+mcstasscript.instrument\_diagram.canvas.DiagramCanvas
+=====================================================
+
+.. currentmodule:: mcstasscript.instrument_diagram.canvas
+
+.. autoclass:: DiagramCanvas
+   :members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~DiagramCanvas.__init__
+      ~DiagramCanvas.make_legend
+      ~DiagramCanvas.plot
+   
+   
+
+   
+   
+   

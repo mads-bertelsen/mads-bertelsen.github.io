@@ -1,0 +1,30 @@
+mcstasscript.instrument\_diagram.make\_diagram
+==============================================
+
+.. automodule:: mcstasscript.instrument_diagram.make_diagram
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:
+   
+      instrument_diagram
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

@@ -1,0 +1,30 @@
+mcstasscript.instrument\_diagram.component\_description
+=======================================================
+
+.. automodule:: mcstasscript.instrument_diagram.component_description
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:
+   
+      component_description
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

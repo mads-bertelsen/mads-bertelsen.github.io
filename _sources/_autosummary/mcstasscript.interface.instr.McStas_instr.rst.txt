@@ -18,6 +18,7 @@
       ~McStas_instr.add_component
       ~McStas_instr.add_declare_var
       ~McStas_instr.add_parameter
+      ~McStas_instr.add_user_var
       ~McStas_instr.append_declare
       ~McStas_instr.append_finally
       ~McStas_instr.append_finally_no_new_line
@@ -37,9 +38,11 @@
       ~McStas_instr.has_errors
       ~McStas_instr.init_parameters
       ~McStas_instr.move_component
+      ~McStas_instr.move_user_vars_to_declare
       ~McStas_instr.print_component
       ~McStas_instr.print_component_short
       ~McStas_instr.print_components
+      ~McStas_instr.read_instrument_file
       ~McStas_instr.remove_component
       ~McStas_instr.reset_parameters
       ~McStas_instr.run_full_instrument
@@ -56,6 +59,7 @@
       ~McStas_instr.show_components
       ~McStas_instr.show_diagram
       ~McStas_instr.show_instrument
+      ~McStas_instr.show_instrument_file
       ~McStas_instr.show_parameters
       ~McStas_instr.show_settings
       ~McStas_instr.show_variables

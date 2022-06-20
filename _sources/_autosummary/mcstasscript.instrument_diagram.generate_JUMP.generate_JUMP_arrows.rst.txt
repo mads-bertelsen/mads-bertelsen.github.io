@@ -1,0 +1,6 @@
+mcstasscript.instrument\_diagram.generate\_JUMP.generate\_JUMP\_arrows
+======================================================================
+
+.. currentmodule:: mcstasscript.instrument_diagram.generate_JUMP
+
+.. autofunction:: generate_JUMP_arrows

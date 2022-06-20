@@ -1,0 +1,34 @@
+mcstasscript.instrument\_diagram.connections
+============================================
+
+.. automodule:: mcstasscript.instrument_diagram.connections
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      Connection
+      ConnectionList
+      IndexConnection
+      Lane
+   
+   
+
+   
+   
+   
+
+
+

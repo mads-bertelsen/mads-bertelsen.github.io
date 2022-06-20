@@ -1,0 +1,6 @@
+mcstasscript.instrument\_diagram.generate\_AT.generate\_AT\_arrows
+==================================================================
+
+.. currentmodule:: mcstasscript.instrument_diagram.generate_AT
+
+.. autofunction:: generate_AT_arrows

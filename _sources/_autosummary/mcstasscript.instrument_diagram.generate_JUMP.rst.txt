@@ -1,0 +1,30 @@
+mcstasscript.instrument\_diagram.generate\_JUMP
+===============================================
+
+.. automodule:: mcstasscript.instrument_diagram.generate_JUMP
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:
+   
+      generate_JUMP_arrows
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

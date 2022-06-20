@@ -34,5 +34,6 @@ mcstasscript.instr\_reader
    mcstasscript.instr_reader.read_finally
    mcstasscript.instr_reader.read_initialize
    mcstasscript.instr_reader.read_trace
+   mcstasscript.instr_reader.read_uservars
    mcstasscript.instr_reader.util
 

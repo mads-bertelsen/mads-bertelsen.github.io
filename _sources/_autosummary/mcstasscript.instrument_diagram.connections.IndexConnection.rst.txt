@@ -1,0 +1,24 @@
+mcstasscript.instrument\_diagram.connections.IndexConnection
+============================================================
+
+.. currentmodule:: mcstasscript.instrument_diagram.connections
+
+.. autoclass:: IndexConnection
+   :members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~IndexConnection.__init__
+      ~IndexConnection.compatible_with
+   
+   
+
+   
+   
+   

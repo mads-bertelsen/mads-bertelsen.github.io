@@ -1,0 +1,6 @@
+mcstasscript.instrument\_diagram.component\_description.component\_description
+==============================================================================
+
+.. currentmodule:: mcstasscript.instrument_diagram.component_description
+
+.. autofunction:: component_description

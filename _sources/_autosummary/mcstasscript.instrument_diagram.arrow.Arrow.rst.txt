@@ -1,0 +1,41 @@
+mcstasscript.instrument\_diagram.arrow.Arrow
+============================================
+
+.. currentmodule:: mcstasscript.instrument_diagram.arrow
+
+.. autoclass:: Arrow
+   :members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Arrow.__init__
+      ~Arrow.get_box_offset_origin
+      ~Arrow.get_box_offset_target
+      ~Arrow.get_lane_value
+      ~Arrow.plot_left_side
+      ~Arrow.plot_right_side
+      ~Arrow.set_alpha
+      ~Arrow.set_arrow_length
+      ~Arrow.set_arrow_width
+      ~Arrow.set_box_offset_origin
+      ~Arrow.set_box_offset_target
+      ~Arrow.set_connection
+      ~Arrow.set_lane
+      ~Arrow.set_lane_offset
+      ~Arrow.set_lane_width
+      ~Arrow.set_linestyle
+      ~Arrow.set_origin_congested
+      ~Arrow.set_sub_lane
+      ~Arrow.set_target_congested
+   
+   
+
+   
+   
+   
