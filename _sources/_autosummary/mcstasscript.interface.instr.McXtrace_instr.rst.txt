@@ -29,14 +29,17 @@
       ~McXtrace_instr.available_components
       ~McXtrace_instr.backengine
       ~McXtrace_instr.check_for_errors
+      ~McXtrace_instr.check_for_relative_errors
       ~McXtrace_instr.component_help
       ~McXtrace_instr.copy_component
       ~McXtrace_instr.dump
       ~McXtrace_instr.from_dump
       ~McXtrace_instr.get_component
+      ~McXtrace_instr.get_component_subset_index_range
       ~McXtrace_instr.get_last_component
       ~McXtrace_instr.has_errors
       ~McXtrace_instr.init_parameters
+      ~McXtrace_instr.make_component_subset
       ~McXtrace_instr.move_component
       ~McXtrace_instr.move_user_vars_to_declare
       ~McXtrace_instr.print_component
@@ -45,7 +48,10 @@
       ~McXtrace_instr.read_instrument_file
       ~McXtrace_instr.remove_component
       ~McXtrace_instr.reset_parameters
+      ~McXtrace_instr.reset_run_points
+      ~McXtrace_instr.run_from
       ~McXtrace_instr.run_full_instrument
+      ~McXtrace_instr.run_to
       ~McXtrace_instr.saveH5
       ~McXtrace_instr.set_calculator_base_dir
       ~McXtrace_instr.set_input
@@ -58,11 +64,15 @@
       ~McXtrace_instr.settings_string
       ~McXtrace_instr.show_components
       ~McXtrace_instr.show_diagram
+      ~McXtrace_instr.show_dump
+      ~McXtrace_instr.show_dumps
       ~McXtrace_instr.show_instrument
       ~McXtrace_instr.show_instrument_file
       ~McXtrace_instr.show_parameters
+      ~McXtrace_instr.show_run_subset
       ~McXtrace_instr.show_settings
       ~McXtrace_instr.show_variables
+      ~McXtrace_instr.subset_check
       ~McXtrace_instr.write_c_files
       ~McXtrace_instr.write_full_instrument
    

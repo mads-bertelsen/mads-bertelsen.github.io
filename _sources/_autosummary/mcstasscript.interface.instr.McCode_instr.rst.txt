@@ -29,14 +29,17 @@
       ~McCode_instr.available_components
       ~McCode_instr.backengine
       ~McCode_instr.check_for_errors
+      ~McCode_instr.check_for_relative_errors
       ~McCode_instr.component_help
       ~McCode_instr.copy_component
       ~McCode_instr.dump
       ~McCode_instr.from_dump
       ~McCode_instr.get_component
+      ~McCode_instr.get_component_subset_index_range
       ~McCode_instr.get_last_component
       ~McCode_instr.has_errors
       ~McCode_instr.init_parameters
+      ~McCode_instr.make_component_subset
       ~McCode_instr.move_component
       ~McCode_instr.move_user_vars_to_declare
       ~McCode_instr.print_component
@@ -45,7 +48,10 @@
       ~McCode_instr.read_instrument_file
       ~McCode_instr.remove_component
       ~McCode_instr.reset_parameters
+      ~McCode_instr.reset_run_points
+      ~McCode_instr.run_from
       ~McCode_instr.run_full_instrument
+      ~McCode_instr.run_to
       ~McCode_instr.saveH5
       ~McCode_instr.set_calculator_base_dir
       ~McCode_instr.set_input
@@ -58,11 +64,15 @@
       ~McCode_instr.settings_string
       ~McCode_instr.show_components
       ~McCode_instr.show_diagram
+      ~McCode_instr.show_dump
+      ~McCode_instr.show_dumps
       ~McCode_instr.show_instrument
       ~McCode_instr.show_instrument_file
       ~McCode_instr.show_parameters
+      ~McCode_instr.show_run_subset
       ~McCode_instr.show_settings
       ~McCode_instr.show_variables
+      ~McCode_instr.subset_check
       ~McCode_instr.write_c_files
       ~McCode_instr.write_full_instrument
    

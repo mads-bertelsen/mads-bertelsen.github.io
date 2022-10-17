@@ -1,4 +1,4 @@
-﻿mcstasscript.tests.test\_Instr.TestMcStas\_instr
+mcstasscript.tests.test\_Instr.TestMcStas\_instr
 ================================================
 
 .. currentmodule:: mcstasscript.tests.test_Instr
@@ -123,10 +123,21 @@
       ~TestMcStas_instr.test_run_full_instrument_overwrite_default
       ~TestMcStas_instr.test_run_full_instrument_required_par_error
       ~TestMcStas_instr.test_run_full_instrument_x_ray_basic
+      ~TestMcStas_instr.test_set_run_from_and_run_to
+      ~TestMcStas_instr.test_set_run_from_component
+      ~TestMcStas_instr.test_set_run_from_component_fails_if_no_dump
+      ~TestMcStas_instr.test_set_run_from_component_keywords
+      ~TestMcStas_instr.test_set_run_to_component
+      ~TestMcStas_instr.test_set_run_to_component_keywords
+      ~TestMcStas_instr.test_set_run_to_component_with_ABSOLUTE_in_remaining_fails
+      ~TestMcStas_instr.test_set_run_to_component_with_early_ref_in_remaining_fails
+      ~TestMcStas_instr.test_set_run_to_nonexistant_component_fails
       ~TestMcStas_instr.test_show_components_complex
       ~TestMcStas_instr.test_show_components_complex_2lines
       ~TestMcStas_instr.test_show_components_complex_3lines
       ~TestMcStas_instr.test_show_components_simple
+      ~TestMcStas_instr.test_show_dump_works
+      ~TestMcStas_instr.test_show_dumps_works
       ~TestMcStas_instr.test_show_instrument_basic
       ~TestMcStas_instr.test_show_parameters
       ~TestMcStas_instr.test_show_parameters_line_break

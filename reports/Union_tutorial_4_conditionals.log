@@ -166,7 +166,7 @@ logger_time_all.filename = '"scattering_time.dat"'
 master = instrument.add_component("master", "Union_master")
 
 # Adding a banana - tof detector
-banana_detector = instrument.add_component("banana_detector", "Monitor_nD",
+banana_detector = instrument.add_component("banana_detector", "Monitor_nD")
 banana_detector.set_RELATIVE(cryostat_center)
 banana_detector.xwidth = 1
 banana_detector.yheight = 0.2
@@ -176,10 +176,22 @@ banana_detector.options = options
 banana_detector.filename = '"tof_b.dat"'
 ------------------
 
-[0;36m  File [0;32m"<ipython-input-2-6d0816cbf4c1>"[0;36m, line [0;32m152[0m
-[0;31m    banana_detector.xwidth = 1[0m
-[0m    ^[0m
-[0;31mSyntaxError[0m[0;31m:[0m invalid syntax
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+[0;32m<ipython-input-2-7c4d182982df>[0m in [0;36m<module>[0;34m[0m
+[1;32m     36[0m [0;34m[0m[0m
+[1;32m     37[0m [0minstrument[0m[0;34m.[0m[0madd_parameter[0m[0;34m([0m[0;34m"wavelength"[0m[0;34m,[0m [0mvalue[0m[0;34m=[0m[0;36m5.0[0m[0;34m,[0m [0mcomment[0m[0;34m=[0m[0;34m"Wavelength in [Ang]"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 38[0;31m src.lambda0 = instrument.add_parameter("wavelength", value=5.0,
+[0m[1;32m     39[0m                                        comment="Wavelength in [Ang]")
+[1;32m     40[0m [0msrc[0m[0;34m.[0m[0mdlambda[0m [0;34m=[0m [0;34m"0.01*wavelength"[0m[0;34m[0m[0;34m[0m[0m
 
-SyntaxError: invalid syntax (<ipython-input-2-6d0816cbf4c1>, line 152)
+[0;32m~/PaNOSC/McStasScript/github/McStasScript/mcstasscript/interface/instr.py[0m in [0;36madd_parameter[0;34m(self, *args, **kwargs)[0m
+[1;32m    710[0m [0;34m[0m[0m
+[1;32m    711[0m         [0;32mif[0m [0mpar[0m[0;34m.[0m[0mname[0m [0;32min[0m [0mnames[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 712[0;31m             raise NameError(f"A parameter or variable with name '{par.name}'"
+[0m[1;32m    713[0m                             f" already exists!")
+[1;32m    714[0m [0;34m[0m[0m
+
+[0;31mNameError[0m: A parameter or variable with name 'wavelength' already exists!
+NameError: A parameter or variable with name 'wavelength' already exists!
 

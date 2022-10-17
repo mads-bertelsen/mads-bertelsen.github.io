@@ -29,14 +29,17 @@
       ~McStas_instr.available_components
       ~McStas_instr.backengine
       ~McStas_instr.check_for_errors
+      ~McStas_instr.check_for_relative_errors
       ~McStas_instr.component_help
       ~McStas_instr.copy_component
       ~McStas_instr.dump
       ~McStas_instr.from_dump
       ~McStas_instr.get_component
+      ~McStas_instr.get_component_subset_index_range
       ~McStas_instr.get_last_component
       ~McStas_instr.has_errors
       ~McStas_instr.init_parameters
+      ~McStas_instr.make_component_subset
       ~McStas_instr.move_component
       ~McStas_instr.move_user_vars_to_declare
       ~McStas_instr.print_component
@@ -45,7 +48,10 @@
       ~McStas_instr.read_instrument_file
       ~McStas_instr.remove_component
       ~McStas_instr.reset_parameters
+      ~McStas_instr.reset_run_points
+      ~McStas_instr.run_from
       ~McStas_instr.run_full_instrument
+      ~McStas_instr.run_to
       ~McStas_instr.saveH5
       ~McStas_instr.set_calculator_base_dir
       ~McStas_instr.set_input
@@ -58,11 +64,15 @@
       ~McStas_instr.settings_string
       ~McStas_instr.show_components
       ~McStas_instr.show_diagram
+      ~McStas_instr.show_dump
+      ~McStas_instr.show_dumps
       ~McStas_instr.show_instrument
       ~McStas_instr.show_instrument_file
       ~McStas_instr.show_parameters
+      ~McStas_instr.show_run_subset
       ~McStas_instr.show_settings
       ~McStas_instr.show_variables
+      ~McStas_instr.subset_check
       ~McStas_instr.write_c_files
       ~McStas_instr.write_full_instrument
    

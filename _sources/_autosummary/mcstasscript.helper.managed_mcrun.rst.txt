@@ -14,9 +14,12 @@ mcstasscript.helper.managed\_mcrun
    .. autosummary::
       :toctree:
    
+      findall
+      highlight
       load_metadata
       load_monitor
       load_results
+      print_sim_output
    
    
 
