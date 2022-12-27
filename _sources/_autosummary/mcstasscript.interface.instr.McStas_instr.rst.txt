@@ -62,6 +62,7 @@
       ~McStas_instr.set_parameters
       ~McStas_instr.settings
       ~McStas_instr.settings_string
+      ~McStas_instr.show_analysis
       ~McStas_instr.show_components
       ~McStas_instr.show_diagram
       ~McStas_instr.show_dump

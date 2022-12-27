@@ -62,6 +62,7 @@
       ~McCode_instr.set_parameters
       ~McCode_instr.settings
       ~McCode_instr.settings_string
+      ~McCode_instr.show_analysis
       ~McCode_instr.show_components
       ~McCode_instr.show_diagram
       ~McCode_instr.show_dump

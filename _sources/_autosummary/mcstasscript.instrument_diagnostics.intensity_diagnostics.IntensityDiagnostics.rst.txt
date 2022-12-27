@@ -1,0 +1,36 @@
+mcstasscript.instrument\_diagnostics.intensity\_diagnostics.IntensityDiagnostics
+================================================================================
+
+.. currentmodule:: mcstasscript.instrument_diagnostics.intensity_diagnostics
+
+.. autoclass:: IntensityDiagnostics
+   :members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~IntensityDiagnostics.__init__
+      ~IntensityDiagnostics.add_monitor
+      ~IntensityDiagnostics.correct_target_index
+      ~IntensityDiagnostics.plot
+      ~IntensityDiagnostics.plot_0D
+      ~IntensityDiagnostics.plot_1D
+      ~IntensityDiagnostics.remove_previous_use
+      ~IntensityDiagnostics.reset_instr
+      ~IntensityDiagnostics.run
+      ~IntensityDiagnostics.run_general
+      ~IntensityDiagnostics.set_parameters
+      ~IntensityDiagnostics.settings
+      ~IntensityDiagnostics.show_parameters
+      ~IntensityDiagnostics.show_settings
+   
+   
+
+   
+   
+   

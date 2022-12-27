@@ -1,0 +1,25 @@
+mcstasscript.instrument\_diagnostics.plot\_overview.PlotOverview
+================================================================
+
+.. currentmodule:: mcstasscript.instrument_diagnostics.plot_overview
+
+.. autoclass:: PlotOverview
+   :members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~PlotOverview.__init__
+      ~PlotOverview.plot_all
+      ~PlotOverview.set_same_scale
+   
+   
+
+   
+   
+   

@@ -1,4 +1,4 @@
-﻿mcstasscript.tests.test\_Instr
+mcstasscript.tests.test\_Instr
 ==============================
 
 .. automodule:: mcstasscript.tests.test_Instr

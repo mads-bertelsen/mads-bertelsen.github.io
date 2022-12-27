@@ -186,11 +186,11 @@ banana_detector.filename = '"tof_b.dat"'
 [1;32m     40[0m [0msrc[0m[0;34m.[0m[0mdlambda[0m [0;34m=[0m [0;34m"0.01*wavelength"[0m[0;34m[0m[0;34m[0m[0m
 
 [0;32m~/PaNOSC/McStasScript/github/McStasScript/mcstasscript/interface/instr.py[0m in [0;36madd_parameter[0;34m(self, *args, **kwargs)[0m
-[1;32m    710[0m [0;34m[0m[0m
-[1;32m    711[0m         [0;32mif[0m [0mpar[0m[0;34m.[0m[0mname[0m [0;32min[0m [0mnames[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 712[0;31m             raise NameError(f"A parameter or variable with name '{par.name}'"
-[0m[1;32m    713[0m                             f" already exists!")
-[1;32m    714[0m [0;34m[0m[0m
+[1;32m    715[0m [0;34m[0m[0m
+[1;32m    716[0m         [0;32mif[0m [0mpar[0m[0;34m.[0m[0mname[0m [0;32min[0m [0mnames[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 717[0;31m             raise NameError(f"A parameter or variable with name '{par.name}'"
+[0m[1;32m    718[0m                             f" already exists!")
+[1;32m    719[0m [0;34m[0m[0m
 
 [0;31mNameError[0m: A parameter or variable with name 'wavelength' already exists!
 NameError: A parameter or variable with name 'wavelength' already exists!

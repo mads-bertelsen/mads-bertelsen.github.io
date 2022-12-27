@@ -1,0 +1,37 @@
+mcstasscript.instrument\_diagnostics
+====================================
+
+.. automodule:: mcstasscript.instrument_diagnostics
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :template: custom-module-template.rst
+   :recursive:
+
+   mcstasscript.instrument_diagnostics.beam_diagnostics
+   mcstasscript.instrument_diagnostics.diagnostics_instrument
+   mcstasscript.instrument_diagnostics.event_plotter
+   mcstasscript.instrument_diagnostics.intensity_diagnostics
+   mcstasscript.instrument_diagnostics.plot_overview
+   mcstasscript.instrument_diagnostics.view
+

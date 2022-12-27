@@ -1,0 +1,31 @@
+mcstasscript.instrument\_diagnostics.event\_plotter
+===================================================
+
+.. automodule:: mcstasscript.instrument_diagnostics.event_plotter
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      EventPlotter
+   
+   
+
+   
+   
+   
+
+
+

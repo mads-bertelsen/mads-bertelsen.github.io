@@ -1,4 +1,4 @@
-﻿mcstasscript.helper
+mcstasscript.helper
 ===================
 
 .. automodule:: mcstasscript.helper
@@ -29,6 +29,7 @@
    :recursive:
 
    mcstasscript.helper.beam_dump_database
+   mcstasscript.helper.check_mccode_version
    mcstasscript.helper.component_reader
    mcstasscript.helper.exceptions
    mcstasscript.helper.formatting

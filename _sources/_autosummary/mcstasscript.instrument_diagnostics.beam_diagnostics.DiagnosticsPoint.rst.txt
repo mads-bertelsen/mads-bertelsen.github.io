@@ -1,0 +1,25 @@
+mcstasscript.instrument\_diagnostics.beam\_diagnostics.DiagnosticsPoint
+=======================================================================
+
+.. currentmodule:: mcstasscript.instrument_diagnostics.beam_diagnostics
+
+.. autoclass:: DiagnosticsPoint
+   :members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~DiagnosticsPoint.__init__
+      ~DiagnosticsPoint.set_filename
+      ~DiagnosticsPoint.set_recorded_rays
+   
+   
+
+   
+   
+   

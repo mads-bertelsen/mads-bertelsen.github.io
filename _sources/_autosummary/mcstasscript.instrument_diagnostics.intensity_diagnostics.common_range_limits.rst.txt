@@ -1,0 +1,6 @@
+mcstasscript.instrument\_diagnostics.intensity\_diagnostics.common\_range\_limits
+=================================================================================
+
+.. currentmodule:: mcstasscript.instrument_diagnostics.intensity_diagnostics
+
+.. autofunction:: common_range_limits

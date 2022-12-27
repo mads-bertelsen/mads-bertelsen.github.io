@@ -62,6 +62,7 @@
       ~McXtrace_instr.set_parameters
       ~McXtrace_instr.settings
       ~McXtrace_instr.settings_string
+      ~McXtrace_instr.show_analysis
       ~McXtrace_instr.show_components
       ~McXtrace_instr.show_diagram
       ~McXtrace_instr.show_dump

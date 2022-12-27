@@ -1,0 +1,26 @@
+mcstasscript.instrument\_diagnostics.view.View
+==============================================
+
+.. currentmodule:: mcstasscript.instrument_diagnostics.view
+
+.. autoclass:: View
+   :members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~View.__init__
+      ~View.clear_limits
+      ~View.set_axis1_limits
+      ~View.set_axis2_limits
+   
+   
+
+   
+   
+   

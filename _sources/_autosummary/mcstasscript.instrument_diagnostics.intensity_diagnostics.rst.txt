@@ -1,0 +1,38 @@
+mcstasscript.instrument\_diagnostics.intensity\_diagnostics
+===========================================================
+
+.. automodule:: mcstasscript.instrument_diagnostics.intensity_diagnostics
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:
+   
+      common_range_limits
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      IntensityDiagnostics
+   
+   
+
+   
+   
+   
+
+
+

@@ -1,0 +1,45 @@
+mcstasscript.instrument\_diagnostics.beam\_diagnostics.BeamDiagnostics
+======================================================================
+
+.. currentmodule:: mcstasscript.instrument_diagnostics.beam_diagnostics
+
+.. autoclass:: BeamDiagnostics
+   :members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~BeamDiagnostics.__init__
+      ~BeamDiagnostics.add_flag
+      ~BeamDiagnostics.add_monitor
+      ~BeamDiagnostics.add_monitors
+      ~BeamDiagnostics.add_point
+      ~BeamDiagnostics.add_view
+      ~BeamDiagnostics.clear_flags
+      ~BeamDiagnostics.clear_points
+      ~BeamDiagnostics.clear_views
+      ~BeamDiagnostics.correct_target_index
+      ~BeamDiagnostics.plot
+      ~BeamDiagnostics.read_data
+      ~BeamDiagnostics.remove_point
+      ~BeamDiagnostics.remove_previous_use
+      ~BeamDiagnostics.reset_instr
+      ~BeamDiagnostics.run
+      ~BeamDiagnostics.set_parameters
+      ~BeamDiagnostics.settings
+      ~BeamDiagnostics.show_flags
+      ~BeamDiagnostics.show_parameters
+      ~BeamDiagnostics.show_points
+      ~BeamDiagnostics.show_settings
+      ~BeamDiagnostics.show_views
+   
+   
+
+   
+   
+   

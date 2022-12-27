@@ -1,0 +1,30 @@
+mcstasscript.instrument\_diagram.generate\_target\_index
+========================================================
+
+.. automodule:: mcstasscript.instrument_diagram.generate_target_index
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:
+   
+      generate_target_index_arrows
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

@@ -33,11 +33,11 @@ ms.make_sub_plot(data, log=True)
 [1;32m     49[0m     [0mnumber_of_plots[0m [0;34m=[0m [0mlen[0m[0;34m([0m[0mdata_list[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
 [0;32m~/PaNOSC/McStasScript/github/McStasScript/mcstasscript/helper/plot_helper.py[0m in [0;36m_handle_kwargs[0;34m(data_list, **kwargs)[0m
-[1;32m    249[0m                 [0;32mfor[0m [0mdata[0m [0;32min[0m [0mdata_list[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    250[0m                     [0minput_kwarg[0m [0;34m=[0m [0;34m{[0m[0moption[0m[0;34m:[0m [0mgiven_option[0m[0;34m}[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 251[0;31m                     [0mdata[0m[0;34m.[0m[0mset_plot_options[0m[0;34m([0m[0;34m**[0m[0minput_kwarg[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    252[0m [0;34m[0m[0m
-[1;32m    253[0m             [0;31m# Remove option from kwargs[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    270[0m                 [0;32mfor[0m [0mdata[0m [0;32min[0m [0mdata_list[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    271[0m                     [0minput_kwarg[0m [0;34m=[0m [0;34m{[0m[0moption[0m[0;34m:[0m [0mgiven_option[0m[0;34m}[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 272[0;31m                     [0mdata[0m[0;34m.[0m[0mset_plot_options[0m[0;34m([0m[0;34m**[0m[0minput_kwarg[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    273[0m [0;34m[0m[0m
+[1;32m    274[0m             [0;31m# Remove option from kwargs[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
 
 [0;31mAttributeError[0m: 'NoneType' object has no attribute 'set_plot_options'
 AttributeError: 'NoneType' object has no attribute 'set_plot_options'

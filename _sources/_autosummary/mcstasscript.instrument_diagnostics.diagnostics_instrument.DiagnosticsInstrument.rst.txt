@@ -1,0 +1,30 @@
+mcstasscript.instrument\_diagnostics.diagnostics\_instrument.DiagnosticsInstrument
+==================================================================================
+
+.. currentmodule:: mcstasscript.instrument_diagnostics.diagnostics_instrument
+
+.. autoclass:: DiagnosticsInstrument
+   :members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~DiagnosticsInstrument.__init__
+      ~DiagnosticsInstrument.correct_target_index
+      ~DiagnosticsInstrument.remove_previous_use
+      ~DiagnosticsInstrument.reset_instr
+      ~DiagnosticsInstrument.set_parameters
+      ~DiagnosticsInstrument.settings
+      ~DiagnosticsInstrument.show_parameters
+      ~DiagnosticsInstrument.show_settings
+   
+   
+
+   
+   
+   

@@ -1,0 +1,6 @@
+mcstasscript.instrument\_diagnostics.beam\_diagnostics.sanitise\_comp\_name
+===========================================================================
+
+.. currentmodule:: mcstasscript.instrument_diagnostics.beam_diagnostics
+
+.. autofunction:: sanitise_comp_name

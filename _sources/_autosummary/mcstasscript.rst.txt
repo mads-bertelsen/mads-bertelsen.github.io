@@ -31,6 +31,7 @@
    mcstasscript.data
    mcstasscript.helper
    mcstasscript.instr_reader
+   mcstasscript.instrument_diagnostics
    mcstasscript.instrument_diagram
    mcstasscript.integration_tests
    mcstasscript.interface

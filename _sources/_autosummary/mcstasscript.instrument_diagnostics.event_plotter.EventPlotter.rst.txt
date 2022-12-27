@@ -1,0 +1,28 @@
+mcstasscript.instrument\_diagnostics.event\_plotter.EventPlotter
+================================================================
+
+.. currentmodule:: mcstasscript.instrument_diagnostics.event_plotter
+
+.. autoclass:: EventPlotter
+   :members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~EventPlotter.__init__
+      ~EventPlotter.add_view_limits
+      ~EventPlotter.get_view_limits_axis1
+      ~EventPlotter.get_view_limits_axis2
+      ~EventPlotter.plot
+      ~EventPlotter.scale_weights
+   
+   
+
+   
+   
+   

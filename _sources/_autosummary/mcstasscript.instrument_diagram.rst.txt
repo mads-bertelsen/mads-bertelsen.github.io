@@ -38,5 +38,6 @@ mcstasscript.instrument\_diagram
    mcstasscript.instrument_diagram.generate_JUMP
    mcstasscript.instrument_diagram.generate_ROTATED
    mcstasscript.instrument_diagram.generate_Union
+   mcstasscript.instrument_diagram.generate_target_index
    mcstasscript.instrument_diagram.make_diagram
 

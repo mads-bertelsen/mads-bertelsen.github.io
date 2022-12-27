@@ -1,0 +1,39 @@
+mcstasscript.instrument\_diagnostics.beam\_diagnostics
+======================================================
+
+.. automodule:: mcstasscript.instrument_diagnostics.beam_diagnostics
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:
+   
+      sanitise_comp_name
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      BeamDiagnostics
+      DiagnosticsPoint
+   
+   
+
+   
+   
+   
+
+
+
