@@ -1,4 +1,4 @@
-mcstasscript.data
+﻿mcstasscript.data
 =================
 
 .. automodule:: mcstasscript.data
@@ -28,6 +28,7 @@ mcstasscript.data
    :template: custom-module-template.rst
    :recursive:
 
+   mcstasscript.data.MCPLDataFormat
    mcstasscript.data.McStasDataFormat
    mcstasscript.data.data
    mcstasscript.data.pyvinylData

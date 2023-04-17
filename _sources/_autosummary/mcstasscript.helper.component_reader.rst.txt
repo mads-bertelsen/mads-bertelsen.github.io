@@ -1,4 +1,4 @@
-mcstasscript.helper.component\_reader
+﻿mcstasscript.helper.component\_reader
 =====================================
 
 .. automodule:: mcstasscript.helper.component_reader
@@ -8,6 +8,13 @@ mcstasscript.helper.component\_reader
    
 
    
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:
+   
+      c_integer_literal_base
    
    
 

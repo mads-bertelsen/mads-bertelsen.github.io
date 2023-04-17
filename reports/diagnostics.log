@@ -26,16 +26,16 @@ instr.show_diagram(analysis=True)
 [0;32m----> 1[0;31m [0minstr[0m[0;34m.[0m[0mshow_diagram[0m[0;34m([0m[0manalysis[0m[0;34m=[0m[0;32mTrue[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m
 [0;32m~/PaNOSC/McStasScript/github/McStasScript/mcstasscript/interface/instr.py[0m in [0;36mshow_diagram[0;34m(self, analysis, variable, limits)[0m
-[1;32m   2546[0m             [0manalysis[0m [0;34m=[0m [0;32mTrue[0m[0;34m[0m[0;34m[0m[0m
-[1;32m   2547[0m [0;34m[0m[0m
-[0;32m-> 2548[0;31m         [0minstrument_diagram[0m[0;34m([0m[0mself[0m[0;34m,[0m [0manalysis[0m[0;34m=[0m[0manalysis[0m[0;34m,[0m [0mvariable[0m[0;34m=[0m[0mvariable[0m[0;34m,[0m [0mlimits[0m[0;34m=[0m[0mlimits[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m   2549[0m         [0mself[0m[0;34m.[0m[0mcheck_for_errors[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m   2550[0m [0;34m[0m[0m
+[1;32m   2584[0m             [0manalysis[0m [0;34m=[0m [0;32mTrue[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   2585[0m [0;34m[0m[0m
+[0;32m-> 2586[0;31m         [0minstrument_diagram[0m[0;34m([0m[0mself[0m[0;34m,[0m [0manalysis[0m[0;34m=[0m[0manalysis[0m[0;34m,[0m [0mvariable[0m[0;34m=[0m[0mvariable[0m[0;34m,[0m [0mlimits[0m[0;34m=[0m[0mlimits[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   2587[0m         [0mself[0m[0;34m.[0m[0mcheck_for_errors[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   2588[0m [0;34m[0m[0m
 
 [0;32m~/PaNOSC/McStasScript/github/McStasScript/mcstasscript/instrument_diagram/make_diagram.py[0m in [0;36minstrument_diagram[0;34m(instrument, analysis, variable, limits)[0m
-[1;32m     73[0m [0;34m[0m[0m
-[1;32m     74[0m     [0;31m# Plot diagram[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
-[0;32m---> 75[0;31m     [0mcanvas[0m[0;34m.[0m[0mplot[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     92[0m [0;34m[0m[0m
+[1;32m     93[0m     [0;31m# Plot diagram[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 94[0;31m     [0mcanvas[0m[0;34m.[0m[0mplot[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m
 [0;32m~/PaNOSC/McStasScript/github/McStasScript/mcstasscript/instrument_diagram/canvas.py[0m in [0;36mplot[0;34m(self)[0m
 [1;32m    411[0m             [0;31m# Plot graph, convey tick positions and ylimits to match main diagram[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m

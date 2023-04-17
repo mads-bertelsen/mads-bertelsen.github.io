@@ -19,6 +19,7 @@ mcstasscript.data.pyvinylData
       :toctree:
       :template: custom-class-template.rst
    
+      pyvinylMCPLData
       pyvinylMcStasData
    
    
