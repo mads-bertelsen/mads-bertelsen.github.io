@@ -18,6 +18,7 @@
       ~McXtrace_instr.add_component
       ~McXtrace_instr.add_declare_var
       ~McXtrace_instr.add_parameter
+      ~McXtrace_instr.add_search
       ~McXtrace_instr.add_user_var
       ~McXtrace_instr.append_declare
       ~McXtrace_instr.append_finally
@@ -30,6 +31,7 @@
       ~McXtrace_instr.backengine
       ~McXtrace_instr.check_for_errors
       ~McXtrace_instr.check_for_relative_errors
+      ~McXtrace_instr.clear_search
       ~McXtrace_instr.component_help
       ~McXtrace_instr.copy_component
       ~McXtrace_instr.dump
@@ -54,6 +56,7 @@
       ~McXtrace_instr.run_to
       ~McXtrace_instr.saveH5
       ~McXtrace_instr.set_calculator_base_dir
+      ~McXtrace_instr.set_dependency
       ~McXtrace_instr.set_input
       ~McXtrace_instr.set_instrument_base_dir
       ~McXtrace_instr.set_output_data_types
@@ -71,6 +74,7 @@
       ~McXtrace_instr.show_instrument_file
       ~McXtrace_instr.show_parameters
       ~McXtrace_instr.show_run_subset
+      ~McXtrace_instr.show_search
       ~McXtrace_instr.show_settings
       ~McXtrace_instr.show_variables
       ~McXtrace_instr.subset_check

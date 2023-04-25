@@ -97,10 +97,12 @@
       ~TestManagedMcrun.test_ManagedMcrun_load_data_PSD4PI
       ~TestManagedMcrun.test_ManagedMcrun_load_data_no_mcsim_file
       ~TestManagedMcrun.test_ManagedMcrun_load_data_nonexisting
+      ~TestManagedMcrun.test_ManagedMcrun_run_simulation_NeXus
       ~TestManagedMcrun.test_ManagedMcrun_run_simulation_basic
       ~TestManagedMcrun.test_ManagedMcrun_run_simulation_basic_path
       ~TestManagedMcrun.test_ManagedMcrun_run_simulation_compile
       ~TestManagedMcrun.test_ManagedMcrun_run_simulation_no_standard
+      ~TestManagedMcrun.test_ManagedMcrun_run_simulation_openacc
       ~TestManagedMcrun.test_ManagedMcrun_run_simulation_parameters
       ~TestManagedMcrun.test_ManagedMcrun_run_simulation_with_gravity
    

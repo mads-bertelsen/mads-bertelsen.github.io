@@ -15,8 +15,10 @@ mcstasscript.tests.test\_Instr.DummyComponent
    .. autosummary::
    
       ~DummyComponent.__init__
+      ~DummyComponent.add_search
       ~DummyComponent.append_EXTEND
       ~DummyComponent.check_parameters
+      ~DummyComponent.clear_search
       ~DummyComponent.print_long
       ~DummyComponent.print_short
       ~DummyComponent.set_AT
@@ -35,6 +37,7 @@ mcstasscript.tests.test\_Instr.DummyComponent
       ~DummyComponent.set_parameters
       ~DummyComponent.show_parameters
       ~DummyComponent.show_parameters_simple
+      ~DummyComponent.show_search
       ~DummyComponent.write_component
    
    

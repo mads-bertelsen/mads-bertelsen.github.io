@@ -18,6 +18,7 @@
       ~McStas_instr.add_component
       ~McStas_instr.add_declare_var
       ~McStas_instr.add_parameter
+      ~McStas_instr.add_search
       ~McStas_instr.add_user_var
       ~McStas_instr.append_declare
       ~McStas_instr.append_finally
@@ -30,6 +31,7 @@
       ~McStas_instr.backengine
       ~McStas_instr.check_for_errors
       ~McStas_instr.check_for_relative_errors
+      ~McStas_instr.clear_search
       ~McStas_instr.component_help
       ~McStas_instr.copy_component
       ~McStas_instr.dump
@@ -54,6 +56,7 @@
       ~McStas_instr.run_to
       ~McStas_instr.saveH5
       ~McStas_instr.set_calculator_base_dir
+      ~McStas_instr.set_dependency
       ~McStas_instr.set_input
       ~McStas_instr.set_instrument_base_dir
       ~McStas_instr.set_output_data_types
@@ -71,6 +74,7 @@
       ~McStas_instr.show_instrument_file
       ~McStas_instr.show_parameters
       ~McStas_instr.show_run_subset
+      ~McStas_instr.show_search
       ~McStas_instr.show_settings
       ~McStas_instr.show_variables
       ~McStas_instr.subset_check

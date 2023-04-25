@@ -1,4 +1,4 @@
-﻿libpyvinyl.Instrument.Instrument
+libpyvinyl.Instrument.Instrument
 ================================
 
 .. currentmodule:: libpyvinyl.Instrument

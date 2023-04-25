@@ -27,7 +27,7 @@
       ~MasterParameter.get_options_are_legal
       ~MasterParameter.is_legal
       ~MasterParameter.print_line
-      ~MasterParameter.print_parameter_constraints
+      ~MasterParameter.print_paramter_constraints
    
    
 

@@ -26,11 +26,11 @@ instr.show_diagram(analysis=True)
 [0;32m----> 1[0;31m [0minstr[0m[0;34m.[0m[0mshow_diagram[0m[0;34m([0m[0manalysis[0m[0;34m=[0m[0;32mTrue[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m
 [0;32m~/PaNOSC/McStasScript/github/McStasScript/mcstasscript/interface/instr.py[0m in [0;36mshow_diagram[0;34m(self, analysis, variable, limits)[0m
-[1;32m   2584[0m             [0manalysis[0m [0;34m=[0m [0;32mTrue[0m[0;34m[0m[0;34m[0m[0m
-[1;32m   2585[0m [0;34m[0m[0m
-[0;32m-> 2586[0;31m         [0minstrument_diagram[0m[0;34m([0m[0mself[0m[0;34m,[0m [0manalysis[0m[0;34m=[0m[0manalysis[0m[0;34m,[0m [0mvariable[0m[0;34m=[0m[0mvariable[0m[0;34m,[0m [0mlimits[0m[0;34m=[0m[0mlimits[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m   2587[0m         [0mself[0m[0;34m.[0m[0mcheck_for_errors[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m   2588[0m [0;34m[0m[0m
+[1;32m   2721[0m             [0manalysis[0m [0;34m=[0m [0;32mTrue[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   2722[0m [0;34m[0m[0m
+[0;32m-> 2723[0;31m         [0minstrument_diagram[0m[0;34m([0m[0mself[0m[0;34m,[0m [0manalysis[0m[0;34m=[0m[0manalysis[0m[0;34m,[0m [0mvariable[0m[0;34m=[0m[0mvariable[0m[0;34m,[0m [0mlimits[0m[0;34m=[0m[0mlimits[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   2724[0m [0;34m[0m[0m
+[1;32m   2725[0m         [0;32mif[0m [0mself[0m[0;34m.[0m[0m_run_settings[0m[0;34m[[0m[0;34m"checks"[0m[0;34m][0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 
 [0;32m~/PaNOSC/McStasScript/github/McStasScript/mcstasscript/instrument_diagram/make_diagram.py[0m in [0;36minstrument_diagram[0;34m(instrument, analysis, variable, limits)[0m
 [1;32m     92[0m [0;34m[0m[0m

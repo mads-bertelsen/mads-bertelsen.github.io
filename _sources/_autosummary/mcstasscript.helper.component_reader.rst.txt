@@ -1,4 +1,4 @@
-﻿mcstasscript.helper.component\_reader
+mcstasscript.helper.component\_reader
 =====================================
 
 .. automodule:: mcstasscript.helper.component_reader

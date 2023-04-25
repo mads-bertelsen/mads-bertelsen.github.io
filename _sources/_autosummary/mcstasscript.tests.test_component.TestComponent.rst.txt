@@ -111,6 +111,7 @@
       ~TestComponent.test_Component_write_to_file_complex_SPLIT_string
       ~TestComponent.test_Component_write_to_file_include
       ~TestComponent.test_Component_write_to_file_simple
+      ~TestComponent.test_Component_write_to_file_simple_search
       ~TestComponent.test_component_basic_init_set_parameters
       ~TestComponent.test_component_error_check
    

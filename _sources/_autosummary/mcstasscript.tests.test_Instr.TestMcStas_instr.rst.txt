@@ -83,6 +83,7 @@ mcstasscript.tests.test\_Instr.TestMcStas\_instr
       ~TestMcStas_instr.tearDownClass
       ~TestMcStas_instr.test_RELATIVE_error
       ~TestMcStas_instr.test_RELATIVE_error_and_checks_false
+      ~TestMcStas_instr.test_add_component_infer_name
       ~TestMcStas_instr.test_add_component_simple
       ~TestMcStas_instr.test_add_component_simple_after
       ~TestMcStas_instr.test_add_component_simple_after_error
@@ -107,6 +108,9 @@ mcstasscript.tests.test\_Instr.TestMcStas\_instr
       ~TestMcStas_instr.test_get_component_simple
       ~TestMcStas_instr.test_get_component_simple_error
       ~TestMcStas_instr.test_get_last_component_simple
+      ~TestMcStas_instr.test_infer_add_declare_variable
+      ~TestMcStas_instr.test_infer_copy_component_simple
+      ~TestMcStas_instr.test_infer_name_add_parameter
       ~TestMcStas_instr.test_load_config_file
       ~TestMcStas_instr.test_load_config_file_x_ray
       ~TestMcStas_instr.test_load_libpyvinyl_parameters
@@ -117,6 +121,7 @@ mcstasscript.tests.test\_Instr.TestMcStas\_instr
       ~TestMcStas_instr.test_print_component_short
       ~TestMcStas_instr.test_remove_component
       ~TestMcStas_instr.test_run_backengine_basic
+      ~TestMcStas_instr.test_run_backengine_complex_settings
       ~TestMcStas_instr.test_run_backengine_existing_folder
       ~TestMcStas_instr.test_run_full_instrument_complex
       ~TestMcStas_instr.test_run_full_instrument_junk_par_error
@@ -156,6 +161,8 @@ mcstasscript.tests.test\_Instr.TestMcStas\_instr
       ~TestMcStas_instr.test_user_var_block_add_declare_variable
       ~TestMcStas_instr.test_user_var_block_add_parameter
       ~TestMcStas_instr.test_write_c_files_simple
+      ~TestMcStas_instr.test_write_full_instrument_dependency
+      ~TestMcStas_instr.test_write_full_instrument_search
       ~TestMcStas_instr.test_write_full_instrument_simple
       ~TestMcStas_instr.test_x_ray_run_full_instrument_basic
    

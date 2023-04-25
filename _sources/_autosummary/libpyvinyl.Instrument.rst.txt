@@ -5,23 +5,21 @@
 
    
    
-   .. rubric:: Module Attributes
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
 
    .. autosummary::
       :toctree:
+      :template: custom-class-template.rst
    
-      calculators
-      master
-      name
-      parameters
-   
-   
-
-   
-   
-   
-
-   
+      Instrument
    
    
 

@@ -15,8 +15,10 @@ mcstasscript.helper.mcstas\_objects.Component
    .. autosummary::
    
       ~Component.__init__
+      ~Component.add_search
       ~Component.append_EXTEND
       ~Component.check_parameters
+      ~Component.clear_search
       ~Component.print_long
       ~Component.print_short
       ~Component.set_AT
@@ -35,6 +37,7 @@ mcstasscript.helper.mcstas\_objects.Component
       ~Component.set_parameters
       ~Component.show_parameters
       ~Component.show_parameters_simple
+      ~Component.show_search
       ~Component.write_component
    
    

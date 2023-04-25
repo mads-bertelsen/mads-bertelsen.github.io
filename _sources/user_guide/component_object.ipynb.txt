@@ -488,9 +488,30 @@
    ]
   },
   {
+   "cell_type": "markdown",
+   "id": "better-chance",
+   "metadata": {},
+   "source": [
+    "### SEARCH\n",
+    "It is also possible to set a number of SEARCH statements for a component. McStas will not include the component if it is not found in that search statement. These work just as for instruments and are documented [here](instrument_object.ipynb). Note that McStasScript does not yet search for components in these locations, so for now this syntax can only be used to use different versions of existing components with the same input parameters."
+   ]
+  },
+  {
    "cell_type": "code",
    "execution_count": null,
    "id": "stable-blond",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "arm = instrument.add_component(\"code_arm\", \"Arm\")\n",
+    "arm.add_search(\"/search/for/component/here\")\n",
+    "print(arm)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "focused-short",
    "metadata": {},
    "outputs": [],
    "source": []

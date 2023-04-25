@@ -18,6 +18,7 @@
       ~McCode_instr.add_component
       ~McCode_instr.add_declare_var
       ~McCode_instr.add_parameter
+      ~McCode_instr.add_search
       ~McCode_instr.add_user_var
       ~McCode_instr.append_declare
       ~McCode_instr.append_finally
@@ -30,6 +31,7 @@
       ~McCode_instr.backengine
       ~McCode_instr.check_for_errors
       ~McCode_instr.check_for_relative_errors
+      ~McCode_instr.clear_search
       ~McCode_instr.component_help
       ~McCode_instr.copy_component
       ~McCode_instr.dump
@@ -54,6 +56,7 @@
       ~McCode_instr.run_to
       ~McCode_instr.saveH5
       ~McCode_instr.set_calculator_base_dir
+      ~McCode_instr.set_dependency
       ~McCode_instr.set_input
       ~McCode_instr.set_instrument_base_dir
       ~McCode_instr.set_output_data_types
@@ -71,6 +74,7 @@
       ~McCode_instr.show_instrument_file
       ~McCode_instr.show_parameters
       ~McCode_instr.show_run_subset
+      ~McCode_instr.show_search
       ~McCode_instr.show_settings
       ~McCode_instr.show_variables
       ~McCode_instr.subset_check
